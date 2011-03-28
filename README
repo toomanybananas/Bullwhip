@@ -1,2 +1,7 @@
 Bullwhip is a simple 2D game engine.
 It is coded in C++, uses SFML for rendering, Box2D for physics, and Lua for scripting
+
+Quick note on the branches:
+Lamborghini is the most stable build and is the release build. ('Gold' or 'release' build)
+Ferrari is the semi-working build. It is updated more often than Lamborghini, but it might have some bugs. ('Silver' build)
+Corvette is the working build. You should almost never use this branch, it has the most bugs and might not even compile.
