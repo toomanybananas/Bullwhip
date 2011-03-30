@@ -46,23 +46,6 @@ int main()
             if(event.Type == sf::Event::Closed)
                 gam.Quit();
         }
-
-        if(in.IsKeyDown(sf::Key::Up))
-        {
-            player.jump();
-        }
-        if(in.IsKeyDown(sf::Key::Right))
-        {
-            player.ApplyForce(Vec2(500, -100), Vec2(0, 0));
-        }
-        if(in.IsKeyDown(sf::Key::Left))
-        {
-            player.ApplyForce(Vec2(-500, -100), Vec2(0, 0));
-        }
-        if((!in.IsKeyDown(sf::Key::Right)) && (!in.IsKeyDown(sf::Key::Left)))
-        {
-            player.SetXVel(0);
-        }
         gam.draw();
     }
     return 0;

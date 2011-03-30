@@ -35,7 +35,7 @@ void phys_static::reg(b2World* world)
     body->CreateFixture(&bounding, 0.0f);
 }
 
-void phys_static::update()
+void phys_static::update(const sf::Input& in)
 {
     b2Vec2 pos = body->GetPosition();
     float angle = toDeg(body->GetAngle());

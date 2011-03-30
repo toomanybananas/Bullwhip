@@ -23,7 +23,7 @@ void SceneManager::Update(sf::RenderWindow& win)
     for(unsigned int i = 0; i < entites.size(); i++)
     {
         //Update entity
-        entites[i]->update();
+        entites[i]->update(win.GetInput());
         win.Draw(entites[i]->getspr());
     }
 }
