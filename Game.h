@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <sstream>
 #include "JMath.h"
 #include "Constants.h"
 #include "SceneManager.h"
@@ -41,6 +42,8 @@ class Game
     private:
         sf::RenderWindow win;
         sf::View v;
+        sf::String fps;
+        sf::Font fpsfont;
         bool running;
         bool paused;
         static Game m_Game;

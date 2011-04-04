@@ -7,6 +7,9 @@ void Game::init(std::string title, int x, int y)
     win.SetFramerateLimit(60);
     scene = new SceneManager;
     reg = new EntityRegistry;
+    fpsfont.LoadFromFile("slkscr.ttf");
+    fps.SetFont(fpsfont);
+    fps.SetSize(12);
     //ill do views later
     //v.SetCenter(1000, 1000);
     //v.SetHalfSize(400, 300);
@@ -22,6 +25,10 @@ void Game::draw()
     //win.SetView(win.GetDefaultView());
     //Draw the interface
     scene->Update(win);
+    std::stringstream ss;
+    ss <<  1.f / win.GetFrameTime();
+    fps.SetText(ss.str());
+    win.Draw(fps);
     win.Display();
 }
 
