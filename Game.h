@@ -7,6 +7,7 @@
 #include "JMath.h"
 #include "Constants.h"
 #include "SceneManager.h"
+#include "EntityRegistry.h"
 
 #define VERSION 0.1
 
@@ -34,6 +35,7 @@ class Game
 
         void SetScene(SceneManager* scenem) {scene = scenem;};
         SceneManager* GetScene() {return scene;};
+        EntityRegistry* GetRegistry() {return reg;};
 
         static Game& Instance() {return m_Game;};
     private:
@@ -43,6 +45,7 @@ class Game
         bool paused;
         static Game m_Game;
         SceneManager* scene;
+        EntityRegistry* reg;
     protected:
         Game() {}; //Singleton
 };
