@@ -28,7 +28,7 @@ class Entity
         virtual float GetRot() {return draw.GetRotation();};
 
 
-        virtual void update();
+        virtual void update(const sf::Input &in);
 
 
         virtual sf::Sprite& getspr() {return draw;};
@@ -69,3 +69,4 @@ class Entity
         std::map<std::string, bool> attributes;
 };
 
+Entity* newEntity(int i);

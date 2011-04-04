@@ -6,6 +6,7 @@ void Game::init(std::string title, int x, int y)
     running = true;
     win.SetFramerateLimit(60);
     scene = new SceneManager;
+    reg = new EntityRegistry;
     //ill do views later
     //v.SetCenter(1000, 1000);
     //v.SetHalfSize(400, 300);

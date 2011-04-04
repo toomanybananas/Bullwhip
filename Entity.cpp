@@ -46,8 +46,13 @@ void Entity::damage(int dmg)
     }
 }
 
-void Entity::update()
+void Entity::update(const sf::Input& in)
 {
     //
+}
+
+Entity* newEntity(int i)
+{
+    return new Entity;
 }
 

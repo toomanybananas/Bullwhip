@@ -14,6 +14,15 @@ void SceneManager::AddEntity(Entity& ent)
     }
 }
 
+void SceneManager::AddEntity(Entity* ent)
+{
+    entites.insert(entites.end(), ent);
+    if(ent->GetAttribute("physics"))
+    {
+        PhysAdd(ent);
+    }
+}
+
 void SceneManager::Update(sf::RenderWindow& win)
 {
     phys_world->Step(1.f / 60.f, 10, 10);
@@ -23,7 +32,7 @@ void SceneManager::Update(sf::RenderWindow& win)
     for(unsigned int i = 0; i < entites.size(); i++)
     {
         //Update entity
-        entites[i]->update();
+        entites[i]->update(win.GetInput());
         win.Draw(entites[i]->getspr());
     }
 }

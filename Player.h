@@ -12,10 +12,11 @@ class Player : public phys_dynamic
         Player();
         virtual bool onCollision(Entity* obj);
         virtual void jump();
-        virtual void update();
+        virtual void update(const sf::Input& in);
     protected:
         bool can_jump;
         std::string collide;
         float coly;
         sf::Clock jumptimer;
 };
+Entity* newPlayer(int i);
