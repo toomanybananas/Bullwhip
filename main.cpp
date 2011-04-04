@@ -19,16 +19,19 @@ int main()
     gam.init("Bullwhip.Platformer", 800, 600); //Window title, width, height
     gam.GetScene()->Init(b2Vec2(0.f, 10.f));
     SceneManager* scene = gam.GetScene();
+    EntityRegistry* reg = gam.GetRegistry();
+    reg->AddFactory("base_ent", &newEntity);
+    reg->AddFactory("player", &newPlayer);
 
     scene->LoadScene("level.bin");
 
 
-    Player player;
+    Entity* player = reg->NewEnt("player");
     Def pdef;
     pdef.SetVal("x", 100);
     pdef.SetVal("y", 100);
     pdef.SetString("image", "player.png");
-    player.init(pdef);
+    player->init(pdef);
     scene->AddEntity(player);
 
 

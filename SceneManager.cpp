@@ -14,6 +14,15 @@ void SceneManager::AddEntity(Entity& ent)
     }
 }
 
+void SceneManager::AddEntity(Entity* ent)
+{
+    entites.insert(entites.end(), ent);
+    if(ent->GetAttribute("physics"))
+    {
+        PhysAdd(ent);
+    }
+}
+
 void SceneManager::Update(sf::RenderWindow& win)
 {
     phys_world->Step(1.f / 60.f, 10, 10);

@@ -38,3 +38,8 @@ void phys_dynamic::reg(b2World* world)
     body = world->CreateBody(&body_def);
     fix = body->CreateFixture(&fix_def);
 }
+
+Entity* newPhys_dynamic(int i)
+{
+    return new phys_dynamic;
+}

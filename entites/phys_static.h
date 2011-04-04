@@ -26,4 +26,5 @@ class phys_static : public Entity
         b2BodyDef body_def;
         b2PolygonShape bounding;
 };
+Entity* newPhys_static(int i);
 

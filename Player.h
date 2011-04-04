@@ -19,3 +19,4 @@ class Player : public phys_dynamic
         float coly;
         sf::Clock jumptimer;
 };
+Entity* newPlayer(int i);

@@ -17,4 +17,6 @@ class phys_dynamic : public phys_static
         b2Fixture* fix;
 };
 
+Entity* newPhys_dynamic(int i);
+
 #endif // PHYS_DYNAMIC_H

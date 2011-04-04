@@ -69,3 +69,4 @@ class Entity
         std::map<std::string, bool> attributes;
 };
 
+Entity* newEntity(int i);

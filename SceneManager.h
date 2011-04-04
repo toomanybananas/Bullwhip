@@ -17,6 +17,7 @@ class SceneManager
         SceneManager();
         virtual void Update(sf::RenderWindow& win);
         virtual void AddEntity (Entity& obj);
+        virtual void AddEntity (Entity* obj);
         virtual void Init(b2Vec2 gravity);
         virtual void PhysAdd(Entity* obj);
         virtual void LoadScene(std::string filename);

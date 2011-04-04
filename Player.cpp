@@ -48,3 +48,8 @@ void Player::update(const sf::Input& in)
     draw.SetY(pos.y / SCALE);
     draw.SetRotation(angle);
 }
+
+Entity* newPlayer(int i)
+{
+    return new Player;
+}

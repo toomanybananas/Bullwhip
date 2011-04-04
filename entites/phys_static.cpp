@@ -43,3 +43,8 @@ void phys_static::update(const sf::Input& in)
     draw.SetY(pos.y / SCALE);
     draw.SetRotation(angle);
 }
+
+Entity* newPhys_static(int i)
+{
+    return new phys_static;
+}
