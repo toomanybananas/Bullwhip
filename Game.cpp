@@ -12,7 +12,6 @@ void Game::init(std::string title, int x, int y)
     fps.SetSize(12);
     //ill do views later
     //v.SetCenter(1000, 1000);
-    //v.SetHalfSize(400, 300);
     //v.Move(-900, -900);
 
 }
@@ -21,10 +20,9 @@ void Game::init(std::string title, int x, int y)
 void Game::draw()
 {
     win.Clear();
-    //win.SetView(v);
-    //win.SetView(win.GetDefaultView());
-    //Draw the interface
     scene->Update(win);
+    win.SetView(win.GetDefaultView());
+    //Draw the interface
     std::stringstream ss;
     ss <<  1.f / win.GetFrameTime();
     fps.SetText(ss.str());

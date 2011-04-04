@@ -41,7 +41,6 @@ class Game
         static Game& Instance() {return m_Game;};
     private:
         sf::RenderWindow win;
-        sf::View v;
         sf::String fps;
         sf::Font fpsfont;
         bool running;

@@ -12,6 +12,10 @@ void SceneManager::AddEntity(Entity& ent)
     {
         PhysAdd(&ent);
     }
+    if(ent.GetAttribute("center"))
+    {
+        center = &ent;
+    }
 }
 
 void SceneManager::AddEntity(Entity* ent)
@@ -21,6 +25,10 @@ void SceneManager::AddEntity(Entity* ent)
     {
         PhysAdd(ent);
     }
+    if(ent->GetAttribute("center"))
+    {
+        center = ent;
+    }
 }
 
 void SceneManager::Update(sf::RenderWindow& win)
@@ -29,11 +37,16 @@ void SceneManager::Update(sf::RenderWindow& win)
     phys_world->ClearForces();
 
     //Parse entites
+    win.SetView(v);
     for(unsigned int i = 0; i < entites.size(); i++)
     {
         //Update entity
         entites[i]->update(win.GetInput());
         win.Draw(entites[i]->getspr());
+    }
+    if(center != NULL)
+    {
+        v.SetCenter(center->GetX(), center->GetY());
     }
 }
 
@@ -41,6 +54,8 @@ void SceneManager::Init(b2Vec2 gravity)
 {
     phys_world = new b2World(gravity, true);
     phys_world->SetContactListener(&bclisten);
+    v.SetHalfSize(400, 300);
+    v.SetCenter(100, 100);
 }
 
 void SceneManager::PhysAdd(Entity* obj)

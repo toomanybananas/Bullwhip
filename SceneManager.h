@@ -25,6 +25,8 @@ class SceneManager
         std::vector<Entity*> entites;
         b2World* phys_world;
         BullwhipContactListener bclisten;
+        Entity* center;
+        sf::View v;
 };
 
 #endif // SCENEMANAGER_H
