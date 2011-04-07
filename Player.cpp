@@ -3,7 +3,6 @@
 Player::Player()
 {
     name = "player";
-    attributes["center"] = true;
 }
 
 bool Player::onCollision(Entity* obj)

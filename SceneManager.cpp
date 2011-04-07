@@ -12,10 +12,6 @@ void SceneManager::AddEntity(Entity& ent)
     {
         PhysAdd(&ent);
     }
-    if(ent.GetAttribute("center"))
-    {
-        center = &ent;
-    }
 }
 
 void SceneManager::AddEntity(Entity* ent)
@@ -24,10 +20,6 @@ void SceneManager::AddEntity(Entity* ent)
     if(ent->GetAttribute("physics"))
     {
         PhysAdd(ent);
-    }
-    if(ent->GetAttribute("center"))
-    {
-        center = ent;
     }
 }
 
@@ -44,9 +36,9 @@ void SceneManager::Update(sf::RenderWindow& win)
         entites[i]->update(win.GetInput());
         win.Draw(entites[i]->getspr());
     }
-    if(center != NULL)
+    if(specents["center"] != NULL)
     {
-        v.SetCenter(center->GetX(), center->GetY());
+        v.SetCenter(specents["center"]->GetX(), specents["center"]->GetY());
     }
 }
 

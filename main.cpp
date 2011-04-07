@@ -33,6 +33,7 @@ int main()
     pdef.SetString("image", "player.png");
     player->init(pdef);
     scene->AddEntity(player);
+    scene->SetEntity("center", player);
 
 
     while(gam.run())

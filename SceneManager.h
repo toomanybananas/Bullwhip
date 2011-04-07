@@ -21,12 +21,14 @@ class SceneManager
         virtual void Init(b2Vec2 gravity);
         virtual void PhysAdd(Entity* obj);
         virtual void LoadScene(std::string filename);
+        virtual void SetEntity(std::string n, Entity* ent) {specents[n] = ent;};
+        virtual Entity* GetEntity(std::string n) {return specents[n];};
     protected:
         std::vector<Entity*> entites;
         b2World* phys_world;
         BullwhipContactListener bclisten;
-        Entity* center;
         sf::View v;
+        std::map<std::string, Entity*> specents;
 };
 
 #endif // SCENEMANAGER_H
