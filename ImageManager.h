@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "ResourceManager.h"
+#include "Constants.h"
 
 class ImageManager : public ResourceManager< sf::Image > {
 private:

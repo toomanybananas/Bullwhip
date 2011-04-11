@@ -13,5 +13,6 @@ sf::Image* ImageManager::load( const std::string& strId ) {
         image = NULL;
     }
     image->SetSmooth(false);
+    std::cout << "[image] loaded image: " << strId << std::endl;
     return image;
 }

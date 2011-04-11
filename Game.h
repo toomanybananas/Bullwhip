@@ -18,7 +18,6 @@ class Game
 {
     public:
         void init(std::string title, int x, int y);
-        void update();
         void draw();
         bool run() {return running;};
 

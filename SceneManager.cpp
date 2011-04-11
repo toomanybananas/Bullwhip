@@ -12,6 +12,7 @@ void SceneManager::AddEntity(Entity& ent)
     {
         PhysAdd(&ent);
     }
+    prtDbg("[scene] added entity");
 }
 
 void SceneManager::AddEntity(Entity* ent)
@@ -21,6 +22,7 @@ void SceneManager::AddEntity(Entity* ent)
     {
         PhysAdd(ent);
     }
+    prtDbg("[scene] added entity");
 }
 
 void SceneManager::Update(sf::RenderWindow& win)
@@ -46,17 +48,21 @@ void SceneManager::Init(b2Vec2 gravity)
 {
     phys_world = new b2World(gravity, true);
     phys_world->SetContactListener(&bclisten);
+    prtDbg("[scene][phys] intialized physics");
     v.SetHalfSize(400, 300);
     v.SetCenter(100, 100);
+    prtDbg("[scene] set views");
 }
 
 void SceneManager::PhysAdd(Entity* obj)
 {
     obj->reg(phys_world);
+    std::cout << "[scene][phys] added physics entity" << std::endl;
 }
 
 void SceneManager::LoadScene(std::string filename)
 {
+    std::cout << "[scene] attempted to call an unfinished function\n";
     return; //not done yet
     inFile file;
     file.OpenFile(filename);

@@ -3,6 +3,7 @@
 void Game::init(std::string title, int x, int y)
 {
     win.Create(sf::VideoMode(800, 600, 32), title);
+    prtDbg("[core] initizalized screen");
     running = true;
     win.SetFramerateLimit(60);
     scene = new SceneManager;
@@ -10,6 +11,7 @@ void Game::init(std::string title, int x, int y)
     fpsfont.LoadFromFile("slkscr.ttf");
     fps.SetFont(fpsfont);
     fps.SetSize(12);
+    prtDbg("[core] fps counter loaded");
     //ill do views later
     //v.SetCenter(1000, 1000);
     //v.Move(-900, -900);
@@ -28,14 +30,6 @@ void Game::draw()
     fps.SetText(ss.str());
     win.Draw(fps);
     win.Display();
-}
-
-
-void Game::update()
-{
-    if(!running) {return;}
-
-    //do stuff, make this function feel needed.
 }
 
 
