@@ -9,6 +9,7 @@
 #include <sstream>
 #include "entites/phys_static.h"
 #include "BullwhipContactListener.h"
+#include "File.h"
 
 
 class SceneManager
@@ -29,6 +30,7 @@ class SceneManager
         BullwhipContactListener bclisten;
         sf::View v;
         std::map<std::string, Entity*> specents;
+        Def worldprops;
 };
 
 #endif // SCENEMANAGER_H

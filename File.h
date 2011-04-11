@@ -12,6 +12,7 @@ class inFile
         std::string ReadString();
         float ReadFloat();
         int ReadInt();
+        void Close();
     protected:
     private:
         std::ifstream* f;
@@ -27,6 +28,7 @@ class outFile
         void WriteString(std::string str);
         void WriteFloat(float ff);
         void WriteInt(int ff);
+        void Close();
     protected:
     private:
         std::ofstream* f;

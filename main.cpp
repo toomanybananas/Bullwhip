@@ -22,8 +22,18 @@ int main()
     EntityRegistry* reg = gam.GetRegistry();
     reg->AddFactory("base_ent", &newEntity);
     reg->AddFactory("player", &newPlayer);
+    reg->AddFactory("phys_static", &newPhys_static);
+    reg->AddFactory("phys_dynamic", &newPhys_dynamic);
 
-    scene->LoadScene("level.bin");
+    //scene->LoadScene("level.bin"); //new format coming soon
+
+    Entity* platform = reg->NewEnt("phys_static");
+    Def p;
+    p.SetVal("x", 300);
+    p.SetVal("y", 500);
+    p.SetString("image", "platform.png");
+    platform->init(p);
+    scene->AddEntity(platform);
 
 
     Entity* player = reg->NewEnt("player");

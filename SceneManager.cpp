@@ -57,45 +57,50 @@ void SceneManager::PhysAdd(Entity* obj)
 
 void SceneManager::LoadScene(std::string filename)
 {
-    std::ifstream file(filename.c_str(), std::ios::binary);
-    int ents;
-    file.read((char*)&ents, sizeof(int));
-    for(int i = 0; i < ents; i++)
+    return; //not done yet
+    inFile file;
+    file.OpenFile(filename);
+    //READ HEADER
+    //INT: ENGINE VERSION
+    if(file.ReadInt() != 1)
     {
-        /*int length; //read ent name
-        file.read((char*)&length, sizeof(int));
-        for(int k = 0; k <= length; k++)
+        //error out
+        std::cout << "Incompatible map version\n";
+        return;
+    }
+    //INT: GAME ID (not used yet)
+    int gameID = file.ReadInt();
+    //STRING: MAPNAME
+    std::string mapname = file.ReadString();
+    //PROPERTY LIST: WORLD PROPERTY'S
+    while(true)
+    {
+        //INT: TYPE
+        int t = file.ReadInt();
+        if(t == 0) //no type, end of list
         {
-            //read string
-            //don't parse the string for now
-        }*/
-        //read x and y coords
-        float x;
-        float y;
-        file.read((char*)&x, sizeof(float));
-        file.read((char*)&y, sizeof(float));
-        int imglength;
-        file.read((char*)&imglength, sizeof(int));
-        std::stringstream ss;
-        for(int k = 0; k <= imglength; k++)
-        {
-            //read string
-            char c;
-            file.read((char*)&c, sizeof(char));
-            ss << c;
+            break;
         }
-        std::string image = ss.str();
-        phys_static* ent = new phys_static;
-        Def edef;
-        edef.SetVal("x", (int)x);
-        edef.SetVal("y", (int)y);
-        edef.SetString("image", image);
-        ent->init(edef);
-        entites.insert(entites.end(), ent);
-        if(ent->GetAttribute("physics"))
+        if(t == 1) //int
         {
-            PhysAdd(ent);
+            //STRING: NAME
+            //INT: VALUE
+            worldprops.SetVal(file.ReadString(), file.ReadInt());
+        }
+        if(t == 2) //float
+        {
+            //STRING: NAME
+            //FLOAT: VALUE
+            worldprops.SetVal(file.ReadString(), file.ReadFloat());
+        }
+        if(t == 3) //string
+        {
+            //STRING: NAME
+            //string: VALUE
+            worldprops.SetString(file.ReadString(), file.ReadString());
         }
     }
-    file.close();
+    //INT: ENTS TO READ
+    int entcount = file.ReadInt();
+    file.Close();
 }

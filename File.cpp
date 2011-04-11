@@ -46,6 +46,18 @@ int inFile::ReadInt()
     return ff;
 }
 
+void inFile::Close()
+{
+    f->close();
+    delete f;
+}
+
+void outFile::Close()
+{
+    f->close();
+    delete f;
+}
+
 void outFile::WriteFloat(float ff)
 {
     f->write((char*)&ff, sizeof(float));
