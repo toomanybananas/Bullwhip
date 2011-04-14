@@ -63,35 +63,43 @@ void SceneManager::PhysAdd(Entity* obj)
 void SceneManager::LoadScene(std::string filename)
 {
     std::cout << "[scene] attempted to call an unfinished function\n";
-    return; //not done yet
+    //return; //not done yet
     inFile file;
     file.OpenFile(filename);
     //READ HEADER
     //INT: ENGINE VERSION
-    if(file.ReadInt() != 1)
+    /*if(file.ReadInt() != 1)
     {
         //error out
         std::cout << "Incompatible map version\n";
         return;
-    }
+    }*/
+    std::cout << "version:" << file.ReadInt() << std::endl;
     //INT: GAME ID (not used yet)
     int gameID = file.ReadInt();
+    std::cout << "gameid:" << gameID << std::endl;
     //STRING: MAPNAME
     std::string mapname = file.ReadString();
+    std::cout << "mapname:" << mapname << std::endl;
     //PROPERTY LIST: WORLD PROPERTY'S
     while(true)
     {
         //INT: TYPE
         int t = file.ReadInt();
+        std::cout << "ID:" << t << std::endl;
         if(t == 0) //no type, end of list
         {
+            std::cout << "breaking\n";
             break;
         }
         if(t == 1) //int
         {
             //STRING: NAME
             //INT: VALUE
-            worldprops.SetVal(file.ReadString(), file.ReadInt());
+            std::string h = file.ReadString();
+            int i = file.ReadInt();
+            //worldprops.SetVal(file.ReadString(), file.ReadInt());
+            std::cout << "VAL:" << h << ":" << i << std::endl;
         }
         if(t == 2) //float
         {
@@ -108,5 +116,6 @@ void SceneManager::LoadScene(std::string filename)
     }
     //INT: ENTS TO READ
     int entcount = file.ReadInt();
+    std::cout << "Ents:" << entcount << std::endl;
     file.Close();
 }

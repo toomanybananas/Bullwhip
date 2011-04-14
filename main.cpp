@@ -25,7 +25,7 @@ int main()
     reg->AddFactory("phys_static", &newPhys_static);
     reg->AddFactory("phys_dynamic", &newPhys_dynamic);
 
-    //scene->LoadScene("level.bin"); //new format coming soon
+    scene->LoadScene("level.bin"); //new format coming soon
 
     Entity* platform = reg->NewEnt("phys_static");
     Def p;
