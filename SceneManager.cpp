@@ -98,8 +98,8 @@ void SceneManager::LoadScene(std::string filename)
             //INT: VALUE
             std::string h = file.ReadString();
             int i = file.ReadInt();
-            //worldprops.SetVal(file.ReadString(), file.ReadInt());
-            std::cout << "VAL:" << h << ":" << i << std::endl;
+            worldprops.SetVal(h, i);
+            std::cout << "VAL:" << h << ":" << i << std::endl; //
         }
         if(t == 2) //float
         {
@@ -117,5 +117,53 @@ void SceneManager::LoadScene(std::string filename)
     //INT: ENTS TO READ
     int entcount = file.ReadInt();
     std::cout << "Ents:" << entcount << std::endl;
+    for(int i = 0; i < entcount; i++)
+    {
+        std::string type = file.ReadString();
+        Entity* newent = reg->NewEnt(type);
+        Def pdef;
+        while(true)
+        {
+            //INT: TYPE
+            int t = file.ReadInt();
+            std::cout << "ID:" << t << std::endl;
+            if(t == 0) //no type, end of list
+            {
+                std::cout << "breaking\n";
+                break;
+            }
+            if(t == 1) //int
+            {
+                //STRING: NAME
+                //INT: VALUE
+                std::string h = file.ReadString();
+                int i = file.ReadInt();
+                pdef.SetVal(h, i);
+                std::cout << "VAL:" << h << ":" << i << std::endl; //
+            }
+            if(t == 2) //float
+            {
+                //STRING: NAME
+                //FLOAT: VALUE
+                std::string h = file.ReadString();
+                float i = file.ReadFloat();
+                pdef.SetVal(h, i);
+            }
+            if(t == 3) //string
+            {
+                //STRING: NAME
+                //string: VALUE
+                std::string h = file.ReadString();
+                std::string i = file.ReadString();
+                pdef.SetString(h, i);
+            }
+        }
+        newent->init(pdef);
+        AddEntity(newent);
+        if(pdef.GetString("name") != "")
+        {
+            SetEntity(pdef.GetString("name"), newent);
+        }
+    }
     file.Close();
 }

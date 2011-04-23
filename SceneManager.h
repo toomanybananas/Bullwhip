@@ -7,6 +7,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include "EntityRegistry.h"
 #include "entites/phys_static.h"
 #include "BullwhipContactListener.h"
 #include "File.h"
@@ -24,6 +25,7 @@ class SceneManager
         virtual void LoadScene(std::string filename);
         virtual void SetEntity(std::string n, Entity* ent) {specents[n] = ent;};
         virtual Entity* GetEntity(std::string n) {return specents[n];};
+        virtual void SetReg(EntityRegistry* r) {reg = r;};
     protected:
         std::vector<Entity*> entites;
         b2World* phys_world;
@@ -31,6 +33,8 @@ class SceneManager
         sf::View v;
         std::map<std::string, Entity*> specents;
         Def worldprops;
+        EntityRegistry* reg;
+
 };
 
 #endif // SCENEMANAGER_H
