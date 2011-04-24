@@ -9,11 +9,11 @@ void Game::init(std::string title, int x, int y)
     win.SetFramerateLimit(60);
     scene = new SceneManager;
     reg = new EntityRegistry;
-    scene->SetReg(reg);
+    //scene->SetReg(reg);
     fpsfont.LoadFromFile("slkscr.ttf");
     fps.SetFont(fpsfont);
     fps.SetSize(12);
-    prtDbg("[core] fps counter loaded");
+    std::cout << "[core] fps counter loaded\n";
     //ill do views later
     //v.SetCenter(1000, 1000);
     //v.Move(-900, -900);
@@ -36,4 +36,3 @@ void Game::draw()
 
 
 
-Game Game::m_Game;

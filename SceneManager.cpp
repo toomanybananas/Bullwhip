@@ -2,7 +2,7 @@
 
 SceneManager::SceneManager()
 {
-    //ctor
+    //reg == NULL;
 }
 
 void SceneManager::AddEntity(Entity& ent)
@@ -12,7 +12,7 @@ void SceneManager::AddEntity(Entity& ent)
     {
         PhysAdd(&ent);
     }
-    prtDbg("[scene] added entity");
+    std::cout << "[scene] added entity\n";
 }
 
 void SceneManager::AddEntity(Entity* ent)
@@ -22,7 +22,7 @@ void SceneManager::AddEntity(Entity* ent)
     {
         PhysAdd(ent);
     }
-    prtDbg("[scene] added entity");
+    std::cout << "[scene] added entity\n";
 }
 
 void SceneManager::Update(sf::RenderWindow& win)
@@ -48,10 +48,10 @@ void SceneManager::Init(b2Vec2 gravity)
 {
     phys_world = new b2World(gravity, true);
     phys_world->SetContactListener(&bclisten);
-    prtDbg("[scene][phys] intialized physics");
+    std::cout << "[scene][phys] intialized physics\n";
     v.SetHalfSize(400, 300);
     v.SetCenter(100, 100);
-    prtDbg("[scene] set views");
+    std::cout << "[scene] set views\n";
 }
 
 void SceneManager::PhysAdd(Entity* obj)
@@ -117,7 +117,7 @@ void SceneManager::LoadScene(std::string filename)
     //INT: ENTS TO READ
     int entcount = file.ReadInt();
     std::cout << "Ents:" << entcount << std::endl;
-    for(int i = 0; i < entcount; i++)
+    /*for(int i = 0; i < entcount; i++)
     {
         std::string type = file.ReadString();
         Entity* newent = reg->NewEnt(type);
@@ -164,6 +164,6 @@ void SceneManager::LoadScene(std::string filename)
         {
             SetEntity(pdef.GetString("name"), newent);
         }
-    }
+    }*/
     file.Close();
 }

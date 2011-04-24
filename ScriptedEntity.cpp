@@ -1,7 +1,7 @@
 #include "ScriptedEntity.h"
 using namespace std;
 
-ScriptedEntity::ScriptedEntity() : m(ScriptManager::Instance())
+ScriptedEntity::ScriptedEntity()
 {
     //
 }
@@ -9,8 +9,7 @@ ScriptedEntity::ScriptedEntity() : m(ScriptManager::Instance())
 void ScriptedEntity::init(Def def)
 {
 
-    ScriptManager& inst = ScriptManager::Instance();
-    mdef = def;
+    /*mdef = def;
 
     ename = def.GetString("entname");
     inst.OpenTable(ename);
@@ -29,7 +28,7 @@ void ScriptedEntity::init(Def def)
     //draw.SetRotation(direction * 90);
     alive = true;
     solid = inst.GetTableBool("solid");
-    inst.CloseTable();
+    inst.CloseTable();*/
 }
 
 void ScriptedEntity::update(Entity* surround[3][3])

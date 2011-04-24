@@ -195,7 +195,6 @@ bool ScriptManager::GetTableBool(std::string name)
     return i;
 }
 
-ScriptManager ScriptManager::m_ScriptManager;
 
 int RandomFunc(lua_State* L)
 {

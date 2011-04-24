@@ -37,7 +37,6 @@ class Game
         SceneManager* GetScene() {return scene;};
         EntityRegistry* GetRegistry() {return reg;};
 
-        static Game& Instance() {return m_Game;};
     private:
         sf::RenderWindow win;
         sf::String fps;
@@ -47,6 +46,4 @@ class Game
         static Game m_Game;
         SceneManager* scene;
         EntityRegistry* reg;
-    protected:
-        Game() {}; //Singleton
 };

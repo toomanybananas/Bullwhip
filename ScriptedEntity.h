@@ -13,7 +13,6 @@ class ScriptedEntity : public Entity
         void update(Entity* surround[3][3]);
     protected:
     private:
-        ScriptManager& m;
         std::string ename;
 };
 

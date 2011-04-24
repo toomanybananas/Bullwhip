@@ -20,8 +20,6 @@ class ScriptManager
         void init();
         void ExecScript(std::string filename);
 
-        static ScriptManager& Instance() {return m_ScriptManager;};
-
         void Close();
 
         //void CallFunc(std::string name, std::string s, ...);
@@ -58,9 +56,6 @@ class ScriptManager
         int args;
         std::string fname;
         int tablepos;
-
-    protected:
-        ScriptManager() {}; //Singleton
 };
 
 int RandomFunc(lua_State* L);
