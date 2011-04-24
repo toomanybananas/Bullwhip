@@ -117,7 +117,7 @@ void SceneManager::LoadScene(std::string filename)
     //INT: ENTS TO READ
     int entcount = file.ReadInt();
     std::cout << "Ents:" << entcount << std::endl;
-    /*for(int i = 0; i < entcount; i++)
+    for(int i = 0; i < entcount; i++)
     {
         std::string type = file.ReadString();
         Entity* newent = reg->NewEnt(type);
@@ -164,6 +164,6 @@ void SceneManager::LoadScene(std::string filename)
         {
             SetEntity(pdef.GetString("name"), newent);
         }
-    }*/
+    }
     file.Close();
 }
