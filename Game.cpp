@@ -2,8 +2,9 @@
 
 void Game::init(std::string title, int x, int y)
 {
+    std::cout << "LOADING SCREEN YO!\n";
     win.Create(sf::VideoMode(800, 600, 32), title);
-    prtDbg("[core] initizalized screen");
+    std::cout << "[core] initizalized screen\n";
     running = true;
     win.SetFramerateLimit(60);
     scene = new SceneManager;

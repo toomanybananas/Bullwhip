@@ -15,7 +15,9 @@
 using namespace std;
 int main()
 {
+    std::cout << "main was totally called yo\n";
     Game& gam = Game::Instance();
+    std::cout << "got the instance\n";
     gam.init("Bullwhip.Platformer", 800, 600); //Window title, width, height
     gam.GetScene()->Init(b2Vec2(0.f, 10.f));
     SceneManager* scene = gam.GetScene();
@@ -27,13 +29,13 @@ int main()
 
     scene->LoadScene("level.bin"); //new format coming soon
 
-    Entity* platform = reg->NewEnt("phys_static");
+    /*Entity* platform = reg->NewEnt("phys_static");
     Def p;
     p.SetVal("x", 300);
     p.SetVal("y", 500);
     p.SetString("image", "platform.png");
     platform->init(p);
-    scene->AddEntity(platform);
+    scene->AddEntity(platform);*/
 
 
     Entity* player = reg->NewEnt("player");
