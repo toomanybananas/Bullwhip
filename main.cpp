@@ -15,10 +15,8 @@
 using namespace std;
 int main()
 {
-    std::cout << "main was totally called yo\n";
     Game gam;
-    std::cout << "got the instance\n";
-    gam.init("Bullwhip.Platformer", 800, 600); //Window title, width, height
+    gam.init("Bullwhip.Default", 800, 600); //Window title, width, height
     gam.GetScene()->Init(b2Vec2(0.f, 10.f));
     SceneManager* scene = gam.GetScene();
     EntityRegistry* reg = gam.GetRegistry();
