@@ -9,7 +9,7 @@ void Game::init(std::string title, int x, int y)
     win.SetFramerateLimit(60);
     scene = new SceneManager;
     reg = new EntityRegistry;
-    //scene->SetReg(reg);
+    scene->SetReg(reg);
     fpsfont.LoadFromFile("slkscr.ttf");
     fps.SetFont(fpsfont);
     fps.SetSize(12);

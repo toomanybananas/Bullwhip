@@ -120,6 +120,7 @@ void SceneManager::LoadScene(std::string filename)
     for(int i = 0; i < entcount; i++)
     {
         std::string type = file.ReadString();
+        std::cout << "type:" << type << std::endl;
         Entity* newent = reg->NewEnt(type);
         Def pdef;
         while(true)
