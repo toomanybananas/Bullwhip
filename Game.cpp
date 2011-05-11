@@ -14,9 +14,6 @@ void Game::init(std::string title, int x, int y)
     fps.SetFont(fpsfont);
     fps.SetSize(12);
     std::cout << "[core] fps counter loaded\n";
-    //ill do views later
-    //v.SetCenter(1000, 1000);
-    //v.Move(-900, -900);
 
 }
 

@@ -10,6 +10,7 @@
 #include "Constants.h"
 #include "entites/phys_dynamic.h"
 #include "Player.h"
+#include "entites/game_spawnpoint.h"
 //Version is 0.09
 
 using namespace std;
@@ -24,6 +25,7 @@ int main()
     reg->AddFactory("player", &newPlayer);
     reg->AddFactory("phys_static", &newPhys_static);
     reg->AddFactory("phys_dynamic", &newPhys_dynamic);
+    reg->AddFactory("game_spawnpoint", &newGame_spawnpoint);
 
     scene->LoadScene("level.bin"); //new format coming soon
 
@@ -42,7 +44,7 @@ int main()
     pdef.SetVal("y", 100);
     pdef.SetString("image", "player.png");
     player->init(pdef);
-    scene->AddEntity(player);
+    scene->Spawn(*player, "spawn_default");
     scene->SetEntity("center", player);
 
 

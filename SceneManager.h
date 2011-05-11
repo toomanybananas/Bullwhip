@@ -26,12 +26,16 @@ class SceneManager
         virtual void SetEntity(std::string n, Entity* ent) {specents[n] = ent;};
         virtual Entity* GetEntity(std::string n) {return specents[n];};
         virtual void SetReg(EntityRegistry* r) {reg = r;};
+        virtual void AddSpawn(Entity& obj, std::string name) {spawnpoints[name] = &obj;};
+        virtual void AddSpawn(Entity* obj, std::string name) {spawnpoints[name] = obj;};
+        virtual void Spawn(Entity& plyr, std::string spawnpoint);
     protected:
         std::vector<Entity*> entites;
         b2World* phys_world;
         BullwhipContactListener bclisten;
         sf::View v;
         std::map<std::string, Entity*> specents;
+        std::map<std::string, Entity*> spawnpoints;
         Def worldprops;
         EntityRegistry* reg;
 

@@ -51,6 +51,8 @@ class Entity
 
         std::string name;
 
+        virtual void Draw(sf::RenderWindow& win) {win.Draw(draw);};
+
 
 
     protected:

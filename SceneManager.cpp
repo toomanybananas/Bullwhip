@@ -36,7 +36,8 @@ void SceneManager::Update(sf::RenderWindow& win)
     {
         //Update entity
         entites[i]->update(win.GetInput());
-        win.Draw(entites[i]->getspr());
+        //win.Draw(entites[i]->getspr());
+        entites[i]->Draw(win);
     }
     if(specents["center"] != NULL)
     {
@@ -58,6 +59,13 @@ void SceneManager::PhysAdd(Entity* obj)
 {
     obj->reg(phys_world);
     std::cout << "[scene][phys] added physics entity" << std::endl;
+}
+
+void SceneManager::Spawn(Entity& plyr, std::string spawnpoint)
+{
+    AddEntity(plyr);
+    plyr.SetX(spawnpoints[spawnpoint]->GetX());
+    plyr.SetY(spawnpoints[spawnpoint]->GetY());
 }
 
 void SceneManager::LoadScene(std::string filename)
@@ -160,6 +168,10 @@ void SceneManager::LoadScene(std::string filename)
         if(pdef.GetString("name") != "")
         {
             SetEntity(pdef.GetString("name"), newent);
+        }
+        if(type == "game_spawnpoint")
+        {
+            AddSpawn(newent, pdef.GetString("name"));
         }
     }
     file.Close();
