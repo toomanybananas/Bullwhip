@@ -62,34 +62,30 @@ void SceneManager::PhysAdd(Entity* obj)
 
 void SceneManager::LoadScene(std::string filename)
 {
-    std::cout << "[scene] attempted to call an unfinished function\n";
-    //return; //not done yet
+    sf::Clock time;
     inFile file;
     file.OpenFile(filename);
     //READ HEADER
     //INT: ENGINE VERSION
-    /*if(file.ReadInt() != 1)
+    if(file.ReadInt() != 1)
     {
         //error out
-        std::cout << "Incompatible map version\n";
+        std::cout << "[scene] [WARN] Incompatible map version!\n";
         return;
-    }*/
-    std::cout << "version:" << file.ReadInt() << std::endl;
+    }
+    //std::cout << "version:" << file.ReadInt() << std::endl;
     //INT: GAME ID (not used yet)
     int gameID = file.ReadInt();
-    std::cout << "gameid:" << gameID << std::endl;
     //STRING: MAPNAME
     std::string mapname = file.ReadString();
-    std::cout << "mapname:" << mapname << std::endl;
+    std::cout << "[scene] loading map:" << mapname << std::endl;
     //PROPERTY LIST: WORLD PROPERTY'S
     while(true)
     {
         //INT: TYPE
         int t = file.ReadInt();
-        std::cout << "ID:" << t << std::endl;
         if(t == 0) //no type, end of list
         {
-            std::cout << "breaking\n";
             break;
         }
         if(t == 1) //int
@@ -99,38 +95,39 @@ void SceneManager::LoadScene(std::string filename)
             std::string h = file.ReadString();
             int i = file.ReadInt();
             worldprops.SetVal(h, i);
-            std::cout << "VAL:" << h << ":" << i << std::endl; //
         }
         if(t == 2) //float
         {
             //STRING: NAME
             //FLOAT: VALUE
-            worldprops.SetVal(file.ReadString(), file.ReadFloat());
+            std::string h = file.ReadString();
+            float i = file.ReadFloat();
+            worldprops.SetVal(h, i);
         }
         if(t == 3) //string
         {
             //STRING: NAME
             //string: VALUE
-            worldprops.SetString(file.ReadString(), file.ReadString());
+            std::string h = file.ReadString();
+            std::string i = file.ReadString();
+            worldprops.SetString(h, i);
         }
     }
-    //INT: ENTS TO READ
-    int entcount = file.ReadInt();
-    std::cout << "Ents:" << entcount << std::endl;
-    for(int i = 0; i < entcount; i++)
+    while(true)
     {
         std::string type = file.ReadString();
-        std::cout << "type:" << type << std::endl;
+        if(type == "")
+        {
+            break;
+        }
         Entity* newent = reg->NewEnt(type);
         Def pdef;
         while(true)
         {
             //INT: TYPE
             int t = file.ReadInt();
-            std::cout << "ID:" << t << std::endl;
             if(t == 0) //no type, end of list
             {
-                std::cout << "breaking\n";
                 break;
             }
             if(t == 1) //int
@@ -140,7 +137,6 @@ void SceneManager::LoadScene(std::string filename)
                 std::string h = file.ReadString();
                 int i = file.ReadInt();
                 pdef.SetVal(h, i);
-                std::cout << "VAL:" << h << ":" << i << std::endl; //
             }
             if(t == 2) //float
             {
@@ -167,4 +163,5 @@ void SceneManager::LoadScene(std::string filename)
         }
     }
     file.Close();
+    std::cout << "[scene] Level loading took:" << time.GetElapsedTime() << std::endl;
 }
