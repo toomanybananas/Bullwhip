@@ -3,6 +3,7 @@ using namespace std;
 Entity::Entity()
 {
     name = "base_ent";
+    do_q = false;
 }
 
 void Entity::SetX(float m)
@@ -14,6 +15,18 @@ void Entity::SetX(float m)
 void Entity::SetY(float m)
 {
     draw.SetY(m);
+}
+
+void Entity::SetXQ(float m)
+{
+    xq = m;
+    do_q = true;
+}
+
+void Entity::SetYQ(float m)
+{
+    yq = m;
+    do_q = true;
 }
 
 
@@ -48,7 +61,12 @@ void Entity::damage(int dmg)
 
 void Entity::update(const sf::Input& in)
 {
-    //
+    if(do_q)
+    {
+        SetX(xq);
+        SetY(yq);
+        do_q = false;
+    }
 }
 
 Entity* newEntity(int i)

@@ -18,6 +18,8 @@ class Entity
 
         virtual void SetX(float m);
         virtual void SetY(float m);
+        virtual void SetXQ(float m);
+        virtual void SetYQ(float m);
 
 
         virtual float GetX() {return draw.GetPosition().x;};
@@ -60,6 +62,9 @@ class Entity
         sf::Sprite draw;
         float lx;
         float ly;
+        float xq;
+        float yq;
+        bool do_q;
         int hw;
         int hh;
         //0 is up, 1 right, 2 down, 3 left

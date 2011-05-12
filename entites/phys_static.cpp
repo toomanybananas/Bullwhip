@@ -37,6 +37,12 @@ void phys_static::reg(b2World* world)
 
 void phys_static::update(const sf::Input& in)
 {
+    if(do_q)
+    {
+        SetX(xq);
+        SetY(yq);
+        do_q = false;
+    }
     b2Vec2 pos = body->GetPosition();
     float angle = toDeg(body->GetAngle());
     draw.SetX(pos.x / SCALE);

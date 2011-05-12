@@ -3,6 +3,7 @@
 Player::Player()
 {
     name = "player";
+    attributes["teleport"] = true;
 }
 
 bool Player::onCollision(Entity* obj)
@@ -25,6 +26,12 @@ void Player::jump()
 
 void Player::update(const sf::Input& in)
 {
+    if(do_q)
+    {
+        SetX(xq);
+        SetY(yq);
+        do_q = false;
+    }
     //movement
     if(in.IsKeyDown(sf::Key::Up))
     {

@@ -63,9 +63,11 @@ void SceneManager::PhysAdd(Entity* obj)
 
 void SceneManager::Spawn(Entity& plyr, std::string spawnpoint)
 {
+    std::cout << "spawning\n";
     AddEntity(plyr);
     plyr.SetX(spawnpoints[spawnpoint]->GetX());
     plyr.SetY(spawnpoints[spawnpoint]->GetY());
+    std::cout << "spawned\n";
 }
 
 void SceneManager::LoadScene(std::string filename)

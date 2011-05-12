@@ -11,6 +11,7 @@
 #include "entites/phys_dynamic.h"
 #include "Player.h"
 #include "entites/game_spawnpoint.h"
+#include "entites/tele_coord.h"
 //Version is 0.09
 
 using namespace std;
@@ -26,17 +27,9 @@ int main()
     reg->AddFactory("phys_static", &newPhys_static);
     reg->AddFactory("phys_dynamic", &newPhys_dynamic);
     reg->AddFactory("game_spawnpoint", &newGame_spawnpoint);
+    reg->AddFactory("tele_coord", &newTele_coord);
 
     scene->LoadScene("level.bin"); //new format coming soon
-
-    /*Entity* platform = reg->NewEnt("phys_static");
-    Def p;
-    p.SetVal("x", 300);
-    p.SetVal("y", 500);
-    p.SetString("image", "platform.png");
-    platform->init(p);
-    scene->AddEntity(platform);*/
-
 
     Entity* player = reg->NewEnt("player");
     Def pdef;
@@ -52,11 +45,8 @@ int main()
     {
         const sf::Input& in = gam.getin();
 
-
         sf::Event event;
 
-
-        //Handle events
         while(gam.gEvent(event))
         {
             if(event.Type == sf::Event::Closed)
