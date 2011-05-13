@@ -15,3 +15,14 @@ void BullwhipContactListener::PreSolve(b2Contact* contact, const b2Manifold* old
         contact->SetEnabled(false);
 
 }
+
+void BullwhipContactListener::BeginContact(b2Contact* contact)
+{
+    Entity* a;
+    Entity* b;
+    a = (Entity*)contact->GetFixtureA()->GetBody()->GetUserData();
+    b = (Entity*)contact->GetFixtureB()->GetBody()->GetUserData();
+    if((!a->onCollision(b)) || (!b->onCollision(a)))
+        contact->SetEnabled(false);
+
+}

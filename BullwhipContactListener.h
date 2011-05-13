@@ -7,7 +7,7 @@ class BullwhipContactListener : public b2ContactListener
 {
     public:
         BullwhipContactListener();
-
+        void BeginContact(b2Contact* contact);
         void PreSolve(b2Contact* contact, const b2Manifold* oldManifold);
     protected:
     private:

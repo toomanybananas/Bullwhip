@@ -25,7 +25,7 @@ void InvisPhysEntity::init(Def def)
     fix_def.density = 1.0f;
     fix_def.friction = 1.0f;
     fix_def.shape = &bounding;
-    //fix_def.isSensor = true;
+    fix_def.isSensor = true;
 }
 
 void InvisPhysEntity::reg(b2World* world)
