@@ -19,7 +19,7 @@ class phys_static : public Entity
         virtual void SetRot(float m) {body->SetTransform(body->GetPosition(), toRad(m));};
         virtual float GetRot() {return toDeg(body->GetAngle());};
         virtual void reg(b2World* world);
-        virtual void update(const sf::Input& in);
+        virtual void update(const sf::Input& in, SceneManager* scene);
         sf::Sprite& getspr() {return draw;};
     protected:
         b2Body* body;

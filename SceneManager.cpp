@@ -35,7 +35,7 @@ void SceneManager::Update(sf::RenderWindow& win)
     for(unsigned int i = 0; i < entites.size(); i++)
     {
         //Update entity
-        entites[i]->update(win.GetInput());
+        entites[i]->update(win.GetInput(), this);
         //win.Draw(entites[i]->getspr());
         entites[i]->Draw(win);
     }
@@ -83,7 +83,6 @@ void SceneManager::LoadScene(std::string filename)
         std::cout << "[scene] [WARN] Incompatible map version!\n";
         return;
     }
-    //std::cout << "version:" << file.ReadInt() << std::endl;
     //INT: GAME ID (not used yet)
     int gameID = file.ReadInt();
     //STRING: MAPNAME
@@ -147,6 +146,7 @@ void SceneManager::LoadScene(std::string filename)
                 std::string h = file.ReadString();
                 int i = file.ReadInt();
                 pdef.SetVal(h, i);
+                //std::cout << h << i << std::endl;
             }
             if(t == 2) //float
             {
@@ -155,6 +155,7 @@ void SceneManager::LoadScene(std::string filename)
                 std::string h = file.ReadString();
                 float i = file.ReadFloat();
                 pdef.SetVal(h, i);
+                //std::cout << h << i << std::endl;
             }
             if(t == 3) //string
             {
@@ -163,10 +164,12 @@ void SceneManager::LoadScene(std::string filename)
                 std::string h = file.ReadString();
                 std::string i = file.ReadString();
                 pdef.SetString(h, i);
+                //std::cout << h << i << std::endl;
             }
         }
         newent->init(pdef);
         AddEntity(newent);
+        //std::cout << "name:" << pdef.GetString("name") << ";" << std::endl;
         if(pdef.GetString("name") != "")
         {
             SetEntity(pdef.GetString("name"), newent);

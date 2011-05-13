@@ -8,7 +8,7 @@
 #include "ImageManager.h"
 #include "Constants.h"
 
-
+class SceneManager;
 class Entity
 {
     public:
@@ -30,7 +30,7 @@ class Entity
         virtual float GetRot() {return draw.GetRotation();};
 
 
-        virtual void update(const sf::Input &in);
+        virtual void update(const sf::Input &in, SceneManager* scene);
 
 
         virtual sf::Sprite& getspr() {return draw;};

@@ -2,7 +2,7 @@
 #define INVISPHYSENTITY_H
 #include "InvisEntity.h"
 #include "phys_static.h"
-
+#include "../SceneManager.h"
 class InvisPhysEntity : public phys_static
 {
     public:

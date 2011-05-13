@@ -12,6 +12,7 @@
 #include "Player.h"
 #include "entites/game_spawnpoint.h"
 #include "entites/tele_coord.h"
+#include "entites/tele_obj.h"
 //Version is 0.09
 
 using namespace std;
@@ -28,6 +29,7 @@ int main()
     reg->AddFactory("phys_dynamic", &newPhys_dynamic);
     reg->AddFactory("game_spawnpoint", &newGame_spawnpoint);
     reg->AddFactory("tele_coord", &newTele_coord);
+    reg->AddFactory("tele_obj", &newTele_obj);
 
     scene->LoadScene("level.bin"); //new format coming soon
 

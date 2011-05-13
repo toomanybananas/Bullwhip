@@ -24,7 +24,7 @@ void Player::jump()
     }
 }
 
-void Player::update(const sf::Input& in)
+void Player::update(const sf::Input& in, SceneManager* scene)
 {
     if(do_q)
     {

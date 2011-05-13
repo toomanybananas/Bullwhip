@@ -59,7 +59,7 @@ void Entity::damage(int dmg)
     }
 }
 
-void Entity::update(const sf::Input& in)
+void Entity::update(const sf::Input& in, SceneManager* scene)
 {
     if(do_q)
     {
