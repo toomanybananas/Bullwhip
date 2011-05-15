@@ -13,6 +13,7 @@
 #include "entites/game_spawnpoint.h"
 #include "entites/tele_coord.h"
 #include "entites/tele_obj.h"
+#include "entites/ent_string.h"
 #include "SimpleINI/SimpleIni.h"
 //Version is 0.09
 
@@ -33,6 +34,7 @@ int main()
     reg->AddFactory("game_spawnpoint", &newGame_spawnpoint);
     reg->AddFactory("tele_coord", &newTele_coord);
     reg->AddFactory("tele_obj", &newTele_obj);
+    reg->AddFactory("ent_string", &newEnt_string);
 
     scene->LoadScene(bullwhipini.GetValue("Bullwhip", "level", NULL));
 
