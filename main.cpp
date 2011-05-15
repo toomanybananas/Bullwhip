@@ -31,7 +31,7 @@ int main()
     reg->AddFactory("tele_coord", &newTele_coord);
     reg->AddFactory("tele_obj", &newTele_obj);
 
-    scene->LoadScene("level.bin"); //new format coming soon
+    scene->LoadScene("level.bin");
 
     Entity* player = reg->NewEnt("player");
     Def pdef;
