@@ -2,14 +2,15 @@
 
 void Game::init(std::string title, int x, int y)
 {
-    //std::cout << "LOADING SCREEN YO!\n";
     win.Create(sf::VideoMode(800, 600, 32), title);
     std::cout << "[core] initizalized screen\n";
     running = true;
     win.SetFramerateLimit(60);
-    scene = new SceneManager;
-    reg = new EntityRegistry;
-    scene->SetReg(reg);
+    //scene = new SceneManager;
+    //reg = new EntityRegistry;
+    state = new StateManager;
+    state->Init(&win);
+    //scene->SetReg(reg);
     fpsfont.LoadFromFile("slkscr.ttf");
     fps.SetFont(fpsfont);
     fps.SetSize(12);
@@ -21,7 +22,8 @@ void Game::init(std::string title, int x, int y)
 void Game::draw()
 {
     win.Clear();
-    scene->Update(win);
+    //scene->Update(win);
+    state->Update();
     win.SetView(win.GetDefaultView());
     //Draw the interface
     std::stringstream ss;

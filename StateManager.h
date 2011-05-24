@@ -11,7 +11,7 @@ class StateManager
         StateManager();
         void Init(sf::RenderWindow* win) {window = win;};
         void RegisterState(std::string name, State* state);
-        void RegisterState(std::string name, State state);
+        void RegisterState(std::string name, State& state);
         void SetCurrentState(std::string name);
         void Update();
     protected:

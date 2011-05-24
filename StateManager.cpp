@@ -25,6 +25,7 @@ void StateManager::SetCurrentState(std::string name)
     {
         current_state = states[name];
         current_state->Init(window);
+        std::cout << "[state] Set current state to " << name << std::endl;
     }
     else
     {
@@ -34,9 +35,10 @@ void StateManager::SetCurrentState(std::string name)
 
 void StateManager::RegisterState(std::string name, State* state)
 {
-    if(states[name] != NULL)
+    if(states[name] == NULL)
     {
         states[name] = state;
+        std::cout << "[state] Registered state " << name << std::endl;
     }
     else
     {
@@ -44,11 +46,12 @@ void StateManager::RegisterState(std::string name, State* state)
     }
 }
 
-void StateManager::RegisterState(std::string name, State state)
+void StateManager::RegisterState(std::string name, State& state)
 {
-    if(states[name] != NULL)
+    if(states[name] == NULL)
     {
         states[name] = &state;
+        std::cout << "[state] Registered state " << name << std::endl;
     }
     else
     {

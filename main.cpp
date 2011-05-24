@@ -15,16 +15,17 @@
 #include "entites/tele_obj.h"
 #include "entites/ent_string.h"
 #include "SimpleINI/SimpleIni.h"
+#include "PlayState.h"
 //Version is 0.09
 
 using namespace std;
 int main()
 {
-    CSimpleIni bullwhipini;
-    bullwhipini.LoadFile("Bullwhip.ini");
+    /*CSimpleIni bullwhipini;
+    bullwhipini.LoadFile("Bullwhip.ini");*/
     Game gam;
     gam.init("Bullwhip.Default", 800, 600); //Window title, width, height
-    gam.GetScene()->Init(b2Vec2(0.f, 10.f));
+    /*gam.GetScene()->Init(b2Vec2(0.f, 10.f));
     SceneManager* scene = gam.GetScene();
     EntityRegistry* reg = gam.GetRegistry();
     reg->AddFactory("base_ent", &newEntity);
@@ -45,7 +46,11 @@ int main()
     pdef.SetString("image", "player.png");
     player->init(pdef);
     scene->Spawn(*player, bullwhipini.GetValue("Bullwhip", "spawnpoint", NULL));
-    scene->SetEntity("center", player);
+    scene->SetEntity("center", player);*/
+    StateManager* state = gam.GetStateManager();
+    PlayState* play = new PlayState;
+    state->RegisterState("PlayState", play);
+    state->SetCurrentState("PlayState");
 
 
     while(gam.run())

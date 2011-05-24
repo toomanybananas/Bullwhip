@@ -9,6 +9,7 @@
 #include "Constants.h"
 #include "SceneManager.h"
 #include "EntityRegistry.h"
+#include "StateManager.h"
 
 #define VERSION 0.1
 
@@ -36,6 +37,7 @@ class Game
         void SetScene(SceneManager* scenem) {scene = scenem;};
         SceneManager* GetScene() {return scene;};
         EntityRegistry* GetRegistry() {return reg;};
+        StateManager* GetStateManager() {return state;};
 
     private:
         sf::RenderWindow win;
@@ -43,7 +45,7 @@ class Game
         sf::Font fpsfont;
         bool running;
         bool paused;
-        static Game m_Game;
         SceneManager* scene;
         EntityRegistry* reg;
+        StateManager* state;
 };
