@@ -29,6 +29,8 @@ class SceneManager
         virtual void AddSpawn(Entity& obj, std::string name) {spawnpoints[name] = &obj;};
         virtual void AddSpawn(Entity* obj, std::string name) {spawnpoints[name] = obj;};
         virtual void Spawn(Entity& plyr, std::string spawnpoint);
+        virtual void RemoveEntityFromList(std::string name);
+        virtual void RemoveEntityFromList(Entity* ent);
     protected:
         std::vector<Entity*> entites;
         b2World* phys_world;

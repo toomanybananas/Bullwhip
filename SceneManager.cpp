@@ -70,6 +70,30 @@ void SceneManager::Spawn(Entity& plyr, std::string spawnpoint)
     std::cout << "spawned\n";
 }
 
+void SceneManager::RemoveEntityFromList(std::string name)
+{
+    for(int i = 0; i < entites.size(); i++)
+    {
+        if(GetEntity(name) == entites[i])
+        {
+            entites.erase(entites.begin()+i);
+            return;
+        }
+    }
+}
+
+void SceneManager::RemoveEntityFromList(Entity* ent)
+{
+    for(int i = 0; i < entites.size(); i++)
+    {
+        if(ent == entites[i])
+        {
+            entites.erase(entites.begin()+i);
+            return;
+        }
+    }
+}
+
 void SceneManager::LoadScene(std::string filename)
 {
     sf::Clock time;
