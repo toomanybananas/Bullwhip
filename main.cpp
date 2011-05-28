@@ -16,6 +16,7 @@
 #include "entites/ent_string.h"
 #include "SimpleINI/SimpleIni.h"
 #include "PlayState.h"
+#include "MainMenuState.h"
 //Version is 0.09
 
 using namespace std;
@@ -50,7 +51,10 @@ int main()
     StateManager* state = gam.GetStateManager();
     PlayState* play = new PlayState;
     state->RegisterState("PlayState", play);
-    state->SetCurrentState("PlayState");
+    //state->SetCurrentState("PlayState");
+    MainMenuState* menu = new MainMenuState;
+    state->RegisterState("MainMenuState", menu);
+    state->SetCurrentState("MainMenuState");
 
 
     while(gam.run())

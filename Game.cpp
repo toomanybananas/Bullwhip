@@ -15,7 +15,7 @@ void Game::init(std::string title, int x, int y)
     fps.SetFont(fpsfont);
     fps.SetSize(12);
     std::cout << "[core] fps counter loaded\n";
-
+    Global.SetVal("run", true);
 }
 
 
@@ -31,6 +31,10 @@ void Game::draw()
     fps.SetText(ss.str());
     win.Draw(fps);
     win.Display();
+    if((bool)Global.GetVal("run") == false)
+    {
+        running = false;
+    }
 }
 
 
