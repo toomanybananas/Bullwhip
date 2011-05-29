@@ -27,6 +27,7 @@ void PlayState::Init(sf::RenderWindow* win)
     reg->AddFactory("tele_coord", &newTele_coord);
     reg->AddFactory("tele_obj", &newTele_obj);
     reg->AddFactory("ent_string", &newEnt_string);
+    reg->AddFactory("game_setglobal", &newGame_setglobal);
 
     scene->LoadScene(bullwhipini.GetValue("Bullwhip", "level", NULL));
 

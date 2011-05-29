@@ -11,6 +11,7 @@
 #include "entites/tele_obj.h"
 #include "entites/ent_string.h"
 #include "SimpleINI/SimpleIni.h"
+#include "entites/game_setglobal.h"
 
 
 class PlayState : public State
