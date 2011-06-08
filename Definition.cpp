@@ -3,16 +3,22 @@
 void Def::SetVal(std::string name, int val)
 {
     vals[name] = (void*)val;
+    define[name] = true;
+    types[name] = DEF_INT;
 }
 
 void Def::SetVal(std::string name, bool val)
 {
     vals[name] = (void*)val;
+    define[name] = true;
+    types[name] = DEF_BOOL;
 }
 
 void Def::SetVal(std::string name, float val)
 {
     floats[name] = val;
+    define[name] = true;
+    types[name] = DEF_FLOAT;
 }
 
 
@@ -20,6 +26,8 @@ void Def::SetVal(std::string name, float val)
 void Def::SetString(std::string name, std::string val)
 {
     strings[name] = val;
+    define[name] = true;
+    types[name] = DEF_STRING;
 }
 
 Def::Def()
