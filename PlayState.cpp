@@ -15,7 +15,7 @@ void PlayState::Init(sf::RenderWindow* win)
     scene = new SceneManager;
     reg = new EntityRegistry;
     scene->SetReg(reg);
-    bullwhipini.LoadFile("Bullwhip.ini");
+    //bullwhipini.LoadFile("Bullwhip.ini");
 
 
     scene->Init(b2Vec2(0.f, 10.f));
@@ -29,7 +29,8 @@ void PlayState::Init(sf::RenderWindow* win)
     reg->AddFactory("ent_string", &newEnt_string);
     reg->AddFactory("game_setglobal", &newGame_setglobal);
 
-    scene->LoadScene(bullwhipini.GetValue("Bullwhip", "level", NULL));
+    //scene->LoadScene(bullwhipini.GetValue("Bullwhip", "level", NULL));
+    scene->LoadScene("level.bin");
 
     player = reg->NewEnt("player");
     Def pdef;
@@ -37,7 +38,8 @@ void PlayState::Init(sf::RenderWindow* win)
     pdef.SetVal("y", 100);
     pdef.SetString("image", "player.png");
     player->init(pdef);
-    scene->Spawn(*player, bullwhipini.GetValue("Bullwhip", "spawnpoint", NULL));
+    //scene->Spawn(*player, bullwhipini.GetValue("Bullwhip", "spawnpoint", NULL));
+    scene->Spawn(*player, "spawn_default");
     scene->SetEntity("center", player);
     alive = true;
 }

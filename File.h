@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <windows.h>
 
 class inFile
 {
@@ -12,6 +13,7 @@ class inFile
         std::string ReadString();
         float ReadFloat();
         int ReadInt();
+        BYTE ReadByte();
         void Close();
     protected:
     private:
@@ -28,6 +30,7 @@ class outFile
         void WriteString(std::string str);
         void WriteFloat(float ff);
         void WriteInt(int ff);
+        void WriteByte(BYTE ff);
         void Close();
     protected:
     private:

@@ -115,8 +115,8 @@ void SceneManager::LoadScene(std::string filename)
     //PROPERTY LIST: WORLD PROPERTY'S
     while(true)
     {
-        //INT: TYPE
-        int t = file.ReadInt();
+        //BYTE: TYPE
+        BYTE t = file.ReadByte();
         if(t == 0) //no type, end of list
         {
             break;
@@ -157,8 +157,8 @@ void SceneManager::LoadScene(std::string filename)
         Def pdef;
         while(true)
         {
-            //INT: TYPE
-            int t = file.ReadInt();
+            //BYTE: TYPE
+            BYTE t = file.ReadByte();
             if(t == 0) //no type, end of list
             {
                 break;

@@ -46,6 +46,13 @@ int inFile::ReadInt()
     return ff;
 }
 
+BYTE inFile::ReadByte()
+{
+    BYTE ff;
+    f->read((char*)&ff, sizeof(BYTE));
+    return ff;
+}
+
 void inFile::Close()
 {
     f->close();
@@ -66,6 +73,11 @@ void outFile::WriteFloat(float ff)
 void outFile::WriteInt(int ff)
 {
     f->write((char*)&ff, sizeof(int));
+}
+
+void outFile::WriteByte(BYTE ff)
+{
+    f->write((char*)&ff, sizeof(BYTE));
 }
 
 void outFile::WriteString(std::string str)
