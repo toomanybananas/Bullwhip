@@ -47,7 +47,7 @@ void Player::update(const sf::Input& in, SceneManager* scene)
     }
     if((!in.IsKeyDown(sf::Key::Right)) && (!in.IsKeyDown(sf::Key::Left)))
     {
-        SetXVel(0);
+        body->SetLinearVelocity(b2Vec2(((body->GetLinearVelocity().x / SCALE) * 0.90f) * SCALE, body->GetLinearVelocity().y));
     }
     b2Vec2 pos = body->GetPosition();
     float angle = toDeg(body->GetAngle());
