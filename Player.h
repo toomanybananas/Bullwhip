@@ -1,3 +1,5 @@
+//Basic player entity.
+//Most of the functionality should be handed over to the script.
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <string>
@@ -5,7 +7,6 @@
 #include "entites/phys_dynamic.h"
 #include "Definition.h"
 
-//Nothing to see here, move along
 class Player : public phys_dynamic
 {
     public:

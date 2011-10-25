@@ -1,3 +1,5 @@
+//Simple menu state
+//Likely to be gone once the ability to load menus from a lua script is added.
 #pragma once
 #include "State.h"
 #include <SFML/Graphics.hpp>

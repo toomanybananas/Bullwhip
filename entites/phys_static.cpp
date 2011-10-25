@@ -9,6 +9,7 @@ phys_static::phys_static()
 void phys_static::init(Def def)
 {
     draw.SetImage(*gImageManager.getResource(def.GetString("image")));
+    std::cout << "Loaded image " << def.GetString("image") << std::endl;
     hw = draw.GetSize().x / 2;
     hh = draw.GetSize().y / 2;
     draw.SetCenter(hw, hh);
@@ -19,21 +20,14 @@ void phys_static::init(Def def)
     ly = (int)def.GetVal("y");
     draw.SetRotation(def.GetFloat("rotation"));
     alive = true;
-    solid = (bool)def.GetVal("solid");
     mdef = def;
 
-    //physics initzilizatrion
-    body_def.position.Set(lx * SCALE, ly * SCALE);
-    body_def.angle = toRad(draw.GetRotation());
-    body_def.userData = this;
-    bounding.SetAsBox( (draw.GetSize().x / 2.f) * SCALE, (draw.GetSize().y / 2.f) * SCALE);
+    body = new StaticBody;
+    def.SetVal("hw", hw);
+    def.SetVal("hh", hh);
+    body->Intialize(def, this);
 }
 
-void phys_static::reg(b2World* world)
-{
-    body = world->CreateBody(&body_def);
-    body->CreateFixture(&bounding, 0.0f);
-}
 
 void phys_static::update(const sf::Input& in, SceneManager* scene)
 {
@@ -43,11 +37,10 @@ void phys_static::update(const sf::Input& in, SceneManager* scene)
         SetY(yq);
         do_q = false;
     }
-    b2Vec2 pos = body->GetPosition();
-    float angle = toDeg(body->GetAngle());
-    draw.SetX(pos.x / SCALE);
-    draw.SetY(pos.y / SCALE);
-    draw.SetRotation(angle);
+    Vec2 pos = body->GetPosition();
+    draw.SetX(pos.x);
+    draw.SetY(pos.y);
+    draw.SetRotation(body->GetAngle());
 }
 
 Entity* newPhys_static(int i)

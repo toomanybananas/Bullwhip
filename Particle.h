@@ -1,3 +1,4 @@
+//Unfinished particle classes.
 #pragma once
 #include <SFML/Graphics.hpp>
 class Particle

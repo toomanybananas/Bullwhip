@@ -19,24 +19,18 @@ void phys_dynamic::init(Def def)
     ly = (int)def.GetVal("y");
     draw.SetRotation(def.GetFloat("rotation"));
     alive = true;
-    solid = (bool)def.GetVal("solid");
     mdef = def;
 
-    //physics initzilizatrion
-    body_def.position.Set(lx * SCALE, ly * SCALE);
-    body_def.angle = toRad(draw.GetRotation());
-    body_def.userData = this;
-    body_def.type = b2_dynamicBody;
-    bounding.SetAsBox( (draw.GetSize().x / 2.f) * SCALE, (draw.GetSize().y / 2.f) * SCALE);
-    fix_def.density = 1.0f;
-    fix_def.friction = 1.0f;
-    fix_def.shape = &bounding;
+    body = new DynamicBody;
+    def.SetVal("hw", hw);
+    def.SetVal("hh", hh);
+    body->Intialize(def, this);
 }
 
-void phys_dynamic::reg(b2World* world)
+
+void phys_dynamic::Destroy()
 {
-    body = world->CreateBody(&body_def);
-    fix = body->CreateFixture(&fix_def);
+    //body->DestroyFixture(fix);
 }
 
 Entity* newPhys_dynamic(int i)

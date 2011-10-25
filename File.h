@@ -1,4 +1,12 @@
+/// HEY READ THIS
+/*
+This file is set to be moved into BullwhipCommon, a library to help me use my projects more efficiently.
+Don't expect this to be directly accesible in the near future.
+
+
+*/
 #pragma once
+//Simple file library.
 #include <fstream>
 #include <string>
 #include <sstream>

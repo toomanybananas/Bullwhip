@@ -19,7 +19,7 @@ void Player::jump()
 {
     if(can_jump == true)
     {
-        ApplyForce(Vec2(0.f, -5300.f), Vec2(0.f, 0.f));
+        body->ApplyForce(Vec2(0.f, -53.f));
         can_jump = false;
     }
 }
@@ -39,20 +39,20 @@ void Player::update(const sf::Input& in, SceneManager* scene)
     }
     if(in.IsKeyDown(sf::Key::Right))
     {
-        ApplyForce(Vec2(500, -100), Vec2(0, 0));
+        body->ApplyForce(Vec2(5, 0));
     }
     if(in.IsKeyDown(sf::Key::Left))
     {
-        ApplyForce(Vec2(-500, -100), Vec2(0, 0));
+        body->ApplyForce(Vec2(-5, 0));
     }
     if((!in.IsKeyDown(sf::Key::Right)) && (!in.IsKeyDown(sf::Key::Left)))
     {
-        body->SetLinearVelocity(b2Vec2(((body->GetLinearVelocity().x / SCALE) * 0.90f) * SCALE, body->GetLinearVelocity().y));
+        body->SetLinearVelocity(Vec2(body->GetLinearVelocity().x* 0.90f, body->GetLinearVelocity().y));
     }
-    b2Vec2 pos = body->GetPosition();
-    float angle = toDeg(body->GetAngle());
-    draw.SetX(pos.x / SCALE);
-    draw.SetY(pos.y / SCALE);
+    Vec2 pos = body->GetPosition();
+    float angle = body->GetAngle();
+    draw.SetX(pos.x);
+    draw.SetY(pos.y);
     draw.SetRotation(angle);
 }
 

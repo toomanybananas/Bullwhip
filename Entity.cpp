@@ -43,7 +43,6 @@ void Entity::init(Def def)
     ly = (int)def.GetVal("y");
     draw.SetRotation(def.GetFloat("rotation"));
     alive = true;
-    solid = (bool)def.GetVal("solid");
     mdef = def;
 }
 

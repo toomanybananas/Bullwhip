@@ -21,7 +21,12 @@ void Def::SetVal(std::string name, float val)
     types[name] = DEF_FLOAT;
 }
 
-
+void Def::SetVal(std::string name, void* val)
+{
+    vals[name] = val;
+    define[name] = true;
+    types[name] = DEF_VOID;
+}
 
 void Def::SetString(std::string name, std::string val)
 {

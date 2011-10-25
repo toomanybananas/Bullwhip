@@ -1,3 +1,5 @@
+//Teleports you to a position of another object.
+//If you want moving teleport destinations, or simply want to be able to move an object around instead of retyping in coords, this is for you
 #pragma once
 #include "tele_coord.h"
 

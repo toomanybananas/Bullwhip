@@ -18,7 +18,7 @@ void PlayState::Init(sf::RenderWindow* win)
     //bullwhipini.LoadFile("Bullwhip.ini");
 
 
-    scene->Init(b2Vec2(0.f, 10.f));
+    scene->Init(Vec2(0.f, 1000.f));
     reg->AddFactory("base_ent", &newEntity);
     reg->AddFactory("player", &newPlayer);
     reg->AddFactory("phys_static", &newPhys_static);

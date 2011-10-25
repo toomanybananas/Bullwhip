@@ -1,3 +1,5 @@
+//Teleportation entity
+//Teleports any teleportable entity inside it to another area.
 #ifndef TELE_COORD_H
 #define TELE_COORD_H
 #include "InvisPhysEntity.h"

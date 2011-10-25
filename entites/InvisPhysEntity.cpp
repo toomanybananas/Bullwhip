@@ -8,28 +8,17 @@ InvisPhysEntity::InvisPhysEntity()
 
 void InvisPhysEntity::init(Def def)
 {
-    draw.SetX((int)def.GetVal("x"));
+    /*draw.SetX((int)def.GetVal("x")); //Not quite sure why this is here, commenting it out for now
     draw.SetY((int)def.GetVal("y"));
     lx = (int)def.GetVal("x");
     ly = (int)def.GetVal("y");
-    draw.SetRotation(def.GetFloat("rotation"));
+    draw.SetRotation(def.GetFloat("rotation"));*/
     alive = true;
     mdef = def;
 
-    //physics initzilizatrion
-    body_def.position.Set((lx + ((int)def.GetVal("width") / 2.f)) * SCALE, (ly + ((int)def.GetVal("height") / 2.f)) * SCALE);
-    body_def.angle = toRad(draw.GetRotation());
-    body_def.userData = this;
-    body_def.type = b2_staticBody;
-    bounding.SetAsBox( ((int)def.GetVal("width") / 2.f) * SCALE, ((int)def.GetVal("height") / 2.f) * SCALE);
-    fix_def.density = 1.0f;
-    fix_def.friction = 1.0f;
-    fix_def.shape = &bounding;
-    fix_def.isSensor = true;
+    body = new TriggerBody;
+    def.SetVal("hw", hw);
+    def.SetVal("hh", hh);
+    body->Intialize(def, this);
 }
 
-void InvisPhysEntity::reg(b2World* world)
-{
-    body = world->CreateBody(&body_def);
-    fix = body->CreateFixture(&fix_def);
-}

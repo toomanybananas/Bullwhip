@@ -1,3 +1,6 @@
+//Simple invisible entity, no collisions, absoultely nothing
+
+//Not entirely useless, can use it as a marker for teleport destinations
 #ifndef INVISENTITY_H
 #define INVISENTITY_H
 #include "../Entity.h"

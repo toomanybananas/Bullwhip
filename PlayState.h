@@ -1,3 +1,4 @@
+//General game setup and logic goes here (although in the future logic entites will take care of this)
 #ifndef PLAYSTATE_H
 #define PLAYSTATE_H
 

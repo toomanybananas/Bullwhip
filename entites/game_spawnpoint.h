@@ -1,3 +1,5 @@
+//THE MOST USELESS ENTITY EVER
+//KILL THIS
 #pragma once
 #include "InvisEntity.h"
 

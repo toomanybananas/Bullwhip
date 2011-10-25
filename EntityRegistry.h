@@ -1,4 +1,7 @@
 #pragma once
+/*
+Class for holding types of entitys, just to make it easy to access them via script
+*/
 #include "Entity.h"
 #include <map>
 class EntityRegistry

@@ -8,27 +8,18 @@ SceneManager::SceneManager()
 void SceneManager::AddEntity(Entity& ent)
 {
     entites.insert(entites.end(), &ent);
-    if(ent.GetAttribute("physics"))
-    {
-        PhysAdd(&ent);
-    }
     std::cout << "[scene] added entity\n";
 }
 
 void SceneManager::AddEntity(Entity* ent)
 {
     entites.insert(entites.end(), ent);
-    if(ent->GetAttribute("physics"))
-    {
-        PhysAdd(ent);
-    }
     std::cout << "[scene] added entity\n";
 }
 
 void SceneManager::Update(sf::RenderWindow& win)
 {
-    phys_world->Step(1.f / 60.f, 10, 10);
-    phys_world->ClearForces();
+    phys_world->Step(1.f / 60.f);
 
     //Parse entites
     win.SetView(v);
@@ -36,7 +27,6 @@ void SceneManager::Update(sf::RenderWindow& win)
     {
         //Update entity
         entites[i]->update(win.GetInput(), this);
-        //win.Draw(entites[i]->getspr());
         entites[i]->Draw(win);
     }
     if(specents["center"] != NULL)
@@ -45,29 +35,22 @@ void SceneManager::Update(sf::RenderWindow& win)
     }
 }
 
-void SceneManager::Init(b2Vec2 gravity)
+void SceneManager::Init(Vec2 gravity)
 {
-    phys_world = new b2World(gravity, true);
-    phys_world->SetContactListener(&bclisten);
+    phys_world = new Physics2D;
+    phys_world->Init(gravity);
     std::cout << "[scene][phys] intialized physics\n";
     v.SetHalfSize(400, 300);
     v.SetCenter(100, 100);
     std::cout << "[scene] set views\n";
 }
 
-void SceneManager::PhysAdd(Entity* obj)
-{
-    obj->reg(phys_world);
-    std::cout << "[scene][phys] added physics entity" << std::endl;
-}
 
 void SceneManager::Spawn(Entity& plyr, std::string spawnpoint)
 {
-    std::cout << "spawning\n";
     AddEntity(plyr);
     plyr.SetX(spawnpoints[spawnpoint]->GetX());
     plyr.SetY(spawnpoints[spawnpoint]->GetY());
-    std::cout << "spawned\n";
 }
 
 void SceneManager::RemoveEntityFromList(std::string name)
@@ -170,7 +153,6 @@ void SceneManager::LoadScene(std::string filename)
                 std::string h = file.ReadString();
                 int i = file.ReadInt();
                 pdef.SetVal(h, i);
-                //std::cout << h << i << std::endl;
             }
             if(t == 2) //float
             {
@@ -179,7 +161,6 @@ void SceneManager::LoadScene(std::string filename)
                 std::string h = file.ReadString();
                 float i = file.ReadFloat();
                 pdef.SetVal(h, i);
-                //std::cout << h << i << std::endl;
             }
             if(t == 3) //string
             {
@@ -188,12 +169,10 @@ void SceneManager::LoadScene(std::string filename)
                 std::string h = file.ReadString();
                 std::string i = file.ReadString();
                 pdef.SetString(h, i);
-                //std::cout << h << i << std::endl;
             }
         }
         newent->init(pdef);
         AddEntity(newent);
-        //std::cout << "name:" << pdef.GetString("name") << ";" << std::endl;
         if(pdef.GetString("name") != "")
         {
             SetEntity(pdef.GetString("name"), newent);

@@ -1,3 +1,4 @@
+//Simplistic entity to simply display a static string
 #pragma once
 #include "../Entity.h"
 class ent_string : public Entity

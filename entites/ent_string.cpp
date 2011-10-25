@@ -11,9 +11,8 @@ void ent_string::init(Def def)
     str.SetY((int)def.GetVal("y"));
     lx = (int)def.GetVal("x");
     ly = (int)def.GetVal("y");
-    draw.SetRotation(def.GetFloat("rotation"));
+    str.SetRotation(def.GetFloat("rotation"));
     alive = true;
-    solid = (bool)def.GetVal("solid");
     mdef = def;
     f.LoadFromFile("slkscr.ttf");
     str.SetFont(f);

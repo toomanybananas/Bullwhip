@@ -1,4 +1,4 @@
-
+#include "Constants.h"
 #include "JMath.h"
 
 float distance(float x1, float y1, float x2, float y2)
@@ -23,4 +23,12 @@ float toRad(float deg)
 float toDeg(float rad)
 {
     return (rad * 180) / PI;
+}
+
+Vec2 toReg(b2Vec2 vec)
+{
+    Vec2 v;
+    v.x = vec.x / SCALE;
+    v.y = vec.y / SCALE;
+    return v;
 }

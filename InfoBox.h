@@ -1,3 +1,6 @@
+//Incredibly crappy debug box that pops up a window with the entity's postition
+//Going to be removed soon.
+
 #ifndef INFOBOX_H
 #define INFOBOX_H
 #include <SFML/Graphics.hpp>

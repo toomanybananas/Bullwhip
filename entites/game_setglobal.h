@@ -1,3 +1,4 @@
+//Invisible entity that sets a global value when an entity passes over it
 #include "InvisPhysEntity.h"
 #include "../Constants.h"
 

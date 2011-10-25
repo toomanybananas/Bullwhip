@@ -1,3 +1,7 @@
+//Quick class to facilitate loading of images.
+//May become part of BullwhipCommon
+//Derived from ResourceManager, which will become common
+
 #ifndef IMAGEMANAGER_H_INCLUDED
 #define IMAGEMANAGER_H_INCLUDED
 

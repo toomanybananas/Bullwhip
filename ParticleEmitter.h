@@ -1,3 +1,4 @@
+//Unfinished particle emitter class.
 #pragma once
 #include "Particle.h"
 #include <SFML/Graphics.hpp>

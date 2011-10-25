@@ -1,3 +1,4 @@
+//Set to become part of BullwhipCommon
 #pragma once
 #include <string>
 #include <map>
@@ -7,6 +8,7 @@
 #define DEF_FLOAT 2
 #define DEF_STRING 3
 #define DEF_BOOL 4
+#define DEF_VOID 5
 class Entity;
 class Def
 {
@@ -15,6 +17,7 @@ class Def
         virtual void SetVal(std::string name, int val);
         virtual void SetVal(std::string name, bool val);
         virtual void SetVal(std::string name, float val);
+        virtual void SetVal(std::string name, void* val);
         virtual void SetString(std::string name, std::string val);
         virtual void* GetVal(std::string name) {return vals[name];};
         virtual std::string& GetString(const std::string& name) {return strings[name];};

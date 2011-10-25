@@ -1,3 +1,6 @@
+//Extremely useless file, nothing more than a pitiful wrapper for the state manager
+//This hopefully won't be around for too much longer
+
 #pragma once
 #define SFML_DYNAMIC
 #include <SFML/Graphics.hpp>
@@ -5,11 +8,8 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
-#include "JMath.h"
-#include "Constants.h"
-#include "SceneManager.h"
-#include "EntityRegistry.h"
 #include "StateManager.h"
+#include "Constants.h"
 
 #define VERSION 0.1
 
@@ -33,19 +33,12 @@ class Game
 
         void HandleEvent(sf::Event& event) {};
         void Quit() {running = false;};
-
-        void SetScene(SceneManager* scenem) {scene = scenem;};
-        SceneManager* GetScene() {return scene;};
-        EntityRegistry* GetRegistry() {return reg;};
         StateManager* GetStateManager() {return state;};
-
     private:
         sf::RenderWindow win;
         sf::String fps;
         sf::Font fpsfont;
+        StateManager* state;
         bool running;
         bool paused;
-        SceneManager* scene;
-        EntityRegistry* reg;
-        StateManager* state;
 };

@@ -1,3 +1,5 @@
+//Scripted entity
+//Will probably be decprectated so regular bodies can just have a member that does this.
 #pragma once
 #include "Entity.h"
 #include "ScriptManager.h"
