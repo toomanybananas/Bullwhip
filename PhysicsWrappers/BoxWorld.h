@@ -16,7 +16,7 @@ class BoxWorld : public PhysicsWorld
         void DestroyBody(PhysicsBody* body) {};
         void Step(float timestep);
         void SetGravity(Vec2 gravity) {};
-        Vec2 GetGravity() {};
+        Vec2 GetGravity() {return Vec2(0,0);};
     protected:
         b2World* world;
         BullwhipContactListener* bclisten;

@@ -18,9 +18,10 @@ bool tele_obj::onCollision(Entity* obj)
         obj->SetXQ(ox);
         obj->SetYQ(oy);
     }
+    return true;
 }
 
-void tele_obj::update(const sf::Input& in, SceneManager* scene)
+void tele_obj::update(SceneManager* scene)
 {
     ox = scene->GetEntity(mdef.GetString("entity"))->GetX();
     oy = scene->GetEntity(mdef.GetString("entity"))->GetY();

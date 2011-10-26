@@ -8,6 +8,7 @@ game_setglobal::game_setglobal()
 bool game_setglobal::onCollision(Entity* obj)
 {
     Global.SetString(mdef.GetString("gname"), mdef.GetString("gval"));
+    return true;
 }
 
 Entity* newGame_setglobal(int i)

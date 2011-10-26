@@ -39,10 +39,10 @@ class Entity
         virtual float GetRot() {return draw.GetRotation();};
 
 
-        virtual void update(const sf::Input &in, SceneManager* scene);  //Update the basic components, don't overrider unless you need to add more
-                                                                        //basic components, such as physics
-        virtual void Update(const sf::Input &in, SceneManager* scene) {};   //Function prototype, since c++ doesn't have a super call this is for
-                                                                            //user written code
+        virtual void update(SceneManager* scene);   //Update the basic components, don't overrider unless you need to add more
+                                                    //basic components, such as physics
+        virtual void Update(SceneManager* scene) {};//Function prototype, since c++ doesn't have a super call this is for
+                                                    //user written code
 
 
         virtual sf::Sprite& getspr() {return draw;}; //Helper function for getting the sprite. Not used anymore, just here for compatiblity.

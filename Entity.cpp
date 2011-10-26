@@ -32,10 +32,10 @@ void Entity::SetYQ(float m)
 
 void Entity::init(Def def)
 {
-    draw.SetImage(*gImageManager.getResource(def.GetString("image")));
+    draw.SetTexture(*gImageManager.getResource(def.GetString("image")));
     hw = draw.GetSize().x / 2;
     hh = draw.GetSize().y / 2;
-    draw.SetCenter(hw, hh);
+    draw.SetOrigin(hw, hh);
 
     draw.SetX((int)def.GetVal("x"));
     draw.SetY((int)def.GetVal("y"));
@@ -58,7 +58,7 @@ void Entity::damage(int dmg)
     }
 }
 
-void Entity::update(const sf::Input& in, SceneManager* scene)
+void Entity::update(SceneManager* scene)
 {
     if(do_q)
     {

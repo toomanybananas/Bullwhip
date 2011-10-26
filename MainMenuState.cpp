@@ -6,7 +6,7 @@ MainMenuState::MainMenuState()
     alive = false;
 }
 
-void MainMenuState::Init(sf::RenderWindow* win)
+/*void MainMenuState::Init(sf::RenderWindow* win)
 {
     if(alive)
     {
@@ -15,9 +15,9 @@ void MainMenuState::Init(sf::RenderWindow* win)
     window = win;
     play_btn = new cp::cpButton(win, &gui, "Play", 400, 300, 70, 30);
     exit_btn = new cp::cpButton(win, &gui, "Exit", 400, 400, 70, 30);
-}
+}*/
 
-std::string MainMenuState::Update()
+/*std::string MainMenuState::Update()
 {
     sf::Event ev;
     while(window->GetEvent(ev))
@@ -36,4 +36,4 @@ std::string MainMenuState::Update()
     play_btn->Draw();
     exit_btn->Draw();
     return "";
-}
+}*/

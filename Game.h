@@ -22,14 +22,14 @@ class Game
         void draw();
         bool run() {return running;};
 
-        const sf::Input& getin() {return win.GetInput();};
+        //const sf::Input& getin() {return win.GetInput();};
 
         sf::RenderWindow& getwin() {return win;};
 
         void clear() {win.Clear();};
         void display() {win.Display();};
 
-        //bool gEvent(sf::Event &ev) {return win.GetEvent(ev);};
+        bool gEvent(sf::Event &ev) {return win.PollEvent(ev);};
 
         void HandleEvent(sf::Event& event) {};
         void Quit() {running = false;};

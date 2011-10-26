@@ -14,6 +14,7 @@ bool tele_coord::onCollision(Entity* obj)
         obj->SetXQ((int)mdef.GetVal("tx"));
         obj->SetYQ((int)mdef.GetVal("ty"));
     }
+    return true;
 }
 
 Entity* newTele_coord(int i)

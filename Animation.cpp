@@ -1,4 +1,4 @@
-#include "Animation.h"
+/*#include "Animation.h"
 
 Animation::Animation()
 {
@@ -36,3 +36,4 @@ sf::Sprite& Animation::Getspr()
         return sheet;
     }
 }
+*/

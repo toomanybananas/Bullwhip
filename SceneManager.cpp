@@ -26,7 +26,7 @@ void SceneManager::Update(sf::RenderWindow& win)
     for(unsigned int i = 0; i < entites.size(); i++)
     {
         //Update entity
-        entites[i]->update(win.GetInput(), this);
+        entites[i]->update(this);
         entites[i]->Draw(win);
     }
     if(specents["center"] != NULL)
@@ -40,7 +40,7 @@ void SceneManager::Init(Vec2 gravity)
     phys_world = new Physics2D;
     phys_world->Init(gravity);
     std::cout << "[scene][phys] intialized physics\n";
-    v.SetHalfSize(400, 300);
+    v.SetSize(800, 600);
     v.SetCenter(100, 100);
     std::cout << "[scene] set views\n";
 }
@@ -55,7 +55,7 @@ void SceneManager::Spawn(Entity& plyr, std::string spawnpoint)
 
 void SceneManager::RemoveEntityFromList(std::string name)
 {
-    for(int i = 0; i < entites.size(); i++)
+    for(unsigned int i = 0; i < entites.size(); i++)
     {
         if(GetEntity(name) == entites[i])
         {
@@ -67,7 +67,7 @@ void SceneManager::RemoveEntityFromList(std::string name)
 
 void SceneManager::RemoveEntityFromList(Entity* ent)
 {
-    for(int i = 0; i < entites.size(); i++)
+    for(unsigned int i = 0; i < entites.size(); i++)
     {
         if(ent == entites[i])
         {
@@ -92,6 +92,7 @@ void SceneManager::LoadScene(std::string filename)
     }
     //INT: GAME ID (not used yet)
     int gameID = file.ReadInt();
+    gameID++;
     //STRING: MAPNAME
     std::string mapname = file.ReadString();
     std::cout << "[scene] loading map:" << mapname << std::endl;

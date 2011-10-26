@@ -8,7 +8,7 @@ class ent_string : public Entity
         virtual void init(Def def);
         virtual void Draw(sf::RenderWindow& win) {win.Draw(str);};
     protected:
-        sf::String str;
+        sf::Text str;
         sf::Font f;
     private:
 };

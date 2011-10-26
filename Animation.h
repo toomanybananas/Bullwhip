@@ -1,3 +1,5 @@
+//Commented out because of SFML2 transition
+/*
 #pragma once
 #include <SFML/Graphics.hpp>
 
@@ -23,4 +25,4 @@ class Animation
         int curframe;
         int frames;
 };
-
+*/

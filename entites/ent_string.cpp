@@ -16,8 +16,8 @@ void ent_string::init(Def def)
     mdef = def;
     f.LoadFromFile("slkscr.ttf");
     str.SetFont(f);
-    str.SetSize((int)def.GetVal("size"));
-    str.SetText(def.GetString("text"));
+    str.SetCharacterSize((int)def.GetVal("size"));
+    str.SetString(def.GetString("text"));
     str.SetColor(sf::Color((int)def.GetVal("colorr"), (int)def.GetVal("colorg"), (int)def.GetVal("colorb")));
     std::cout << def.GetString("text") << std::endl;
 }

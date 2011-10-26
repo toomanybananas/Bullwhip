@@ -13,7 +13,7 @@ class Player : public phys_dynamic
         Player();
         virtual bool onCollision(Entity* obj);
         virtual void jump();
-        virtual void update(const sf::Input& in, SceneManager* scene);
+        virtual void update(SceneManager* scene);
     protected:
         bool can_jump;
         std::string collide;

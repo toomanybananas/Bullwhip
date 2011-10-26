@@ -7,5 +7,5 @@ ent_item::ent_item()
 
 bool ent_item::onCollision(Entity* obj)
 {
-    //
+    return true;
 }

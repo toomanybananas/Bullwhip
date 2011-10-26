@@ -11,7 +11,7 @@ InfoBox::InfoBox(Entity& o) : obj(o)
 
 void InfoBox::draw()
 {
-    box.Clear();
+    /*box.Clear();
     sf::String nam("Info:", arial, 10);
     nam.SetPosition(0, 0);
     std::stringstream x, y;
@@ -24,5 +24,5 @@ void InfoBox::draw()
     box.Draw(nam);
     box.Draw(xx);
     box.Draw(yy);
-    box.Display();
+    box.Display();*/
 }

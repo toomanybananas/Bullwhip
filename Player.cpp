@@ -24,7 +24,7 @@ void Player::jump()
     }
 }
 
-void Player::update(const sf::Input& in, SceneManager* scene)
+void Player::update(SceneManager* scene)
 {
     if(do_q)
     {
@@ -33,19 +33,19 @@ void Player::update(const sf::Input& in, SceneManager* scene)
         do_q = false;
     }
     //movement
-    if(in.IsKeyDown(sf::Key::Up))
+    if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Up))
     {
         jump();
     }
-    if(in.IsKeyDown(sf::Key::Right))
+    if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Right))
     {
         body->ApplyForce(Vec2(5, 0));
     }
-    if(in.IsKeyDown(sf::Key::Left))
+    if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Left))
     {
         body->ApplyForce(Vec2(-5, 0));
     }
-    if((!in.IsKeyDown(sf::Key::Right)) && (!in.IsKeyDown(sf::Key::Left)))
+    if((!sf::Keyboard::IsKeyPressed(sf::Keyboard::Right)) && (!sf::Keyboard::IsKeyPressed(sf::Keyboard::Left)))
     {
         body->SetLinearVelocity(Vec2(body->GetLinearVelocity().x* 0.90f, body->GetLinearVelocity().y));
     }

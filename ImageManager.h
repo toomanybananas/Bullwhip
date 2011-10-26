@@ -10,10 +10,10 @@
 #include "ResourceManager.h"
 #include "Constants.h"
 
-class ImageManager : public ResourceManager< sf::Image > {
+class ImageManager : public ResourceManager< sf::Texture > {
 private:
 protected:
-    virtual sf::Image* load( const std::string& strId );
+    virtual sf::Texture* load( const std::string& strId );
 public:
 };
 

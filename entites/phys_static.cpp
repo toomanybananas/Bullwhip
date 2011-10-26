@@ -8,11 +8,11 @@ phys_static::phys_static()
 
 void phys_static::init(Def def)
 {
-    draw.SetImage(*gImageManager.getResource(def.GetString("image")));
+    draw.SetTexture(*gImageManager.getResource(def.GetString("image")));
     std::cout << "Loaded image " << def.GetString("image") << std::endl;
     hw = draw.GetSize().x / 2;
     hh = draw.GetSize().y / 2;
-    draw.SetCenter(hw, hh);
+    draw.SetOrigin(hw, hh);
 
     draw.SetX((int)def.GetVal("x"));
     draw.SetY((int)def.GetVal("y"));
@@ -29,7 +29,7 @@ void phys_static::init(Def def)
 }
 
 
-void phys_static::update(const sf::Input& in, SceneManager* scene)
+void phys_static::update(SceneManager* scene)
 {
     if(do_q)
     {

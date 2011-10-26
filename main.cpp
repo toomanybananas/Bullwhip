@@ -19,15 +19,13 @@ int main()
     StateManager* state = gam.GetStateManager();
     PlayState* play = new PlayState;
     state->RegisterState("PlayState", play);
-    MainMenuState* menu = new MainMenuState;
-    state->RegisterState("MainMenuState", menu);
-    state->SetCurrentState("MainMenuState");
+    //MainMenuState* menu = new MainMenuState;
+    //state->RegisterState("MainMenuState", menu);
+    state->SetCurrentState("PlayState");
 
 
     while(gam.run())
     {
-        const sf::Input& in = gam.getin();
-
         sf::Event event;
 
         while(gam.gEvent(event))
