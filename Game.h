@@ -29,14 +29,14 @@ class Game
         void clear() {win.Clear();};
         void display() {win.Display();};
 
-        bool gEvent(sf::Event &ev) {return win.GetEvent(ev);};
+        //bool gEvent(sf::Event &ev) {return win.GetEvent(ev);};
 
         void HandleEvent(sf::Event& event) {};
         void Quit() {running = false;};
         StateManager* GetStateManager() {return state;};
     private:
         sf::RenderWindow win;
-        sf::String fps;
+        sf::Text fps;
         sf::Font fpsfont;
         StateManager* state;
         bool running;
