@@ -8,8 +8,7 @@ phys_static::phys_static()
 
 void phys_static::init(Def def)
 {
-    draw.SetTexture(*gImageManager.getResource(def.GetString("image")));
-    std::cout << "Loaded image " << def.GetString("image") << std::endl;
+    /*draw.SetTexture(*gImageManager.getResource(def.GetString("image")));
     hw = draw.GetSize().x / 2;
     hh = draw.GetSize().y / 2;
     draw.SetOrigin(hw, hh);
@@ -20,7 +19,8 @@ void phys_static::init(Def def)
     ly = (int)def.GetVal("y");
     draw.SetRotation(def.GetFloat("rotation"));
     alive = true;
-    mdef = def;
+    mdef = def;*/
+    super::init(def);
 
     body = new StaticBody;
     def.SetVal("hw", hw);

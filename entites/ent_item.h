@@ -13,6 +13,7 @@ class ent_item : public phys_dynamic
         bool onCollision(Entity* obj);
     protected:
     private:
+        typedef phys_dynamic super;
 };
 
 #endif // ENT_ITEM_H

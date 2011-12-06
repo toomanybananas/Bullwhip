@@ -6,18 +6,20 @@
 #include <iostream>
 #include "entites/phys_dynamic.h"
 #include "Definition.h"
+#include "Item.h"
+#include "SceneManager.h"
 
 class Player : public phys_dynamic
 {
     public:
         Player();
         virtual bool onCollision(Entity* obj);
-        virtual void jump();
         virtual void update(SceneManager* scene);
     protected:
         bool can_jump;
-        std::string collide;
-        float coly;
-        sf::Clock jumptimer;
+        Inventory inv;
+        Entity* pickup;
+    private:
+        typedef phys_dynamic super;
 };
 Entity* newPlayer(int i);

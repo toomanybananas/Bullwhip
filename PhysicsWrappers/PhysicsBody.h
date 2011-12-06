@@ -27,6 +27,7 @@ class PhysicsBody
         virtual void ApplyForce(Vec2 force)=0;
         virtual void ApplyTorque(float torque)=0;
         virtual int GetType() {return type;};
+        virtual void* GetBody()=0;
     protected:
         int type;
     private:

@@ -13,6 +13,7 @@ class InvisPhysEntity : public phys_static
         void Draw(sf::RenderWindow& win) {};
     protected:
     private:
+        typedef phys_static super;
 };
 
 

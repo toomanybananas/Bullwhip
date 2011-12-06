@@ -14,6 +14,7 @@ class InvisEntity : public Entity
         virtual void init(Def def);
     protected:
     private:
+        typedef Entity super;
 };
 
 #endif // INVISENTITY_H

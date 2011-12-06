@@ -24,8 +24,12 @@ class phys_static : public Entity
         virtual float GetRot() {return toDeg(body->GetAngle());};
         virtual void update(SceneManager* scene);
         sf::Sprite& getspr() {return draw;};
+
+        virtual void Destroy() {phys_world->DestroyBody(body);};
     protected:
         PhysicsBody* body; //The actual physics body object.
+    private:
+        typedef Entity super;
 };
 Entity* newPhys_static(int i);
 

@@ -11,5 +11,6 @@ class ent_string : public Entity
         sf::Text str;
         sf::Font f;
     private:
+        typedef Entity super;
 };
 Entity* newEnt_string(int i);

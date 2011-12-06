@@ -18,6 +18,7 @@ class BoxStaticBody : public PhysicsBody
         void ApplyForce(Vec2 force, Vec2 point) {body->ApplyForce(force.toBox(), point.toBox());};
         void ApplyForce(Vec2 force) {body->ApplyForce(force.tob2(), body->GetWorldPoint(body->GetLocalCenter()));};
         void ApplyTorque(float torque) {body->ApplyTorque(toRad(torque));};
+        void* GetBody() {return body;};
     protected:
         b2Body* body;
         b2BodyDef body_def;
