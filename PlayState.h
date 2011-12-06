@@ -28,6 +28,7 @@ class PlayState : public State
         Entity* player;
         bool alive;
     private:
+        typedef State super;
 };
 
 #endif // PLAYSTATE_H

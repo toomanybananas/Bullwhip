@@ -11,7 +11,7 @@ void PlayState::Init(sf::RenderWindow* win)
     {
         return;
     }
-    window = win;
+    super::Init(win);
     scene = new SceneManager;
     reg = new EntityRegistry;
     scene->SetReg(reg);
