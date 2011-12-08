@@ -8,16 +8,24 @@ phys_dynamic::phys_dynamic()
 
 void phys_dynamic::init(Def def)
 {
-    draw.SetTexture(*gImageManager.getResource(def.GetString("image")));
+    try
+    {
+        std::string s = any_cast<std::string>(def.GetVal("image"));
+    }
+    catch(boost::bad_any_cast b)
+    {
+        std::cout << b.what() << std::endl;
+    }
+    draw.SetTexture(*gImageManager.getResource(any_cast<std::string>(def.GetVal("image"))));
     hw = draw.GetSize().x / 2;
     hh = draw.GetSize().y / 2;
     draw.SetOrigin(hw, hh);
 
-    draw.SetX((int)def.GetVal("x"));
-    draw.SetY((int)def.GetVal("y"));
-    lx = (int)def.GetVal("x");
-    ly = (int)def.GetVal("y");
-    draw.SetRotation(def.GetFloat("rotation"));
+    draw.SetX(any_cast<int>(def.GetVal("x")));
+    draw.SetY(any_cast<int>(def.GetVal("y")));
+    lx = any_cast<int>(def.GetVal("x"));
+    ly = any_cast<int>(def.GetVal("y"));
+    draw.SetRotation(any_cast<float>(def.GetVal("rotation")));
     alive = true;
     mdef = def;
 
@@ -28,10 +36,10 @@ void phys_dynamic::init(Def def)
 }
 
 
-void phys_dynamic::Destroy()
+/*void phys_dynamic::Destroy()
 {
     //body->DestroyFixture(fix);
-}
+}*/
 
 Entity* newPhys_dynamic(int i)
 {

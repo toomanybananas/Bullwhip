@@ -12,7 +12,7 @@ class phys_dynamic : public phys_static
     public:
         phys_dynamic();
         virtual void init(Def def);
-        virtual void Destroy();
+        //virtual void Destroy();
     protected:
     private:
         typedef phys_static super;

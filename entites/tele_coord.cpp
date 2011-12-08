@@ -11,8 +11,8 @@ bool tele_coord::onCollision(Entity* obj)
 {
     if(obj->GetAttribute("teleport"))
     {
-        obj->SetXQ((int)mdef.GetVal("tx"));
-        obj->SetYQ((int)mdef.GetVal("ty"));
+        obj->SetXQ(any_cast<int>(mdef.GetVal("tx")));
+        obj->SetYQ(any_cast<int>(mdef.GetVal("ty")));
     }
     return true;
 }

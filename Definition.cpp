@@ -2,57 +2,44 @@
 
 void Def::SetVal(std::string name, int val)
 {
-    vals[name] = (void*)val;
+    vals[name] = val;
     define[name] = true;
     types[name] = DEF_INT;
 }
 
 void Def::SetVal(std::string name, bool val)
 {
-    vals[name] = (void*)val;
+    vals[name] = val;
     define[name] = true;
     types[name] = DEF_BOOL;
 }
 
 void Def::SetVal(std::string name, float val)
 {
-    floats[name] = val;
+    //floats[name] = val;
+    vals[name] = val;
     define[name] = true;
     types[name] = DEF_FLOAT;
 }
 
-void Def::SetVal(std::string name, void* val)
+void Def::SetVal(std::string name, boost::any val)
 {
     vals[name] = val;
     define[name] = true;
     types[name] = DEF_VOID;
 }
 
-void Def::SetString(std::string name, std::string val)
+void Def::SetVal(std::string name, std::string val)
 {
-    strings[name] = val;
+    //strings[name] = val;
+    vals[name] = val;
     define[name] = true;
     types[name] = DEF_STRING;
 }
 
 Def::Def()
 {
-    vals["x"] = 0;
-    vals["y"] = 0;
-    vals["rotation"] = 0;
-    vals["health"] = 0;
-    vals["invincible"] = 0;
-    vals["solid"] = 0;
-    strings["image"] = "none.png";
-}
-
-
-void Def::SetFunc(std::string name,int (*func)(Entity*))
-{
-    funcs[name] = func;
-}
-
-void Def::RunFunc(std::string name, Entity* obj)
-{
-    funcs[name](obj);
+    SetVal("x", 0);
+    SetVal("y", 0);
+    SetVal("rotation", 0.0f);
 }

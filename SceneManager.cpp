@@ -127,7 +127,7 @@ void SceneManager::LoadScene(std::string filename)
             //string: VALUE
             std::string h = file.ReadString();
             std::string i = file.ReadString();
-            worldprops.SetString(h, i);
+            worldprops.SetVal(h, i);
         }
     }
     while(true)
@@ -169,18 +169,18 @@ void SceneManager::LoadScene(std::string filename)
                 //string: VALUE
                 std::string h = file.ReadString();
                 std::string i = file.ReadString();
-                pdef.SetString(h, i);
+                pdef.SetVal(h, i);
             }
         }
         newent->init(pdef);
         AddEntity(newent);
-        if(pdef.GetString("name") != "")
+        if(any_cast<std::string>(pdef.GetVal("name")) != "")
         {
-            SetEntity(pdef.GetString("name"), newent);
+            SetEntity(any_cast<std::string>(pdef.GetVal("name")), newent);
         }
         if(type == "game_spawnpoint")
         {
-            AddSpawn(newent, pdef.GetString("name"));
+            AddSpawn(newent, any_cast<std::string>(pdef.GetVal("name")));
         }
     }
     file.Close();

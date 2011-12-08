@@ -32,16 +32,16 @@ void Entity::SetYQ(float m)
 
 void Entity::init(Def def)
 {
-    draw.SetTexture(*gImageManager.getResource(def.GetString("image")));
+    draw.SetTexture(*gImageManager.getResource(any_cast<std::string>(def.GetVal("image"))));
     hw = draw.GetSize().x / 2;
     hh = draw.GetSize().y / 2;
     draw.SetOrigin(hw, hh);
 
-    draw.SetX((int)def.GetVal("x"));
-    draw.SetY((int)def.GetVal("y"));
-    lx = (int)def.GetVal("x");
-    ly = (int)def.GetVal("y");
-    draw.SetRotation(def.GetFloat("rotation"));
+    draw.SetX(any_cast<int>(def.GetVal("x")));
+    draw.SetY(any_cast<int>(def.GetVal("y")));
+    lx = any_cast<int>(def.GetVal("x"));
+    ly = any_cast<int>(def.GetVal("y"));
+    draw.SetRotation(any_cast<float>(def.GetVal("rotation")));
     alive = true;
     mdef = def;
 }
@@ -49,13 +49,13 @@ void Entity::init(Def def)
 
 void Entity::damage(int dmg)
 {
-    if((bool)mdef.GetVal("invincible"))
+    /*if((bool)mdef.GetVal("invincible"))
         return;
     mdef.SetVal("health", (int)mdef.GetVal("health") - dmg);
     if((int)mdef.GetVal("health") <= 0)
     {
         alive = false;
-    }
+    }*/
 }
 
 void Entity::update(SceneManager* scene)

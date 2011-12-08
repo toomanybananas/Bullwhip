@@ -7,10 +7,10 @@ InvisEntity::InvisEntity()
 
 void InvisEntity::init(Def def)
 {
-    draw.SetX((int)def.GetVal("x"));
-    draw.SetY((int)def.GetVal("y"));
-    lx = (int)def.GetVal("x");
-    ly = (int)def.GetVal("y");
+    draw.SetX(any_cast<int>(def.GetVal("x")));
+    draw.SetY(any_cast<int>(def.GetVal("y")));
+    lx = any_cast<int>(def.GetVal("x"));
+    ly = any_cast<int>(def.GetVal("y"));
     alive = true;
     mdef = def;
 }

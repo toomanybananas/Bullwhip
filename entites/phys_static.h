@@ -28,7 +28,7 @@ class phys_static : public Entity
         virtual void Destroy() {phys_world->DestroyBody(body);};
     protected:
         PhysicsBody* body; //The actual physics body object.
-    private:
+    public: //for a hack
         typedef Entity super;
 };
 Entity* newPhys_static(int i);

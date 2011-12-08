@@ -7,19 +7,19 @@ ent_string::ent_string()
 
 void ent_string::init(Def def)
 {
-    str.SetX((int)def.GetVal("x"));
-    str.SetY((int)def.GetVal("y"));
-    lx = (int)def.GetVal("x");
-    ly = (int)def.GetVal("y");
-    str.SetRotation(def.GetFloat("rotation"));
+    str.SetX(any_cast<int>(def.GetVal("x")));
+    str.SetY(any_cast<int>(def.GetVal("y")));
+    lx = any_cast<int>(def.GetVal("x"));
+    ly = any_cast<int>(def.GetVal("y"));
+    str.SetRotation(any_cast<float>(def.GetVal("rotation")));
     alive = true;
     mdef = def;
     f.LoadFromFile("slkscr.ttf");
     str.SetFont(f);
-    str.SetCharacterSize((int)def.GetVal("size"));
-    str.SetString(def.GetString("text"));
-    str.SetColor(sf::Color((int)def.GetVal("colorr"), (int)def.GetVal("colorg"), (int)def.GetVal("colorb")));
-    std::cout << def.GetString("text") << std::endl;
+    str.SetCharacterSize(any_cast<int>(def.GetVal("size")));
+    str.SetString(any_cast<std::string>(def.GetVal("text")));
+    str.SetColor(sf::Color(any_cast<int>(def.GetVal("colorr")), any_cast<int>(def.GetVal("colorg")), any_cast<int>(def.GetVal("colorb"))));
+    std::cout << any_cast<std::string>(def.GetVal("text")) << std::endl;
 }
 
 Entity* newEnt_string(int i)
