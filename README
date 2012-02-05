@@ -1,5 +1,17 @@
 Bullwhip is a simple 2D game engine.
-It is coded in C++, uses SFML for rendering, Box2D for physics, and Lua for scripting
+It is coded in C++, uses SFML2 for rendering, Box2D for physics, and Lua for scripting
+
+Current Features:
+State machine
+Physics simulation intergrated with graphics
+Supports most major image formats via SFML
+It's very own level format
+A fully moveable player!
+
+Soon to come:
+Menu system via GWEN
+2D Skeletal animation
+Networked players
 
 Quick note on the branches:
 Lamborghini is the most stable build and is the release build. ('Gold' or 'release' build)
