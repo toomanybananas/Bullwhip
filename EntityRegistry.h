@@ -8,7 +8,7 @@ Class for holding types of entitys, just to make it easy to access them via scri
 class EntityRegistry
 {
     public:
-        EntityRegistry();
+        EntityRegistry() {};
         void AddFactory(std::string name, Entity* (*func)(int)) {factorys[name] = func;};
         Entity* NewEnt(std::string name) {return factorys[name](0);}
     protected:
