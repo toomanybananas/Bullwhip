@@ -8,14 +8,6 @@ phys_dynamic::phys_dynamic()
 
 void phys_dynamic::init(Def def)
 {
-    try
-    {
-        std::string s = any_cast<std::string>(def.GetVal("image"));
-    }
-    catch(boost::bad_any_cast b)
-    {
-        std::cout << b.what() << std::endl;
-    }
     draw.SetTexture(*gImageManager.getResource(any_cast<std::string>(def.GetVal("image"))));
     hw = draw.GetSize().x / 2;
     hh = draw.GetSize().y / 2;
@@ -26,6 +18,7 @@ void phys_dynamic::init(Def def)
     lx = any_cast<int>(def.GetVal("x"));
     ly = any_cast<int>(def.GetVal("y"));
     draw.SetRotation(any_cast<float>(def.GetVal("rotation")));
+    //angle = any_cast<float>(def.GetVal("rotation"));
     alive = true;
     mdef = def;
 

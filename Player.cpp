@@ -49,9 +49,13 @@ void Player::update(SceneManager* scene)
     {
         body->ApplyForce(Vec2(-5, 0));
     }
+    if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Space))
+    {
+        body->ApplyTorque(100);
+    }
     if((!sf::Keyboard::IsKeyPressed(sf::Keyboard::Right)) && (!sf::Keyboard::IsKeyPressed(sf::Keyboard::Left)))
     {
-        body->SetLinearVelocity(Vec2(body->GetLinearVelocity().x* 0.90f, body->GetLinearVelocity().y));
+        body->SetLinearVelocity(Vec2(body->GetLinearVelocity().x * 0.90f, body->GetLinearVelocity().y));
     }
 
     //Item pickups
@@ -70,10 +74,9 @@ void Player::update(SceneManager* scene)
         pickup = NULL;
     }
     Vec2 pos = body->GetPosition();
-    float angle = body->GetAngle();
     draw.SetX(pos.x);
     draw.SetY(pos.y);
-    draw.SetRotation(angle);
+    draw.SetRotation(body->GetAngle());
 }
 
 Entity* newPlayer(int i)

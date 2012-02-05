@@ -43,3 +43,4 @@ Def::Def()
     SetVal("y", 0);
     SetVal("rotation", 0.0f);
 }
+

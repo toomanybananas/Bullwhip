@@ -89,3 +89,4 @@ public:
 };
 
 #endif // RESOURCEMANAGER_H_INCLUDED
+

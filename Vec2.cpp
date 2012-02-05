@@ -20,3 +20,4 @@ b2Vec2 Vec2::tob2()
     newvec.y = y;
     return newvec;
 }
+

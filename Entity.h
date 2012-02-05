@@ -14,6 +14,7 @@ ALL POSTITIONS ARE IN PIXELS
 #include <iostream>
 #include <vector>
 #include "Definition.h"
+#include "Vec2.h"
 #include "ImageManager.h"
 #include "Constants.h"
 
@@ -27,16 +28,21 @@ class Entity
 
         virtual void SetX(float m); //Setting position
         virtual void SetY(float m);
+        virtual void SetPos(Vec2& m) {pos = m;};
         virtual void SetXQ(float m); //Setting quened postion. Useful for modifiying position during a timestep.
         virtual void SetYQ(float m);
+        //virtual Vec2& GetPos() {return pos;};
 
 
         virtual float GetX() {return draw.GetPosition().x;}; //Getting position
         virtual float GetY() {return draw.GetPosition().y;};
+        //virtual float GetX() {return pos.x;};
+        //virtual float GetY() {return pos.y;};
 
 
-        virtual void SetRot(float m) {draw.SetRotation(m);}; //Getting and setting rotation angle (Degrees)
+        virtual void SetRot(float m) {draw.SetRotation(m);angle = m;}; //Getting and setting rotation angle (Degrees)
         virtual float GetRot() {return draw.GetRotation();};
+        //virtual float GetRot() {return angle;};
 
 
         virtual void update(SceneManager* scene);   //Update the basic components, don't overrider unless you need to add more
@@ -60,7 +66,7 @@ class Entity
 
         std::string name; //Quick getting the name of the entity eg phys_static
 
-        virtual void Draw(sf::RenderWindow& win) {win.Draw(draw);}; //Drawing function, is called by the scene manager
+        virtual void Draw(sf::RenderTarget& win) {win.Draw(draw);}; //Drawing function, is called by the scene manager
         virtual void Destroy() {}; //Unfinished destruction function. Use right before deleting.
 
 
@@ -69,8 +75,11 @@ class Entity
         sf::Sprite draw; //Sprite for drawing things
         float lx; //Variable to hold current position
         float ly; //see above
+        Vec2 pos;
+        float angle;
         float xq; //Quened position
         float yq;
+        Vec2 qpos;
         bool do_q; //Whether or not a quene is active
         int hw; //Half width of sprite
         int hh; //Half height

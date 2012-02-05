@@ -10,6 +10,10 @@
 #include <sstream>
 #include "StateManager.h"
 #include "Constants.h"
+#include <Gwen/Renderers/SFML.h>
+#include <Gwen/Input/SFML.h>
+#include <Gwen/Skins/TexturedBase.h>
+#include <Gwen/Controls/Canvas.h>
 
 #define VERSION 0.1
 
@@ -21,8 +25,6 @@ class Game
         void init(std::string title, int x, int y);
         void draw();
         bool run() {return running;};
-
-        //const sf::Input& getin() {return win.GetInput();};
 
         sf::RenderWindow& getwin() {return win;};
 
@@ -39,6 +41,11 @@ class Game
         sf::Text fps;
         sf::Font fpsfont;
         StateManager* state;
+        sf::RenderTexture GUI;
+        sf::Sprite GUI_sprite;
+        Gwen::Renderer::SFML* render;
+        Gwen::Skin::TexturedBase skin;
+        Gwen::Input::SFML input;
         bool running;
         bool paused;
 };

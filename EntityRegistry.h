@@ -2,6 +2,7 @@
 /*
 Class for holding types of entitys, just to make it easy to access them via script
 */
+//Will be replaced by Mineshaft resgistry
 #include "Entity.h"
 #include <map>
 class EntityRegistry
@@ -14,3 +15,9 @@ class EntityRegistry
     private:
         std::map<std::string, Entity* (*)(int)> factorys;
 };
+
+template<class T>
+Entity* NewEnt()
+{
+    return new T;
+}

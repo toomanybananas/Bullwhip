@@ -17,7 +17,7 @@ void SceneManager::AddEntity(Entity* ent)
     std::cout << "[scene] added entity\n";
 }
 
-void SceneManager::Update(sf::RenderWindow& win)
+void SceneManager::Update(sf::RenderTarget& win)
 {
     phys_world->Step(1.f / 60.f);
 
@@ -33,6 +33,7 @@ void SceneManager::Update(sf::RenderWindow& win)
     {
         v.SetCenter(specents["center"]->GetX(), specents["center"]->GetY());
     }
+    win.SetView(win.GetDefaultView());
 }
 
 void SceneManager::Init(Vec2 gravity)

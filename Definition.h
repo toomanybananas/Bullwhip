@@ -30,3 +30,4 @@ class Def
         std::map<std::string, bool> define;
         std::map<std::string, BYTE> types;
 };
+

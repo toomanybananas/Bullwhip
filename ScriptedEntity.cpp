@@ -1,4 +1,4 @@
-#include "ScriptedEntity.h"
+/*#include "ScriptedEntity.h"
 using namespace std;
 
 ScriptedEntity::ScriptedEntity()
@@ -28,7 +28,7 @@ void ScriptedEntity::init(Def def)
     //draw.SetRotation(direction * 90);
     alive = true;
     solid = inst.GetTableBool("solid");
-    inst.CloseTable();*/
+    inst.CloseTable();
 }
 
 void ScriptedEntity::update(Entity* surround[3][3])
@@ -37,3 +37,4 @@ void ScriptedEntity::update(Entity* surround[3][3])
     //m.CallTableFunc("update");
     //m.CloseTable();
 }
+*/

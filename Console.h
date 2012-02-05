@@ -1,14 +1,7 @@
 #ifndef CONSOLE_H
 #define CONSOLE_H
 
-//Lua includes
-extern "C"
-{
-    #include <lua/lua.h>
-    #include <lua/lualib.h>
-    #include <lua/lauxlib.h>
-}
-
+#include <SLB/SLB.hpp>
 #include <iostream>
 #include <string>
 #include <SFML/Graphics.hpp>
@@ -19,21 +12,18 @@ class Console
         Console();
         void Init();
         void Close();
-        int GetCVarI(std::string name);
-        float GetCVarF(std::string name);
-        bool GetCVarB(std::string name);
-        std::string GetCVarS(std::string name);
+        //template<class T>
+        //T GetCVar(std::string name) {return s->get<T>(name);};
         void PushString(std::string str);
-        void SetCVar(std::string name, int i);
-        void SetCVar(std::string name, float i);
-        void SetCVar(std::string name, bool i);
-        void SetCVar(std::string name, std::string i);
+        //template<class T>
+        //void SetCVar(std::string name, T i) {s->set<T>(name, i);};
 
         void AddLine(std::string line);
 
     protected:
     private:
-    lua_State* state;
+        //SLB::Script* s;
+        //SLB::Manager m;
 };
 
 #endif // CONSOLE_H

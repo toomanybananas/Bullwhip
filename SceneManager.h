@@ -20,7 +20,7 @@ class SceneManager
 {
     public:
         SceneManager();
-        virtual void Update(sf::RenderWindow& win); //Updates everything
+        virtual void Update(sf::RenderTarget& win); //Updates everything
         virtual void AddEntity (Entity& obj); //Adds a entity to the global list
         virtual void AddEntity (Entity* obj);
         virtual void Init(Vec2 gravity); //Intializes the physics and views

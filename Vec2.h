@@ -21,3 +21,4 @@ class Vec2
 };
 
 #endif // VEC2_H
+

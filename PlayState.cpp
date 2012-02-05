@@ -36,16 +36,36 @@ void PlayState::Init(sf::RenderWindow* win)
     Def pdef;
     pdef.SetVal("x", 100);
     pdef.SetVal("y", 100);
+    pdef.SetVal("rotation", 0.0f);
     pdef.SetString("image", "player.png");
     player->init(pdef);
     //scene->Spawn(*player, bullwhipini.GetValue("Bullwhip", "spawnpoint", NULL));
     scene->Spawn(*player, "spawn_default");
     scene->SetEntity("center", player);
+    tex.Create(800, 600);
+    renderspr.SetTexture(tex.GetTexture());
+    renderspr.SetX(0);
+    renderspr.SetY(0);
+    renderspr.FlipY(true);
+    /*play = new Gwen::Controls::Button(canvas);
+    play->SetBounds(400, 300, 70, 30);
+    play->SetText("Some button");*/
     alive = true;
 }
 
 std::string PlayState::Update()
 {
-    scene->Update(*window);
+    //sf::Event ev;
+    /*while(window->PollEvent(ev))
+    {
+        if(ev.Type == sf::Event::Closed)
+        {
+            Global.SetVal("run", false);
+        }
+    }*/
+    tex.Clear();
+    scene->Update(tex);
+    //scene->Update(*window);
+    window->Draw(renderspr);
     return "";
 }

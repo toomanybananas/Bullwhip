@@ -4,7 +4,6 @@
 //#include "../Constants.h"
 #include "../Definition.h"
 //Simple wrapper to make the engine physics engine independent.
-class Vec2;
 class Entity;
 //Body type defines
 #define BODY_DUMMY 0

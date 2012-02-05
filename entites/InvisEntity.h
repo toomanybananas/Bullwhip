@@ -10,7 +10,7 @@ class InvisEntity : public Entity
 {
     public:
         InvisEntity();
-        virtual void Draw(sf::RenderWindow& win) {};
+        virtual void Draw(sf::RenderTarget& win) {};
         virtual void init(Def def);
     protected:
     private:

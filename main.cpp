@@ -19,20 +19,13 @@ int main()
     StateManager* state = gam.GetStateManager();
     PlayState* play = new PlayState;
     state->RegisterState("PlayState", play);
-    //MainMenuState* menu = new MainMenuState;
-    //state->RegisterState("MainMenuState", menu);
-    state->SetCurrentState("PlayState");
+    MainMenuState* menu = new MainMenuState;
+    state->RegisterState("MainMenuState", menu);
+    state->SetCurrentState("MainMenuState");
 
 
     while(gam.run())
     {
-        sf::Event event;
-
-        while(gam.gEvent(event))
-        {
-            if(event.Type == sf::Event::Closed)
-                gam.Quit();
-        }
         gam.draw();
     }
     return 0;

@@ -1,6 +1,6 @@
 //Scripted entity
 //Will probably be decprectated so regular bodies can just have a member that does this.
-#pragma once
+/*#pragma once
 #include "Entity.h"
 #include "ScriptManager.h"
 #include <iostream>
@@ -18,3 +18,4 @@ class ScriptedEntity : public Entity
         std::string ename;
 };
 
+*/

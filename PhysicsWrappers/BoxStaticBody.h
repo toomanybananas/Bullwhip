@@ -3,6 +3,7 @@
 #include "PhysicsBody.h"
 #include "../Vec2.h"
 #include "../JMath.h"
+#include "../Constants.h"
 class BoxStaticBody : public PhysicsBody
 {
     public:
