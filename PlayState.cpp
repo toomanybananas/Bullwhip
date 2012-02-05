@@ -19,15 +19,15 @@ void PlayState::Init(sf::RenderWindow* win)
 
 
     scene->Init(Vec2(0.f, 1000.f));
-    reg->AddFactory("base_ent", &newEntity);
-    reg->AddFactory("player", &newPlayer);
-    reg->AddFactory("phys_static", &newPhys_static);
-    reg->AddFactory("phys_dynamic", &newPhys_dynamic);
-    reg->AddFactory("game_spawnpoint", &newGame_spawnpoint);
-    reg->AddFactory("tele_coord", &newTele_coord);
-    reg->AddFactory("tele_obj", &newTele_obj);
-    reg->AddFactory("ent_string", &newEnt_string);
-    reg->AddFactory("game_setglobal", &newGame_setglobal);
+    reg->AddFactory("base_ent", &NewEnt<Entity>);
+    reg->AddFactory("player", &NewEnt<Player>);
+    reg->AddFactory("phys_static", &NewEnt<phys_static>);
+    reg->AddFactory("phys_dynamic", &NewEnt<phys_dynamic>);
+    reg->AddFactory("game_spawnpoint", &NewEnt<game_spawnpoint>);
+    reg->AddFactory("tele_coord", &NewEnt<tele_coord>);
+    reg->AddFactory("tele_obj", &NewEnt<tele_obj>);
+    reg->AddFactory("ent_string", &NewEnt<ent_string>);
+    reg->AddFactory("game_setglobal", &NewEnt<game_setglobal>);
 
     //scene->LoadScene(bullwhipini.GetValue("Bullwhip", "level", NULL));
     scene->LoadScene("level.bin");
@@ -55,14 +55,6 @@ void PlayState::Init(sf::RenderWindow* win)
 
 std::string PlayState::Update()
 {
-    //sf::Event ev;
-    /*while(window->PollEvent(ev))
-    {
-        if(ev.Type == sf::Event::Closed)
-        {
-            Global.SetVal("run", false);
-        }
-    }*/
     tex.Clear();
     scene->Update(tex);
     //scene->Update(*window);

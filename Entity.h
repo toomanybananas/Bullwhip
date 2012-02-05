@@ -57,7 +57,9 @@ class Entity
         virtual void damage(int dmg); //Incomplete damage system.
 
         virtual void SetTag(std::string name, boost::any data) {mdef.SetVal(name, data);}; //Functions for accessing mdef.
-        virtual boost::any GetTag(std::string name) {return mdef.GetVal(name);};
+        template<class T>
+        T GetTag(std::string name) {return mdef.GetVal<T>(name);};
+        //virtual boost::any GetTag(std::string name) {return mdef.GetVal(name);};
 
         virtual bool onCollision(Entity* obj) {return true;}; //Collision callback, used for physics collisions.
         virtual void SetAttribute(std::string attribute, bool val) {attributes[attribute] = val;};  //Setting basic attributes, call in ctor only most

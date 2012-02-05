@@ -8,16 +8,16 @@ phys_dynamic::phys_dynamic()
 
 void phys_dynamic::init(Def def)
 {
-    draw.SetTexture(*gImageManager.getResource(any_cast<std::string>(def.GetVal("image"))));
+    draw.SetTexture(*gImageManager.getResource(def.GetVal<std::string>("image")));
     hw = draw.GetSize().x / 2;
     hh = draw.GetSize().y / 2;
     draw.SetOrigin(hw, hh);
 
-    draw.SetX(any_cast<int>(def.GetVal("x")));
-    draw.SetY(any_cast<int>(def.GetVal("y")));
-    lx = any_cast<int>(def.GetVal("x"));
-    ly = any_cast<int>(def.GetVal("y"));
-    draw.SetRotation(any_cast<float>(def.GetVal("rotation")));
+    draw.SetX(def.GetVal<int>("x"));
+    draw.SetY(def.GetVal<int>("y"));
+    lx = def.GetVal<int>("x");
+    ly = def.GetVal<int>("y");
+    draw.SetRotation(def.GetVal<float>("rotation"));
     //angle = any_cast<float>(def.GetVal("rotation"));
     alive = true;
     mdef = def;

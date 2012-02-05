@@ -21,6 +21,6 @@ void BoxWorld::Step(float timestep)
 
 void* BoxWorld::CreateBody(Def d)
 {
-    b2BodyDef bdef = any_cast<b2BodyDef>(d.GetVal("def"));
+    b2BodyDef bdef = d.GetVal<b2BodyDef>("def");
     return (void*)world->CreateBody(&bdef);
 }

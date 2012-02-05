@@ -17,7 +17,7 @@ class EntityRegistry
 };
 
 template<class T>
-Entity* NewEnt()
+Entity* NewEnt(int i)
 {
     return new T;
 }

@@ -26,7 +26,7 @@ void Def::SetVal(std::string name, boost::any val)
 {
     vals[name] = val;
     define[name] = true;
-    types[name] = DEF_VOID;
+    types[name] = DEF_ANY;
 }
 
 void Def::SetVal(std::string name, std::string val)

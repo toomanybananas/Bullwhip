@@ -47,7 +47,8 @@ void Game::draw()
     fps.SetString(ss.str());
     win.Draw(fps);
     win.Display();
-    if(any_cast<bool>(Global.GetVal("run")) == false)
+    //if(any_cast<bool>(Global.GetVal("run")) == false)
+    if(Global.GetVal<bool>("run") == false)
     {
         running = false;
     }

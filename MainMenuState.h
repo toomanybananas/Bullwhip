@@ -21,10 +21,6 @@ class MainMenuState : public State
         virtual std::string Update();
     protected:
         bool alive;
-        /*Gwen::Renderer::SFML* render;
-        Gwen::Skin::TexturedBase skin;
-        Gwen::Controls::Canvas* canvas2;
-        Gwen::Input::SFML input;*/
         Gwen::Controls::Button* play;
     private:
         typedef State super;

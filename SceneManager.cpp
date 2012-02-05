@@ -175,13 +175,13 @@ void SceneManager::LoadScene(std::string filename)
         }
         newent->init(pdef);
         AddEntity(newent);
-        if(any_cast<std::string>(pdef.GetVal("name")) != "")
+        if(pdef.GetVal<std::string>("name") != "")
         {
-            SetEntity(any_cast<std::string>(pdef.GetVal("name")), newent);
+            SetEntity(pdef.GetVal<std::string>("name"), newent);
         }
         if(type == "game_spawnpoint")
         {
-            AddSpawn(newent, any_cast<std::string>(pdef.GetVal("name")));
+            AddSpawn(newent, pdef.GetVal<std::string>("name"));
         }
     }
     file.Close();
