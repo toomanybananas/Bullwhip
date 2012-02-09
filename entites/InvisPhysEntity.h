@@ -10,7 +10,7 @@ class InvisPhysEntity : public phys_static
     public:
         InvisPhysEntity();
         virtual void init(Def def);
-        void Draw(sf::RenderTarget& win) {};
+        virtual void Draw(sf::RenderTarget& win) {};
     protected:
     private:
         typedef phys_static super;

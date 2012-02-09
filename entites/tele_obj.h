@@ -8,11 +8,9 @@ class tele_obj : public tele_coord
     public:
         tele_obj();
         virtual void update(SceneManager* scene);
-        virtual bool onCollision(Entity* obj);
+        virtual void onCollision(Entity* obj);
     protected:
         int ox;
         int oy;
     private:
 };
-
-Entity* newTele_obj(int i);

@@ -31,5 +31,4 @@ class phys_static : public Entity
     public: //for a hack
         typedef Entity super;
 };
-Entity* newPhys_static(int i);
 

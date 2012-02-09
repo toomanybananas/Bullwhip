@@ -18,6 +18,4 @@ class phys_dynamic : public phys_static
         typedef phys_static super;
 };
 
-Entity* newPhys_dynamic(int i);
-
 #endif // PHYS_DYNAMIC_H

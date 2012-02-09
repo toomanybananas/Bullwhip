@@ -17,6 +17,7 @@ weight:int - Weight of the item, in grams
 equip_type:string - Where equippables go in the equipment screen
 drop_ent:string - Defaults to ent_item, pickup entity
 img:string - File for the pickup entity
+pickdef:Def - Definition for the pickup entity, if img isn't defined
 
 Stats can be added for equippables, and so on. These are just the values it has to have, no matter what
 

@@ -11,8 +11,8 @@ void BullwhipContactListener::PreSolve(b2Contact* contact, const b2Manifold* old
     Entity* b;
     a = (Entity*)contact->GetFixtureA()->GetBody()->GetUserData();
     b = (Entity*)contact->GetFixtureB()->GetBody()->GetUserData();
-    if((!a->onCollision(b)) || (!b->onCollision(a)))
-        contact->SetEnabled(false);
+    a->onCollision(b);
+    b->onCollision(a);
 
 }
 
@@ -22,7 +22,16 @@ void BullwhipContactListener::BeginContact(b2Contact* contact)
     Entity* b;
     a = (Entity*)contact->GetFixtureA()->GetBody()->GetUserData();
     b = (Entity*)contact->GetFixtureB()->GetBody()->GetUserData();
-    if((!a->onCollision(b)) || (!b->onCollision(a)))
-        contact->SetEnabled(false);
+    a->onBeginCollision(b);
+    b->onBeginCollision(a);
+}
 
+void BullwhipContactListener::EndContact(b2Contact* contact)
+{
+    Entity* a;
+    Entity* b;
+    a = (Entity*)contact->GetFixtureA()->GetBody()->GetUserData();
+    b = (Entity*)contact->GetFixtureB()->GetBody()->GetUserData();
+    a->onEndCollision(b);
+    b->onEndCollision(a);
 }

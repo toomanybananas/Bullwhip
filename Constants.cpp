@@ -6,4 +6,4 @@ PhysicsWorld* phys_world;
 
 ItemManager Items;
 
-Gwen::Controls::Canvas* canvas;
+//Gwen::Controls::Canvas* canvas;

@@ -13,7 +13,9 @@ class Player : public phys_dynamic
 {
     public:
         Player();
-        virtual bool onCollision(Entity* obj);
+        virtual void onCollision(Entity* obj);
+        virtual void onBeginCollision(Entity* obj);
+        virtual void onEndCollision(Entity* obj);
         virtual void update(SceneManager* scene);
     protected:
         bool can_jump;
@@ -22,4 +24,3 @@ class Player : public phys_dynamic
     private:
         typedef phys_dynamic super;
 };
-Entity* newPlayer(int i);

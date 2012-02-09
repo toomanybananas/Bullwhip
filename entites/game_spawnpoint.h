@@ -12,4 +12,3 @@ class game_spawnpoint : public InvisEntity
     private:
 };
 
-Entity* newGame_spawnpoint(int i);

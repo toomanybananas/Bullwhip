@@ -13,6 +13,7 @@
 #include "entites/ent_string.h"
 #include "SimpleINI/SimpleIni.h"
 #include "entites/game_setglobal.h"
+#include "entites/ent_item.h"
 #include <Gwen/Controls/Button.h>
 
 class PlayState : public State

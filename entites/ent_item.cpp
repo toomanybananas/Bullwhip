@@ -3,9 +3,11 @@
 ent_item::ent_item()
 {
     //ctor
+    name = "ent_item";
 }
 
-bool ent_item::onCollision(Entity* obj)
+void ent_item::init(Def def)
 {
-    return true;
+    Entity::init(def);
+    super::init(def);
 }

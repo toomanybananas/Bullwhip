@@ -8,11 +8,10 @@ class tele_coord : public InvisPhysEntity
 {
     public:
         tele_coord();
-        virtual bool onCollision(Entity* obj);
+        virtual void onCollision(Entity* obj);
     protected:
     private:
 };
 
-Entity* newTele_coord(int i);
 
 #endif // TELE_COORD_H

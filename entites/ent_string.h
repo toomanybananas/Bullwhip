@@ -13,4 +13,3 @@ class ent_string : public Entity
     private:
         typedef Entity super;
 };
-Entity* newEnt_string(int i);

@@ -31,18 +31,17 @@ class Entity
         virtual void SetPos(Vec2& m) {pos = m;};
         virtual void SetXQ(float m); //Setting quened postion. Useful for modifiying position during a timestep.
         virtual void SetYQ(float m);
-        //virtual Vec2& GetPos() {return pos;};
+
+        virtual int GetWidth() {return w;};
+        virtual int GetHeight() {return h;};
 
 
         virtual float GetX() {return draw.GetPosition().x;}; //Getting position
         virtual float GetY() {return draw.GetPosition().y;};
-        //virtual float GetX() {return pos.x;};
-        //virtual float GetY() {return pos.y;};
 
 
         virtual void SetRot(float m) {draw.SetRotation(m);angle = m;}; //Getting and setting rotation angle (Degrees)
         virtual float GetRot() {return draw.GetRotation();};
-        //virtual float GetRot() {return angle;};
 
 
         virtual void update(SceneManager* scene);   //Update the basic components, don't overrider unless you need to add more
@@ -59,9 +58,10 @@ class Entity
         virtual void SetTag(std::string name, boost::any data) {mdef.SetVal(name, data);}; //Functions for accessing mdef.
         template<class T>
         T GetTag(std::string name) {return mdef.GetVal<T>(name);};
-        //virtual boost::any GetTag(std::string name) {return mdef.GetVal(name);};
 
-        virtual bool onCollision(Entity* obj) {return true;}; //Collision callback, used for physics collisions.
+        virtual void onCollision(Entity* obj) {return;}; //Collision callback, used for physics collisions. Called every frame of the collision
+        virtual void onBeginCollision(Entity* obj) {return;}; //Called only when the collision starts
+        virtual void onEndCollision(Entity* obj) {return;};
         virtual void SetAttribute(std::string attribute, bool val) {attributes[attribute] = val;};  //Setting basic attributes, call in ctor only most
                                                                                                     //of the time
         virtual bool GetAttribute(std::string attribute) {return attributes[attribute];}; //Getting attributes
@@ -85,6 +85,8 @@ class Entity
         bool do_q; //Whether or not a quene is active
         int hw; //Half width of sprite
         int hh; //Half height
+        int w;
+        int h;
 
         bool alive; //Is the object alive? (used in things such as whether to call update or not)
 
@@ -92,4 +94,3 @@ class Entity
         std::map<std::string, bool> attributes;
 };
 
-Entity* newEntity(int i);

@@ -28,6 +28,7 @@ void PlayState::Init(sf::RenderWindow* win)
     reg->AddFactory("tele_obj", &NewEnt<tele_obj>);
     reg->AddFactory("ent_string", &NewEnt<ent_string>);
     reg->AddFactory("game_setglobal", &NewEnt<game_setglobal>);
+    reg->AddFactory("ent_item", &NewEnt<ent_item>);
 
     //scene->LoadScene(bullwhipini.GetValue("Bullwhip", "level", NULL));
     scene->LoadScene("level.bin");
@@ -44,12 +45,14 @@ void PlayState::Init(sf::RenderWindow* win)
     scene->SetEntity("center", player);
     tex.Create(800, 600);
     renderspr.SetTexture(tex.GetTexture());
-    renderspr.SetX(0);
-    renderspr.SetY(0);
-    renderspr.FlipY(true);
-    /*play = new Gwen::Controls::Button(canvas);
-    play->SetBounds(400, 300, 70, 30);
-    play->SetText("Some button");*/
+    renderspr.SetPosition(0, 0);
+
+    // A basic item
+    Def item;
+    item.SetString("name", "QSword");
+    item.SetString("real_name", "Sword");
+    Items.SetItem("QSword", item);
+
     alive = true;
 }
 
@@ -57,6 +60,7 @@ std::string PlayState::Update()
 {
     tex.Clear();
     scene->Update(tex);
+    tex.Display();
     //scene->Update(*window);
     window->Draw(renderspr);
     return "";

@@ -185,5 +185,5 @@ void SceneManager::LoadScene(std::string filename)
         }
     }
     file.Close();
-    std::cout << "[scene] Level loading took:" << time.GetElapsedTime() << std::endl;
+    std::cout << "[scene] Level loading took:" << time.GetElapsedTime().AsSeconds() << std::endl;
 }

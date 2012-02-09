@@ -6,32 +6,34 @@ Player::Player()
     attributes["teleport"] = true;
 }
 
-bool Player::onCollision(Entity* obj)
+void Player::onCollision(Entity* obj)
 {
-    if(obj->name == "phys_static" && (obj->GetY() - (obj->getspr().GetSize().y / 2)) > (GetY() + (draw.GetSize().y /2)))
+    if(obj->name == "phys_static" && (obj->GetY() - (obj->GetHeight() / 2)) > (GetY() + (GetHeight() /2)))
     {
         can_jump = true;
     }
+}
+
+void Player::onBeginCollision(Entity* obj)
+{
     if(obj->name == "ent_item")
     {
         pickup = obj;
     }
-    else
+}
+
+void Player::onEndCollision(Entity* obj)
+{
+    if(obj == pickup)
     {
         pickup = NULL;
     }
-    return true;
 }
 
 
 void Player::update(SceneManager* scene)
 {
-    if(do_q)
-    {
-        SetX(xq);
-        SetY(yq);
-        do_q = false;
-    }
+    phys_static::update(scene);
     //movement
     if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Up))
     {
@@ -68,18 +70,17 @@ void Player::update(SceneManager* scene)
         //Pickup the item and throw a message
         scene->RemoveEntityFromList(pickup);
         inv.AddItem(pickup->GetTag<std::string>("item"));
-        std::cout << "Picked up " << pickup->GetTag<std::string>("item") << std::endl;
+        if(inv.HasItem(pickup->GetTag<std::string>("item")))
+        {
+            std::cout << "Got the item\n";
+        }
+        else
+        {
+            std::cout << "life sucks\n";
+        }
+        //std::cout << "Picked up " << pickup->GetTag<std::string>("item") << std::endl;
         pickup->Destroy();
         delete pickup;
         pickup = NULL;
     }
-    Vec2 pos = body->GetPosition();
-    draw.SetX(pos.x);
-    draw.SetY(pos.y);
-    draw.SetRotation(body->GetAngle());
-}
-
-Entity* newPlayer(int i)
-{
-    return new Player;
 }

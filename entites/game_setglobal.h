@@ -6,9 +6,7 @@ class game_setglobal : public InvisPhysEntity
 {
     public:
         game_setglobal();
-        virtual bool onCollision(Entity* obj);
+        virtual void onCollision(Entity* obj);
     protected:
     private:
 };
-
-Entity* newGame_setglobal(int i);

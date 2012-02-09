@@ -8,18 +8,6 @@ phys_static::phys_static()
 
 void phys_static::init(Def def)
 {
-    /*draw.SetTexture(*gImageManager.getResource(def.GetString("image")));
-    hw = draw.GetSize().x / 2;
-    hh = draw.GetSize().y / 2;
-    draw.SetOrigin(hw, hh);
-
-    draw.SetX((int)def.GetVal("x"));
-    draw.SetY((int)def.GetVal("y"));
-    lx = (int)def.GetVal("x");
-    ly = (int)def.GetVal("y");
-    draw.SetRotation(def.GetFloat("rotation"));
-    alive = true;
-    mdef = def;*/
     super::init(def);
 
     body = new StaticBody;
@@ -31,19 +19,8 @@ void phys_static::init(Def def)
 
 void phys_static::update(SceneManager* scene)
 {
-    if(do_q)
-    {
-        SetX(xq);
-        SetY(yq);
-        do_q = false;
-    }
+    Entity::update(scene);
     Vec2 pos = body->GetPosition();
-    draw.SetX(pos.x);
-    draw.SetY(pos.y);
+    draw.SetPosition(pos.x, pos.y);
     draw.SetRotation(body->GetAngle());
-}
-
-Entity* newPhys_static(int i)
-{
-    return new phys_static;
 }

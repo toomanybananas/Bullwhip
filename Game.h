@@ -10,10 +10,6 @@
 #include <sstream>
 #include "StateManager.h"
 #include "Constants.h"
-#include <Gwen/Renderers/SFML.h>
-#include <Gwen/Input/SFML.h>
-#include <Gwen/Skins/TexturedBase.h>
-#include <Gwen/Controls/Canvas.h>
 
 #define VERSION 0.1
 
@@ -43,9 +39,7 @@ class Game
         StateManager* state;
         sf::RenderTexture GUI;
         sf::Sprite GUI_sprite;
-        Gwen::Renderer::SFML* render;
-        Gwen::Skin::TexturedBase skin;
-        Gwen::Input::SFML input;
+        sf::Clock counter;
         bool running;
         bool paused;
 };

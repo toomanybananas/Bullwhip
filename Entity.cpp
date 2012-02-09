@@ -8,13 +8,13 @@ Entity::Entity()
 
 void Entity::SetX(float m)
 {
-    draw.SetX(m);
+    draw.SetPosition(m, GetX());
     //pos.x = m;
 }
 
 void Entity::SetY(float m)
 {
-    draw.SetY(m);
+    draw.SetPosition(GetY(), m);
     //pos.y = m;
 }
 
@@ -36,17 +36,18 @@ void Entity::SetYQ(float m)
 void Entity::init(Def def)
 {
     //draw.SetTexture(*gImageManager.getResource(any_cast<std::string>(def.GetVal("image"))));
-    draw.SetTexture(*gImageManager.getResource(def.GetVal<std::string>("image")));
-    hw = draw.GetSize().x / 2;
-    hh = draw.GetSize().y / 2;
+    sf::Texture* tex = gImageManager.getResource(def.GetVal<std::string>("image"));
+    draw.SetTexture(*tex);
+    hw = tex->GetWidth() / 2;
+    hh = tex->GetHeight() / 2;
+    w = tex->GetWidth();
+    h = tex->GetHeight();
     draw.SetOrigin(hw, hh);
 
-    draw.SetX(def.GetVal<int>("x"));
-    draw.SetY(def.GetVal<int>("y"));
+    draw.SetPosition(def.GetVal<int>("x"), def.GetVal<int>("y"));
     lx = def.GetVal<int>("x");
     ly = def.GetVal<int>("y");
     draw.SetRotation(def.GetVal<float>("rotation"));
-    //angle = draw.GetRotation();
     alive = true;
     mdef = def;
 }
@@ -71,10 +72,5 @@ void Entity::update(SceneManager* scene)
         SetY(yq);
         do_q = false;
     }
-}
-
-Entity* newEntity(int i)
-{
-    return new Entity;
 }
 

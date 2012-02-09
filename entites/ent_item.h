@@ -3,17 +3,18 @@
 #ifndef ENT_ITEM_H
 #define ENT_ITEM_H
 
-#include "phys_dynamic.h"
+#include "InvisPhysEntity.h"
 
 
-class ent_item : public phys_dynamic
+class ent_item : public InvisPhysEntity
 {
     public:
         ent_item();
-        bool onCollision(Entity* obj);
+        virtual void init(Def d);
+        virtual void Draw(sf::RenderTarget& win) {win.Draw(draw);};
     protected:
     private:
-        typedef phys_dynamic super;
+        typedef InvisPhysEntity super;
 };
 
 #endif // ENT_ITEM_H
