@@ -5,22 +5,23 @@
 #include <string>
 #include <iostream>
 #include "entites/phys_dynamic.h"
+#include "Actor.h"
 #include "Definition.h"
 #include "Item.h"
 #include "SceneManager.h"
 
-class Player : public phys_dynamic
+class Player : public Actor
 {
     public:
         Player();
-        virtual void onCollision(Entity* obj);
+        //virtual void onCollision(Entity* obj);
         virtual void onBeginCollision(Entity* obj);
         virtual void onEndCollision(Entity* obj);
         virtual void update(SceneManager* scene);
     protected:
-        bool can_jump;
+        //bool can_jump;
         Inventory inv;
         Entity* pickup;
     private:
-        typedef phys_dynamic super;
+        typedef Actor super;
 };

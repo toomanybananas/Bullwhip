@@ -6,13 +6,13 @@ Player::Player()
     attributes["teleport"] = true;
 }
 
-void Player::onCollision(Entity* obj)
+/*void Player::onCollision(Entity* obj)
 {
     if(obj->name == "phys_static" && (obj->GetY() - (obj->GetHeight() / 2)) > (GetY() + (GetHeight() /2)))
     {
         can_jump = true;
     }
-}
+}*/
 
 void Player::onBeginCollision(Entity* obj)
 {
@@ -33,23 +33,26 @@ void Player::onEndCollision(Entity* obj)
 
 void Player::update(SceneManager* scene)
 {
-    phys_static::update(scene);
+    super::update(scene);
     //movement
     if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Up))
     {
-        if(can_jump == true)
+        /*if(can_jump == true)
         {
             body->ApplyForce(Vec2(0.f, -53.f));
             can_jump = false;
-        }
+        }*/
+        Jump();
     }
     if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Right))
     {
-        body->ApplyForce(Vec2(5, 0));
+        //body->ApplyForce(Vec2(5, 0));
+        MoveRight();
     }
     if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Left))
     {
-        body->ApplyForce(Vec2(-5, 0));
+        //body->ApplyForce(Vec2(-5, 0));
+        MoveLeft();
     }
     if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Space))
     {
