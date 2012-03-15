@@ -14,7 +14,7 @@ class Entity;
 class PhysicsBody
 {
     public:
-        virtual void Intialize(Def d, Entity* obj)=0;
+        virtual void Intialize(Entity* obj)=0;
         virtual void SetTransform(Vec2 pos, float angle)=0;
         virtual Vec2 GetPosition()=0;
         virtual float GetAngle()=0;

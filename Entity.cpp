@@ -33,10 +33,10 @@ void Entity::SetYQ(float m)
 }
 
 
-void Entity::init(Def def)
+void Entity::init()
 {
     //draw.SetTexture(*gImageManager.getResource(any_cast<std::string>(def.GetVal("image"))));
-    sf::Texture* tex = gImageManager.getResource(def.GetVal<std::string>("image"));
+    sf::Texture* tex = gImageManager.getResource(GetVal<std::string>("image"));
     draw.SetTexture(*tex);
     hw = tex->GetWidth() / 2;
     hh = tex->GetHeight() / 2;
@@ -44,12 +44,11 @@ void Entity::init(Def def)
     h = tex->GetHeight();
     draw.SetOrigin(hw, hh);
 
-    draw.SetPosition(def.GetVal<int>("x"), def.GetVal<int>("y"));
-    lx = def.GetVal<int>("x");
-    ly = def.GetVal<int>("y");
-    draw.SetRotation(def.GetVal<float>("rotation"));
+    draw.SetPosition(GetVal<int>("x"), GetVal<int>("y"));
+    lx = GetVal<int>("x");
+    ly = GetVal<int>("y");
+    draw.SetRotation(GetVal<float>("rotation"));
     alive = true;
-    mdef = def;
 }
 
 

@@ -18,6 +18,6 @@ void tele_obj::onCollision(Entity* obj)
 
 void tele_obj::update(SceneManager* scene)
 {
-    ox = scene->GetEntity(mdef.GetVal<std::string>("entity"))->GetX();
-    oy = scene->GetEntity(mdef.GetVal<std::string>("entity"))->GetY();
+    ox = scene->GetEntity(GetVal<std::string>("entity"))->GetX();
+    oy = scene->GetEntity(GetVal<std::string>("entity"))->GetY();
 }

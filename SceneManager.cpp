@@ -139,7 +139,7 @@ void SceneManager::LoadScene(std::string filename)
             break;
         }
         Entity* newent = reg->NewEnt(type);
-        Def pdef;
+        //Def pdef;
         while(true)
         {
             //BYTE: TYPE
@@ -154,7 +154,7 @@ void SceneManager::LoadScene(std::string filename)
                 //INT: VALUE
                 std::string h = file.ReadString();
                 int i = file.ReadInt();
-                pdef.SetVal(h, i);
+                newent->SetVal(h, i);
             }
             if(t == 2) //float
             {
@@ -162,7 +162,7 @@ void SceneManager::LoadScene(std::string filename)
                 //FLOAT: VALUE
                 std::string h = file.ReadString();
                 float i = file.ReadFloat();
-                pdef.SetVal(h, i);
+                newent->SetVal(h, i);
             }
             if(t == 3) //string
             {
@@ -170,18 +170,18 @@ void SceneManager::LoadScene(std::string filename)
                 //string: VALUE
                 std::string h = file.ReadString();
                 std::string i = file.ReadString();
-                pdef.SetVal(h, i);
+                newent->SetVal(h, i);
             }
         }
-        newent->init(pdef);
+        newent->init();
         AddEntity(newent);
-        if(pdef.GetVal<std::string>("name") != "")
+        if(newent->GetVal<std::string>("name") != "")
         {
-            SetEntity(pdef.GetVal<std::string>("name"), newent);
+            SetEntity(newent->GetVal<std::string>("name"), newent);
         }
         if(type == "game_spawnpoint")
         {
-            AddSpawn(newent, pdef.GetVal<std::string>("name"));
+            AddSpawn(newent, newent->GetVal<std::string>("name"));
         }
     }
     file.Close();

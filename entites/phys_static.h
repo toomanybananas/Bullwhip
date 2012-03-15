@@ -12,7 +12,7 @@ class phys_static : public Entity
 {
     public:
         phys_static();
-        virtual void init(Def def);
+        virtual void init();
         virtual void SetX(float m) {body->SetTransform(Vec2(m, GetY()), GetRot());};
         virtual void SetY(float m) {body->SetTransform(Vec2(GetX(), m), GetRot());};
 

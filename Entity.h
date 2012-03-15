@@ -19,11 +19,11 @@ ALL POSTITIONS ARE IN PIXELS
 #include "Constants.h"
 
 class SceneManager;
-class Entity
+class Entity : public Def
 {
     public:
         Entity();
-        virtual void init(Def def); //Intialization
+        virtual void init(); //Intialization
 
 
         virtual void SetX(float m); //Setting position
@@ -55,9 +55,9 @@ class Entity
 
         virtual void damage(int dmg); //Incomplete damage system.
 
-        virtual void SetTag(std::string name, boost::any data) {mdef.SetVal(name, data);}; //Functions for accessing mdef.
-        template<class T>
-        T GetTag(std::string name) {return mdef.GetVal<T>(name);};
+        //virtual void SetTag(std::string name, boost::any data) {mdef.SetVal(name, data);}; //Functions for accessing mdef.
+        //template<class T>
+        //T GetTag(std::string name) {return mdef.GetVal<T>(name);};
 
         virtual void onCollision(Entity* obj) {return;}; //Collision callback, used for physics collisions. Called every frame of the collision
         virtual void onBeginCollision(Entity* obj) {return;}; //Called only when the collision starts
@@ -90,7 +90,7 @@ class Entity
 
         bool alive; //Is the object alive? (used in things such as whether to call update or not)
 
-        Def mdef; //Def that is passed during intilization
+        //Def mdef; //Def that is passed during intilization
         std::map<std::string, bool> attributes;
 };
 

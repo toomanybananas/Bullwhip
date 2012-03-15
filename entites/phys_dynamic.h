@@ -11,7 +11,7 @@ class phys_dynamic : public phys_static
 {
     public:
         phys_dynamic();
-        virtual void init(Def def);
+        virtual void init();
         //virtual void Destroy();
     protected:
     private:

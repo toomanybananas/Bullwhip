@@ -72,8 +72,8 @@ void Player::update(SceneManager* scene)
     {
         //Pickup the item and throw a message
         scene->RemoveEntityFromList(pickup);
-        inv.AddItem(pickup->GetTag<std::string>("item"));
-        if(inv.HasItem(pickup->GetTag<std::string>("item")))
+        inv.AddItem(pickup->GetVal<std::string>("item"));
+        if(inv.HasItem(pickup->GetVal<std::string>("item")))
         {
             std::cout << "Got the item\n";
         }

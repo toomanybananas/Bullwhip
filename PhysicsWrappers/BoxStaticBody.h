@@ -8,7 +8,7 @@ class BoxStaticBody : public PhysicsBody
 {
     public:
         BoxStaticBody();
-        virtual void Intialize(Def d, Entity* obj);
+        virtual void Intialize(Entity* obj);
         void SetTransform(Vec2 pos, float angle) {body->SetTransform(pos.toBox(), toRad(angle));};
         Vec2 GetPosition() {return toReg(body->GetPosition());};
         float GetAngle() {return toDeg(body->GetAngle());};

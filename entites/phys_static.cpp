@@ -6,14 +6,14 @@ phys_static::phys_static()
     attributes["physics"] = true;
 }
 
-void phys_static::init(Def def)
+void phys_static::init()
 {
-    super::init(def);
+    super::init();
 
     body = new StaticBody;
-    def.SetVal("hw", hw);
-    def.SetVal("hh", hh);
-    body->Intialize(def, this);
+    SetVal("hw", hw);
+    SetVal("hh", hh);
+    body->Intialize(this);
 }
 
 

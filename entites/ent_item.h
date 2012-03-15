@@ -10,7 +10,7 @@ class ent_item : public InvisPhysEntity
 {
     public:
         ent_item();
-        virtual void init(Def d);
+        virtual void init();
         virtual void Draw(sf::RenderTarget& win) {win.Draw(draw);};
     protected:
     private:

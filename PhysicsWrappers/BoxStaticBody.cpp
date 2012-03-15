@@ -1,17 +1,18 @@
 #include "BoxStaticBody.h"
 #include "../Constants.h"
+#include "../Entity.h"
 BoxStaticBody::BoxStaticBody()
 {
     //ctor
     type = BODY_STATIC;
 }
 
-void BoxStaticBody::Intialize(Def d, Entity* obj)
+void BoxStaticBody::Intialize(Entity* obj)
 {
-    body_def.position.Set(d.GetVal<int>("x") * SCALE, d.GetVal<int>("y") * SCALE);
-    body_def.angle = toRad(d.GetVal<float>("rotation"));
+    body_def.position.Set(obj->GetVal<int>("x") * SCALE, obj->GetVal<int>("y") * SCALE);
+    body_def.angle = toRad(obj->GetVal<float>("rotation"));
     body_def.userData = obj;
-    bounding.SetAsBox( (d.GetVal<int>("hw")) * SCALE, (d.GetVal<int>("hh")) * SCALE);
+    bounding.SetAsBox( (obj->GetVal<int>("hw")) * SCALE, (obj->GetVal<int>("hh")) * SCALE);
 
     Def c;
     c.SetVal("def", body_def);

@@ -7,5 +7,5 @@ game_setglobal::game_setglobal()
 
 void game_setglobal::onCollision(Entity* obj)
 {
-    Global.SetVal(mdef.GetVal<std::string>("gname"), mdef.GetVal<std::string>("gval"));
+    Global.SetVal(GetVal<std::string>("gname"), GetVal<std::string>("gval"));
 }

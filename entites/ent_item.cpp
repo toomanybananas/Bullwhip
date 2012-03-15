@@ -6,8 +6,8 @@ ent_item::ent_item()
     name = "ent_item";
 }
 
-void ent_item::init(Def def)
+void ent_item::init()
 {
-    Entity::init(def);
-    super::init(def);
+    Entity::init();
+    super::init();
 }

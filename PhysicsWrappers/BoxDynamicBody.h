@@ -6,7 +6,7 @@ class BoxDynamicBody : public BoxStaticBody
 {
     public:
         BoxDynamicBody();
-        void Intialize(Def d, Entity* obj);
+        void Intialize(Entity* obj);
     protected:
         b2FixtureDef fix_def;
         b2Fixture* fix;

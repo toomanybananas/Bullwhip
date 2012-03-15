@@ -6,15 +6,14 @@ InvisPhysEntity::InvisPhysEntity()
     attributes["physics"] = true;
 }
 
-void InvisPhysEntity::init(Def def)
+void InvisPhysEntity::init()
 {
-    draw.SetPosition(def.GetVal<int>("x"), def.GetVal<int>("y"));
+    draw.SetPosition(GetVal<int>("x"), GetVal<int>("y"));
     alive = true;
-    mdef = def;
 
     body = new TriggerBody;
-    def.SetVal("hw", hw);
-    def.SetVal("hh", hh);
-    body->Intialize(def, this);
+    SetVal("hw", hw);
+    SetVal("hh", hh);
+    body->Intialize(this);
 }
 

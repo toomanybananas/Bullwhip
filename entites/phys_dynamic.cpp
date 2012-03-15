@@ -6,12 +6,12 @@ phys_dynamic::phys_dynamic()
     attributes["physics"] = true;
 }
 
-void phys_dynamic::init(Def def)
+void phys_dynamic::init()
 {
-    Entity::init(def);
+    Entity::init();
 
     body = new DynamicBody;
-    def.SetVal("hw", hw);
-    def.SetVal("hh", hh);
-    body->Intialize(def, this);
+    SetVal("hw", hw);
+    SetVal("hh", hh);
+    body->Intialize(this);
 }

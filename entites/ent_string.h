@@ -5,7 +5,7 @@ class ent_string : public Entity
 {
     public:
         ent_string();
-        virtual void init(Def def);
+        virtual void init();
         virtual void Draw(sf::RenderTarget& win) {win.Draw(str);};
     protected:
         sf::Text str;

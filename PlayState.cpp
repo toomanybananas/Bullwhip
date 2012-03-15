@@ -34,12 +34,12 @@ void PlayState::Init(sf::RenderWindow* win)
     scene->LoadScene("level.bin");
 
     player = reg->NewEnt("player");
-    Def pdef;
-    pdef.SetVal("x", 100);
-    pdef.SetVal("y", 100);
-    pdef.SetVal("rotation", 0.0f);
-    pdef.SetString("image", "player.png");
-    player->init(pdef);
+    //Def pdef;
+    player->SetVal("x", 100);
+    player->SetVal("y", 100);
+    player->SetVal("rotation", 0.0f);
+    player->SetString("image", "player.png");
+    player->init();
     //scene->Spawn(*player, bullwhipini.GetValue("Bullwhip", "spawnpoint", NULL));
     scene->Spawn(*player, "spawn_default");
     scene->SetEntity("center", player);

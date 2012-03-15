@@ -4,7 +4,7 @@
 class Actor : public phys_dynamic
 {
     public:
-        virtual void init(Def d);
+        virtual void init();
         virtual void MoveRight();
         virtual void MoveLeft();
         virtual void Jump();
@@ -13,7 +13,7 @@ class Actor : public phys_dynamic
         //virtual void onEndCollision(Entity* obj);
     private:
         bool can_jump;
-        int jump_force;
-        int move_speed;
-        bool can_move;
+        //int jump_force;
+        //int move_speed;
+        //bool can_move;
 };

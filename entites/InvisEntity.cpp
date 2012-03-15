@@ -5,11 +5,10 @@ InvisEntity::InvisEntity()
     //ctor
 }
 
-void InvisEntity::init(Def def)
+void InvisEntity::init()
 {
-    draw.SetPosition(def.GetVal<int>("x"), def.GetVal<int>("y"));
-    lx = def.GetVal<int>("x");
-    ly = def.GetVal<int>("y");
+    draw.SetPosition(GetVal<int>("x"), GetVal<int>("y"));
+    lx = GetVal<int>("x");
+    ly = GetVal<int>("y");
     alive = true;
-    mdef = def;
 }

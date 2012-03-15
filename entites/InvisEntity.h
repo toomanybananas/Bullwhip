@@ -11,7 +11,7 @@ class InvisEntity : public Entity
     public:
         InvisEntity();
         virtual void Draw(sf::RenderTarget& win) {};
-        virtual void init(Def def);
+        virtual void init();
     protected:
     private:
         typedef Entity super;

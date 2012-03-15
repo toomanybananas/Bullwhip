@@ -8,7 +8,7 @@ class BoxTriggerBody : public BoxDynamicBody
 {
     public:
         BoxTriggerBody();
-        void Intialize(Def d, Entity* obj);
+        void Intialize(Entity* obj);
     protected:
     private:
 };
