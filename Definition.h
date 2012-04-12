@@ -10,6 +10,7 @@
 #define DEF_STRING 3
 #define DEF_BOOL 4
 #define DEF_ANY 5
+#define DEF_DEF 6
 using boost::any_cast;
 class Def
 {
@@ -18,6 +19,7 @@ class Def
         void SetVal(std::string name, int val);
         void SetVal(std::string name, bool val);
         void SetVal(std::string name, float val);
+        void SetVal(std::string name, Def val);
         void SetVal(std::string name, boost::any val);
         void SetString(std::string name, std::string val) {SetVal(name, val);}; //Compatibility reasons
         void SetVal(std::string name, std::string val);
@@ -28,6 +30,8 @@ class Def
         int GetType(std::string name) {return types[name];};
         void Load(std::string filename);
         void Save(std::string filename);
+        void Load(inFile& f);
+        void Save(outFile& f);
     protected:
         std::map<std::string, boost::any> vals;
         std::map<std::string, bool> define;
