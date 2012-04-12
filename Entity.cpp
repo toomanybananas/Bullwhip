@@ -8,13 +8,13 @@ Entity::Entity()
 
 void Entity::SetX(float m)
 {
-    draw.SetPosition(m, GetX());
+    draw.setPosition(m, GetX());
     //pos.x = m;
 }
 
 void Entity::SetY(float m)
 {
-    draw.SetPosition(GetY(), m);
+    draw.setPosition(GetY(), m);
     //pos.y = m;
 }
 
@@ -36,18 +36,28 @@ void Entity::SetYQ(float m)
 void Entity::init()
 {
     //draw.SetTexture(*gImageManager.getResource(any_cast<std::string>(def.GetVal("image"))));
-    sf::Texture* tex = gImageManager.getResource(GetVal<std::string>("image"));
-    draw.SetTexture(*tex);
-    hw = tex->GetWidth() / 2;
-    hh = tex->GetHeight() / 2;
-    w = tex->GetWidth();
-    h = tex->GetHeight();
-    draw.SetOrigin(hw, hh);
+    isasset = false;
+    sf::Texture* tex;
+    if(IsDefined("image"))
+        tex = gImageManager.getResource(GetVal<std::string>("image"));
+    else //assume that an asset file is being referenced
+    {
+        asset.Load(GetVal<std::string>("asset"));
+        tex = gImageManager.getResource(asset.GetVal<std::string>("image"));
+        //load some other crap
+        isasset = true;
+    }
+    draw.setTexture(*tex);
+    hw = tex->getWidth() / 2;
+    hh = tex->getHeight() / 2;
+    w = tex->getWidth();
+    h = tex->getHeight();
+    draw.setOrigin(hw, hh);
 
-    draw.SetPosition(GetVal<int>("x"), GetVal<int>("y"));
+    draw.setPosition(GetVal<int>("x"), GetVal<int>("y"));
     lx = GetVal<int>("x");
     ly = GetVal<int>("y");
-    draw.SetRotation(GetVal<float>("rotation"));
+    draw.setRotation(GetVal<float>("rotation"));
     alive = true;
 }
 

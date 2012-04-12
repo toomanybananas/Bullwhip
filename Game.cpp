@@ -2,15 +2,15 @@
 
 void Game::init(std::string title, int x, int y)
 {
-    win.Create(sf::VideoMode(800, 600, 32), title);
+    win.create(sf::VideoMode(800, 600, 32), title);
     std::cout << "[core] initialized screen\n";
     running = true;
-    win.SetFramerateLimit(60);
+    win.setFramerateLimit(60);
     state = new StateManager;
     state->Init(&win);
-    fpsfont.LoadFromFile("slkscr.ttf");
-    fps.SetFont(fpsfont);
-    fps.SetCharacterSize(8);
+    fpsfont.loadFromFile("slkscr.ttf");
+    fps.setFont(fpsfont);
+    fps.setCharacterSize(8);
     std::cout << "[core] fps counter loaded\n";
     Global.SetVal("run", true);
 }
@@ -18,22 +18,22 @@ void Game::init(std::string title, int x, int y)
 
 void Game::draw()
 {
-    win.Clear();
+    win.clear();
     state->Update();
-    win.SetView(win.GetDefaultView());
+    win.setView(win.getDefaultView());
     sf::Event ev;
-    while(win.PollEvent(ev))
+    while(win.pollEvent(ev))
     {
-        if(ev.Type == sf::Event::Closed)
+        if(ev.type == sf::Event::Closed)
         {
             Global.SetVal("run", false);
         }
     }
     std::stringstream ss;
-    ss <<  (1.f / counter.Restart().AsSeconds());
-    fps.SetString(ss.str());
-    win.Draw(fps);
-    win.Display();
+    ss <<  (1.f / counter.restart().asSeconds());
+    fps.setString(ss.str());
+    win.draw(fps);
+    win.display();
     if(Global.GetVal<bool>("run") == false)
     {
         running = false;

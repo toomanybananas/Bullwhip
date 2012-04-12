@@ -11,7 +11,7 @@ class ent_item : public InvisPhysEntity
     public:
         ent_item();
         virtual void init();
-        virtual void Draw(sf::RenderTarget& win) {win.Draw(draw);};
+        virtual void Draw(sf::RenderTarget& win) {win.draw(draw);};
     protected:
     private:
         typedef InvisPhysEntity super;

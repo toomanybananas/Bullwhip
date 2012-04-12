@@ -2,8 +2,8 @@
 #pragma once
 #include <string>
 #include <map>
-#include <windows.h>
 #include <boost/any.hpp>
+#include "File.h"
 #define DEF_INT 1
 #define DEF_UNDEF 0
 #define DEF_FLOAT 2
@@ -26,10 +26,11 @@ class Def
         //virtual boost::any GetVal(std::string name) {return vals[name];};
         bool IsDefined(std::string name) {return define[name];};
         int GetType(std::string name) {return types[name];};
-        void SaveDef(std::string filename) {};
+        void Load(std::string filename);
+        void Save(std::string filename);
     protected:
         std::map<std::string, boost::any> vals;
         std::map<std::string, bool> define;
-        std::map<std::string, BYTE> types;
+        std::map<std::string, int> types;
 };
 

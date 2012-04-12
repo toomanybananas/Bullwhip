@@ -7,14 +7,14 @@ ent_string::ent_string()
 
 void ent_string::init()
 {
-    str.SetPosition(GetVal<int>("x"), GetVal<int>("y"));
+    str.setPosition(GetVal<int>("x"), GetVal<int>("y"));
     lx = GetVal<int>("x");
     ly = GetVal<int>("y");
-    str.SetRotation(GetVal<float>("rotation"));
+    str.setRotation(GetVal<float>("rotation"));
     alive = true;
-    f.LoadFromFile("slkscr.ttf");
-    str.SetFont(f);
-    str.SetCharacterSize(GetVal<int>("size"));
-    str.SetString(GetVal<std::string>("text"));
-    str.SetColor(sf::Color(GetVal<int>("colorr"), GetVal<int>("colorg"), GetVal<int>("colorb")));
+    f.loadFromFile("slkscr.ttf");
+    str.setFont(f);
+    str.setCharacterSize(GetVal<int>("size"));
+    str.setString(GetVal<std::string>("text"));
+    str.setColor(sf::Color(GetVal<int>("colorr"), GetVal<int>("colorg"), GetVal<int>("colorb")));
 }

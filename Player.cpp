@@ -35,7 +35,7 @@ void Player::update(SceneManager* scene)
 {
     super::update(scene);
     //movement
-    if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Up))
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
     {
         /*if(can_jump == true)
         {
@@ -44,21 +44,21 @@ void Player::update(SceneManager* scene)
         }*/
         Jump();
     }
-    if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Right))
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
     {
         //body->ApplyForce(Vec2(5, 0));
         MoveRight();
     }
-    if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Left))
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
     {
         //body->ApplyForce(Vec2(-5, 0));
         MoveLeft();
     }
-    if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Space))
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
     {
         body->ApplyTorque(100);
     }
-    if((!sf::Keyboard::IsKeyPressed(sf::Keyboard::Right)) && (!sf::Keyboard::IsKeyPressed(sf::Keyboard::Left)))
+    if((!sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) && (!sf::Keyboard::isKeyPressed(sf::Keyboard::Left)))
     {
         body->SetLinearVelocity(Vec2(body->GetLinearVelocity().x * 0.90f, body->GetLinearVelocity().y));
     }
@@ -68,7 +68,7 @@ void Player::update(SceneManager* scene)
     {
         //TODO: Draw 'Press key to pickup' message
     }
-    if(pickup != NULL && sf::Keyboard::IsKeyPressed(sf::Keyboard::E))
+    if(pickup != NULL && sf::Keyboard::isKeyPressed(sf::Keyboard::E))
     {
         //Pickup the item and throw a message
         scene->RemoveEntityFromList(pickup);

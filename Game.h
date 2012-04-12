@@ -24,10 +24,10 @@ class Game
 
         sf::RenderWindow& getwin() {return win;};
 
-        void clear() {win.Clear();};
-        void display() {win.Display();};
+        void clear() {win.clear();};
+        void display() {win.display();};
 
-        bool gEvent(sf::Event &ev) {return win.PollEvent(ev);};
+        bool gEvent(sf::Event &ev) {return win.pollEvent(ev);};
 
         void HandleEvent(sf::Event& event) {};
         void Quit() {running = false;};

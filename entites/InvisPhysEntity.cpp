@@ -8,7 +8,7 @@ InvisPhysEntity::InvisPhysEntity()
 
 void InvisPhysEntity::init()
 {
-    draw.SetPosition(GetVal<int>("x"), GetVal<int>("y"));
+    draw.setPosition(GetVal<int>("x"), GetVal<int>("y"));
     alive = true;
 
     body = new TriggerBody;

@@ -43,9 +43,9 @@ void PlayState::Init(sf::RenderWindow* win)
     //scene->Spawn(*player, bullwhipini.GetValue("Bullwhip", "spawnpoint", NULL));
     scene->Spawn(*player, "spawn_default");
     scene->SetEntity("center", player);
-    tex.Create(800, 600);
-    renderspr.SetTexture(tex.GetTexture());
-    renderspr.SetPosition(0, 0);
+    tex.create(800, 600);
+    renderspr.setTexture(tex.getTexture());
+    renderspr.setPosition(0, 0);
 
     // A basic item
     Def item;
@@ -58,10 +58,10 @@ void PlayState::Init(sf::RenderWindow* win)
 
 std::string PlayState::Update()
 {
-    tex.Clear();
+    tex.clear();
     scene->Update(tex);
-    tex.Display();
+    tex.display();
     //scene->Update(*window);
-    window->Draw(renderspr);
+    window->draw(renderspr);
     return "";
 }

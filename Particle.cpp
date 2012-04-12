@@ -16,14 +16,14 @@ void Particle::Init(sf::Vector2f p, sf::Color c, sf::Vector2f s, sf::Vector2f g,
     gravity = g;
     lifetime = l;
     alive = true;
-    life.Restart();
+    life.restart();
 }
 
 bool Particle::Update()
 {
     pos += speed;
     speed += gravity;
-    if(life.GetElapsedTime().AsMilliseconds() >= lifetime)
+    if(life.getElapsedTime().asMilliseconds() >= lifetime)
     {
         return true;
     }

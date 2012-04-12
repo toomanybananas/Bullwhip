@@ -21,6 +21,6 @@ void phys_static::update(SceneManager* scene)
 {
     Entity::update(scene);
     Vec2 pos = body->GetPosition();
-    draw.SetPosition(pos.x, pos.y);
-    draw.SetRotation(body->GetAngle());
+    draw.setPosition(pos.x, pos.y);
+    draw.setRotation(body->GetAngle());
 }

@@ -36,12 +36,12 @@ class Entity : public Def
         virtual int GetHeight() {return h;};
 
 
-        virtual float GetX() {return draw.GetPosition().x;}; //Getting position
-        virtual float GetY() {return draw.GetPosition().y;};
+        virtual float GetX() {return draw.getPosition().x;}; //Getting position
+        virtual float GetY() {return draw.getPosition().y;};
 
 
-        virtual void SetRot(float m) {draw.SetRotation(m);angle = m;}; //Getting and setting rotation angle (Degrees)
-        virtual float GetRot() {return draw.GetRotation();};
+        virtual void SetRot(float m) {draw.setRotation(m);angle = m;}; //Getting and setting rotation angle (Degrees)
+        virtual float GetRot() {return draw.getRotation();};
 
 
         virtual void update(SceneManager* scene);   //Update the basic components, don't overrider unless you need to add more
@@ -68,7 +68,7 @@ class Entity : public Def
 
         std::string name; //Quick getting the name of the entity eg phys_static
 
-        virtual void Draw(sf::RenderTarget& win) {win.Draw(draw);}; //Drawing function, is called by the scene manager
+        virtual void Draw(sf::RenderTarget& win) {win.draw(draw);}; //Drawing function, is called by the scene manager
         virtual void Destroy() {}; //Unfinished destruction function. Use right before deleting.
 
 
@@ -90,7 +90,8 @@ class Entity : public Def
 
         bool alive; //Is the object alive? (used in things such as whether to call update or not)
 
-        //Def mdef; //Def that is passed during intilization
+        Def asset; //def loaded for asset stuff
+        bool isasset;
         std::map<std::string, bool> attributes;
 };
 

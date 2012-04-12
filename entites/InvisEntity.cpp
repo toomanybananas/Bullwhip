@@ -7,7 +7,7 @@ InvisEntity::InvisEntity()
 
 void InvisEntity::init()
 {
-    draw.SetPosition(GetVal<int>("x"), GetVal<int>("y"));
+    draw.setPosition(GetVal<int>("x"), GetVal<int>("y"));
     lx = GetVal<int>("x");
     ly = GetVal<int>("y");
     alive = true;

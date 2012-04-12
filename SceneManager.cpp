@@ -22,7 +22,7 @@ void SceneManager::Update(sf::RenderTarget& win)
     phys_world->Step(1.f / 60.f);
 
     //Parse entites
-    win.SetView(v);
+    win.setView(v);
     for(unsigned int i = 0; i < entites.size(); i++)
     {
         //Update entity
@@ -31,9 +31,9 @@ void SceneManager::Update(sf::RenderTarget& win)
     }
     if(specents["center"] != NULL)
     {
-        v.SetCenter(specents["center"]->GetX(), specents["center"]->GetY());
+        v.setCenter(specents["center"]->GetX(), specents["center"]->GetY());
     }
-    win.SetView(win.GetDefaultView());
+    win.setView(win.getDefaultView());
 }
 
 void SceneManager::Init(Vec2 gravity)
@@ -41,8 +41,8 @@ void SceneManager::Init(Vec2 gravity)
     phys_world = new Physics2D;
     phys_world->Init(gravity);
     std::cout << "[scene][phys] intialized physics\n";
-    v.SetSize(800, 600);
-    v.SetCenter(100, 100);
+    v.setSize(800, 600);
+    v.setCenter(100, 100);
     std::cout << "[scene] set views\n";
 }
 
@@ -185,5 +185,5 @@ void SceneManager::LoadScene(std::string filename)
         }
     }
     file.Close();
-    std::cout << "[scene] Level loading took:" << time.GetElapsedTime().AsSeconds() << std::endl;
+    std::cout << "[scene] Level loading took:" << time.getElapsedTime().asSeconds() << std::endl;
 }
