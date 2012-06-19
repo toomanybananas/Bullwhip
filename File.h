@@ -3,8 +3,8 @@
 #include <fstream>
 #include <string>
 #include <sstream>
-#include <windows.h>
-
+//#include <windows.h>
+typedef unsigned char BYTE;
 class inFile
 {
     public:

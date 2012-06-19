@@ -8,7 +8,7 @@ BoxWorld::BoxWorld()
 
 void BoxWorld::Init(Vec2 gravity)
 {
-    world = new b2World(gravity.toBox(), true);
+    world = new b2World(gravity.toBox());
     bclisten = new BullwhipContactListener;
     world->SetContactListener(bclisten);
 }

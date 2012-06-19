@@ -1,13 +1,12 @@
 #include <iostream>
 #include <string>
 #include <math.h>
-#include <windows.h>
 #include <SFML/Graphics.hpp>
 #include "Game.h"
 #include "SimpleINI/SimpleIni.h"
 #include "PlayState.h"
 #include "MainMenuState.h"
-//Version is 0.3
+
 
 using namespace std;
 int main()

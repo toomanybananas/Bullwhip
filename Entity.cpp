@@ -48,10 +48,10 @@ void Entity::init()
         isasset = true;
     }
     draw.setTexture(*tex);
-    hw = tex->getWidth() / 2;
-    hh = tex->getHeight() / 2;
-    w = tex->getWidth();
-    h = tex->getHeight();
+    hw = tex->getSize().x / 2;
+    hh = tex->getSize().y / 2;
+    w = tex->getSize().x;
+    h = tex->getSize().y;
     draw.setOrigin(hw, hh);
 
     draw.setPosition(GetVal<int>("x"), GetVal<int>("y"));

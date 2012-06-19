@@ -14,7 +14,6 @@
 #include "SimpleINI/SimpleIni.h"
 #include "entites/game_setglobal.h"
 #include "entites/ent_item.h"
-#include <Gwen/Controls/Button.h>
 
 class PlayState : public State
 {
@@ -30,7 +29,6 @@ class PlayState : public State
         bool alive;
         sf::RenderTexture tex;
         sf::Sprite renderspr;
-        Gwen::Controls::Button* play;
     private:
         typedef State super;
 };
