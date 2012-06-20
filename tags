@@ -4,6 +4,14 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+ACLOCAL	Makefile	/^ACLOCAL = ${SHELL} \/home\/neos\/code\/bullwhip\/Bullwhip\/missing --run aclocal-1.12$/;"	m
+ACLOCAL_M4	Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+AMTAR	Makefile	/^AMTAR = $${TAR-tar}$/;"	m
+AM_RECURSIVE_TARGETS	Makefile	/^AM_RECURSIVE_TARGETS = cscope$/;"	m
+AUTOCONF	Makefile	/^AUTOCONF = ${SHELL} \/home\/neos\/code\/bullwhip\/Bullwhip\/missing --run autoconf$/;"	m
+AUTOHEADER	Makefile	/^AUTOHEADER = ${SHELL} \/home\/neos\/code\/bullwhip\/Bullwhip\/missing --run autoheader$/;"	m
+AUTOMAKE	Makefile	/^AUTOMAKE = ${SHELL} \/home\/neos\/code\/bullwhip\/Bullwhip\/missing --run automake-1.12$/;"	m
+AWK	Makefile	/^AWK = gawk$/;"	m
 Actor	Actor.h	/^class Actor : public phys_dynamic$/;"	c	inherits:phys_dynamic
 Actor::Jump	Actor.cpp	/^void Actor::Jump()$/;"	f	class:Actor	signature:()
 Actor::Jump	Actor.h	/^        virtual void Jump();$/;"	p	class:Actor	access:public	signature:()
@@ -22,7 +30,7 @@ AddEntity	SceneManager.h	/^        virtual void AddEntity (Entity& obj); \/\/Add
 AddEntity	SceneManager.h	/^        virtual void AddEntity (Entity* obj);$/;"	p	class:SceneManager	access:public	signature:(Entity* obj)
 AddEntry	SimpleINI/SimpleIni.h	/^    SI_Error AddEntry($/;"	p	class:CSimpleIniTempl	access:private	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pValue, const SI_CHAR * a_pComment, bool a_bForceReplace, bool a_bCopyStrings )
 AddEntry	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::AddEntry($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pValue, const SI_CHAR * a_pComment, bool a_bForceReplace, bool a_bCopyStrings )
-AddFactory	EntityRegistry.h	/^        void AddFactory(std::string name, Entity* (*func)(int)) {factorys[name] = func;};$/;"	f	class:EntityRegistry	access:public	signature:(std::string name, Entity* (*func)(int))
+AddFactory	EntityRegistry.h	/^        void AddFactory(std::string name, Entity* (*func)(void)) {factorys[name] = func;};$/;"	f	class:EntityRegistry	access:public	signature:(std::string name, Entity* (*func)(void))
 AddItem	Item.h	/^        void AddItem(std::string itemname) {items.push_back(Items.GetItem(itemname));};$/;"	f	class:Inventory	access:public	signature:(std::string itemname)
 AddLine	Console.cpp	/^void Console::AddLine(std::string line)$/;"	f	class:Console	signature:(std::string line)
 AddLine	Console.h	/^        void AddLine(std::string line);$/;"	p	class:Console	access:public	signature:(std::string line)
@@ -109,9 +117,15 @@ BullwhipContactListener::EndContact	BullwhipContactListener.cpp	/^void BullwhipC
 BullwhipContactListener::EndContact	BullwhipContactListener.h	/^        void EndContact(b2Contact* contact);$/;"	p	class:BullwhipContactListener	access:public	signature:(b2Contact* contact)
 BullwhipContactListener::PreSolve	BullwhipContactListener.cpp	/^void BullwhipContactListener::PreSolve(b2Contact* contact, const b2Manifold* oldManifold)$/;"	f	class:BullwhipContactListener	signature:(b2Contact* contact, const b2Manifold* oldManifold)
 BullwhipContactListener::PreSolve	BullwhipContactListener.h	/^        void PreSolve(b2Contact* contact, const b2Manifold* oldManifold);$/;"	p	class:BullwhipContactListener	access:public	signature:(b2Contact* contact, const b2Manifold* oldManifold)
-CC	Makefile	/^CC=g++$/;"	m
-CFLAGS	Makefile	/^CFLAGS=-c -Wall -Wextra$/;"	m
+CC	Makefile	/^CC = gcc$/;"	m
+CCDEPMODE	Makefile	/^CCDEPMODE = depmode=gcc3$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -g -O2$/;"	m
+CONFIG_CLEAN_FILES	Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_VPATH_FILES	Makefile	/^CONFIG_CLEAN_VPATH_FILES =$/;"	m
+CONFIG_HEADER	Makefile	/^CONFIG_HEADER = config.h$/;"	m
 CONSOLE_H	Console.h	2;"	d
+CPPFLAGS	Makefile	/^CPPFLAGS = $/;"	m
+CSCOPE	Makefile	/^CSCOPE = cscope$/;"	m
 CSimpleIni	SimpleINI/SimpleIni.h	3360;"	d
 CSimpleIni	SimpleINI/SimpleIni.h	3364;"	d
 CSimpleIniA	SimpleINI/SimpleIni.h	/^    SI_NoCase<char>,SI_ConvertA<char> >                 CSimpleIniA;$/;"	t
@@ -274,6 +288,15 @@ CSimpleIniTempl::~CSimpleIniTempl	SimpleINI/SimpleIni.h	/^    ~CSimpleIniTempl()
 CSimpleIniTempl::~CSimpleIniTempl	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::~CSimpleIniTempl()$/;"	f	class:CSimpleIniTempl	signature:()
 CSimpleIniW	SimpleINI/SimpleIni.h	/^    SI_NoCase<UChar>,SI_ConvertW<UChar> >               CSimpleIniW;$/;"	t
 CSimpleIniW	SimpleINI/SimpleIni.h	/^    SI_NoCase<wchar_t>,SI_ConvertW<wchar_t> >           CSimpleIniW;$/;"	t
+CTAGS	Makefile	/^CTAGS = ctags$/;"	m
+CXX	Makefile	/^CXX = g++$/;"	m
+CXXCOMPILE	Makefile	/^CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \\$/;"	m
+CXXCPP	Makefile	/^CXXCPP = g++ -E$/;"	m
+CXXDEPMODE	Makefile	/^CXXDEPMODE = depmode=gcc3$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS = -g -O2$/;"	m
+CXXLD	Makefile	/^CXXLD = $(CXX)$/;"	m
+CXXLINK	Makefile	/^CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \\$/;"	m
+CYGPATH_W	Makefile	/^CYGPATH_W = echo$/;"	m
 Close	Console.cpp	/^void Console::Close()$/;"	f	class:Console	signature:()
 Close	Console.h	/^        void Close();$/;"	p	class:Console	access:public	signature:()
 Close	File.cpp	/^void inFile::Close()$/;"	f	class:inFile	signature:()
@@ -325,13 +348,21 @@ CopyString	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERT
 CreateBody	PhysicsWrappers/BoxWorld.cpp	/^void* BoxWorld::CreateBody(Def d)$/;"	f	class:BoxWorld	signature:(Def d)
 CreateBody	PhysicsWrappers/BoxWorld.h	/^        void* CreateBody(Def d);$/;"	p	class:BoxWorld	access:public	signature:(Def d)
 CreateBody	PhysicsWrappers/PhysicsWorld.h	/^        virtual void* CreateBody(Def d)=0;$/;"	p	class:PhysicsWorld	access:public	signature:(Def d)
-DEF_ANY	Definition.h	12;"	d
-DEF_BOOL	Definition.h	11;"	d
-DEF_DEF	Definition.h	13;"	d
-DEF_FLOAT	Definition.h	9;"	d
-DEF_INT	Definition.h	7;"	d
-DEF_STRING	Definition.h	10;"	d
-DEF_UNDEF	Definition.h	8;"	d
+DEFAULT_INCLUDES	Makefile	/^DEFAULT_INCLUDES = -I.$/;"	m
+DEFS	Makefile	/^DEFS = -DHAVE_CONFIG_H$/;"	m
+DEF_ANY	Definition.h	19;"	d
+DEF_BOOL	Definition.h	18;"	d
+DEF_DEF	Definition.h	20;"	d
+DEF_FLOAT	Definition.h	16;"	d
+DEF_INT	Definition.h	14;"	d
+DEF_STRING	Definition.h	17;"	d
+DEF_UNDEF	Definition.h	15;"	d
+DEPDIR	Makefile	/^DEPDIR = .deps$/;"	m
+DISTFILES	Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DIST_ARCHIVES	Makefile	/^DIST_ARCHIVES = $(distdir).tar.gz$/;"	m
+DIST_COMMON	Makefile	/^DIST_COMMON = README $(am__configure_deps) $(srcdir)\/Makefile.am \\$/;"	m
+DIST_SOURCES	Makefile	/^DIST_SOURCES = $(bullwhip_SOURCES)$/;"	m
+DIST_TARGETS	Makefile	/^DIST_TARGETS = dist-gzip$/;"	m
 Data	SimpleINI/SimpleIni.h	/^        const char * Data() { return m_scratch.data(); }$/;"	f	class:CSimpleIniTempl::Converter	access:public	signature:()
 Def	Definition.cpp	/^Def::Def()$/;"	f	class:Def	signature:()
 Def	Definition.h	/^        Def();$/;"	p	class:Def	access:public	signature:()
@@ -379,8 +410,13 @@ Draw	entites/InvisPhysEntity.h	/^        virtual void Draw(sf::RenderTarget& win
 Draw	entites/ent_item.h	/^        virtual void Draw(sf::RenderTarget& win) {win.draw(draw);};$/;"	f	class:ent_item	access:public	signature:(sf::RenderTarget& win)
 Draw	entites/ent_string.h	/^        virtual void Draw(sf::RenderTarget& win) {win.draw(str);};$/;"	f	class:ent_string	access:public	signature:(sf::RenderTarget& win)
 DynamicBody	PhysicsWrappers/Box2DPhysics.h	10;"	d
+ECHO_C	Makefile	/^ECHO_C = $/;"	m
+ECHO_N	Makefile	/^ECHO_N = -n$/;"	m
+ECHO_T	Makefile	/^ECHO_T = $/;"	m
+EGREP	Makefile	/^EGREP = \/usr\/bin\/grep -E$/;"	m
 ENT_ITEM_H	entites/ent_item.h	4;"	d
-EXEC	Makefile	/^EXEC=bullwhip$/;"	m
+ETAGS	Makefile	/^ETAGS = etags$/;"	m
+EXEEXT	Makefile	/^EXEEXT = $/;"	m
 EndContact	BullwhipContactListener.cpp	/^void BullwhipContactListener::EndContact(b2Contact* contact)$/;"	f	class:BullwhipContactListener	signature:(b2Contact* contact)
 EndContact	BullwhipContactListener.h	/^        void EndContact(b2Contact* contact);$/;"	p	class:BullwhipContactListener	access:public	signature:(b2Contact* contact)
 Entity	Entity.cpp	/^Entity::Entity()$/;"	f	class:Entity	signature:()
@@ -400,9 +436,9 @@ Entity::SetAttribute	Entity.h	/^        virtual void SetAttribute(std::string at
 Entity::SetPos	Entity.h	/^        virtual void SetPos(Vec2& m) {pos = m;};$/;"	f	class:Entity	access:public	signature:(Vec2& m)
 Entity::SetRot	Entity.h	/^        virtual void SetRot(float m) {draw.setRotation(m);angle = m;}; \/\/Getting and setting rotation angle (Degrees)$/;"	f	class:Entity	access:public	signature:(float m)
 Entity::SetX	Entity.cpp	/^void Entity::SetX(float m)$/;"	f	class:Entity	signature:(float m)
-Entity::SetX	Entity.h	/^        virtual void SetX(float m); \/\/Setting position$/;"	p	class:Entity	access:public	signature:(float m)
+Entity::SetX	Entity.h	/^        virtual void SetX(float m); $/;"	p	class:Entity	access:public	signature:(float m)
 Entity::SetXQ	Entity.cpp	/^void Entity::SetXQ(float m)$/;"	f	class:Entity	signature:(float m)
-Entity::SetXQ	Entity.h	/^        virtual void SetXQ(float m); \/\/Setting quened postion. Useful for modifiying position during a timestep.$/;"	p	class:Entity	access:public	signature:(float m)
+Entity::SetXQ	Entity.h	/^        virtual void SetXQ(float m); $/;"	p	class:Entity	access:public	signature:(float m)
 Entity::SetY	Entity.cpp	/^void Entity::SetY(float m)$/;"	f	class:Entity	signature:(float m)
 Entity::SetY	Entity.h	/^        virtual void SetY(float m);$/;"	p	class:Entity	access:public	signature:(float m)
 Entity::SetYQ	Entity.cpp	/^void Entity::SetYQ(float m)$/;"	f	class:Entity	signature:(float m)
@@ -421,7 +457,7 @@ Entity::h	Entity.h	/^        int h;$/;"	m	class:Entity	access:protected
 Entity::hh	Entity.h	/^        int hh; \/\/Half height$/;"	m	class:Entity	access:protected
 Entity::hw	Entity.h	/^        int hw; \/\/Half width of sprite$/;"	m	class:Entity	access:protected
 Entity::init	Entity.cpp	/^void Entity::init()$/;"	f	class:Entity	signature:()
-Entity::init	Entity.h	/^        virtual void init(); \/\/Intialization$/;"	p	class:Entity	access:public	signature:()
+Entity::init	Entity.h	/^        virtual void init(); $/;"	p	class:Entity	access:public	signature:()
 Entity::isAlive	Entity.h	/^        virtual bool isAlive() {return alive;}; \/\/returns whether the entity is alive or not.$/;"	f	class:Entity	access:public	signature:()
 Entity::isasset	Entity.h	/^        bool isasset;$/;"	m	class:Entity	access:protected
 Entity::lx	Entity.h	/^        float lx; \/\/Variable to hold current position$/;"	m	class:Entity	access:protected
@@ -439,10 +475,10 @@ Entity::xq	Entity.h	/^        float xq; \/\/Quened position$/;"	m	class:Entity	a
 Entity::yq	Entity.h	/^        float yq;$/;"	m	class:Entity	access:protected
 EntityRegistry	EntityRegistry.h	/^        EntityRegistry() {};$/;"	f	class:EntityRegistry	access:public	signature:()
 EntityRegistry	EntityRegistry.h	/^class EntityRegistry$/;"	c
-EntityRegistry::AddFactory	EntityRegistry.h	/^        void AddFactory(std::string name, Entity* (*func)(int)) {factorys[name] = func;};$/;"	f	class:EntityRegistry	access:public	signature:(std::string name, Entity* (*func)(int))
+EntityRegistry::AddFactory	EntityRegistry.h	/^        void AddFactory(std::string name, Entity* (*func)(void)) {factorys[name] = func;};$/;"	f	class:EntityRegistry	access:public	signature:(std::string name, Entity* (*func)(void))
 EntityRegistry::EntityRegistry	EntityRegistry.h	/^        EntityRegistry() {};$/;"	f	class:EntityRegistry	access:public	signature:()
-EntityRegistry::NewEnt	EntityRegistry.h	/^        Entity* NewEnt(std::string name) {return factorys[name](0);}$/;"	f	class:EntityRegistry	access:public	signature:(std::string name)
-EntityRegistry::factorys	EntityRegistry.h	/^        std::map<std::string, Entity* (*)(int)> factorys;$/;"	m	class:EntityRegistry	access:private
+EntityRegistry::NewEnt	EntityRegistry.h	/^        Entity* NewEnt(std::string name) {return factorys[name]();}$/;"	f	class:EntityRegistry	access:public	signature:(std::string name)
+EntityRegistry::factorys	EntityRegistry.h	/^        std::map<std::string, Entity* (*)(void)> factorys;$/;"	m	class:EntityRegistry	access:private
 Entry	SimpleINI/SimpleIni.h	/^        Entry(const Entry & rhs) { operator=(rhs); }$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const Entry & rhs)
 Entry	SimpleINI/SimpleIni.h	/^        Entry(const SI_CHAR * a_pszItem = NULL, int a_nOrder = 0)$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const SI_CHAR * a_pszItem = NULL, int a_nOrder = 0)
 Entry	SimpleINI/SimpleIni.h	/^        Entry(const SI_CHAR * a_pszItem, const SI_CHAR * a_pszComment, int a_nOrder)$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const SI_CHAR * a_pszItem, const SI_CHAR * a_pszComment, int a_nOrder)
@@ -456,8 +492,10 @@ FindEntry	SimpleINI/SimpleIni.h	/^    bool FindEntry($/;"	p	class:CSimpleIniTemp
 FindEntry	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::FindEntry($/;"	f	class:CSimpleIniTempl	signature:( SI_CHAR *& a_pData, const SI_CHAR *& a_pSection, const SI_CHAR *& a_pKey, const SI_CHAR *& a_pVal, const SI_CHAR *& a_pComment ) const
 FindFileComment	SimpleINI/SimpleIni.h	/^    SI_Error FindFileComment($/;"	p	class:CSimpleIniTempl	access:private	signature:( SI_CHAR *& a_pData, bool a_bCopyStrings )
 FindFileComment	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::FindFileComment($/;"	f	class:CSimpleIniTempl	signature:( SI_CHAR *& a_pData, bool a_bCopyStrings )
+GREP	Makefile	/^GREP = \/usr\/bin\/grep$/;"	m
 GUI	Game.h	/^        sf::RenderTexture GUI;$/;"	m	class:Game	access:private
 GUI_sprite	Game.h	/^        sf::Sprite GUI_sprite;$/;"	m	class:Game	access:private
+GZIP_ENV	Makefile	/^GZIP_ENV = --best$/;"	m
 Game	Game.h	/^class Game$/;"	c
 Game::GUI	Game.h	/^        sf::RenderTexture GUI;$/;"	m	class:Game	access:private
 Game::GUI_sprite	Game.h	/^        sf::Sprite GUI_sprite;$/;"	m	class:Game	access:private
@@ -529,11 +567,39 @@ GetX	entites/phys_static.h	/^        virtual float GetX() {return body->GetPosit
 GetY	Entity.h	/^        virtual float GetY() {return draw.getPosition().y;};$/;"	f	class:Entity	access:public	signature:()
 GetY	entites/phys_static.h	/^        virtual float GetY() {return body->GetPosition().y;};$/;"	f	class:phys_static	access:public	signature:()
 Global	Constants.cpp	/^Def Global;$/;"	v
+HAVE_BOOST_ANY_HPP	config.h	5;"	d
+HAVE_BOX2D_BOX2D_H	config.h	8;"	d
+HAVE_INTTYPES_H	config.h	11;"	d
+HAVE_LIBBOX2D	config.h	14;"	d
+HAVE_LIBSFML_GRAPHICS	config.h	17;"	d
+HAVE_LIBSFML_SYSTEM	config.h	20;"	d
+HAVE_LIBSFML_WINDOW	config.h	23;"	d
+HAVE_MEMMOVE	config.h	26;"	d
+HAVE_MEMORY_H	config.h	29;"	d
+HAVE_MEMSET	config.h	32;"	d
+HAVE_POW	config.h	35;"	d
+HAVE_SFML_GRAPHICS_HPP	config.h	38;"	d
+HAVE_SQRT	config.h	41;"	d
+HAVE_STDINT_H	config.h	44;"	d
+HAVE_STDLIB_H	config.h	47;"	d
+HAVE_STRINGS_H	config.h	50;"	d
+HAVE_STRING_H	config.h	53;"	d
+HAVE_STRTOL	config.h	56;"	d
+HAVE_SYS_STAT_H	config.h	59;"	d
+HAVE_SYS_TYPES_H	config.h	62;"	d
+HAVE_UNISTD_H	config.h	65;"	d
+HAVE_WCHAR_H	config.h	68;"	d
 HandleEvent	Game.h	/^        void HandleEvent(sf::Event& event) {};$/;"	f	class:Game	access:public	signature:(sf::Event& event)
 HasItem	Item.cpp	/^bool Inventory::HasItem(std::string name)$/;"	f	class:Inventory	signature:(std::string name)
 HasItem	Item.h	/^        bool HasItem(std::string name);$/;"	p	class:Inventory	access:public	signature:(std::string name)
 IMAGEMANAGER_H_INCLUDED	ImageManager.h	6;"	d
 INCLUDED_SimpleIni_h	SimpleINI/SimpleIni.h	195;"	d
+INSTALL	Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL_DATA	Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_HEADER	Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_PROGRAM	Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_STRIP_PROGRAM	Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
 INVISENTITY_H	entites/InvisEntity.h	5;"	d
 ITEM_H	Item.h	28;"	d
 ImageManager	ImageManager.h	/^class ImageManager : public ResourceManager< sf::Texture > {$/;"	c	inherits:ResourceManager
@@ -614,7 +680,10 @@ Items	Constants.cpp	/^ItemManager Items;$/;"	v
 Jump	Actor.cpp	/^void Actor::Jump()$/;"	f	class:Actor	signature:()
 Jump	Actor.h	/^        virtual void Jump();$/;"	p	class:Actor	access:public	signature:()
 KeyOrder	SimpleINI/SimpleIni.h	/^        struct KeyOrder : std::binary_function<Entry, Entry, bool> {$/;"	s	struct:CSimpleIniTempl::Entry	inherits:std::binary_function	access:public
-LDFLAGS	Makefile	/^LDFLAGS=-lsfml-graphics -lsfml-window -lsfml-system -lBox2D$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS = $/;"	m
+LIBOBJS	Makefile	/^LIBOBJS = $/;"	m
+LIBS	Makefile	/^LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lBox2D $/;"	m
+LTLIBOBJS	Makefile	/^LTLIBOBJS = $/;"	m
 Load	Definition.cpp	/^void Def::Load(inFile& f)$/;"	f	class:Def	signature:(inFile& f)
 Load	Definition.cpp	/^void Def::Load(std::string filename)$/;"	f	class:Def	signature:(std::string filename)
 Load	Definition.h	/^        void Load(inFile& f);$/;"	p	class:Def	access:public	signature:(inFile& f)
@@ -636,6 +705,8 @@ LoadMultiLineText	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_
 LoadOrder	SimpleINI/SimpleIni.h	/^        struct LoadOrder : std::binary_function<Entry, Entry, bool> {$/;"	s	struct:CSimpleIniTempl::Entry	inherits:std::binary_function	access:public
 LoadScene	SceneManager.cpp	/^void SceneManager::LoadScene(std::string filename)$/;"	f	class:SceneManager	signature:(std::string filename)
 LoadScene	SceneManager.h	/^        virtual void LoadScene(std::string filename); \/\/Loads a level from a file.$/;"	p	class:SceneManager	access:public	signature:(std::string filename)
+MAKEINFO	Makefile	/^MAKEINFO = ${SHELL} \/home\/neos\/code\/bullwhip\/Bullwhip\/missing --run makeinfo$/;"	m
+MKDIR_P	Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
 MainMenuState	MainMenuState.cpp	/^MainMenuState::MainMenuState()$/;"	f	class:MainMenuState	signature:()
 MainMenuState	MainMenuState.h	/^        MainMenuState();$/;"	p	class:MainMenuState	access:public	signature:()
 MainMenuState	MainMenuState.h	/^class MainMenuState : public State$/;"	c	inherits:State
@@ -651,9 +722,11 @@ MoveLeft	Actor.cpp	/^void Actor::MoveLeft()$/;"	f	class:Actor	signature:()
 MoveLeft	Actor.h	/^        virtual void MoveLeft();$/;"	p	class:Actor	access:public	signature:()
 MoveRight	Actor.cpp	/^void Actor::MoveRight()$/;"	f	class:Actor	signature:()
 MoveRight	Actor.h	/^        virtual void MoveRight();$/;"	p	class:Actor	access:public	signature:()
-NewEnt	EntityRegistry.h	/^        Entity* NewEnt(std::string name) {return factorys[name](0);}$/;"	f	class:EntityRegistry	access:public	signature:(std::string name)
-NewEnt	EntityRegistry.h	/^Entity* NewEnt(int i)$/;"	f	signature:(int i)
-OBJECTS	Makefile	/^OBJECTS=$(SOURCES:.cpp=.o)$/;"	m
+NORMAL_INSTALL	Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_UNINSTALL	Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+NewEnt	EntityRegistry.h	/^        Entity* NewEnt(std::string name) {return factorys[name]();}$/;"	f	class:EntityRegistry	access:public	signature:(std::string name)
+NewEnt	EntityRegistry.h	/^Entity* NewEnt()$/;"	f	signature:()
+OBJEXT	Makefile	/^OBJEXT = o$/;"	m
 OpenFile	File.cpp	/^void inFile::OpenFile(std::string filename)$/;"	f	class:inFile	signature:(std::string filename)
 OpenFile	File.cpp	/^void outFile::OpenFile(std::string filename)$/;"	f	class:outFile	signature:(std::string filename)
 OpenFile	File.h	/^        void OpenFile(std::string filename);$/;"	p	class:inFile	access:public	signature:(std::string filename)
@@ -663,10 +736,31 @@ OutputMultiLineText	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,S
 OutputWriter	SimpleINI/SimpleIni.h	/^        OutputWriter() { }$/;"	f	class:CSimpleIniTempl::OutputWriter	access:public	signature:()
 OutputWriter	SimpleINI/SimpleIni.h	/^        OutputWriter(const OutputWriter &);             \/\/ disable$/;"	p	class:CSimpleIniTempl::OutputWriter	access:private	signature:(const OutputWriter &)
 OutputWriter	SimpleINI/SimpleIni.h	/^    class OutputWriter {$/;"	c	class:CSimpleIniTempl	access:public
+PACKAGE	Makefile	/^PACKAGE = bullwhip$/;"	m
+PACKAGE	config.h	74;"	d
+PACKAGE_BUGREPORT	Makefile	/^PACKAGE_BUGREPORT = stuff@stuff.com$/;"	m
+PACKAGE_BUGREPORT	config.h	77;"	d
+PACKAGE_NAME	Makefile	/^PACKAGE_NAME = bullwhip$/;"	m
+PACKAGE_NAME	config.h	80;"	d
+PACKAGE_STRING	Makefile	/^PACKAGE_STRING = bullwhip 1.0$/;"	m
+PACKAGE_STRING	config.h	83;"	d
+PACKAGE_TARNAME	Makefile	/^PACKAGE_TARNAME = bullwhip$/;"	m
+PACKAGE_TARNAME	config.h	86;"	d
+PACKAGE_URL	Makefile	/^PACKAGE_URL = $/;"	m
+PACKAGE_URL	config.h	89;"	d
+PACKAGE_VERSION	Makefile	/^PACKAGE_VERSION = 1.0$/;"	m
+PACKAGE_VERSION	config.h	92;"	d
+PATH_SEPARATOR	Makefile	/^PATH_SEPARATOR = :$/;"	m
 PHYSINUSE	PhysicsWrappers/Box2DPhysics.h	15;"	d
 PHYS_DYNAMIC_H	entites/phys_dynamic.h	5;"	d
 PI	JMath.h	4;"	d
 PLAYSTATE_H	PlayState.h	3;"	d
+POST_INSTALL	Makefile	/^POST_INSTALL = :$/;"	m
+POST_UNINSTALL	Makefile	/^POST_UNINSTALL = :$/;"	m
+POW_LIB	Makefile	/^POW_LIB = $/;"	m
+PRE_INSTALL	Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_UNINSTALL	Makefile	/^PRE_UNINSTALL = :$/;"	m
+PROGRAMS	Makefile	/^PROGRAMS = $(bin_PROGRAMS)$/;"	m
 Particle	Particle.cpp	/^Particle::Particle()$/;"	f	class:Particle	signature:()
 Particle	Particle.h	/^        Particle();$/;"	p	class:Particle	access:public	signature:()
 Particle	Particle.h	/^class Particle$/;"	c
@@ -796,9 +890,11 @@ ResourceManager::releaseAllResources	ResourceManager.h	/^    void releaseAllReso
 ResourceManager::releaseResource	ResourceManager.h	/^    void releaseResource( const std::string& strId ) {$/;"	f	class:ResourceManager	access:public	signature:( const std::string& strId )
 ResourceManager::~ResourceManager	ResourceManager.h	/^    virtual ~ResourceManager() {$/;"	f	class:ResourceManager	access:public	signature:()
 ResourceMap	ResourceManager.h	/^    typedef std::map< std::string, T* >     ResourceMap;$/;"	t	class:ResourceManager	access:public
-SCALE	Constants.h	14;"	d
+SCALE	Constants.h	20;"	d
 SCENEMANAGER_H	SceneManager.h	3;"	d
-SFML_DYNAMIC	Game.h	5;"	d
+SET_MAKE	Makefile	/^SET_MAKE = $/;"	m
+SFML_DYNAMIC	Game.h	2;"	d
+SHELL	Makefile	/^SHELL = \/bin\/sh$/;"	m
 SI_ASSERT	SimpleINI/SimpleIni.h	230;"	d
 SI_ASSERT	SimpleINI/SimpleIni.h	232;"	d
 SI_CONVERT_GENERIC	SimpleINI/SimpleIni.h	2615;"	d
@@ -875,8 +971,10 @@ SI_UPDATED	SimpleINI/SimpleIni.h	/^    SI_UPDATED  =  1,   \/\/!< An existing va
 SI_UTF8_SIGNATURE	SimpleINI/SimpleIni.h	246;"	d
 SI_WCHAR_T	SimpleINI/SimpleIni.h	262;"	d
 SI_WCHAR_T	SimpleINI/SimpleIni.h	265;"	d
-SOURCES	Makefile	/^SOURCES=Actor.cpp BullwhipContactListener.cpp Constants.cpp Definition.cpp Entity.cpp File.cpp Game.cpp ImageManager.cpp Item.cpp JMath.cpp MainMenuState.cpp PlayState.cpp Player.cpp SceneManager.cpp State.cpp StateManager.cpp Vec2.cpp main.cpp PhysicsWrappers\/BoxDynamicBody.cpp PhysicsWrappers\/BoxStaticBody.cpp PhysicsWrappers\/BoxTriggerBody.cpp PhysicsWrappers\/BoxWorld.cpp SimpleINI\/ConvertUTF.c entites\/InvisEntity.cpp entites\/InvisPhysEntity.cpp entites\/ent_item.cpp entites\/ent_string.cpp entites\/game_setglobal.cpp entites\/game_spawnpoint.cpp entites\/phys_dynamic.cpp entites\/phys_static.cpp entites\/tele_coord.cpp entites\/tele_obj.cpp$/;"	m
+SOURCES	Makefile	/^SOURCES = $(bullwhip_SOURCES)$/;"	m
 STATE_H	State.h	3;"	d
+STDC_HEADERS	config.h	95;"	d
+STRIP	Makefile	/^STRIP = $/;"	m
 Save	Definition.cpp	/^void Def::Save(outFile& f)$/;"	f	class:Def	signature:(outFile& f)
 Save	Definition.cpp	/^void Def::Save(std::string filename)$/;"	f	class:Def	signature:(std::string filename)
 Save	Definition.h	/^        void Save(outFile& f);$/;"	p	class:Def	access:public	signature:(outFile& f)
@@ -977,10 +1075,10 @@ SetVal	Definition.h	/^        void SetVal(std::string name, int val);$/;"	p	clas
 SetVal	Definition.h	/^        void SetVal(std::string name, std::string val);$/;"	p	class:Def	access:public	signature:(std::string name, std::string val)
 SetValue	SimpleINI/SimpleIni.h	/^    SI_Error SetValue($/;"	f	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pValue, const SI_CHAR * a_pComment = NULL, bool a_bForceReplace = false )
 SetX	Entity.cpp	/^void Entity::SetX(float m)$/;"	f	class:Entity	signature:(float m)
-SetX	Entity.h	/^        virtual void SetX(float m); \/\/Setting position$/;"	p	class:Entity	access:public	signature:(float m)
+SetX	Entity.h	/^        virtual void SetX(float m); $/;"	p	class:Entity	access:public	signature:(float m)
 SetX	entites/phys_static.h	/^        virtual void SetX(float m) {body->SetTransform(Vec2(m, GetY()), GetRot());};$/;"	f	class:phys_static	access:public	signature:(float m)
 SetXQ	Entity.cpp	/^void Entity::SetXQ(float m)$/;"	f	class:Entity	signature:(float m)
-SetXQ	Entity.h	/^        virtual void SetXQ(float m); \/\/Setting quened postion. Useful for modifiying position during a timestep.$/;"	p	class:Entity	access:public	signature:(float m)
+SetXQ	Entity.h	/^        virtual void SetXQ(float m); $/;"	p	class:Entity	access:public	signature:(float m)
 SetY	Entity.cpp	/^void Entity::SetY(float m)$/;"	f	class:Entity	signature:(float m)
 SetY	Entity.h	/^        virtual void SetY(float m);$/;"	p	class:Entity	access:public	signature:(float m)
 SetY	entites/phys_static.h	/^        virtual void SetY(float m) {body->SetTransform(Vec2(GetX(), m), GetRot());};$/;"	f	class:phys_static	access:public	signature:(float m)
@@ -1062,7 +1160,8 @@ Update	StateManager.cpp	/^void StateManager::Update()$/;"	f	class:StateManager	s
 Update	StateManager.h	/^        void Update(); \/\/Updates the current state$/;"	p	class:StateManager	access:public	signature:()
 UsingSpaces	SimpleINI/SimpleIni.h	/^    bool UsingSpaces() const { return m_bSpaces; }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
 VEC2_H	Vec2.h	6;"	d
-VERSION	Game.h	14;"	d
+VERSION	Makefile	/^VERSION = 1.0$/;"	m
+VERSION	config.h	98;"	d
 Vec2	Vec2.cpp	/^Vec2::Vec2()$/;"	f	class:Vec2	signature:()
 Vec2	Vec2.h	/^        Vec2();$/;"	p	class:Vec2	access:public	signature:()
 Vec2	Vec2.h	/^        Vec2(float m, float n) {x = m; y = n;};$/;"	f	class:Vec2	access:public	signature:(float m, float n)
@@ -1090,19 +1189,80 @@ WriteInt	File.cpp	/^void outFile::WriteInt(int ff)$/;"	f	class:outFile	signature
 WriteInt	File.h	/^        void WriteInt(int ff);$/;"	p	class:outFile	access:public	signature:(int ff)
 WriteString	File.cpp	/^void outFile::WriteString(std::string str)$/;"	f	class:outFile	signature:(std::string str)
 WriteString	File.h	/^        void WriteString(std::string str);$/;"	p	class:outFile	access:public	signature:(std::string str)
+abs_builddir	Makefile	/^abs_builddir = \/home\/neos\/code\/bullwhip\/Bullwhip$/;"	m
+abs_srcdir	Makefile	/^abs_srcdir = \/home\/neos\/code\/bullwhip\/Bullwhip$/;"	m
+abs_top_builddir	Makefile	/^abs_top_builddir = \/home\/neos\/code\/bullwhip\/Bullwhip$/;"	m
+abs_top_srcdir	Makefile	/^abs_top_srcdir = \/home\/neos\/code\/bullwhip\/Bullwhip$/;"	m
+ac_ct_CC	Makefile	/^ac_ct_CC = gcc$/;"	m
+ac_ct_CXX	Makefile	/^ac_ct_CXX = g++$/;"	m
+ac_fn_c_find_intX_t	configure	/^ac_fn_c_find_intX_t ()$/;"	f
+ac_fn_c_try_compile	configure	/^ac_fn_c_try_compile ()$/;"	f
+ac_fn_cxx_check_func	configure	/^ac_fn_cxx_check_func ()$/;"	f
+ac_fn_cxx_check_header_compile	configure	/^ac_fn_cxx_check_header_compile ()$/;"	f
+ac_fn_cxx_check_header_mongrel	configure	/^ac_fn_cxx_check_header_mongrel ()$/;"	f
+ac_fn_cxx_check_type	configure	/^ac_fn_cxx_check_type ()$/;"	f
+ac_fn_cxx_try_compile	configure	/^ac_fn_cxx_try_compile ()$/;"	f
+ac_fn_cxx_try_cpp	configure	/^ac_fn_cxx_try_cpp ()$/;"	f
+ac_fn_cxx_try_link	configure	/^ac_fn_cxx_try_link ()$/;"	f
+ac_fn_cxx_try_run	configure	/^ac_fn_cxx_try_run ()$/;"	f
 alive	Entity.h	/^        bool alive; \/\/Is the object alive? (used in things such as whether to call update or not)$/;"	m	class:Entity	access:protected
 alive	MainMenuState.h	/^        bool alive;$/;"	m	class:MainMenuState	access:protected
 alive	Particle.h	/^        bool alive;$/;"	m	class:Particle	access:protected
 alive	PlayState.h	/^        bool alive;$/;"	m	class:PlayState	access:protected
+am__CONFIG_DISTCLEAN_FILES	Makefile	/^am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \\$/;"	m
+am__aclocal_m4_deps	Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/configure.ac$/;"	m
+am__can_run_installinfo	Makefile	/^am__can_run_installinfo = \\$/;"	m
+am__cd	Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__configure_deps	Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__depfiles_maybe	Makefile	/^am__depfiles_maybe = depfiles$/;"	m
+am__distuninstallcheck_listfiles	Makefile	/^am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \\$/;"	m
+am__include	Makefile	/^am__include = include$/;"	m
+am__installdirs	Makefile	/^am__installdirs = "$(DESTDIR)$(bindir)"$/;"	m
+am__leading_dot	Makefile	/^am__leading_dot = .$/;"	m
+am__make_dryrun	Makefile	/^am__make_dryrun = \\$/;"	m
+am__mv	Makefile	/^am__mv = mv -f$/;"	m
+am__post_remove_distdir	Makefile	/^am__post_remove_distdir = $(am__remove_distdir)$/;"	m
+am__quote	Makefile	/^am__quote = $/;"	m
+am__remove_distdir	Makefile	/^am__remove_distdir = \\$/;"	m
+am__tar	Makefile	/^am__tar = $${TAR-tar} chof - "$$tardir"$/;"	m
+am__untar	Makefile	/^am__untar = $${TAR-tar} xf -$/;"	m
+am_bullwhip_OBJECTS	Makefile	/^am_bullwhip_OBJECTS = Actor.$(OBJEXT) \\$/;"	m
 angle	Entity.h	/^        float angle;$/;"	m	class:Entity	access:protected
 args	ScriptManager.h	/^        int args;$/;"	m	class:ScriptManager	access:private
+as_fn_append	config.status	/^  as_fn_append ()$/;"	f
+as_fn_append	configure	/^  as_fn_append ()$/;"	f
+as_fn_arith	config.status	/^  as_fn_arith ()$/;"	f
+as_fn_arith	configure	/^  as_fn_arith ()$/;"	f
+as_fn_error	config.status	/^as_fn_error ()$/;"	f
+as_fn_error	configure	/^as_fn_error ()$/;"	f
+as_fn_executable_p	config.status	/^as_fn_executable_p ()$/;"	f
+as_fn_executable_p	configure	/^as_fn_executable_p ()$/;"	f
+as_fn_exit	config.status	/^as_fn_exit ()$/;"	f
+as_fn_exit	configure	/^as_fn_exit ()$/;"	f
+as_fn_failure	configure	/^as_fn_failure () { as_fn_return 1; }$/;"	f
+as_fn_mkdir_p	config.status	/^as_fn_mkdir_p ()$/;"	f
+as_fn_mkdir_p	configure	/^as_fn_mkdir_p ()$/;"	f
+as_fn_ret_failure	configure	/^as_fn_ret_failure () { return 1; }$/;"	f
+as_fn_ret_success	configure	/^as_fn_ret_success () { return 0; }$/;"	f
+as_fn_set_status	config.status	/^as_fn_set_status ()$/;"	f
+as_fn_set_status	configure	/^as_fn_set_status ()$/;"	f
+as_fn_success	configure	/^as_fn_success () { as_fn_return 0; }$/;"	f
+as_fn_unset	config.status	/^as_fn_unset ()$/;"	f
+as_fn_unset	configure	/^as_fn_unset ()$/;"	f
 asset	Entity.h	/^        Def asset; \/\/def loaded for asset stuff$/;"	m	class:Entity	access:protected
 attributes	Entity.h	/^        std::map<std::string, bool> attributes;$/;"	m	class:Entity	access:protected
 bclisten	PhysicsWrappers/BoxWorld.h	/^        BullwhipContactListener* bclisten;$/;"	m	class:BoxWorld	access:protected
+bin_PROGRAMS	Makefile	/^bin_PROGRAMS = bullwhip$(EXEEXT)$/;"	m
+bindir	Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
 body	PhysicsWrappers/BoxStaticBody.h	/^        b2Body* body;$/;"	m	class:BoxStaticBody	access:protected
 body	entites/phys_static.h	/^        PhysicsBody* body; \/\/The actual physics body object.$/;"	m	class:phys_static	access:protected
 body_def	PhysicsWrappers/BoxStaticBody.h	/^        b2BodyDef body_def;$/;"	m	class:BoxStaticBody	access:protected
 bounding	PhysicsWrappers/BoxStaticBody.h	/^        b2PolygonShape bounding;$/;"	m	class:BoxStaticBody	access:protected
+build_alias	Makefile	/^build_alias = $/;"	m
+builddir	Makefile	/^builddir = .$/;"	m
+bullwhip_LDADD	Makefile	/^bullwhip_LDADD = $(LDADD)$/;"	m
+bullwhip_OBJECTS	Makefile	/^bullwhip_OBJECTS = $(am_bullwhip_OBJECTS)$/;"	m
+bullwhip_SOURCES	Makefile	/^bullwhip_SOURCES = Actor.cpp BullwhipContactListener.cpp Constants.cpp Definition.cpp Entity.cpp File.cpp Game.cpp ImageManager.cpp Item.cpp JMath.cpp MainMenuState.cpp PlayState.cpp Player.cpp SceneManager.cpp State.cpp StateManager.cpp Vec2.cpp main.cpp PhysicsWrappers\/BoxDynamicBody.cpp PhysicsWrappers\/BoxStaticBody.cpp PhysicsWrappers\/BoxTriggerBody.cpp PhysicsWrappers\/BoxWorld.cpp entites\/InvisEntity.cpp entites\/InvisPhysEntity.cpp entites\/ent_item.cpp entites\/ent_string.cpp entites\/game_setglobal.cpp entites\/game_spawnpoint.cpp entites\/phys_dynamic.cpp entites\/phys_static.cpp entites\/tele_coord.cpp entites\/tele_obj.cpp$/;"	m
 bullwhipini	PlayState.h	/^        CSimpleIni bullwhipini;$/;"	m	class:PlayState	access:protected
 can_jump	Actor.h	/^        bool can_jump;$/;"	m	class:Actor	access:private
 clear	Game.h	/^        void clear() {win.clear();};$/;"	f	class:Game	access:public	signature:()
@@ -1112,15 +1272,23 @@ counter	Game.h	/^        sf::Clock counter;$/;"	m	class:Game	access:private
 current_state	StateManager.h	/^        State* current_state;$/;"	m	class:StateManager	access:private
 damage	Entity.cpp	/^void Entity::damage(int dmg)$/;"	f	class:Entity	signature:(int dmg)
 damage	Entity.h	/^        virtual void damage(int dmg); \/\/Incomplete damage system.$/;"	p	class:Entity	access:public	signature:(int dmg)
+datadir	Makefile	/^datadir = ${datarootdir}$/;"	m
+datarootdir	Makefile	/^datarootdir = ${prefix}\/share$/;"	m
 define	Definition.h	/^        std::map<std::string, bool> define;$/;"	m	class:Def	access:protected
+depcomp	Makefile	/^depcomp = $(SHELL) $(top_srcdir)\/depcomp$/;"	m
 display	Game.h	/^        void display() {win.display();};$/;"	f	class:Game	access:public	signature:()
 distance	JMath.cpp	/^float distance(float x1, float y1, float x2, float y2)$/;"	f	signature:(float x1, float y1, float x2, float y2)
 distance	JMath.h	/^float distance(float x1, float y1, float x2, float y2);$/;"	p	signature:(float x1, float y1, float x2, float y2)
+distcleancheck_listfiles	Makefile	/^distcleancheck_listfiles = find . -type f -print$/;"	m
+distdir	Makefile	/^distdir = $(PACKAGE)-$(VERSION)$/;"	m
+distuninstallcheck_listfiles	Makefile	/^distuninstallcheck_listfiles = find . -type f -print$/;"	m
 do_q	Entity.h	/^        bool do_q; \/\/Whether or not a quene is active$/;"	m	class:Entity	access:protected
+docdir	Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
 draw	Entity.h	/^        sf::Sprite draw; \/\/Sprite for drawing things$/;"	m	class:Entity	access:protected
 draw	Game.cpp	/^void Game::draw()$/;"	f	class:Game	signature:()
 draw	Game.h	/^        void draw();$/;"	p	class:Game	access:public	signature:()
 draw	ParticleEmitter.h	/^        sf::Image draw;$/;"	m	class:ParticleEmitter	access:protected
+dvidir	Makefile	/^dvidir = ${docdir}$/;"	m
 ent_item	entites/ent_item.cpp	/^ent_item::ent_item()$/;"	f	class:ent_item	signature:()
 ent_item	entites/ent_item.h	/^        ent_item();$/;"	p	class:ent_item	access:public	signature:()
 ent_item	entites/ent_item.h	/^class ent_item : public InvisPhysEntity$/;"	c	inherits:InvisPhysEntity
@@ -1142,10 +1310,11 @@ ent_string::init	entites/ent_string.h	/^        virtual void init();$/;"	p	class
 ent_string::str	entites/ent_string.h	/^        sf::Text str;$/;"	m	class:ent_string	access:protected
 ent_string::super	entites/ent_string.h	/^        typedef Entity super;$/;"	t	class:ent_string	access:private
 entites	SceneManager.h	/^        std::vector<Entity*> entites; \/\/Global list of entites$/;"	m	class:SceneManager	access:protected
+exec_prefix	Makefile	/^exec_prefix = ${prefix}$/;"	m
 f	File.h	/^        std::ifstream* f;$/;"	m	class:inFile	access:private
 f	File.h	/^        std::ofstream* f;$/;"	m	class:outFile	access:private
 f	entites/ent_string.h	/^        sf::Font f;$/;"	m	class:ent_string	access:protected
-factorys	EntityRegistry.h	/^        std::map<std::string, Entity* (*)(int)> factorys;$/;"	m	class:EntityRegistry	access:private
+factorys	EntityRegistry.h	/^        std::map<std::string, Entity* (*)(void)> factorys;$/;"	m	class:EntityRegistry	access:private
 false	SimpleINI/ConvertUTF.c	56;"	d	file:
 find	ResourceManager.h	/^    T* find( const std::string& strId ) {$/;"	f	class:ResourceManager	access:private	signature:( const std::string& strId )
 firstByteMark	SimpleINI/ConvertUTF.c	/^static const UTF8 firstByteMark[7] = { 0x00, 0x00, 0xC0, 0xE0, 0xF0, 0xF8, 0xFC };$/;"	v	file:
@@ -1178,6 +1347,8 @@ halfBase	SimpleINI/ConvertUTF.c	/^static const UTF32 halfBase = 0x0010000UL;$/;"
 halfMask	SimpleINI/ConvertUTF.c	/^static const UTF32 halfMask = 0x3FFUL;$/;"	v	file:
 halfShift	SimpleINI/ConvertUTF.c	/^static const int halfShift  = 10; \/* used for shifting by 10 bits *\/$/;"	v	file:
 hh	Entity.h	/^        int hh; \/\/Half height$/;"	m	class:Entity	access:protected
+host_alias	Makefile	/^host_alias = $/;"	m
+htmldir	Makefile	/^htmldir = ${docdir}$/;"	m
 hw	Entity.h	/^        int hw; \/\/Half width of sprite$/;"	m	class:Entity	access:protected
 inFile	File.cpp	/^inFile::inFile()$/;"	f	class:inFile	signature:()
 inFile	File.h	/^        inFile();$/;"	p	class:inFile	access:public	signature:()
@@ -1199,10 +1370,12 @@ inFile::ReadString	File.h	/^        std::string ReadString();$/;"	p	class:inFile
 inFile::f	File.h	/^        std::ifstream* f;$/;"	m	class:inFile	access:private
 inFile::inFile	File.cpp	/^inFile::inFile()$/;"	f	class:inFile	signature:()
 inFile::inFile	File.h	/^        inFile();$/;"	p	class:inFile	access:public	signature:()
+includedir	Makefile	/^includedir = ${prefix}\/include$/;"	m
+infodir	Makefile	/^infodir = ${datarootdir}\/info$/;"	m
 init	Actor.cpp	/^void Actor::init()$/;"	f	class:Actor	signature:()
 init	Actor.h	/^        virtual void init();$/;"	p	class:Actor	access:public	signature:()
 init	Entity.cpp	/^void Entity::init()$/;"	f	class:Entity	signature:()
-init	Entity.h	/^        virtual void init(); \/\/Intialization$/;"	p	class:Entity	access:public	signature:()
+init	Entity.h	/^        virtual void init(); $/;"	p	class:Entity	access:public	signature:()
 init	Game.cpp	/^void Game::init(std::string title, int x, int y)$/;"	f	class:Game	signature:(std::string title, int x, int y)
 init	Game.h	/^        void init(std::string title, int x, int y);$/;"	p	class:Game	access:public	signature:(std::string title, int x, int y)
 init	ScriptManager.cpp	/^void ScriptManager::init()$/;"	f	class:ScriptManager	signature:()
@@ -1221,6 +1394,10 @@ init	entites/phys_static.cpp	/^void phys_static::init()$/;"	f	class:phys_static	
 init	entites/phys_static.h	/^        virtual void init();$/;"	p	class:phys_static	access:public	signature:()
 inrange	JMath.cpp	/^bool inrange(float n, float x, float y)$/;"	f	signature:(float n, float x, float y)
 inrange	JMath.h	/^bool inrange(float n, float x, float y);$/;"	p	signature:(float n, float x, float y)
+install_sh	Makefile	/^install_sh = ${SHELL} \/home\/neos\/code\/bullwhip\/Bullwhip\/install-sh$/;"	m
+install_sh_DATA	Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_PROGRAM	Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
 inv	Player.h	/^        Inventory inv;$/;"	m	class:Player	access:protected
 isAlive	Entity.h	/^        virtual bool isAlive() {return alive;}; \/\/returns whether the entity is alive or not.$/;"	f	class:Entity	access:public	signature:()
 isLegalUTF8	SimpleINI/ConvertUTF.c	/^static Boolean isLegalUTF8(const UTF8 *source, int length) {$/;"	f	file:	signature:(const UTF8 *source, int length)
@@ -1230,11 +1407,15 @@ isasset	Entity.h	/^        bool isasset;$/;"	m	class:Entity	access:protected
 items	Item.h	/^        std::map<std::string, Def> items;$/;"	m	class:ItemManager	access:private
 items	Item.h	/^        std::vector<Def> items;$/;"	m	class:Inventory	access:private
 lenientConversion	SimpleINI/ConvertUTF.h	/^	lenientConversion$/;"	e	enum:__anon2
+libdir	Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libexecdir	Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
 life	Particle.h	/^        sf::Clock life;$/;"	m	class:Particle	access:protected
 lifetime	Particle.h	/^        float lifetime;$/;"	m	class:Particle	access:public
 load	ImageManager.cpp	/^sf::Texture* ImageManager::load( const std::string& strId ) {$/;"	f	class:ImageManager	signature:( const std::string& strId )
 load	ImageManager.h	/^    virtual sf::Texture* load( const std::string& strId );$/;"	p	class:ImageManager	access:protected	signature:( const std::string& strId )
 load	ResourceManager.h	/^    virtual T* load( const std::string& strId ) = 0;$/;"	p	class:ResourceManager	access:protected	signature:( const std::string& strId )
+localedir	Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localstatedir	Makefile	/^localstatedir = ${prefix}\/var$/;"	m
 locase	SimpleINI/SimpleIni.h	/^    inline SI_CHAR locase(SI_CHAR ch) const {$/;"	f	struct:SI_GenericNoCase	access:public	signature:(SI_CHAR ch) const
 lx	Entity.h	/^        float lx; \/\/Variable to hold current position$/;"	m	class:Entity	access:protected
 ly	Entity.h	/^        float ly; \/\/see above$/;"	m	class:Entity	access:protected
@@ -1260,10 +1441,13 @@ m_strings	SimpleINI/SimpleIni.h	/^    TNamesDepend m_strings;$/;"	m	class:CSimpl
 m_uCodePage	SimpleINI/SimpleIni.h	/^    UINT m_uCodePage;$/;"	m	class:SI_ConvertW	access:private
 m_uDataLen	SimpleINI/SimpleIni.h	/^    size_t m_uDataLen;$/;"	m	class:CSimpleIniTempl	access:private
 main	main.cpp	/^int main()$/;"	f	signature:()
+mandir	Makefile	/^mandir = ${datarootdir}\/man$/;"	m
 max_particles	ParticleEmitter.h	/^        int max_particles;$/;"	m	class:ParticleEmitter	access:protected
+mkinstalldirs	Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
 nOrder	SimpleINI/SimpleIni.h	/^        int             nOrder;$/;"	m	struct:CSimpleIniTempl::Entry	access:public
 name	Entity.h	/^        std::string name; \/\/Quick getting the name of the entity eg phys_static$/;"	m	class:Entity	access:public
 offsetsFromUTF8	SimpleINI/ConvertUTF.c	/^static const UTF32 offsetsFromUTF8[6] = { 0x00000000UL, 0x00003080UL, 0x000E2080UL, $/;"	v	file:
+oldincludedir	Makefile	/^oldincludedir = \/usr\/include$/;"	m
 onBeginCollision	Entity.h	/^        virtual void onBeginCollision(Entity* obj) {return;}; \/\/Called only when the collision starts$/;"	f	class:Entity	access:public	signature:(Entity* obj)
 onBeginCollision	Player.cpp	/^void Player::onBeginCollision(Entity* obj)$/;"	f	class:Player	signature:(Entity* obj)
 onBeginCollision	Player.h	/^        virtual void onBeginCollision(Entity* obj);$/;"	p	class:Player	access:public	signature:(Entity* obj)
@@ -1323,6 +1507,7 @@ pComment	SimpleINI/SimpleIni.h	/^        const SI_CHAR * pComment;$/;"	m	struct:
 pItem	SimpleINI/SimpleIni.h	/^        const SI_CHAR * pItem;$/;"	m	struct:CSimpleIniTempl::Entry	access:public
 particles	ParticleEmitter.h	/^        std::vector<Particle*> particles;$/;"	m	class:ParticleEmitter	access:protected
 paused	Game.h	/^        bool paused;$/;"	m	class:Game	access:private
+pdfdir	Makefile	/^pdfdir = ${docdir}$/;"	m
 phys_dynamic	entites/phys_dynamic.cpp	/^phys_dynamic::phys_dynamic()$/;"	f	class:phys_dynamic	signature:()
 phys_dynamic	entites/phys_dynamic.h	/^        phys_dynamic();$/;"	p	class:phys_dynamic	access:public	signature:()
 phys_dynamic	entites/phys_dynamic.h	/^class phys_dynamic : public phys_static$/;"	c	inherits:phys_static
@@ -1352,11 +1537,19 @@ phys_static::update	entites/phys_static.cpp	/^void phys_static::update(SceneMana
 phys_static::update	entites/phys_static.h	/^        virtual void update(SceneManager* scene);$/;"	p	class:phys_static	access:public	signature:(SceneManager* scene)
 phys_world	Constants.cpp	/^PhysicsWorld* phys_world;$/;"	v
 pickup	Player.h	/^        Entity* pickup;$/;"	m	class:Player	access:protected
+pkgdatadir	Makefile	/^pkgdatadir = $(datadir)\/bullwhip$/;"	m
+pkgincludedir	Makefile	/^pkgincludedir = $(includedir)\/bullwhip$/;"	m
+pkglibdir	Makefile	/^pkglibdir = $(libdir)\/bullwhip$/;"	m
+pkglibexecdir	Makefile	/^pkglibexecdir = $(libexecdir)\/bullwhip$/;"	m
 player	PlayState.h	/^        Entity* player;$/;"	m	class:PlayState	access:protected
 pos	Entity.h	/^        Vec2 pos;$/;"	m	class:Entity	access:protected
 pos	Particle.h	/^        sf::Vector2f pos;$/;"	m	class:Particle	access:public
 pos	ParticleEmitter.h	/^        sf::Vector2f pos;$/;"	m	class:ParticleEmitter	access:protected
+prefix	Makefile	/^prefix = \/usr\/local$/;"	m
+program_transform_name	Makefile	/^program_transform_name = s,x,x,$/;"	m
 prop_static.update	testent.lua	/^function prop_static.update()$/;"	f
+prototypes	configure	/^   function prototypes and stuff, but not '\\xHH' hex character constants.$/;"	f
+psdir	Makefile	/^psdir = ${docdir}$/;"	m
 qpos	Entity.h	/^        Vec2 qpos;$/;"	m	class:Entity	access:protected
 reg	PlayState.h	/^        EntityRegistry* reg;$/;"	m	class:PlayState	access:protected
 reg	SceneManager.h	/^        EntityRegistry* reg; \/\/Entity registry$/;"	m	class:SceneManager	access:protected
@@ -1365,16 +1558,20 @@ releaseResource	ResourceManager.h	/^    void releaseResource( const std::string&
 renderspr	PlayState.h	/^        sf::Sprite renderspr;$/;"	m	class:PlayState	access:protected
 run	Game.h	/^        bool run() {return running;};$/;"	f	class:Game	access:public	signature:()
 running	Game.h	/^        bool running;$/;"	m	class:Game	access:private
+sbindir	Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
 scene	PlayState.h	/^        SceneManager* scene;$/;"	m	class:PlayState	access:protected
+sharedstatedir	Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
 sourceExhausted	SimpleINI/ConvertUTF.h	/^	sourceExhausted,	\/* partial character in source, but hit end *\/$/;"	e	enum:__anon1
 sourceIllegal	SimpleINI/ConvertUTF.h	/^	sourceIllegal		\/* source sequence is illegal\/malformed *\/$/;"	e	enum:__anon1
 spawnpoints	SceneManager.h	/^        std::map<std::string, Entity*> spawnpoints; \/\/Spawnpoint map$/;"	m	class:SceneManager	access:protected
 specents	SceneManager.h	/^        std::map<std::string, Entity*> specents; \/\/List of entites to be reffered by name$/;"	m	class:SceneManager	access:protected
 speed	Particle.h	/^        sf::Vector2f speed;$/;"	m	class:Particle	access:public
+srcdir	Makefile	/^srcdir = .$/;"	m
 state	Game.h	/^        StateManager* state;$/;"	m	class:Game	access:private
 states	StateManager.h	/^        std::map<std::string, State*> states; \/\/Map of the states.$/;"	m	class:StateManager	access:private
 str	entites/ent_string.h	/^        sf::Text str;$/;"	m	class:ent_string	access:protected
 strictConversion	SimpleINI/ConvertUTF.h	/^	strictConversion = 0,$/;"	e	enum:__anon2
+subdir	Makefile	/^subdir = .$/;"	m
 super	MainMenuState.h	/^        typedef State super;$/;"	t	class:MainMenuState	access:private
 super	PlayState.h	/^        typedef State super;$/;"	t	class:PlayState	access:private
 super	Player.h	/^        typedef Actor super;$/;"	t	class:Player	access:private
@@ -1384,8 +1581,15 @@ super	entites/ent_item.h	/^        typedef InvisPhysEntity super;$/;"	t	class:en
 super	entites/ent_string.h	/^        typedef Entity super;$/;"	t	class:ent_string	access:private
 super	entites/phys_dynamic.h	/^        typedef phys_static super;$/;"	t	class:phys_dynamic	access:private
 super	entites/phys_static.h	/^        typedef Entity super;$/;"	t	class:phys_static	access:public
+sysconfdir	Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
 tablepos	ScriptManager.h	/^        int tablepos;$/;"	m	class:ScriptManager	access:private
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | BZIP2=$${BZIP2--9} bzip2 -c >$(distdir).tar.bz2$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | GZIP=$(GZIP_ENV) gzip -c >$(distdir).tar.gz$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | XZ_OPT=$${XZ_OPT--e} xz -c >$(distdir).tar.xz$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | compress -c >$(distdir).tar.Z$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | lzip -c $${LZIP_OPT--9} >$(distdir).tar.lz$/;"	m
 targetExhausted	SimpleINI/ConvertUTF.h	/^	targetExhausted,	\/* insuff. room in target for conversion *\/$/;"	e	enum:__anon1
+target_alias	Makefile	/^target_alias = $/;"	m
 tele_coord	entites/tele_coord.cpp	/^tele_coord::tele_coord()$/;"	f	class:tele_coord	signature:()
 tele_coord	entites/tele_coord.h	/^        tele_coord();$/;"	p	class:tele_coord	access:public	signature:()
 tele_coord	entites/tele_coord.h	/^class tele_coord : public InvisPhysEntity$/;"	c	inherits:InvisPhysEntity
@@ -1416,7 +1620,12 @@ toReg	JMath.h	/^Vec2 toReg(b2Vec2 vec);$/;"	p	signature:(b2Vec2 vec)
 tob2	Vec2.cpp	/^b2Vec2 Vec2::tob2()$/;"	f	class:Vec2	signature:()
 tob2	Vec2.h	/^        b2Vec2 tob2();$/;"	p	class:Vec2	access:public	signature:()
 todraw	ParticleEmitter.h	/^        sf::Sprite todraw;$/;"	m	class:ParticleEmitter	access:protected
+top_build_prefix	Makefile	/^top_build_prefix = $/;"	m
+top_builddir	Makefile	/^top_builddir = .$/;"	m
+top_distdir	Makefile	/^top_distdir = $(distdir)$/;"	m
+top_srcdir	Makefile	/^top_srcdir = .$/;"	m
 trailingBytesForUTF8	SimpleINI/ConvertUTF.c	/^static const char trailingBytesForUTF8[256] = {$/;"	v	file:
+transform	Makefile	/^transform = $(program_transform_name)$/;"	m
 true	SimpleINI/ConvertUTF.c	57;"	d	file:
 type	PhysicsWrappers/PhysicsBody.h	/^        int type;$/;"	m	class:PhysicsBody	access:protected
 types	Definition.h	/^        std::map<std::string, int> types;$/;"	m	class:Def	access:protected
