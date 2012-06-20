@@ -1,0 +1,12 @@
+# file to ignore
+*.o
+*.dll
+*.exe
+*.so
+*.gz
+*.7z
+*.zip
+*.rar
+*.tar
+*.jar
+*.iso

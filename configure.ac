@@ -24,6 +24,7 @@ AC_CHECK_LIB([sfml-graphics], [main])
 AC_CHECK_HEADERS([wchar.h])
 AC_CHECK_HEADERS([Box2D/Box2D.h])
 AC_CHECK_HEADERS([SFML/Graphics.hpp]) #we should just be able to check the graphics lib
+AC_CHECK_HEADERS([boost/any.hpp]) # check for the parts of boost we need
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_CHECK_HEADER_STDBOOL

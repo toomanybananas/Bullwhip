@@ -1,5 +1,8 @@
 /* config.h.in.  Generated from configure.ac by autoheader.  */
 
+/* Define to 1 if you have the <boost/any.hpp> header file. */
+#undef HAVE_BOOST_ANY_HPP
+
 /* Define to 1 if you have the <Box2D/Box2D.h> header file. */
 #undef HAVE_BOX2D_BOX2D_H
 
