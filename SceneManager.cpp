@@ -80,6 +80,11 @@ void SceneManager::RemoveEntityFromList(Entity* ent)
 
 void SceneManager::LoadScene(std::string filename)
 {
+	//place holder for new level routine, taken out because of lack of testing
+}
+
+void SceneManager::LoadScenev1(std::string filename)
+{
     sf::Clock time;
     inFile file;
     file.OpenFile(filename);

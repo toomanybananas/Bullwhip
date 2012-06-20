@@ -31,7 +31,7 @@ void PlayState::Init(sf::RenderWindow* win)
     reg->AddFactory("ent_item", &NewEnt<ent_item>);
 
     //scene->LoadScene(bullwhipini.GetValue("Bullwhip", "level", NULL));
-    scene->LoadScene("level.bin");
+    scene->LoadScenev1("level.bin");
 
     player = reg->NewEnt("player");
     //Def pdef;
