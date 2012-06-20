@@ -1,3 +1,11 @@
+/**
+ * @file main.cpp
+ * @brief Main file that initalizes the game and checks at compile time for libraries
+ * @author neos300
+ * @version 1.0
+ * @date 2012-06-20
+ */
+
 #include <iostream>
 #include <string>
 #include <math.h>

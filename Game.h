@@ -1,6 +1,3 @@
-//Extremely useless file, nothing more than a pitiful wrapper for the state manager
-//This hopefully won't be around for too much longer
-
 #pragma once
 #define SFML_DYNAMIC
 #include <SFML/Graphics.hpp>
@@ -10,8 +7,6 @@
 #include <sstream>
 #include "StateManager.h"
 #include "Constants.h"
-
-#define VERSION 0.1
 
 
 
