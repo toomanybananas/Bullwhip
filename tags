@@ -1,0 +1,1448 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Actor	Actor.h	/^class Actor : public phys_dynamic$/;"	c	inherits:phys_dynamic
+Actor::Jump	Actor.cpp	/^void Actor::Jump()$/;"	f	class:Actor	signature:()
+Actor::Jump	Actor.h	/^        virtual void Jump();$/;"	p	class:Actor	access:public	signature:()
+Actor::MoveLeft	Actor.cpp	/^void Actor::MoveLeft()$/;"	f	class:Actor	signature:()
+Actor::MoveLeft	Actor.h	/^        virtual void MoveLeft();$/;"	p	class:Actor	access:public	signature:()
+Actor::MoveRight	Actor.cpp	/^void Actor::MoveRight()$/;"	f	class:Actor	signature:()
+Actor::MoveRight	Actor.h	/^        virtual void MoveRight();$/;"	p	class:Actor	access:public	signature:()
+Actor::can_jump	Actor.h	/^        bool can_jump;$/;"	m	class:Actor	access:private
+Actor::init	Actor.cpp	/^void Actor::init()$/;"	f	class:Actor	signature:()
+Actor::init	Actor.h	/^        virtual void init();$/;"	p	class:Actor	access:public	signature:()
+Actor::onCollision	Actor.cpp	/^void Actor::onCollision(Entity* obj)$/;"	f	class:Actor	signature:(Entity* obj)
+Actor::onCollision	Actor.h	/^        virtual void onCollision(Entity* obj);$/;"	p	class:Actor	access:public	signature:(Entity* obj)
+AddEntity	SceneManager.cpp	/^void SceneManager::AddEntity(Entity& ent)$/;"	f	class:SceneManager	signature:(Entity& ent)
+AddEntity	SceneManager.cpp	/^void SceneManager::AddEntity(Entity* ent)$/;"	f	class:SceneManager	signature:(Entity* ent)
+AddEntity	SceneManager.h	/^        virtual void AddEntity (Entity& obj); \/\/Adds a entity to the global list$/;"	p	class:SceneManager	access:public	signature:(Entity& obj)
+AddEntity	SceneManager.h	/^        virtual void AddEntity (Entity* obj);$/;"	p	class:SceneManager	access:public	signature:(Entity* obj)
+AddEntry	SimpleINI/SimpleIni.h	/^    SI_Error AddEntry($/;"	p	class:CSimpleIniTempl	access:private	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pValue, const SI_CHAR * a_pComment, bool a_bForceReplace, bool a_bCopyStrings )
+AddEntry	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::AddEntry($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pValue, const SI_CHAR * a_pComment, bool a_bForceReplace, bool a_bCopyStrings )
+AddFactory	EntityRegistry.h	/^        void AddFactory(std::string name, Entity* (*func)(int)) {factorys[name] = func;};$/;"	f	class:EntityRegistry	access:public	signature:(std::string name, Entity* (*func)(int))
+AddItem	Item.h	/^        void AddItem(std::string itemname) {items.push_back(Items.GetItem(itemname));};$/;"	f	class:Inventory	access:public	signature:(std::string itemname)
+AddLine	Console.cpp	/^void Console::AddLine(std::string line)$/;"	f	class:Console	signature:(std::string line)
+AddLine	Console.h	/^        void AddLine(std::string line);$/;"	p	class:Console	access:public	signature:(std::string line)
+AddSpawn	SceneManager.h	/^        virtual void AddSpawn(Entity& obj, std::string name) {spawnpoints[name] = &obj;}; \/\/Adds a spawnpoint, this should be deprectated.$/;"	f	class:SceneManager	access:public	signature:(Entity& obj, std::string name)
+AddSpawn	SceneManager.h	/^        virtual void AddSpawn(Entity* obj, std::string name) {spawnpoints[name] = obj;};$/;"	f	class:SceneManager	access:public	signature:(Entity* obj, std::string name)
+ApplyForce	PhysicsWrappers/BoxStaticBody.h	/^        void ApplyForce(Vec2 force) {body->ApplyForce(force.tob2(), body->GetWorldPoint(body->GetLocalCenter()));};$/;"	f	class:BoxStaticBody	access:public	signature:(Vec2 force)
+ApplyForce	PhysicsWrappers/BoxStaticBody.h	/^        void ApplyForce(Vec2 force, Vec2 point) {body->ApplyForce(force.toBox(), point.toBox());};$/;"	f	class:BoxStaticBody	access:public	signature:(Vec2 force, Vec2 point)
+ApplyForce	PhysicsWrappers/PhysicsBody.h	/^        virtual void ApplyForce(Vec2 force)=0;$/;"	p	class:PhysicsBody	access:public	signature:(Vec2 force)
+ApplyForce	PhysicsWrappers/PhysicsBody.h	/^        virtual void ApplyForce(Vec2 force, Vec2 point)=0;$/;"	p	class:PhysicsBody	access:public	signature:(Vec2 force, Vec2 point)
+ApplyTorque	PhysicsWrappers/BoxStaticBody.h	/^        void ApplyTorque(float torque) {body->ApplyTorque(toRad(torque));};$/;"	f	class:BoxStaticBody	access:public	signature:(float torque)
+ApplyTorque	PhysicsWrappers/PhysicsBody.h	/^        virtual void ApplyTorque(float torque)=0;$/;"	p	class:PhysicsBody	access:public	signature:(float torque)
+BODY_DUMMY	PhysicsWrappers/PhysicsBody.h	9;"	d
+BODY_DYNAMIC	PhysicsWrappers/PhysicsBody.h	11;"	d
+BODY_STATIC	PhysicsWrappers/PhysicsBody.h	10;"	d
+BODY_TRIGGER	PhysicsWrappers/PhysicsBody.h	12;"	d
+BOXDYNAMICBODY_H	PhysicsWrappers/BoxDynamicBody.h	2;"	d
+BOXTRIGGERBODY_H	PhysicsWrappers/BoxTriggerBody.h	2;"	d
+BOXWORLD_H	PhysicsWrappers/BoxWorld.h	2;"	d
+BYTE	File.h	/^typedef unsigned char BYTE;$/;"	t
+BeginContact	BullwhipContactListener.cpp	/^void BullwhipContactListener::BeginContact(b2Contact* contact)$/;"	f	class:BullwhipContactListener	signature:(b2Contact* contact)
+BeginContact	BullwhipContactListener.h	/^        void BeginContact(b2Contact* contact);$/;"	p	class:BullwhipContactListener	access:public	signature:(b2Contact* contact)
+Boolean	SimpleINI/ConvertUTF.h	/^typedef unsigned char	Boolean; \/* 0 or 1 *\/$/;"	t
+BoxDynamicBody	PhysicsWrappers/BoxDynamicBody.cpp	/^BoxDynamicBody::BoxDynamicBody()$/;"	f	class:BoxDynamicBody	signature:()
+BoxDynamicBody	PhysicsWrappers/BoxDynamicBody.h	/^        BoxDynamicBody();$/;"	p	class:BoxDynamicBody	access:public	signature:()
+BoxDynamicBody	PhysicsWrappers/BoxDynamicBody.h	/^class BoxDynamicBody : public BoxStaticBody$/;"	c	inherits:BoxStaticBody
+BoxDynamicBody::BoxDynamicBody	PhysicsWrappers/BoxDynamicBody.cpp	/^BoxDynamicBody::BoxDynamicBody()$/;"	f	class:BoxDynamicBody	signature:()
+BoxDynamicBody::BoxDynamicBody	PhysicsWrappers/BoxDynamicBody.h	/^        BoxDynamicBody();$/;"	p	class:BoxDynamicBody	access:public	signature:()
+BoxDynamicBody::Intialize	PhysicsWrappers/BoxDynamicBody.cpp	/^void BoxDynamicBody::Intialize(Entity* obj)$/;"	f	class:BoxDynamicBody	signature:(Entity* obj)
+BoxDynamicBody::Intialize	PhysicsWrappers/BoxDynamicBody.h	/^        void Intialize(Entity* obj);$/;"	p	class:BoxDynamicBody	access:public	signature:(Entity* obj)
+BoxDynamicBody::fix	PhysicsWrappers/BoxDynamicBody.h	/^        b2Fixture* fix;$/;"	m	class:BoxDynamicBody	access:protected
+BoxDynamicBody::fix_def	PhysicsWrappers/BoxDynamicBody.h	/^        b2FixtureDef fix_def;$/;"	m	class:BoxDynamicBody	access:protected
+BoxStaticBody	PhysicsWrappers/BoxStaticBody.cpp	/^BoxStaticBody::BoxStaticBody()$/;"	f	class:BoxStaticBody	signature:()
+BoxStaticBody	PhysicsWrappers/BoxStaticBody.h	/^        BoxStaticBody();$/;"	p	class:BoxStaticBody	access:public	signature:()
+BoxStaticBody	PhysicsWrappers/BoxStaticBody.h	/^class BoxStaticBody : public PhysicsBody$/;"	c	inherits:PhysicsBody
+BoxStaticBody::ApplyForce	PhysicsWrappers/BoxStaticBody.h	/^        void ApplyForce(Vec2 force) {body->ApplyForce(force.tob2(), body->GetWorldPoint(body->GetLocalCenter()));};$/;"	f	class:BoxStaticBody	access:public	signature:(Vec2 force)
+BoxStaticBody::ApplyForce	PhysicsWrappers/BoxStaticBody.h	/^        void ApplyForce(Vec2 force, Vec2 point) {body->ApplyForce(force.toBox(), point.toBox());};$/;"	f	class:BoxStaticBody	access:public	signature:(Vec2 force, Vec2 point)
+BoxStaticBody::ApplyTorque	PhysicsWrappers/BoxStaticBody.h	/^        void ApplyTorque(float torque) {body->ApplyTorque(toRad(torque));};$/;"	f	class:BoxStaticBody	access:public	signature:(float torque)
+BoxStaticBody::BoxStaticBody	PhysicsWrappers/BoxStaticBody.cpp	/^BoxStaticBody::BoxStaticBody()$/;"	f	class:BoxStaticBody	signature:()
+BoxStaticBody::BoxStaticBody	PhysicsWrappers/BoxStaticBody.h	/^        BoxStaticBody();$/;"	p	class:BoxStaticBody	access:public	signature:()
+BoxStaticBody::GetAngle	PhysicsWrappers/BoxStaticBody.h	/^        float GetAngle() {return toDeg(body->GetAngle());};$/;"	f	class:BoxStaticBody	access:public	signature:()
+BoxStaticBody::GetAngularVelocity	PhysicsWrappers/BoxStaticBody.h	/^        float GetAngularVelocity() {return toDeg(body->GetAngularVelocity());};$/;"	f	class:BoxStaticBody	access:public	signature:()
+BoxStaticBody::GetBody	PhysicsWrappers/BoxStaticBody.h	/^        void* GetBody() {return body;};$/;"	f	class:BoxStaticBody	access:public	signature:()
+BoxStaticBody::GetLinearVelocity	PhysicsWrappers/BoxStaticBody.h	/^        Vec2 GetLinearVelocity() {return toReg(body->GetLinearVelocity());};$/;"	f	class:BoxStaticBody	access:public	signature:()
+BoxStaticBody::GetPosition	PhysicsWrappers/BoxStaticBody.h	/^        Vec2 GetPosition() {return toReg(body->GetPosition());};$/;"	f	class:BoxStaticBody	access:public	signature:()
+BoxStaticBody::Intialize	PhysicsWrappers/BoxStaticBody.cpp	/^void BoxStaticBody::Intialize(Entity* obj)$/;"	f	class:BoxStaticBody	signature:(Entity* obj)
+BoxStaticBody::Intialize	PhysicsWrappers/BoxStaticBody.h	/^        virtual void Intialize(Entity* obj);$/;"	p	class:BoxStaticBody	access:public	signature:(Entity* obj)
+BoxStaticBody::SetAngularVelocity	PhysicsWrappers/BoxStaticBody.h	/^        void SetAngularVelocity(float v) {body->SetAngularVelocity(toRad(v));};$/;"	f	class:BoxStaticBody	access:public	signature:(float v)
+BoxStaticBody::SetLinearVelocity	PhysicsWrappers/BoxStaticBody.h	/^        void SetLinearVelocity(Vec2 v) {body->SetLinearVelocity(v.toBox());};$/;"	f	class:BoxStaticBody	access:public	signature:(Vec2 v)
+BoxStaticBody::SetTransform	PhysicsWrappers/BoxStaticBody.h	/^        void SetTransform(Vec2 pos, float angle) {body->SetTransform(pos.toBox(), toRad(angle));};$/;"	f	class:BoxStaticBody	access:public	signature:(Vec2 pos, float angle)
+BoxStaticBody::body	PhysicsWrappers/BoxStaticBody.h	/^        b2Body* body;$/;"	m	class:BoxStaticBody	access:protected
+BoxStaticBody::body_def	PhysicsWrappers/BoxStaticBody.h	/^        b2BodyDef body_def;$/;"	m	class:BoxStaticBody	access:protected
+BoxStaticBody::bounding	PhysicsWrappers/BoxStaticBody.h	/^        b2PolygonShape bounding;$/;"	m	class:BoxStaticBody	access:protected
+BoxTriggerBody	PhysicsWrappers/BoxTriggerBody.cpp	/^BoxTriggerBody::BoxTriggerBody()$/;"	f	class:BoxTriggerBody	signature:()
+BoxTriggerBody	PhysicsWrappers/BoxTriggerBody.h	/^        BoxTriggerBody();$/;"	p	class:BoxTriggerBody	access:public	signature:()
+BoxTriggerBody	PhysicsWrappers/BoxTriggerBody.h	/^class BoxTriggerBody : public BoxDynamicBody$/;"	c	inherits:BoxDynamicBody
+BoxTriggerBody::BoxTriggerBody	PhysicsWrappers/BoxTriggerBody.cpp	/^BoxTriggerBody::BoxTriggerBody()$/;"	f	class:BoxTriggerBody	signature:()
+BoxTriggerBody::BoxTriggerBody	PhysicsWrappers/BoxTriggerBody.h	/^        BoxTriggerBody();$/;"	p	class:BoxTriggerBody	access:public	signature:()
+BoxTriggerBody::Intialize	PhysicsWrappers/BoxTriggerBody.cpp	/^void BoxTriggerBody::Intialize(Entity* obj)$/;"	f	class:BoxTriggerBody	signature:(Entity* obj)
+BoxTriggerBody::Intialize	PhysicsWrappers/BoxTriggerBody.h	/^        void Intialize(Entity* obj);$/;"	p	class:BoxTriggerBody	access:public	signature:(Entity* obj)
+BoxWorld	PhysicsWrappers/BoxWorld.cpp	/^BoxWorld::BoxWorld()$/;"	f	class:BoxWorld	signature:()
+BoxWorld	PhysicsWrappers/BoxWorld.h	/^        BoxWorld();$/;"	p	class:BoxWorld	access:public	signature:()
+BoxWorld	PhysicsWrappers/BoxWorld.h	/^class BoxWorld : public PhysicsWorld$/;"	c	inherits:PhysicsWorld
+BoxWorld::BoxWorld	PhysicsWrappers/BoxWorld.cpp	/^BoxWorld::BoxWorld()$/;"	f	class:BoxWorld	signature:()
+BoxWorld::BoxWorld	PhysicsWrappers/BoxWorld.h	/^        BoxWorld();$/;"	p	class:BoxWorld	access:public	signature:()
+BoxWorld::CreateBody	PhysicsWrappers/BoxWorld.cpp	/^void* BoxWorld::CreateBody(Def d)$/;"	f	class:BoxWorld	signature:(Def d)
+BoxWorld::CreateBody	PhysicsWrappers/BoxWorld.h	/^        void* CreateBody(Def d);$/;"	p	class:BoxWorld	access:public	signature:(Def d)
+BoxWorld::DestroyBody	PhysicsWrappers/BoxWorld.h	/^        void DestroyBody(PhysicsBody* body) {world->DestroyBody((b2Body*)body->GetBody());};$/;"	f	class:BoxWorld	access:public	signature:(PhysicsBody* body)
+BoxWorld::GetGravity	PhysicsWrappers/BoxWorld.h	/^        Vec2 GetGravity() {return Vec2(0,0);};$/;"	f	class:BoxWorld	access:public	signature:()
+BoxWorld::Init	PhysicsWrappers/BoxWorld.cpp	/^void BoxWorld::Init(Vec2 gravity)$/;"	f	class:BoxWorld	signature:(Vec2 gravity)
+BoxWorld::Init	PhysicsWrappers/BoxWorld.h	/^        void Init(Vec2 gravity);$/;"	p	class:BoxWorld	access:public	signature:(Vec2 gravity)
+BoxWorld::SetGravity	PhysicsWrappers/BoxWorld.h	/^        void SetGravity(Vec2 gravity) {};$/;"	f	class:BoxWorld	access:public	signature:(Vec2 gravity)
+BoxWorld::Step	PhysicsWrappers/BoxWorld.cpp	/^void BoxWorld::Step(float timestep)$/;"	f	class:BoxWorld	signature:(float timestep)
+BoxWorld::Step	PhysicsWrappers/BoxWorld.h	/^        void Step(float timestep);$/;"	p	class:BoxWorld	access:public	signature:(float timestep)
+BoxWorld::bclisten	PhysicsWrappers/BoxWorld.h	/^        BullwhipContactListener* bclisten;$/;"	m	class:BoxWorld	access:protected
+BoxWorld::world	PhysicsWrappers/BoxWorld.h	/^        b2World* world;$/;"	m	class:BoxWorld	access:protected
+BullwhipContactListener	BullwhipContactListener.cpp	/^BullwhipContactListener::BullwhipContactListener()$/;"	f	class:BullwhipContactListener	signature:()
+BullwhipContactListener	BullwhipContactListener.h	/^        BullwhipContactListener();$/;"	p	class:BullwhipContactListener	access:public	signature:()
+BullwhipContactListener	BullwhipContactListener.h	/^class BullwhipContactListener : public b2ContactListener$/;"	c	inherits:b2ContactListener
+BullwhipContactListener::BeginContact	BullwhipContactListener.cpp	/^void BullwhipContactListener::BeginContact(b2Contact* contact)$/;"	f	class:BullwhipContactListener	signature:(b2Contact* contact)
+BullwhipContactListener::BeginContact	BullwhipContactListener.h	/^        void BeginContact(b2Contact* contact);$/;"	p	class:BullwhipContactListener	access:public	signature:(b2Contact* contact)
+BullwhipContactListener::BullwhipContactListener	BullwhipContactListener.cpp	/^BullwhipContactListener::BullwhipContactListener()$/;"	f	class:BullwhipContactListener	signature:()
+BullwhipContactListener::BullwhipContactListener	BullwhipContactListener.h	/^        BullwhipContactListener();$/;"	p	class:BullwhipContactListener	access:public	signature:()
+BullwhipContactListener::EndContact	BullwhipContactListener.cpp	/^void BullwhipContactListener::EndContact(b2Contact* contact)$/;"	f	class:BullwhipContactListener	signature:(b2Contact* contact)
+BullwhipContactListener::EndContact	BullwhipContactListener.h	/^        void EndContact(b2Contact* contact);$/;"	p	class:BullwhipContactListener	access:public	signature:(b2Contact* contact)
+BullwhipContactListener::PreSolve	BullwhipContactListener.cpp	/^void BullwhipContactListener::PreSolve(b2Contact* contact, const b2Manifold* oldManifold)$/;"	f	class:BullwhipContactListener	signature:(b2Contact* contact, const b2Manifold* oldManifold)
+BullwhipContactListener::PreSolve	BullwhipContactListener.h	/^        void PreSolve(b2Contact* contact, const b2Manifold* oldManifold);$/;"	p	class:BullwhipContactListener	access:public	signature:(b2Contact* contact, const b2Manifold* oldManifold)
+CC	Makefile	/^CC=g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-c -Wall -Wextra$/;"	m
+CONSOLE_H	Console.h	2;"	d
+CSimpleIni	SimpleINI/SimpleIni.h	3360;"	d
+CSimpleIni	SimpleINI/SimpleIni.h	3364;"	d
+CSimpleIniA	SimpleINI/SimpleIni.h	/^    SI_NoCase<char>,SI_ConvertA<char> >                 CSimpleIniA;$/;"	t
+CSimpleIniCase	SimpleINI/SimpleIni.h	3361;"	d
+CSimpleIniCase	SimpleINI/SimpleIni.h	3365;"	d
+CSimpleIniCaseA	SimpleINI/SimpleIni.h	/^    SI_Case<char>,SI_ConvertA<char> >                   CSimpleIniCaseA;$/;"	t
+CSimpleIniCaseW	SimpleINI/SimpleIni.h	/^    SI_Case<UChar>,SI_ConvertW<UChar> >                 CSimpleIniCaseW;$/;"	t
+CSimpleIniCaseW	SimpleINI/SimpleIni.h	/^    SI_Case<wchar_t>,SI_ConvertW<wchar_t> >             CSimpleIniCaseW;$/;"	t
+CSimpleIniTempl	SimpleINI/SimpleIni.h	/^    CSimpleIniTempl($/;"	p	class:CSimpleIniTempl	access:public	signature:( bool a_bIsUtf8 = false, bool a_bMultiKey = false, bool a_bMultiLine = false )
+CSimpleIniTempl	SimpleINI/SimpleIni.h	/^    CSimpleIniTempl(const CSimpleIniTempl &); \/\/ disabled$/;"	p	class:CSimpleIniTempl	access:private	signature:(const CSimpleIniTempl &)
+CSimpleIniTempl	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::CSimpleIniTempl($/;"	f	class:CSimpleIniTempl	signature:( bool a_bIsUtf8, bool a_bAllowMultiKey, bool a_bAllowMultiLine )
+CSimpleIniTempl	SimpleINI/SimpleIni.h	/^class CSimpleIniTempl$/;"	c
+CSimpleIniTempl::AddEntry	SimpleINI/SimpleIni.h	/^    SI_Error AddEntry($/;"	p	class:CSimpleIniTempl	access:private	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pValue, const SI_CHAR * a_pComment, bool a_bForceReplace, bool a_bCopyStrings )
+CSimpleIniTempl::AddEntry	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::AddEntry($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pValue, const SI_CHAR * a_pComment, bool a_bForceReplace, bool a_bCopyStrings )
+CSimpleIniTempl::CSimpleIniTempl	SimpleINI/SimpleIni.h	/^    CSimpleIniTempl($/;"	p	class:CSimpleIniTempl	access:public	signature:( bool a_bIsUtf8 = false, bool a_bMultiKey = false, bool a_bMultiLine = false )
+CSimpleIniTempl::CSimpleIniTempl	SimpleINI/SimpleIni.h	/^    CSimpleIniTempl(const CSimpleIniTempl &); \/\/ disabled$/;"	p	class:CSimpleIniTempl	access:private	signature:(const CSimpleIniTempl &)
+CSimpleIniTempl::CSimpleIniTempl	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::CSimpleIniTempl($/;"	f	class:CSimpleIniTempl	signature:( bool a_bIsUtf8, bool a_bAllowMultiKey, bool a_bAllowMultiLine )
+CSimpleIniTempl::Converter	SimpleINI/SimpleIni.h	/^    class Converter : private SI_CONVERTER {$/;"	c	class:CSimpleIniTempl	inherits:SI_CONVERTER	access:public
+CSimpleIniTempl::Converter::ConvertToStore	SimpleINI/SimpleIni.h	/^        bool ConvertToStore(const SI_CHAR * a_pszString) {$/;"	f	class:CSimpleIniTempl::Converter	access:public	signature:(const SI_CHAR * a_pszString)
+CSimpleIniTempl::Converter::Converter	SimpleINI/SimpleIni.h	/^        Converter(bool a_bStoreIsUtf8) : SI_CONVERTER(a_bStoreIsUtf8) {$/;"	f	class:CSimpleIniTempl::Converter	access:public	signature:(bool a_bStoreIsUtf8)
+CSimpleIniTempl::Converter::Converter	SimpleINI/SimpleIni.h	/^        Converter(const Converter & rhs) { operator=(rhs); }$/;"	f	class:CSimpleIniTempl::Converter	access:public	signature:(const Converter & rhs)
+CSimpleIniTempl::Converter::Data	SimpleINI/SimpleIni.h	/^        const char * Data() { return m_scratch.data(); }$/;"	f	class:CSimpleIniTempl::Converter	access:public	signature:()
+CSimpleIniTempl::Converter::m_scratch	SimpleINI/SimpleIni.h	/^        std::string m_scratch;$/;"	m	class:CSimpleIniTempl::Converter	access:private
+CSimpleIniTempl::Converter::operator =	SimpleINI/SimpleIni.h	/^        Converter & operator=(const Converter & rhs) {$/;"	f	class:CSimpleIniTempl::Converter	access:public	signature:(const Converter & rhs)
+CSimpleIniTempl::CopyString	SimpleINI/SimpleIni.h	/^    SI_Error CopyString(const SI_CHAR *& a_pString);$/;"	p	class:CSimpleIniTempl	access:private	signature:(const SI_CHAR *& a_pString)
+CSimpleIniTempl::CopyString	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::CopyString($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR *& a_pString )
+CSimpleIniTempl::Delete	SimpleINI/SimpleIni.h	/^    bool Delete($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bRemoveEmpty = false )
+CSimpleIniTempl::Delete	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::Delete($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bRemoveEmpty )
+CSimpleIniTempl::DeleteString	SimpleINI/SimpleIni.h	/^    void DeleteString(const SI_CHAR * a_pString);$/;"	p	class:CSimpleIniTempl	access:private	signature:(const SI_CHAR * a_pString)
+CSimpleIniTempl::DeleteString	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::DeleteString($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pString )
+CSimpleIniTempl::Entry	SimpleINI/SimpleIni.h	/^    struct Entry {$/;"	s	class:CSimpleIniTempl	access:public
+CSimpleIniTempl::Entry::Entry	SimpleINI/SimpleIni.h	/^        Entry(const Entry & rhs) { operator=(rhs); }$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const Entry & rhs)
+CSimpleIniTempl::Entry::Entry	SimpleINI/SimpleIni.h	/^        Entry(const SI_CHAR * a_pszItem = NULL, int a_nOrder = 0)$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const SI_CHAR * a_pszItem = NULL, int a_nOrder = 0)
+CSimpleIniTempl::Entry::Entry	SimpleINI/SimpleIni.h	/^        Entry(const SI_CHAR * a_pszItem, const SI_CHAR * a_pszComment, int a_nOrder)$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const SI_CHAR * a_pszItem, const SI_CHAR * a_pszComment, int a_nOrder)
+CSimpleIniTempl::Entry::KeyOrder	SimpleINI/SimpleIni.h	/^        struct KeyOrder : std::binary_function<Entry, Entry, bool> {$/;"	s	struct:CSimpleIniTempl::Entry	inherits:std::binary_function	access:public
+CSimpleIniTempl::Entry::KeyOrder::operator ()	SimpleINI/SimpleIni.h	/^            bool operator()(const Entry & lhs, const Entry & rhs) const {$/;"	f	struct:CSimpleIniTempl::Entry::KeyOrder	access:public	signature:(const Entry & lhs, const Entry & rhs) const
+CSimpleIniTempl::Entry::LoadOrder	SimpleINI/SimpleIni.h	/^        struct LoadOrder : std::binary_function<Entry, Entry, bool> {$/;"	s	struct:CSimpleIniTempl::Entry	inherits:std::binary_function	access:public
+CSimpleIniTempl::Entry::LoadOrder::operator ()	SimpleINI/SimpleIni.h	/^            bool operator()(const Entry & lhs, const Entry & rhs) const {$/;"	f	struct:CSimpleIniTempl::Entry::LoadOrder	access:public	signature:(const Entry & lhs, const Entry & rhs) const
+CSimpleIniTempl::Entry::nOrder	SimpleINI/SimpleIni.h	/^        int             nOrder;$/;"	m	struct:CSimpleIniTempl::Entry	access:public
+CSimpleIniTempl::Entry::operator <	SimpleINI/SimpleIni.h	/^        bool operator<(const Entry & rhs) const { return LoadOrder()(*this, rhs); }$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const Entry & rhs) const
+CSimpleIniTempl::Entry::operator =	SimpleINI/SimpleIni.h	/^        Entry & operator=(const Entry & rhs) {$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const Entry & rhs)
+CSimpleIniTempl::Entry::operator >	SimpleINI/SimpleIni.h	/^        bool operator>(const Entry & rhs) const { return LoadOrder()(rhs, *this); }$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const Entry & rhs) const
+CSimpleIniTempl::Entry::pComment	SimpleINI/SimpleIni.h	/^        const SI_CHAR * pComment;$/;"	m	struct:CSimpleIniTempl::Entry	access:public
+CSimpleIniTempl::Entry::pItem	SimpleINI/SimpleIni.h	/^        const SI_CHAR * pItem;$/;"	m	struct:CSimpleIniTempl::Entry	access:public
+CSimpleIniTempl::FileWriter	SimpleINI/SimpleIni.h	/^    class FileWriter : public OutputWriter {$/;"	c	class:CSimpleIniTempl	inherits:OutputWriter	access:public
+CSimpleIniTempl::FileWriter::FileWriter	SimpleINI/SimpleIni.h	/^        FileWriter(FILE * a_file) : m_file(a_file) { }$/;"	f	class:CSimpleIniTempl::FileWriter	access:public	signature:(FILE * a_file)
+CSimpleIniTempl::FileWriter::FileWriter	SimpleINI/SimpleIni.h	/^        FileWriter(const FileWriter &);             \/\/ disable$/;"	p	class:CSimpleIniTempl::FileWriter	access:private	signature:(const FileWriter &)
+CSimpleIniTempl::FileWriter::Write	SimpleINI/SimpleIni.h	/^        void Write(const char * a_pBuf) {$/;"	f	class:CSimpleIniTempl::FileWriter	access:public	signature:(const char * a_pBuf)
+CSimpleIniTempl::FileWriter::m_file	SimpleINI/SimpleIni.h	/^        FILE * m_file;$/;"	m	class:CSimpleIniTempl::FileWriter	access:private
+CSimpleIniTempl::FileWriter::operator =	SimpleINI/SimpleIni.h	/^        FileWriter & operator=(const FileWriter &); \/\/ disable$/;"	p	class:CSimpleIniTempl::FileWriter	access:private	signature:(const FileWriter &)
+CSimpleIniTempl::FindEntry	SimpleINI/SimpleIni.h	/^    bool FindEntry($/;"	p	class:CSimpleIniTempl	access:private	signature:( SI_CHAR *& a_pData, const SI_CHAR *& a_pSection, const SI_CHAR *& a_pKey, const SI_CHAR *& a_pVal, const SI_CHAR *& a_pComment ) const
+CSimpleIniTempl::FindEntry	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::FindEntry($/;"	f	class:CSimpleIniTempl	signature:( SI_CHAR *& a_pData, const SI_CHAR *& a_pSection, const SI_CHAR *& a_pKey, const SI_CHAR *& a_pVal, const SI_CHAR *& a_pComment ) const
+CSimpleIniTempl::FindFileComment	SimpleINI/SimpleIni.h	/^    SI_Error FindFileComment($/;"	p	class:CSimpleIniTempl	access:private	signature:( SI_CHAR *& a_pData, bool a_bCopyStrings )
+CSimpleIniTempl::FindFileComment	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::FindFileComment($/;"	f	class:CSimpleIniTempl	signature:( SI_CHAR *& a_pData, bool a_bCopyStrings )
+CSimpleIniTempl::GetAllKeys	SimpleINI/SimpleIni.h	/^    bool GetAllKeys($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, TNamesDepend & a_names ) const
+CSimpleIniTempl::GetAllKeys	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetAllKeys($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, TNamesDepend & a_names ) const
+CSimpleIniTempl::GetAllSections	SimpleINI/SimpleIni.h	/^    void GetAllSections($/;"	p	class:CSimpleIniTempl	access:public	signature:( TNamesDepend & a_names ) const
+CSimpleIniTempl::GetAllSections	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetAllSections($/;"	f	class:CSimpleIniTempl	signature:( TNamesDepend & a_names ) const
+CSimpleIniTempl::GetAllValues	SimpleINI/SimpleIni.h	/^    bool GetAllValues($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, TNamesDepend & a_values ) const
+CSimpleIniTempl::GetAllValues	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetAllValues($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, TNamesDepend & a_values ) const
+CSimpleIniTempl::GetBoolValue	SimpleINI/SimpleIni.h	/^    bool GetBoolValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bDefault = false, bool * a_pHasMultiple = NULL ) const
+CSimpleIniTempl::GetBoolValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetBoolValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bDefault, bool * a_pHasMultiple ) const
+CSimpleIniTempl::GetConverter	SimpleINI/SimpleIni.h	/^    Converter GetConverter() const {$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
+CSimpleIniTempl::GetDoubleValue	SimpleINI/SimpleIni.h	/^    double GetDoubleValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, double a_nDefault = 0, bool * a_pHasMultiple = NULL ) const
+CSimpleIniTempl::GetDoubleValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetDoubleValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, double a_nDefault, bool * a_pHasMultiple ) const
+CSimpleIniTempl::GetLongValue	SimpleINI/SimpleIni.h	/^    long GetLongValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, long a_nDefault = 0, bool * a_pHasMultiple = NULL ) const
+CSimpleIniTempl::GetLongValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetLongValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, long a_nDefault, bool * a_pHasMultiple ) const
+CSimpleIniTempl::GetSection	SimpleINI/SimpleIni.h	/^    const TKeyVal * GetSection($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection ) const
+CSimpleIniTempl::GetSection	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetSection($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection ) const
+CSimpleIniTempl::GetSectionSize	SimpleINI/SimpleIni.h	/^    int GetSectionSize($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection ) const
+CSimpleIniTempl::GetSectionSize	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetSectionSize($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection ) const
+CSimpleIniTempl::GetValue	SimpleINI/SimpleIni.h	/^    const SI_CHAR * GetValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pDefault = NULL, bool * a_pHasMultiple = NULL ) const
+CSimpleIniTempl::GetValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pDefault, bool * a_pHasMultiple ) const
+CSimpleIniTempl::IsComment	SimpleINI/SimpleIni.h	/^    inline bool IsComment(SI_CHAR ch) const {$/;"	f	class:CSimpleIniTempl	access:private	signature:(SI_CHAR ch) const
+CSimpleIniTempl::IsEmpty	SimpleINI/SimpleIni.h	/^    bool IsEmpty() const { return m_data.empty(); }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
+CSimpleIniTempl::IsLess	SimpleINI/SimpleIni.h	/^    bool IsLess(const SI_CHAR * a_pLeft, const SI_CHAR * a_pRight) const {$/;"	f	class:CSimpleIniTempl	access:private	signature:(const SI_CHAR * a_pLeft, const SI_CHAR * a_pRight) const
+CSimpleIniTempl::IsMultiKey	SimpleINI/SimpleIni.h	/^    bool IsMultiKey() const { return m_bAllowMultiKey; }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
+CSimpleIniTempl::IsMultiLine	SimpleINI/SimpleIni.h	/^    bool IsMultiLine() const { return m_bAllowMultiLine; }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
+CSimpleIniTempl::IsMultiLineData	SimpleINI/SimpleIni.h	/^    bool IsMultiLineData(const SI_CHAR * a_pData) const;$/;"	p	class:CSimpleIniTempl	access:private	signature:(const SI_CHAR * a_pData) const
+CSimpleIniTempl::IsMultiLineData	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::IsMultiLineData($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pData ) const
+CSimpleIniTempl::IsMultiLineTag	SimpleINI/SimpleIni.h	/^    bool IsMultiLineTag(const SI_CHAR * a_pData) const;$/;"	p	class:CSimpleIniTempl	access:private	signature:(const SI_CHAR * a_pData) const
+CSimpleIniTempl::IsMultiLineTag	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::IsMultiLineTag($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pVal ) const
+CSimpleIniTempl::IsNewLineChar	SimpleINI/SimpleIni.h	/^    bool IsNewLineChar(SI_CHAR a_c) const;$/;"	p	class:CSimpleIniTempl	access:private	signature:(SI_CHAR a_c) const
+CSimpleIniTempl::IsNewLineChar	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::IsNewLineChar($/;"	f	class:CSimpleIniTempl	signature:( SI_CHAR a_c ) const
+CSimpleIniTempl::IsSpace	SimpleINI/SimpleIni.h	/^    inline bool IsSpace(SI_CHAR ch) const {$/;"	f	class:CSimpleIniTempl	access:private	signature:(SI_CHAR ch) const
+CSimpleIniTempl::IsUnicode	SimpleINI/SimpleIni.h	/^    bool IsUnicode() const { return m_bStoreIsUtf8; }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
+CSimpleIniTempl::LoadData	SimpleINI/SimpleIni.h	/^    SI_Error LoadData($/;"	p	class:CSimpleIniTempl	access:public	signature:( const char * a_pData, size_t a_uDataLen )
+CSimpleIniTempl::LoadData	SimpleINI/SimpleIni.h	/^    SI_Error LoadData($/;"	p	class:CSimpleIniTempl	access:public	signature:( std::istream & a_istream )
+CSimpleIniTempl::LoadData	SimpleINI/SimpleIni.h	/^    SI_Error LoadData(const std::string & a_strData) {$/;"	f	class:CSimpleIniTempl	access:public	signature:(const std::string & a_strData)
+CSimpleIniTempl::LoadData	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::LoadData($/;"	f	class:CSimpleIniTempl	signature:( const char * a_pData, size_t a_uDataLen )
+CSimpleIniTempl::LoadData	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::LoadData($/;"	f	class:CSimpleIniTempl	signature:( std::istream & a_istream )
+CSimpleIniTempl::LoadFile	SimpleINI/SimpleIni.h	/^    SI_Error LoadFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( FILE * a_fpFile )
+CSimpleIniTempl::LoadFile	SimpleINI/SimpleIni.h	/^    SI_Error LoadFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_WCHAR_T * a_pwszFile )
+CSimpleIniTempl::LoadFile	SimpleINI/SimpleIni.h	/^    SI_Error LoadFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( const char * a_pszFile )
+CSimpleIniTempl::LoadFile	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::LoadFile($/;"	f	class:CSimpleIniTempl	signature:( FILE * a_fpFile )
+CSimpleIniTempl::LoadFile	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::LoadFile($/;"	f	class:CSimpleIniTempl	signature:( const SI_WCHAR_T * a_pwszFile )
+CSimpleIniTempl::LoadFile	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::LoadFile($/;"	f	class:CSimpleIniTempl	signature:( const char * a_pszFile )
+CSimpleIniTempl::LoadMultiLineText	SimpleINI/SimpleIni.h	/^    bool LoadMultiLineText($/;"	p	class:CSimpleIniTempl	access:private	signature:( SI_CHAR *& a_pData, const SI_CHAR *& a_pVal, const SI_CHAR * a_pTagName, bool a_bAllowBlankLinesInComment = false ) const
+CSimpleIniTempl::LoadMultiLineText	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::LoadMultiLineText($/;"	f	class:CSimpleIniTempl	signature:( SI_CHAR *& a_pData, const SI_CHAR *& a_pVal, const SI_CHAR * a_pTagName, bool a_bAllowBlankLinesInComment ) const
+CSimpleIniTempl::OutputMultiLineText	SimpleINI/SimpleIni.h	/^    bool OutputMultiLineText($/;"	p	class:CSimpleIniTempl	access:private	signature:( OutputWriter & a_oOutput, Converter & a_oConverter, const SI_CHAR * a_pText ) const
+CSimpleIniTempl::OutputMultiLineText	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::OutputMultiLineText($/;"	f	class:CSimpleIniTempl	signature:( OutputWriter & a_oOutput, Converter & a_oConverter, const SI_CHAR * a_pText ) const
+CSimpleIniTempl::OutputWriter	SimpleINI/SimpleIni.h	/^    class OutputWriter {$/;"	c	class:CSimpleIniTempl	access:public
+CSimpleIniTempl::OutputWriter::OutputWriter	SimpleINI/SimpleIni.h	/^        OutputWriter() { }$/;"	f	class:CSimpleIniTempl::OutputWriter	access:public	signature:()
+CSimpleIniTempl::OutputWriter::OutputWriter	SimpleINI/SimpleIni.h	/^        OutputWriter(const OutputWriter &);             \/\/ disable$/;"	p	class:CSimpleIniTempl::OutputWriter	access:private	signature:(const OutputWriter &)
+CSimpleIniTempl::OutputWriter::Write	SimpleINI/SimpleIni.h	/^        virtual void Write(const char * a_pBuf) = 0;$/;"	p	class:CSimpleIniTempl::OutputWriter	access:public	signature:(const char * a_pBuf)
+CSimpleIniTempl::OutputWriter::operator =	SimpleINI/SimpleIni.h	/^        OutputWriter & operator=(const OutputWriter &); \/\/ disable$/;"	p	class:CSimpleIniTempl::OutputWriter	access:private	signature:(const OutputWriter &)
+CSimpleIniTempl::OutputWriter::~OutputWriter	SimpleINI/SimpleIni.h	/^        virtual ~OutputWriter() { }$/;"	f	class:CSimpleIniTempl::OutputWriter	access:public	signature:()
+CSimpleIniTempl::Reset	SimpleINI/SimpleIni.h	/^    void Reset();$/;"	p	class:CSimpleIniTempl	access:public	signature:()
+CSimpleIniTempl::Reset	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::Reset()$/;"	f	class:CSimpleIniTempl	signature:()
+CSimpleIniTempl::Save	SimpleINI/SimpleIni.h	/^    SI_Error Save($/;"	f	class:CSimpleIniTempl	access:public	signature:( std::ostream & a_ostream, bool a_bAddSignature = false ) const
+CSimpleIniTempl::Save	SimpleINI/SimpleIni.h	/^    SI_Error Save($/;"	f	class:CSimpleIniTempl	access:public	signature:( std::string & a_sBuffer, bool a_bAddSignature = false ) const
+CSimpleIniTempl::Save	SimpleINI/SimpleIni.h	/^    SI_Error Save($/;"	p	class:CSimpleIniTempl	access:public	signature:( OutputWriter & a_oOutput, bool a_bAddSignature = false ) const
+CSimpleIniTempl::Save	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::Save($/;"	f	class:CSimpleIniTempl	signature:( OutputWriter & a_oOutput, bool a_bAddSignature ) const
+CSimpleIniTempl::SaveFile	SimpleINI/SimpleIni.h	/^    SI_Error SaveFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( FILE * a_pFile, bool a_bAddSignature = false ) const
+CSimpleIniTempl::SaveFile	SimpleINI/SimpleIni.h	/^    SI_Error SaveFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_WCHAR_T * a_pwszFile, bool a_bAddSignature = true ) const
+CSimpleIniTempl::SaveFile	SimpleINI/SimpleIni.h	/^    SI_Error SaveFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( const char * a_pszFile, bool a_bAddSignature = true ) const
+CSimpleIniTempl::SaveFile	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::SaveFile($/;"	f	class:CSimpleIniTempl	signature:( FILE * a_pFile, bool a_bAddSignature ) const
+CSimpleIniTempl::SaveFile	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::SaveFile($/;"	f	class:CSimpleIniTempl	signature:( const SI_WCHAR_T * a_pwszFile, bool a_bAddSignature ) const
+CSimpleIniTempl::SaveFile	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::SaveFile($/;"	f	class:CSimpleIniTempl	signature:( const char * a_pszFile, bool a_bAddSignature ) const
+CSimpleIniTempl::SetBoolValue	SimpleINI/SimpleIni.h	/^    SI_Error SetBoolValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bValue, const SI_CHAR * a_pComment = NULL, bool a_bForceReplace = false )
+CSimpleIniTempl::SetBoolValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::SetBoolValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bValue, const SI_CHAR * a_pComment, bool a_bForceReplace )
+CSimpleIniTempl::SetDoubleValue	SimpleINI/SimpleIni.h	/^    SI_Error SetDoubleValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, double a_nValue, const SI_CHAR * a_pComment = NULL, bool a_bForceReplace = false )
+CSimpleIniTempl::SetDoubleValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::SetDoubleValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, double a_nValue, const SI_CHAR * a_pComment, bool a_bForceReplace )
+CSimpleIniTempl::SetLongValue	SimpleINI/SimpleIni.h	/^    SI_Error SetLongValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, long a_nValue, const SI_CHAR * a_pComment = NULL, bool a_bUseHex = false, bool a_bForceReplace = false )
+CSimpleIniTempl::SetLongValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::SetLongValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, long a_nValue, const SI_CHAR * a_pComment, bool a_bUseHex, bool a_bForceReplace )
+CSimpleIniTempl::SetMultiKey	SimpleINI/SimpleIni.h	/^    void SetMultiKey(bool a_bAllowMultiKey = true) {$/;"	f	class:CSimpleIniTempl	access:public	signature:(bool a_bAllowMultiKey = true)
+CSimpleIniTempl::SetMultiLine	SimpleINI/SimpleIni.h	/^    void SetMultiLine(bool a_bAllowMultiLine = true) {$/;"	f	class:CSimpleIniTempl	access:public	signature:(bool a_bAllowMultiLine = true)
+CSimpleIniTempl::SetSpaces	SimpleINI/SimpleIni.h	/^    void SetSpaces(bool a_bSpaces = true) {$/;"	f	class:CSimpleIniTempl	access:public	signature:(bool a_bSpaces = true)
+CSimpleIniTempl::SetUnicode	SimpleINI/SimpleIni.h	/^    void SetUnicode(bool a_bIsUtf8 = true) {$/;"	f	class:CSimpleIniTempl	access:public	signature:(bool a_bIsUtf8 = true)
+CSimpleIniTempl::SetValue	SimpleINI/SimpleIni.h	/^    SI_Error SetValue($/;"	f	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pValue, const SI_CHAR * a_pComment = NULL, bool a_bForceReplace = false )
+CSimpleIniTempl::SkipNewLine	SimpleINI/SimpleIni.h	/^    inline void SkipNewLine(SI_CHAR *& a_pData) const {$/;"	f	class:CSimpleIniTempl	access:private	signature:(SI_CHAR *& a_pData) const
+CSimpleIniTempl::StreamWriter	SimpleINI/SimpleIni.h	/^    class StreamWriter : public OutputWriter {$/;"	c	class:CSimpleIniTempl	inherits:OutputWriter	access:public
+CSimpleIniTempl::StreamWriter::StreamWriter	SimpleINI/SimpleIni.h	/^        StreamWriter(const StreamWriter &);             \/\/ disable$/;"	p	class:CSimpleIniTempl::StreamWriter	access:private	signature:(const StreamWriter &)
+CSimpleIniTempl::StreamWriter::StreamWriter	SimpleINI/SimpleIni.h	/^        StreamWriter(std::ostream & a_ostream) : m_ostream(a_ostream) { }$/;"	f	class:CSimpleIniTempl::StreamWriter	access:public	signature:(std::ostream & a_ostream)
+CSimpleIniTempl::StreamWriter::Write	SimpleINI/SimpleIni.h	/^        void Write(const char * a_pBuf) {$/;"	f	class:CSimpleIniTempl::StreamWriter	access:public	signature:(const char * a_pBuf)
+CSimpleIniTempl::StreamWriter::m_ostream	SimpleINI/SimpleIni.h	/^        std::ostream & m_ostream;$/;"	m	class:CSimpleIniTempl::StreamWriter	access:private
+CSimpleIniTempl::StreamWriter::operator =	SimpleINI/SimpleIni.h	/^        StreamWriter & operator=(const StreamWriter &); \/\/ disable$/;"	p	class:CSimpleIniTempl::StreamWriter	access:private	signature:(const StreamWriter &)
+CSimpleIniTempl::StringWriter	SimpleINI/SimpleIni.h	/^    class StringWriter : public OutputWriter {$/;"	c	class:CSimpleIniTempl	inherits:OutputWriter	access:public
+CSimpleIniTempl::StringWriter::StringWriter	SimpleINI/SimpleIni.h	/^        StringWriter(const StringWriter &);             \/\/ disable$/;"	p	class:CSimpleIniTempl::StringWriter	access:private	signature:(const StringWriter &)
+CSimpleIniTempl::StringWriter::StringWriter	SimpleINI/SimpleIni.h	/^        StringWriter(std::string & a_string) : m_string(a_string) { }$/;"	f	class:CSimpleIniTempl::StringWriter	access:public	signature:(std::string & a_string)
+CSimpleIniTempl::StringWriter::Write	SimpleINI/SimpleIni.h	/^        void Write(const char * a_pBuf) {$/;"	f	class:CSimpleIniTempl::StringWriter	access:public	signature:(const char * a_pBuf)
+CSimpleIniTempl::StringWriter::m_string	SimpleINI/SimpleIni.h	/^        std::string & m_string;$/;"	m	class:CSimpleIniTempl::StringWriter	access:private
+CSimpleIniTempl::StringWriter::operator =	SimpleINI/SimpleIni.h	/^        StringWriter & operator=(const StringWriter &); \/\/ disable$/;"	p	class:CSimpleIniTempl::StringWriter	access:private	signature:(const StringWriter &)
+CSimpleIniTempl::TKeyVal	SimpleINI/SimpleIni.h	/^    typedef std::multimap<Entry,const SI_CHAR *,typename Entry::KeyOrder> TKeyVal;$/;"	t	class:CSimpleIniTempl	access:public
+CSimpleIniTempl::TNamesDepend	SimpleINI/SimpleIni.h	/^    typedef std::list<Entry> TNamesDepend;$/;"	t	class:CSimpleIniTempl	access:public
+CSimpleIniTempl::TSection	SimpleINI/SimpleIni.h	/^    typedef std::map<Entry,TKeyVal,typename Entry::KeyOrder> TSection;$/;"	t	class:CSimpleIniTempl	access:public
+CSimpleIniTempl::UsingSpaces	SimpleINI/SimpleIni.h	/^    bool UsingSpaces() const { return m_bSpaces; }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
+CSimpleIniTempl::m_bAllowMultiKey	SimpleINI/SimpleIni.h	/^    bool m_bAllowMultiKey;$/;"	m	class:CSimpleIniTempl	access:private
+CSimpleIniTempl::m_bAllowMultiLine	SimpleINI/SimpleIni.h	/^    bool m_bAllowMultiLine;$/;"	m	class:CSimpleIniTempl	access:private
+CSimpleIniTempl::m_bSpaces	SimpleINI/SimpleIni.h	/^    bool m_bSpaces;$/;"	m	class:CSimpleIniTempl	access:private
+CSimpleIniTempl::m_bStoreIsUtf8	SimpleINI/SimpleIni.h	/^    bool m_bStoreIsUtf8;$/;"	m	class:CSimpleIniTempl	access:private
+CSimpleIniTempl::m_data	SimpleINI/SimpleIni.h	/^    TSection m_data;$/;"	m	class:CSimpleIniTempl	access:private
+CSimpleIniTempl::m_nOrder	SimpleINI/SimpleIni.h	/^    int m_nOrder;$/;"	m	class:CSimpleIniTempl	access:private
+CSimpleIniTempl::m_pData	SimpleINI/SimpleIni.h	/^    SI_CHAR * m_pData;$/;"	m	class:CSimpleIniTempl	access:private
+CSimpleIniTempl::m_pFileComment	SimpleINI/SimpleIni.h	/^    const SI_CHAR * m_pFileComment;$/;"	m	class:CSimpleIniTempl	access:private
+CSimpleIniTempl::m_strings	SimpleINI/SimpleIni.h	/^    TNamesDepend m_strings;$/;"	m	class:CSimpleIniTempl	access:private
+CSimpleIniTempl::m_uDataLen	SimpleINI/SimpleIni.h	/^    size_t m_uDataLen;$/;"	m	class:CSimpleIniTempl	access:private
+CSimpleIniTempl::operator =	SimpleINI/SimpleIni.h	/^    CSimpleIniTempl & operator=(const CSimpleIniTempl &); \/\/ disabled$/;"	p	class:CSimpleIniTempl	access:private	signature:(const CSimpleIniTempl &)
+CSimpleIniTempl::~CSimpleIniTempl	SimpleINI/SimpleIni.h	/^    ~CSimpleIniTempl();$/;"	p	class:CSimpleIniTempl	access:public	signature:()
+CSimpleIniTempl::~CSimpleIniTempl	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::~CSimpleIniTempl()$/;"	f	class:CSimpleIniTempl	signature:()
+CSimpleIniW	SimpleINI/SimpleIni.h	/^    SI_NoCase<UChar>,SI_ConvertW<UChar> >               CSimpleIniW;$/;"	t
+CSimpleIniW	SimpleINI/SimpleIni.h	/^    SI_NoCase<wchar_t>,SI_ConvertW<wchar_t> >           CSimpleIniW;$/;"	t
+Close	Console.cpp	/^void Console::Close()$/;"	f	class:Console	signature:()
+Close	Console.h	/^        void Close();$/;"	p	class:Console	access:public	signature:()
+Close	File.cpp	/^void inFile::Close()$/;"	f	class:inFile	signature:()
+Close	File.cpp	/^void outFile::Close()$/;"	f	class:outFile	signature:()
+Close	File.h	/^        void Close();$/;"	p	class:inFile	access:public	signature:()
+Close	File.h	/^        void Close();$/;"	p	class:outFile	access:public	signature:()
+Close	ScriptManager.cpp	/^void ScriptManager::Close()$/;"	f	class:ScriptManager	signature:()
+Close	ScriptManager.h	/^        void Close();$/;"	p	class:ScriptManager	access:public	signature:()
+Console	Console.cpp	/^Console::Console()$/;"	f	class:Console	signature:()
+Console	Console.h	/^        Console();$/;"	p	class:Console	access:public	signature:()
+Console	Console.h	/^class Console$/;"	c
+Console::AddLine	Console.cpp	/^void Console::AddLine(std::string line)$/;"	f	class:Console	signature:(std::string line)
+Console::AddLine	Console.h	/^        void AddLine(std::string line);$/;"	p	class:Console	access:public	signature:(std::string line)
+Console::Close	Console.cpp	/^void Console::Close()$/;"	f	class:Console	signature:()
+Console::Close	Console.h	/^        void Close();$/;"	p	class:Console	access:public	signature:()
+Console::Console	Console.cpp	/^Console::Console()$/;"	f	class:Console	signature:()
+Console::Console	Console.h	/^        Console();$/;"	p	class:Console	access:public	signature:()
+Console::Init	Console.cpp	/^void Console::Init()$/;"	f	class:Console	signature:()
+Console::Init	Console.h	/^        void Init();$/;"	p	class:Console	access:public	signature:()
+Console::PushString	Console.cpp	/^void Console::PushString(std::string str)$/;"	f	class:Console	signature:(std::string str)
+Console::PushString	Console.h	/^        void PushString(std::string str);$/;"	p	class:Console	access:public	signature:(std::string str)
+ConversionFlags	SimpleINI/ConvertUTF.h	/^} ConversionFlags;$/;"	t	typeref:enum:__anon2
+ConversionResult	SimpleINI/ConvertUTF.h	/^} ConversionResult;$/;"	t	typeref:enum:__anon1
+ConvertFromStore	SimpleINI/SimpleIni.h	/^    bool ConvertFromStore($/;"	f	class:SI_ConvertA	access:public	signature:( const char * a_pInputData, size_t a_uInputDataLen, SI_CHAR * a_pOutputData, size_t a_uOutputDataSize)
+ConvertFromStore	SimpleINI/SimpleIni.h	/^    bool ConvertFromStore($/;"	f	class:SI_ConvertW	access:public	signature:( const char * a_pInputData, size_t a_uInputDataLen, SI_CHAR * a_pOutputData, size_t a_uOutputDataSize)
+ConvertFromStore	SimpleINI/SimpleIni.h	/^    bool ConvertFromStore($/;"	f	class:SI_ConvertW	access:public	signature:( const char * a_pInputData, size_t a_uInputDataLen, UChar * a_pOutputData, size_t a_uOutputDataSize)
+ConvertToStore	SimpleINI/SimpleIni.h	/^        bool ConvertToStore(const SI_CHAR * a_pszString) {$/;"	f	class:CSimpleIniTempl::Converter	access:public	signature:(const SI_CHAR * a_pszString)
+ConvertToStore	SimpleINI/SimpleIni.h	/^    bool ConvertToStore($/;"	f	class:SI_ConvertA	access:public	signature:( const SI_CHAR * a_pInputData, char * a_pOutputData, size_t a_uOutputDataSize)
+ConvertToStore	SimpleINI/SimpleIni.h	/^    bool ConvertToStore($/;"	f	class:SI_ConvertW	access:public	signature:( const SI_CHAR * a_pInputData, char * a_pOutputData, size_t a_uOutputDataSize )
+ConvertToStore	SimpleINI/SimpleIni.h	/^    bool ConvertToStore($/;"	f	class:SI_ConvertW	access:public	signature:( const SI_CHAR * a_pInputData, char * a_pOutputData, size_t a_uOutputDataSize)
+ConvertToStore	SimpleINI/SimpleIni.h	/^    bool ConvertToStore($/;"	f	class:SI_ConvertW	access:public	signature:( const UChar * a_pInputData, char * a_pOutputData, size_t a_uOutputDataSize)
+ConvertUTF16toUTF32	SimpleINI/ConvertUTF.c	/^ConversionResult ConvertUTF16toUTF32 ($/;"	f	signature:( const UTF16** sourceStart, const UTF16* sourceEnd, UTF32** targetStart, UTF32* targetEnd, ConversionFlags flags)
+ConvertUTF16toUTF32	SimpleINI/ConvertUTF.h	/^ConversionResult ConvertUTF16toUTF32 ($/;"	p	signature:( const UTF16** sourceStart, const UTF16* sourceEnd, UTF32** targetStart, UTF32* targetEnd, ConversionFlags flags)
+ConvertUTF16toUTF8	SimpleINI/ConvertUTF.c	/^ConversionResult ConvertUTF16toUTF8 ($/;"	f	signature:( const UTF16** sourceStart, const UTF16* sourceEnd, UTF8** targetStart, UTF8* targetEnd, ConversionFlags flags)
+ConvertUTF16toUTF8	SimpleINI/ConvertUTF.h	/^ConversionResult ConvertUTF16toUTF8 ($/;"	p	signature:( const UTF16** sourceStart, const UTF16* sourceEnd, UTF8** targetStart, UTF8* targetEnd, ConversionFlags flags)
+ConvertUTF32toUTF16	SimpleINI/ConvertUTF.c	/^ConversionResult ConvertUTF32toUTF16 ($/;"	f	signature:( const UTF32** sourceStart, const UTF32* sourceEnd, UTF16** targetStart, UTF16* targetEnd, ConversionFlags flags)
+ConvertUTF32toUTF16	SimpleINI/ConvertUTF.h	/^ConversionResult ConvertUTF32toUTF16 ($/;"	p	signature:( const UTF32** sourceStart, const UTF32* sourceEnd, UTF16** targetStart, UTF16* targetEnd, ConversionFlags flags)
+ConvertUTF32toUTF8	SimpleINI/ConvertUTF.c	/^ConversionResult ConvertUTF32toUTF8 ($/;"	f	signature:( const UTF32** sourceStart, const UTF32* sourceEnd, UTF8** targetStart, UTF8* targetEnd, ConversionFlags flags)
+ConvertUTF32toUTF8	SimpleINI/ConvertUTF.h	/^ConversionResult ConvertUTF32toUTF8 ($/;"	p	signature:( const UTF32** sourceStart, const UTF32* sourceEnd, UTF8** targetStart, UTF8* targetEnd, ConversionFlags flags)
+ConvertUTF8toUTF16	SimpleINI/ConvertUTF.c	/^ConversionResult ConvertUTF8toUTF16 ($/;"	f	signature:( const UTF8** sourceStart, const UTF8* sourceEnd, UTF16** targetStart, UTF16* targetEnd, ConversionFlags flags)
+ConvertUTF8toUTF16	SimpleINI/ConvertUTF.h	/^ConversionResult ConvertUTF8toUTF16 ($/;"	p	signature:( const UTF8** sourceStart, const UTF8* sourceEnd, UTF16** targetStart, UTF16* targetEnd, ConversionFlags flags)
+ConvertUTF8toUTF32	SimpleINI/ConvertUTF.c	/^ConversionResult ConvertUTF8toUTF32 ($/;"	f	signature:( const UTF8** sourceStart, const UTF8* sourceEnd, UTF32** targetStart, UTF32* targetEnd, ConversionFlags flags)
+ConvertUTF8toUTF32	SimpleINI/ConvertUTF.h	/^ConversionResult ConvertUTF8toUTF32 ($/;"	p	signature:( const UTF8** sourceStart, const UTF8* sourceEnd, UTF32** targetStart, UTF32* targetEnd, ConversionFlags flags)
+Converter	SimpleINI/SimpleIni.h	/^        Converter(bool a_bStoreIsUtf8) : SI_CONVERTER(a_bStoreIsUtf8) {$/;"	f	class:CSimpleIniTempl::Converter	access:public	signature:(bool a_bStoreIsUtf8)
+Converter	SimpleINI/SimpleIni.h	/^        Converter(const Converter & rhs) { operator=(rhs); }$/;"	f	class:CSimpleIniTempl::Converter	access:public	signature:(const Converter & rhs)
+Converter	SimpleINI/SimpleIni.h	/^    class Converter : private SI_CONVERTER {$/;"	c	class:CSimpleIniTempl	inherits:SI_CONVERTER	access:public
+CopyString	SimpleINI/SimpleIni.h	/^    SI_Error CopyString(const SI_CHAR *& a_pString);$/;"	p	class:CSimpleIniTempl	access:private	signature:(const SI_CHAR *& a_pString)
+CopyString	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::CopyString($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR *& a_pString )
+CreateBody	PhysicsWrappers/BoxWorld.cpp	/^void* BoxWorld::CreateBody(Def d)$/;"	f	class:BoxWorld	signature:(Def d)
+CreateBody	PhysicsWrappers/BoxWorld.h	/^        void* CreateBody(Def d);$/;"	p	class:BoxWorld	access:public	signature:(Def d)
+CreateBody	PhysicsWrappers/PhysicsWorld.h	/^        virtual void* CreateBody(Def d)=0;$/;"	p	class:PhysicsWorld	access:public	signature:(Def d)
+DEF_ANY	Definition.h	12;"	d
+DEF_BOOL	Definition.h	11;"	d
+DEF_DEF	Definition.h	13;"	d
+DEF_FLOAT	Definition.h	9;"	d
+DEF_INT	Definition.h	7;"	d
+DEF_STRING	Definition.h	10;"	d
+DEF_UNDEF	Definition.h	8;"	d
+Data	SimpleINI/SimpleIni.h	/^        const char * Data() { return m_scratch.data(); }$/;"	f	class:CSimpleIniTempl::Converter	access:public	signature:()
+Def	Definition.cpp	/^Def::Def()$/;"	f	class:Def	signature:()
+Def	Definition.h	/^        Def();$/;"	p	class:Def	access:public	signature:()
+Def	Definition.h	/^class Def$/;"	c
+Def::Def	Definition.cpp	/^Def::Def()$/;"	f	class:Def	signature:()
+Def::Def	Definition.h	/^        Def();$/;"	p	class:Def	access:public	signature:()
+Def::GetType	Definition.h	/^        int GetType(std::string name) {return types[name];};$/;"	f	class:Def	access:public	signature:(std::string name)
+Def::GetVal	Definition.h	/^        T GetVal(std::string name) {return any_cast<T>(vals[name]);};$/;"	f	class:Def	access:public	signature:(std::string name)
+Def::IsDefined	Definition.h	/^        bool IsDefined(std::string name) {return define[name];};$/;"	f	class:Def	access:public	signature:(std::string name)
+Def::Load	Definition.cpp	/^void Def::Load(inFile& f)$/;"	f	class:Def	signature:(inFile& f)
+Def::Load	Definition.cpp	/^void Def::Load(std::string filename)$/;"	f	class:Def	signature:(std::string filename)
+Def::Load	Definition.h	/^        void Load(inFile& f);$/;"	p	class:Def	access:public	signature:(inFile& f)
+Def::Load	Definition.h	/^        void Load(std::string filename);$/;"	p	class:Def	access:public	signature:(std::string filename)
+Def::Save	Definition.cpp	/^void Def::Save(outFile& f)$/;"	f	class:Def	signature:(outFile& f)
+Def::Save	Definition.cpp	/^void Def::Save(std::string filename)$/;"	f	class:Def	signature:(std::string filename)
+Def::Save	Definition.h	/^        void Save(outFile& f);$/;"	p	class:Def	access:public	signature:(outFile& f)
+Def::Save	Definition.h	/^        void Save(std::string filename);$/;"	p	class:Def	access:public	signature:(std::string filename)
+Def::SetString	Definition.h	/^        void SetString(std::string name, std::string val) {SetVal(name, val);}; \/\/Compatibility reasons$/;"	f	class:Def	access:public	signature:(std::string name, std::string val)
+Def::SetVal	Definition.cpp	/^void Def::SetVal(std::string name, Def val)$/;"	f	class:Def	signature:(std::string name, Def val)
+Def::SetVal	Definition.cpp	/^void Def::SetVal(std::string name, bool val)$/;"	f	class:Def	signature:(std::string name, bool val)
+Def::SetVal	Definition.cpp	/^void Def::SetVal(std::string name, boost::any val)$/;"	f	class:Def	signature:(std::string name, boost::any val)
+Def::SetVal	Definition.cpp	/^void Def::SetVal(std::string name, float val)$/;"	f	class:Def	signature:(std::string name, float val)
+Def::SetVal	Definition.cpp	/^void Def::SetVal(std::string name, int val)$/;"	f	class:Def	signature:(std::string name, int val)
+Def::SetVal	Definition.cpp	/^void Def::SetVal(std::string name, std::string val)$/;"	f	class:Def	signature:(std::string name, std::string val)
+Def::SetVal	Definition.h	/^        void SetVal(std::string name, Def val);$/;"	p	class:Def	access:public	signature:(std::string name, Def val)
+Def::SetVal	Definition.h	/^        void SetVal(std::string name, bool val);$/;"	p	class:Def	access:public	signature:(std::string name, bool val)
+Def::SetVal	Definition.h	/^        void SetVal(std::string name, boost::any val);$/;"	p	class:Def	access:public	signature:(std::string name, boost::any val)
+Def::SetVal	Definition.h	/^        void SetVal(std::string name, float val);$/;"	p	class:Def	access:public	signature:(std::string name, float val)
+Def::SetVal	Definition.h	/^        void SetVal(std::string name, int val);$/;"	p	class:Def	access:public	signature:(std::string name, int val)
+Def::SetVal	Definition.h	/^        void SetVal(std::string name, std::string val);$/;"	p	class:Def	access:public	signature:(std::string name, std::string val)
+Def::define	Definition.h	/^        std::map<std::string, bool> define;$/;"	m	class:Def	access:protected
+Def::types	Definition.h	/^        std::map<std::string, int> types;$/;"	m	class:Def	access:protected
+Def::vals	Definition.h	/^        std::map<std::string, boost::any> vals;$/;"	m	class:Def	access:protected
+Delete	SimpleINI/SimpleIni.h	/^    bool Delete($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bRemoveEmpty = false )
+Delete	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::Delete($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bRemoveEmpty )
+DeleteString	SimpleINI/SimpleIni.h	/^    void DeleteString(const SI_CHAR * a_pString);$/;"	p	class:CSimpleIniTempl	access:private	signature:(const SI_CHAR * a_pString)
+DeleteString	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::DeleteString($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pString )
+Destroy	Entity.h	/^        virtual void Destroy() {}; \/\/Unfinished destruction function. Use right before deleting.$/;"	f	class:Entity	access:public	signature:()
+Destroy	entites/phys_static.h	/^        virtual void Destroy() {phys_world->DestroyBody(body);};$/;"	f	class:phys_static	access:public	signature:()
+DestroyBody	PhysicsWrappers/BoxWorld.h	/^        void DestroyBody(PhysicsBody* body) {world->DestroyBody((b2Body*)body->GetBody());};$/;"	f	class:BoxWorld	access:public	signature:(PhysicsBody* body)
+DestroyBody	PhysicsWrappers/PhysicsWorld.h	/^        virtual void DestroyBody(PhysicsBody* body)=0;$/;"	p	class:PhysicsWorld	access:public	signature:(PhysicsBody* body)
+Draw	Entity.h	/^        virtual void Draw(sf::RenderTarget& win) {win.draw(draw);}; \/\/Drawing function, is called by the scene manager$/;"	f	class:Entity	access:public	signature:(sf::RenderTarget& win)
+Draw	entites/InvisEntity.h	/^        virtual void Draw(sf::RenderTarget& win) {};$/;"	f	class:InvisEntity	access:public	signature:(sf::RenderTarget& win)
+Draw	entites/InvisPhysEntity.h	/^        virtual void Draw(sf::RenderTarget& win) {};$/;"	f	class:InvisPhysEntity	access:public	signature:(sf::RenderTarget& win)
+Draw	entites/ent_item.h	/^        virtual void Draw(sf::RenderTarget& win) {win.draw(draw);};$/;"	f	class:ent_item	access:public	signature:(sf::RenderTarget& win)
+Draw	entites/ent_string.h	/^        virtual void Draw(sf::RenderTarget& win) {win.draw(str);};$/;"	f	class:ent_string	access:public	signature:(sf::RenderTarget& win)
+DynamicBody	PhysicsWrappers/Box2DPhysics.h	10;"	d
+ENT_ITEM_H	entites/ent_item.h	4;"	d
+EXEC	Makefile	/^EXEC=bullwhip$/;"	m
+EndContact	BullwhipContactListener.cpp	/^void BullwhipContactListener::EndContact(b2Contact* contact)$/;"	f	class:BullwhipContactListener	signature:(b2Contact* contact)
+EndContact	BullwhipContactListener.h	/^        void EndContact(b2Contact* contact);$/;"	p	class:BullwhipContactListener	access:public	signature:(b2Contact* contact)
+Entity	Entity.cpp	/^Entity::Entity()$/;"	f	class:Entity	signature:()
+Entity	Entity.h	/^        Entity();$/;"	p	class:Entity	access:public	signature:()
+Entity	Entity.h	/^class Entity : public Def$/;"	c	inherits:Def
+Entity::Destroy	Entity.h	/^        virtual void Destroy() {}; \/\/Unfinished destruction function. Use right before deleting.$/;"	f	class:Entity	access:public	signature:()
+Entity::Draw	Entity.h	/^        virtual void Draw(sf::RenderTarget& win) {win.draw(draw);}; \/\/Drawing function, is called by the scene manager$/;"	f	class:Entity	access:public	signature:(sf::RenderTarget& win)
+Entity::Entity	Entity.cpp	/^Entity::Entity()$/;"	f	class:Entity	signature:()
+Entity::Entity	Entity.h	/^        Entity();$/;"	p	class:Entity	access:public	signature:()
+Entity::GetAttribute	Entity.h	/^        virtual bool GetAttribute(std::string attribute) {return attributes[attribute];}; \/\/Getting attributes$/;"	f	class:Entity	access:public	signature:(std::string attribute)
+Entity::GetHeight	Entity.h	/^        virtual int GetHeight() {return h;};$/;"	f	class:Entity	access:public	signature:()
+Entity::GetRot	Entity.h	/^        virtual float GetRot() {return draw.getRotation();};$/;"	f	class:Entity	access:public	signature:()
+Entity::GetWidth	Entity.h	/^        virtual int GetWidth() {return w;};$/;"	f	class:Entity	access:public	signature:()
+Entity::GetX	Entity.h	/^        virtual float GetX() {return draw.getPosition().x;}; \/\/Getting position$/;"	f	class:Entity	access:public	signature:()
+Entity::GetY	Entity.h	/^        virtual float GetY() {return draw.getPosition().y;};$/;"	f	class:Entity	access:public	signature:()
+Entity::SetAttribute	Entity.h	/^        virtual void SetAttribute(std::string attribute, bool val) {attributes[attribute] = val;};  \/\/Setting basic attributes, call in ctor only most$/;"	f	class:Entity	access:public	signature:(std::string attribute, bool val)
+Entity::SetPos	Entity.h	/^        virtual void SetPos(Vec2& m) {pos = m;};$/;"	f	class:Entity	access:public	signature:(Vec2& m)
+Entity::SetRot	Entity.h	/^        virtual void SetRot(float m) {draw.setRotation(m);angle = m;}; \/\/Getting and setting rotation angle (Degrees)$/;"	f	class:Entity	access:public	signature:(float m)
+Entity::SetX	Entity.cpp	/^void Entity::SetX(float m)$/;"	f	class:Entity	signature:(float m)
+Entity::SetX	Entity.h	/^        virtual void SetX(float m); \/\/Setting position$/;"	p	class:Entity	access:public	signature:(float m)
+Entity::SetXQ	Entity.cpp	/^void Entity::SetXQ(float m)$/;"	f	class:Entity	signature:(float m)
+Entity::SetXQ	Entity.h	/^        virtual void SetXQ(float m); \/\/Setting quened postion. Useful for modifiying position during a timestep.$/;"	p	class:Entity	access:public	signature:(float m)
+Entity::SetY	Entity.cpp	/^void Entity::SetY(float m)$/;"	f	class:Entity	signature:(float m)
+Entity::SetY	Entity.h	/^        virtual void SetY(float m);$/;"	p	class:Entity	access:public	signature:(float m)
+Entity::SetYQ	Entity.cpp	/^void Entity::SetYQ(float m)$/;"	f	class:Entity	signature:(float m)
+Entity::SetYQ	Entity.h	/^        virtual void SetYQ(float m);$/;"	p	class:Entity	access:public	signature:(float m)
+Entity::Update	Entity.h	/^        virtual void Update(SceneManager* scene) {};\/\/Function prototype, since c++ doesn't have a super call this is for$/;"	f	class:Entity	access:public	signature:(SceneManager* scene)
+Entity::alive	Entity.h	/^        bool alive; \/\/Is the object alive? (used in things such as whether to call update or not)$/;"	m	class:Entity	access:protected
+Entity::angle	Entity.h	/^        float angle;$/;"	m	class:Entity	access:protected
+Entity::asset	Entity.h	/^        Def asset; \/\/def loaded for asset stuff$/;"	m	class:Entity	access:protected
+Entity::attributes	Entity.h	/^        std::map<std::string, bool> attributes;$/;"	m	class:Entity	access:protected
+Entity::damage	Entity.cpp	/^void Entity::damage(int dmg)$/;"	f	class:Entity	signature:(int dmg)
+Entity::damage	Entity.h	/^        virtual void damage(int dmg); \/\/Incomplete damage system.$/;"	p	class:Entity	access:public	signature:(int dmg)
+Entity::do_q	Entity.h	/^        bool do_q; \/\/Whether or not a quene is active$/;"	m	class:Entity	access:protected
+Entity::draw	Entity.h	/^        sf::Sprite draw; \/\/Sprite for drawing things$/;"	m	class:Entity	access:protected
+Entity::getspr	Entity.h	/^        virtual sf::Sprite& getspr() {return draw;}; \/\/Helper function for getting the sprite. Not used anymore, just here for compatiblity.$/;"	f	class:Entity	access:public	signature:()
+Entity::h	Entity.h	/^        int h;$/;"	m	class:Entity	access:protected
+Entity::hh	Entity.h	/^        int hh; \/\/Half height$/;"	m	class:Entity	access:protected
+Entity::hw	Entity.h	/^        int hw; \/\/Half width of sprite$/;"	m	class:Entity	access:protected
+Entity::init	Entity.cpp	/^void Entity::init()$/;"	f	class:Entity	signature:()
+Entity::init	Entity.h	/^        virtual void init(); \/\/Intialization$/;"	p	class:Entity	access:public	signature:()
+Entity::isAlive	Entity.h	/^        virtual bool isAlive() {return alive;}; \/\/returns whether the entity is alive or not.$/;"	f	class:Entity	access:public	signature:()
+Entity::isasset	Entity.h	/^        bool isasset;$/;"	m	class:Entity	access:protected
+Entity::lx	Entity.h	/^        float lx; \/\/Variable to hold current position$/;"	m	class:Entity	access:protected
+Entity::ly	Entity.h	/^        float ly; \/\/see above$/;"	m	class:Entity	access:protected
+Entity::name	Entity.h	/^        std::string name; \/\/Quick getting the name of the entity eg phys_static$/;"	m	class:Entity	access:public
+Entity::onBeginCollision	Entity.h	/^        virtual void onBeginCollision(Entity* obj) {return;}; \/\/Called only when the collision starts$/;"	f	class:Entity	access:public	signature:(Entity* obj)
+Entity::onCollision	Entity.h	/^        virtual void onCollision(Entity* obj) {return;}; \/\/Collision callback, used for physics collisions. Called every frame of the collision$/;"	f	class:Entity	access:public	signature:(Entity* obj)
+Entity::onEndCollision	Entity.h	/^        virtual void onEndCollision(Entity* obj) {return;};$/;"	f	class:Entity	access:public	signature:(Entity* obj)
+Entity::pos	Entity.h	/^        Vec2 pos;$/;"	m	class:Entity	access:protected
+Entity::qpos	Entity.h	/^        Vec2 qpos;$/;"	m	class:Entity	access:protected
+Entity::update	Entity.cpp	/^void Entity::update(SceneManager* scene)$/;"	f	class:Entity	signature:(SceneManager* scene)
+Entity::update	Entity.h	/^        virtual void update(SceneManager* scene);   \/\/Update the basic components, don't overrider unless you need to add more$/;"	p	class:Entity	access:public	signature:(SceneManager* scene)
+Entity::w	Entity.h	/^        int w;$/;"	m	class:Entity	access:protected
+Entity::xq	Entity.h	/^        float xq; \/\/Quened position$/;"	m	class:Entity	access:protected
+Entity::yq	Entity.h	/^        float yq;$/;"	m	class:Entity	access:protected
+EntityRegistry	EntityRegistry.h	/^        EntityRegistry() {};$/;"	f	class:EntityRegistry	access:public	signature:()
+EntityRegistry	EntityRegistry.h	/^class EntityRegistry$/;"	c
+EntityRegistry::AddFactory	EntityRegistry.h	/^        void AddFactory(std::string name, Entity* (*func)(int)) {factorys[name] = func;};$/;"	f	class:EntityRegistry	access:public	signature:(std::string name, Entity* (*func)(int))
+EntityRegistry::EntityRegistry	EntityRegistry.h	/^        EntityRegistry() {};$/;"	f	class:EntityRegistry	access:public	signature:()
+EntityRegistry::NewEnt	EntityRegistry.h	/^        Entity* NewEnt(std::string name) {return factorys[name](0);}$/;"	f	class:EntityRegistry	access:public	signature:(std::string name)
+EntityRegistry::factorys	EntityRegistry.h	/^        std::map<std::string, Entity* (*)(int)> factorys;$/;"	m	class:EntityRegistry	access:private
+Entry	SimpleINI/SimpleIni.h	/^        Entry(const Entry & rhs) { operator=(rhs); }$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const Entry & rhs)
+Entry	SimpleINI/SimpleIni.h	/^        Entry(const SI_CHAR * a_pszItem = NULL, int a_nOrder = 0)$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const SI_CHAR * a_pszItem = NULL, int a_nOrder = 0)
+Entry	SimpleINI/SimpleIni.h	/^        Entry(const SI_CHAR * a_pszItem, const SI_CHAR * a_pszComment, int a_nOrder)$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const SI_CHAR * a_pszItem, const SI_CHAR * a_pszComment, int a_nOrder)
+Entry	SimpleINI/SimpleIni.h	/^    struct Entry {$/;"	s	class:CSimpleIniTempl	access:public
+ExecScript	ScriptManager.cpp	/^void ScriptManager::ExecScript(std::string filename)$/;"	f	class:ScriptManager	signature:(std::string filename)
+ExecScript	ScriptManager.h	/^        void ExecScript(std::string filename);$/;"	p	class:ScriptManager	access:public	signature:(std::string filename)
+FileWriter	SimpleINI/SimpleIni.h	/^        FileWriter(FILE * a_file) : m_file(a_file) { }$/;"	f	class:CSimpleIniTempl::FileWriter	access:public	signature:(FILE * a_file)
+FileWriter	SimpleINI/SimpleIni.h	/^        FileWriter(const FileWriter &);             \/\/ disable$/;"	p	class:CSimpleIniTempl::FileWriter	access:private	signature:(const FileWriter &)
+FileWriter	SimpleINI/SimpleIni.h	/^    class FileWriter : public OutputWriter {$/;"	c	class:CSimpleIniTempl	inherits:OutputWriter	access:public
+FindEntry	SimpleINI/SimpleIni.h	/^    bool FindEntry($/;"	p	class:CSimpleIniTempl	access:private	signature:( SI_CHAR *& a_pData, const SI_CHAR *& a_pSection, const SI_CHAR *& a_pKey, const SI_CHAR *& a_pVal, const SI_CHAR *& a_pComment ) const
+FindEntry	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::FindEntry($/;"	f	class:CSimpleIniTempl	signature:( SI_CHAR *& a_pData, const SI_CHAR *& a_pSection, const SI_CHAR *& a_pKey, const SI_CHAR *& a_pVal, const SI_CHAR *& a_pComment ) const
+FindFileComment	SimpleINI/SimpleIni.h	/^    SI_Error FindFileComment($/;"	p	class:CSimpleIniTempl	access:private	signature:( SI_CHAR *& a_pData, bool a_bCopyStrings )
+FindFileComment	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::FindFileComment($/;"	f	class:CSimpleIniTempl	signature:( SI_CHAR *& a_pData, bool a_bCopyStrings )
+GUI	Game.h	/^        sf::RenderTexture GUI;$/;"	m	class:Game	access:private
+GUI_sprite	Game.h	/^        sf::Sprite GUI_sprite;$/;"	m	class:Game	access:private
+Game	Game.h	/^class Game$/;"	c
+Game::GUI	Game.h	/^        sf::RenderTexture GUI;$/;"	m	class:Game	access:private
+Game::GUI_sprite	Game.h	/^        sf::Sprite GUI_sprite;$/;"	m	class:Game	access:private
+Game::GetStateManager	Game.h	/^        StateManager* GetStateManager() {return state;};$/;"	f	class:Game	access:public	signature:()
+Game::HandleEvent	Game.h	/^        void HandleEvent(sf::Event& event) {};$/;"	f	class:Game	access:public	signature:(sf::Event& event)
+Game::Quit	Game.h	/^        void Quit() {running = false;};$/;"	f	class:Game	access:public	signature:()
+Game::clear	Game.h	/^        void clear() {win.clear();};$/;"	f	class:Game	access:public	signature:()
+Game::counter	Game.h	/^        sf::Clock counter;$/;"	m	class:Game	access:private
+Game::display	Game.h	/^        void display() {win.display();};$/;"	f	class:Game	access:public	signature:()
+Game::draw	Game.cpp	/^void Game::draw()$/;"	f	class:Game	signature:()
+Game::draw	Game.h	/^        void draw();$/;"	p	class:Game	access:public	signature:()
+Game::fps	Game.h	/^        sf::Text fps;$/;"	m	class:Game	access:private
+Game::fpsfont	Game.h	/^        sf::Font fpsfont;$/;"	m	class:Game	access:private
+Game::gEvent	Game.h	/^        bool gEvent(sf::Event &ev) {return win.pollEvent(ev);};$/;"	f	class:Game	access:public	signature:(sf::Event &ev)
+Game::getwin	Game.h	/^        sf::RenderWindow& getwin() {return win;};$/;"	f	class:Game	access:public	signature:()
+Game::init	Game.cpp	/^void Game::init(std::string title, int x, int y)$/;"	f	class:Game	signature:(std::string title, int x, int y)
+Game::init	Game.h	/^        void init(std::string title, int x, int y);$/;"	p	class:Game	access:public	signature:(std::string title, int x, int y)
+Game::paused	Game.h	/^        bool paused;$/;"	m	class:Game	access:private
+Game::run	Game.h	/^        bool run() {return running;};$/;"	f	class:Game	access:public	signature:()
+Game::running	Game.h	/^        bool running;$/;"	m	class:Game	access:private
+Game::state	Game.h	/^        StateManager* state;$/;"	m	class:Game	access:private
+Game::win	Game.h	/^        sf::RenderWindow win;$/;"	m	class:Game	access:private
+GetAllKeys	SimpleINI/SimpleIni.h	/^    bool GetAllKeys($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, TNamesDepend & a_names ) const
+GetAllKeys	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetAllKeys($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, TNamesDepend & a_names ) const
+GetAllSections	SimpleINI/SimpleIni.h	/^    void GetAllSections($/;"	p	class:CSimpleIniTempl	access:public	signature:( TNamesDepend & a_names ) const
+GetAllSections	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetAllSections($/;"	f	class:CSimpleIniTempl	signature:( TNamesDepend & a_names ) const
+GetAllValues	SimpleINI/SimpleIni.h	/^    bool GetAllValues($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, TNamesDepend & a_values ) const
+GetAllValues	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetAllValues($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, TNamesDepend & a_values ) const
+GetAngle	PhysicsWrappers/BoxStaticBody.h	/^        float GetAngle() {return toDeg(body->GetAngle());};$/;"	f	class:BoxStaticBody	access:public	signature:()
+GetAngle	PhysicsWrappers/PhysicsBody.h	/^        virtual float GetAngle()=0;$/;"	p	class:PhysicsBody	access:public	signature:()
+GetAngularVelocity	PhysicsWrappers/BoxStaticBody.h	/^        float GetAngularVelocity() {return toDeg(body->GetAngularVelocity());};$/;"	f	class:BoxStaticBody	access:public	signature:()
+GetAngularVelocity	PhysicsWrappers/PhysicsBody.h	/^        virtual float GetAngularVelocity()=0;$/;"	p	class:PhysicsBody	access:public	signature:()
+GetAttribute	Entity.h	/^        virtual bool GetAttribute(std::string attribute) {return attributes[attribute];}; \/\/Getting attributes$/;"	f	class:Entity	access:public	signature:(std::string attribute)
+GetBody	PhysicsWrappers/BoxStaticBody.h	/^        void* GetBody() {return body;};$/;"	f	class:BoxStaticBody	access:public	signature:()
+GetBody	PhysicsWrappers/PhysicsBody.h	/^        virtual void* GetBody()=0;$/;"	p	class:PhysicsBody	access:public	signature:()
+GetBoolValue	SimpleINI/SimpleIni.h	/^    bool GetBoolValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bDefault = false, bool * a_pHasMultiple = NULL ) const
+GetBoolValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetBoolValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bDefault, bool * a_pHasMultiple ) const
+GetConverter	SimpleINI/SimpleIni.h	/^    Converter GetConverter() const {$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
+GetDoubleValue	SimpleINI/SimpleIni.h	/^    double GetDoubleValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, double a_nDefault = 0, bool * a_pHasMultiple = NULL ) const
+GetDoubleValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetDoubleValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, double a_nDefault, bool * a_pHasMultiple ) const
+GetEntity	SceneManager.h	/^        virtual Entity* GetEntity(std::string n) {return specents[n];};$/;"	f	class:SceneManager	access:public	signature:(std::string n)
+GetGravity	PhysicsWrappers/BoxWorld.h	/^        Vec2 GetGravity() {return Vec2(0,0);};$/;"	f	class:BoxWorld	access:public	signature:()
+GetGravity	PhysicsWrappers/PhysicsWorld.h	/^        virtual Vec2 GetGravity()=0;$/;"	p	class:PhysicsWorld	access:public	signature:()
+GetHeight	Entity.h	/^        virtual int GetHeight() {return h;};$/;"	f	class:Entity	access:public	signature:()
+GetItem	Item.cpp	/^Def* Inventory::GetItem(std::string name)$/;"	f	class:Inventory	signature:(std::string name)
+GetItem	Item.h	/^        Def GetItem(std::string name) {return items[name];};$/;"	f	class:ItemManager	access:public	signature:(std::string name)
+GetItem	Item.h	/^        Def* GetItem(std::string name);$/;"	p	class:Inventory	access:public	signature:(std::string name)
+GetLinearVelocity	PhysicsWrappers/BoxStaticBody.h	/^        Vec2 GetLinearVelocity() {return toReg(body->GetLinearVelocity());};$/;"	f	class:BoxStaticBody	access:public	signature:()
+GetLinearVelocity	PhysicsWrappers/PhysicsBody.h	/^        virtual Vec2 GetLinearVelocity()=0;$/;"	p	class:PhysicsBody	access:public	signature:()
+GetLongValue	SimpleINI/SimpleIni.h	/^    long GetLongValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, long a_nDefault = 0, bool * a_pHasMultiple = NULL ) const
+GetLongValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetLongValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, long a_nDefault, bool * a_pHasMultiple ) const
+GetPosition	PhysicsWrappers/BoxStaticBody.h	/^        Vec2 GetPosition() {return toReg(body->GetPosition());};$/;"	f	class:BoxStaticBody	access:public	signature:()
+GetPosition	PhysicsWrappers/PhysicsBody.h	/^        virtual Vec2 GetPosition()=0;$/;"	p	class:PhysicsBody	access:public	signature:()
+GetRot	Entity.h	/^        virtual float GetRot() {return draw.getRotation();};$/;"	f	class:Entity	access:public	signature:()
+GetRot	entites/phys_static.h	/^        virtual float GetRot() {return toDeg(body->GetAngle());};$/;"	f	class:phys_static	access:public	signature:()
+GetSection	SimpleINI/SimpleIni.h	/^    const TKeyVal * GetSection($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection ) const
+GetSection	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetSection($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection ) const
+GetSectionSize	SimpleINI/SimpleIni.h	/^    int GetSectionSize($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection ) const
+GetSectionSize	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetSectionSize($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection ) const
+GetStateManager	Game.h	/^        StateManager* GetStateManager() {return state;};$/;"	f	class:Game	access:public	signature:()
+GetType	Definition.h	/^        int GetType(std::string name) {return types[name];};$/;"	f	class:Def	access:public	signature:(std::string name)
+GetType	PhysicsWrappers/PhysicsBody.h	/^        virtual int GetType() {return type;};$/;"	f	class:PhysicsBody	access:public	signature:()
+GetVal	Definition.h	/^        T GetVal(std::string name) {return any_cast<T>(vals[name]);};$/;"	f	class:Def	access:public	signature:(std::string name)
+GetValue	SimpleINI/SimpleIni.h	/^    const SI_CHAR * GetValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pDefault = NULL, bool * a_pHasMultiple = NULL ) const
+GetValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pDefault, bool * a_pHasMultiple ) const
+GetWidth	Entity.h	/^        virtual int GetWidth() {return w;};$/;"	f	class:Entity	access:public	signature:()
+GetX	Entity.h	/^        virtual float GetX() {return draw.getPosition().x;}; \/\/Getting position$/;"	f	class:Entity	access:public	signature:()
+GetX	entites/phys_static.h	/^        virtual float GetX() {return body->GetPosition().x;};$/;"	f	class:phys_static	access:public	signature:()
+GetY	Entity.h	/^        virtual float GetY() {return draw.getPosition().y;};$/;"	f	class:Entity	access:public	signature:()
+GetY	entites/phys_static.h	/^        virtual float GetY() {return body->GetPosition().y;};$/;"	f	class:phys_static	access:public	signature:()
+Global	Constants.cpp	/^Def Global;$/;"	v
+HandleEvent	Game.h	/^        void HandleEvent(sf::Event& event) {};$/;"	f	class:Game	access:public	signature:(sf::Event& event)
+HasItem	Item.cpp	/^bool Inventory::HasItem(std::string name)$/;"	f	class:Inventory	signature:(std::string name)
+HasItem	Item.h	/^        bool HasItem(std::string name);$/;"	p	class:Inventory	access:public	signature:(std::string name)
+IMAGEMANAGER_H_INCLUDED	ImageManager.h	6;"	d
+INCLUDED_SimpleIni_h	SimpleINI/SimpleIni.h	195;"	d
+INVISENTITY_H	entites/InvisEntity.h	5;"	d
+ITEM_H	Item.h	28;"	d
+ImageManager	ImageManager.h	/^class ImageManager : public ResourceManager< sf::Texture > {$/;"	c	inherits:ResourceManager
+ImageManager::load	ImageManager.cpp	/^sf::Texture* ImageManager::load( const std::string& strId ) {$/;"	f	class:ImageManager	signature:( const std::string& strId )
+ImageManager::load	ImageManager.h	/^    virtual sf::Texture* load( const std::string& strId );$/;"	p	class:ImageManager	access:protected	signature:( const std::string& strId )
+Init	Console.cpp	/^void Console::Init()$/;"	f	class:Console	signature:()
+Init	Console.h	/^        void Init();$/;"	p	class:Console	access:public	signature:()
+Init	MainMenuState.cpp	/^void MainMenuState::Init(sf::RenderWindow* win)$/;"	f	class:MainMenuState	signature:(sf::RenderWindow* win)
+Init	MainMenuState.h	/^        virtual void Init(sf::RenderWindow* win);$/;"	p	class:MainMenuState	access:public	signature:(sf::RenderWindow* win)
+Init	Particle.cpp	/^void Particle::Init(sf::Vector2f p, sf::Color c, sf::Vector2f s, sf::Vector2f g, float l)$/;"	f	class:Particle	signature:(sf::Vector2f p, sf::Color c, sf::Vector2f s, sf::Vector2f g, float l)
+Init	Particle.h	/^        void Init(sf::Vector2f p, sf::Color c, sf::Vector2f s, sf::Vector2f g, float l);$/;"	p	class:Particle	access:public	signature:(sf::Vector2f p, sf::Color c, sf::Vector2f s, sf::Vector2f g, float l)
+Init	ParticleEmitter.cpp	/^void ParticleEmitter::Init(int max_p, sf::Vector2f p)$/;"	f	class:ParticleEmitter	signature:(int max_p, sf::Vector2f p)
+Init	ParticleEmitter.h	/^        virtual void Init(int max_p, sf::Vector2f p);$/;"	p	class:ParticleEmitter	access:public	signature:(int max_p, sf::Vector2f p)
+Init	PhysicsWrappers/BoxWorld.cpp	/^void BoxWorld::Init(Vec2 gravity)$/;"	f	class:BoxWorld	signature:(Vec2 gravity)
+Init	PhysicsWrappers/BoxWorld.h	/^        void Init(Vec2 gravity);$/;"	p	class:BoxWorld	access:public	signature:(Vec2 gravity)
+Init	PhysicsWrappers/PhysicsWorld.h	/^        virtual void Init(Vec2 gravity)=0;$/;"	p	class:PhysicsWorld	access:public	signature:(Vec2 gravity)
+Init	PlayState.cpp	/^void PlayState::Init(sf::RenderWindow* win)$/;"	f	class:PlayState	signature:(sf::RenderWindow* win)
+Init	PlayState.h	/^        virtual void Init(sf::RenderWindow* win);$/;"	p	class:PlayState	access:public	signature:(sf::RenderWindow* win)
+Init	SceneManager.cpp	/^void SceneManager::Init(Vec2 gravity)$/;"	f	class:SceneManager	signature:(Vec2 gravity)
+Init	SceneManager.h	/^        virtual void Init(Vec2 gravity); \/\/Intializes the physics and views$/;"	p	class:SceneManager	access:public	signature:(Vec2 gravity)
+Init	State.h	/^        virtual void Init(sf::RenderWindow* win) {window = win;}; \/\/Intializes the state, that line is a must.$/;"	f	class:State	access:public	signature:(sf::RenderWindow* win)
+Init	StateManager.h	/^        void Init(sf::RenderWindow* win) {window = win;}; \/\/Inits the state manger with the window$/;"	f	class:StateManager	access:public	signature:(sf::RenderWindow* win)
+Intialize	PhysicsWrappers/BoxDynamicBody.cpp	/^void BoxDynamicBody::Intialize(Entity* obj)$/;"	f	class:BoxDynamicBody	signature:(Entity* obj)
+Intialize	PhysicsWrappers/BoxDynamicBody.h	/^        void Intialize(Entity* obj);$/;"	p	class:BoxDynamicBody	access:public	signature:(Entity* obj)
+Intialize	PhysicsWrappers/BoxStaticBody.cpp	/^void BoxStaticBody::Intialize(Entity* obj)$/;"	f	class:BoxStaticBody	signature:(Entity* obj)
+Intialize	PhysicsWrappers/BoxStaticBody.h	/^        virtual void Intialize(Entity* obj);$/;"	p	class:BoxStaticBody	access:public	signature:(Entity* obj)
+Intialize	PhysicsWrappers/BoxTriggerBody.cpp	/^void BoxTriggerBody::Intialize(Entity* obj)$/;"	f	class:BoxTriggerBody	signature:(Entity* obj)
+Intialize	PhysicsWrappers/BoxTriggerBody.h	/^        void Intialize(Entity* obj);$/;"	p	class:BoxTriggerBody	access:public	signature:(Entity* obj)
+Intialize	PhysicsWrappers/PhysicsBody.h	/^        virtual void Intialize(Entity* obj)=0;$/;"	p	class:PhysicsBody	access:public	signature:(Entity* obj)
+Inventory	Item.h	/^class Inventory$/;"	c
+Inventory::AddItem	Item.h	/^        void AddItem(std::string itemname) {items.push_back(Items.GetItem(itemname));};$/;"	f	class:Inventory	access:public	signature:(std::string itemname)
+Inventory::GetItem	Item.cpp	/^Def* Inventory::GetItem(std::string name)$/;"	f	class:Inventory	signature:(std::string name)
+Inventory::GetItem	Item.h	/^        Def* GetItem(std::string name);$/;"	p	class:Inventory	access:public	signature:(std::string name)
+Inventory::HasItem	Item.cpp	/^bool Inventory::HasItem(std::string name)$/;"	f	class:Inventory	signature:(std::string name)
+Inventory::HasItem	Item.h	/^        bool HasItem(std::string name);$/;"	p	class:Inventory	access:public	signature:(std::string name)
+Inventory::Load	Item.h	/^        void Load(std::string filename) {};$/;"	f	class:Inventory	access:public	signature:(std::string filename)
+Inventory::RemoveItem	Item.cpp	/^bool Inventory::RemoveItem(std::string name)$/;"	f	class:Inventory	signature:(std::string name)
+Inventory::RemoveItem	Item.h	/^        bool RemoveItem(std::string name);$/;"	p	class:Inventory	access:public	signature:(std::string name)
+Inventory::Save	Item.h	/^        void Save(std::string filename) {};$/;"	f	class:Inventory	access:public	signature:(std::string filename)
+Inventory::items	Item.h	/^        std::vector<Def> items;$/;"	m	class:Inventory	access:private
+InvisEntity	entites/InvisEntity.cpp	/^InvisEntity::InvisEntity()$/;"	f	class:InvisEntity	signature:()
+InvisEntity	entites/InvisEntity.h	/^        InvisEntity();$/;"	p	class:InvisEntity	access:public	signature:()
+InvisEntity	entites/InvisEntity.h	/^class InvisEntity : public Entity$/;"	c	inherits:Entity
+InvisEntity::Draw	entites/InvisEntity.h	/^        virtual void Draw(sf::RenderTarget& win) {};$/;"	f	class:InvisEntity	access:public	signature:(sf::RenderTarget& win)
+InvisEntity::InvisEntity	entites/InvisEntity.cpp	/^InvisEntity::InvisEntity()$/;"	f	class:InvisEntity	signature:()
+InvisEntity::InvisEntity	entites/InvisEntity.h	/^        InvisEntity();$/;"	p	class:InvisEntity	access:public	signature:()
+InvisEntity::init	entites/InvisEntity.cpp	/^void InvisEntity::init()$/;"	f	class:InvisEntity	signature:()
+InvisEntity::init	entites/InvisEntity.h	/^        virtual void init();$/;"	p	class:InvisEntity	access:public	signature:()
+InvisEntity::super	entites/InvisEntity.h	/^        typedef Entity super;$/;"	t	class:InvisEntity	access:private
+InvisPhysEntity	entites/InvisPhysEntity.cpp	/^InvisPhysEntity::InvisPhysEntity()$/;"	f	class:InvisPhysEntity	signature:()
+InvisPhysEntity	entites/InvisPhysEntity.h	/^        InvisPhysEntity();$/;"	p	class:InvisPhysEntity	access:public	signature:()
+InvisPhysEntity	entites/InvisPhysEntity.h	/^class InvisPhysEntity : public phys_static$/;"	c	inherits:phys_static
+InvisPhysEntity::Draw	entites/InvisPhysEntity.h	/^        virtual void Draw(sf::RenderTarget& win) {};$/;"	f	class:InvisPhysEntity	access:public	signature:(sf::RenderTarget& win)
+InvisPhysEntity::InvisPhysEntity	entites/InvisPhysEntity.cpp	/^InvisPhysEntity::InvisPhysEntity()$/;"	f	class:InvisPhysEntity	signature:()
+InvisPhysEntity::InvisPhysEntity	entites/InvisPhysEntity.h	/^        InvisPhysEntity();$/;"	p	class:InvisPhysEntity	access:public	signature:()
+InvisPhysEntity::init	entites/InvisPhysEntity.cpp	/^void InvisPhysEntity::init()$/;"	f	class:InvisPhysEntity	signature:()
+InvisPhysEntity::init	entites/InvisPhysEntity.h	/^        virtual void init();$/;"	p	class:InvisPhysEntity	access:public	signature:()
+InvisPhysEntity::super	entites/InvisPhysEntity.h	/^        typedef phys_static super;$/;"	t	class:InvisPhysEntity	access:private
+IsComment	SimpleINI/SimpleIni.h	/^    inline bool IsComment(SI_CHAR ch) const {$/;"	f	class:CSimpleIniTempl	access:private	signature:(SI_CHAR ch) const
+IsDefined	Definition.h	/^        bool IsDefined(std::string name) {return define[name];};$/;"	f	class:Def	access:public	signature:(std::string name)
+IsEmpty	SimpleINI/SimpleIni.h	/^    bool IsEmpty() const { return m_data.empty(); }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
+IsLess	SimpleINI/SimpleIni.h	/^    bool IsLess(const SI_CHAR * a_pLeft, const SI_CHAR * a_pRight) const {$/;"	f	class:CSimpleIniTempl	access:private	signature:(const SI_CHAR * a_pLeft, const SI_CHAR * a_pRight) const
+IsMultiKey	SimpleINI/SimpleIni.h	/^    bool IsMultiKey() const { return m_bAllowMultiKey; }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
+IsMultiLine	SimpleINI/SimpleIni.h	/^    bool IsMultiLine() const { return m_bAllowMultiLine; }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
+IsMultiLineData	SimpleINI/SimpleIni.h	/^    bool IsMultiLineData(const SI_CHAR * a_pData) const;$/;"	p	class:CSimpleIniTempl	access:private	signature:(const SI_CHAR * a_pData) const
+IsMultiLineData	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::IsMultiLineData($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pData ) const
+IsMultiLineTag	SimpleINI/SimpleIni.h	/^    bool IsMultiLineTag(const SI_CHAR * a_pData) const;$/;"	p	class:CSimpleIniTempl	access:private	signature:(const SI_CHAR * a_pData) const
+IsMultiLineTag	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::IsMultiLineTag($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pVal ) const
+IsNewLineChar	SimpleINI/SimpleIni.h	/^    bool IsNewLineChar(SI_CHAR a_c) const;$/;"	p	class:CSimpleIniTempl	access:private	signature:(SI_CHAR a_c) const
+IsNewLineChar	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::IsNewLineChar($/;"	f	class:CSimpleIniTempl	signature:( SI_CHAR a_c ) const
+IsSpace	SimpleINI/SimpleIni.h	/^    inline bool IsSpace(SI_CHAR ch) const {$/;"	f	class:CSimpleIniTempl	access:private	signature:(SI_CHAR ch) const
+IsUnicode	SimpleINI/SimpleIni.h	/^    bool IsUnicode() const { return m_bStoreIsUtf8; }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
+ItemManager	Item.h	/^class ItemManager$/;"	c
+ItemManager::GetItem	Item.h	/^        Def GetItem(std::string name) {return items[name];};$/;"	f	class:ItemManager	access:public	signature:(std::string name)
+ItemManager::SetItem	Item.h	/^        void SetItem(std::string name, Def d) {items[name] = d;};$/;"	f	class:ItemManager	access:public	signature:(std::string name, Def d)
+ItemManager::items	Item.h	/^        std::map<std::string, Def> items;$/;"	m	class:ItemManager	access:private
+Items	Constants.cpp	/^ItemManager Items;$/;"	v
+Jump	Actor.cpp	/^void Actor::Jump()$/;"	f	class:Actor	signature:()
+Jump	Actor.h	/^        virtual void Jump();$/;"	p	class:Actor	access:public	signature:()
+KeyOrder	SimpleINI/SimpleIni.h	/^        struct KeyOrder : std::binary_function<Entry, Entry, bool> {$/;"	s	struct:CSimpleIniTempl::Entry	inherits:std::binary_function	access:public
+LDFLAGS	Makefile	/^LDFLAGS=-lsfml-graphics -lsfml-window -lsfml-system -lBox2D$/;"	m
+Load	Definition.cpp	/^void Def::Load(inFile& f)$/;"	f	class:Def	signature:(inFile& f)
+Load	Definition.cpp	/^void Def::Load(std::string filename)$/;"	f	class:Def	signature:(std::string filename)
+Load	Definition.h	/^        void Load(inFile& f);$/;"	p	class:Def	access:public	signature:(inFile& f)
+Load	Definition.h	/^        void Load(std::string filename);$/;"	p	class:Def	access:public	signature:(std::string filename)
+Load	Item.h	/^        void Load(std::string filename) {};$/;"	f	class:Inventory	access:public	signature:(std::string filename)
+LoadData	SimpleINI/SimpleIni.h	/^    SI_Error LoadData($/;"	p	class:CSimpleIniTempl	access:public	signature:( const char * a_pData, size_t a_uDataLen )
+LoadData	SimpleINI/SimpleIni.h	/^    SI_Error LoadData($/;"	p	class:CSimpleIniTempl	access:public	signature:( std::istream & a_istream )
+LoadData	SimpleINI/SimpleIni.h	/^    SI_Error LoadData(const std::string & a_strData) {$/;"	f	class:CSimpleIniTempl	access:public	signature:(const std::string & a_strData)
+LoadData	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::LoadData($/;"	f	class:CSimpleIniTempl	signature:( const char * a_pData, size_t a_uDataLen )
+LoadData	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::LoadData($/;"	f	class:CSimpleIniTempl	signature:( std::istream & a_istream )
+LoadFile	SimpleINI/SimpleIni.h	/^    SI_Error LoadFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( FILE * a_fpFile )
+LoadFile	SimpleINI/SimpleIni.h	/^    SI_Error LoadFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_WCHAR_T * a_pwszFile )
+LoadFile	SimpleINI/SimpleIni.h	/^    SI_Error LoadFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( const char * a_pszFile )
+LoadFile	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::LoadFile($/;"	f	class:CSimpleIniTempl	signature:( FILE * a_fpFile )
+LoadFile	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::LoadFile($/;"	f	class:CSimpleIniTempl	signature:( const SI_WCHAR_T * a_pwszFile )
+LoadFile	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::LoadFile($/;"	f	class:CSimpleIniTempl	signature:( const char * a_pszFile )
+LoadMultiLineText	SimpleINI/SimpleIni.h	/^    bool LoadMultiLineText($/;"	p	class:CSimpleIniTempl	access:private	signature:( SI_CHAR *& a_pData, const SI_CHAR *& a_pVal, const SI_CHAR * a_pTagName, bool a_bAllowBlankLinesInComment = false ) const
+LoadMultiLineText	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::LoadMultiLineText($/;"	f	class:CSimpleIniTempl	signature:( SI_CHAR *& a_pData, const SI_CHAR *& a_pVal, const SI_CHAR * a_pTagName, bool a_bAllowBlankLinesInComment ) const
+LoadOrder	SimpleINI/SimpleIni.h	/^        struct LoadOrder : std::binary_function<Entry, Entry, bool> {$/;"	s	struct:CSimpleIniTempl::Entry	inherits:std::binary_function	access:public
+LoadScene	SceneManager.cpp	/^void SceneManager::LoadScene(std::string filename)$/;"	f	class:SceneManager	signature:(std::string filename)
+LoadScene	SceneManager.h	/^        virtual void LoadScene(std::string filename); \/\/Loads a level from a file.$/;"	p	class:SceneManager	access:public	signature:(std::string filename)
+MainMenuState	MainMenuState.cpp	/^MainMenuState::MainMenuState()$/;"	f	class:MainMenuState	signature:()
+MainMenuState	MainMenuState.h	/^        MainMenuState();$/;"	p	class:MainMenuState	access:public	signature:()
+MainMenuState	MainMenuState.h	/^class MainMenuState : public State$/;"	c	inherits:State
+MainMenuState::Init	MainMenuState.cpp	/^void MainMenuState::Init(sf::RenderWindow* win)$/;"	f	class:MainMenuState	signature:(sf::RenderWindow* win)
+MainMenuState::Init	MainMenuState.h	/^        virtual void Init(sf::RenderWindow* win);$/;"	p	class:MainMenuState	access:public	signature:(sf::RenderWindow* win)
+MainMenuState::MainMenuState	MainMenuState.cpp	/^MainMenuState::MainMenuState()$/;"	f	class:MainMenuState	signature:()
+MainMenuState::MainMenuState	MainMenuState.h	/^        MainMenuState();$/;"	p	class:MainMenuState	access:public	signature:()
+MainMenuState::Update	MainMenuState.cpp	/^std::string MainMenuState::Update()$/;"	f	class:MainMenuState	signature:()
+MainMenuState::Update	MainMenuState.h	/^        virtual std::string Update();$/;"	p	class:MainMenuState	access:public	signature:()
+MainMenuState::alive	MainMenuState.h	/^        bool alive;$/;"	m	class:MainMenuState	access:protected
+MainMenuState::super	MainMenuState.h	/^        typedef State super;$/;"	t	class:MainMenuState	access:private
+MoveLeft	Actor.cpp	/^void Actor::MoveLeft()$/;"	f	class:Actor	signature:()
+MoveLeft	Actor.h	/^        virtual void MoveLeft();$/;"	p	class:Actor	access:public	signature:()
+MoveRight	Actor.cpp	/^void Actor::MoveRight()$/;"	f	class:Actor	signature:()
+MoveRight	Actor.h	/^        virtual void MoveRight();$/;"	p	class:Actor	access:public	signature:()
+NewEnt	EntityRegistry.h	/^        Entity* NewEnt(std::string name) {return factorys[name](0);}$/;"	f	class:EntityRegistry	access:public	signature:(std::string name)
+NewEnt	EntityRegistry.h	/^Entity* NewEnt(int i)$/;"	f	signature:(int i)
+OBJECTS	Makefile	/^OBJECTS=$(SOURCES:.cpp=.o)$/;"	m
+OpenFile	File.cpp	/^void inFile::OpenFile(std::string filename)$/;"	f	class:inFile	signature:(std::string filename)
+OpenFile	File.cpp	/^void outFile::OpenFile(std::string filename)$/;"	f	class:outFile	signature:(std::string filename)
+OpenFile	File.h	/^        void OpenFile(std::string filename);$/;"	p	class:inFile	access:public	signature:(std::string filename)
+OpenFile	File.h	/^        void OpenFile(std::string filename);$/;"	p	class:outFile	access:public	signature:(std::string filename)
+OutputMultiLineText	SimpleINI/SimpleIni.h	/^    bool OutputMultiLineText($/;"	p	class:CSimpleIniTempl	access:private	signature:( OutputWriter & a_oOutput, Converter & a_oConverter, const SI_CHAR * a_pText ) const
+OutputMultiLineText	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::OutputMultiLineText($/;"	f	class:CSimpleIniTempl	signature:( OutputWriter & a_oOutput, Converter & a_oConverter, const SI_CHAR * a_pText ) const
+OutputWriter	SimpleINI/SimpleIni.h	/^        OutputWriter() { }$/;"	f	class:CSimpleIniTempl::OutputWriter	access:public	signature:()
+OutputWriter	SimpleINI/SimpleIni.h	/^        OutputWriter(const OutputWriter &);             \/\/ disable$/;"	p	class:CSimpleIniTempl::OutputWriter	access:private	signature:(const OutputWriter &)
+OutputWriter	SimpleINI/SimpleIni.h	/^    class OutputWriter {$/;"	c	class:CSimpleIniTempl	access:public
+PHYSINUSE	PhysicsWrappers/Box2DPhysics.h	15;"	d
+PHYS_DYNAMIC_H	entites/phys_dynamic.h	5;"	d
+PI	JMath.h	4;"	d
+PLAYSTATE_H	PlayState.h	3;"	d
+Particle	Particle.cpp	/^Particle::Particle()$/;"	f	class:Particle	signature:()
+Particle	Particle.h	/^        Particle();$/;"	p	class:Particle	access:public	signature:()
+Particle	Particle.h	/^class Particle$/;"	c
+Particle::Init	Particle.cpp	/^void Particle::Init(sf::Vector2f p, sf::Color c, sf::Vector2f s, sf::Vector2f g, float l)$/;"	f	class:Particle	signature:(sf::Vector2f p, sf::Color c, sf::Vector2f s, sf::Vector2f g, float l)
+Particle::Init	Particle.h	/^        void Init(sf::Vector2f p, sf::Color c, sf::Vector2f s, sf::Vector2f g, float l);$/;"	p	class:Particle	access:public	signature:(sf::Vector2f p, sf::Color c, sf::Vector2f s, sf::Vector2f g, float l)
+Particle::Particle	Particle.cpp	/^Particle::Particle()$/;"	f	class:Particle	signature:()
+Particle::Particle	Particle.h	/^        Particle();$/;"	p	class:Particle	access:public	signature:()
+Particle::Update	Particle.cpp	/^bool Particle::Update()$/;"	f	class:Particle	signature:()
+Particle::Update	Particle.h	/^        bool Update();$/;"	p	class:Particle	access:public	signature:()
+Particle::alive	Particle.h	/^        bool alive;$/;"	m	class:Particle	access:protected
+Particle::color	Particle.h	/^        sf::Color color;$/;"	m	class:Particle	access:public
+Particle::gravity	Particle.h	/^        sf::Vector2f gravity;$/;"	m	class:Particle	access:public
+Particle::life	Particle.h	/^        sf::Clock life;$/;"	m	class:Particle	access:protected
+Particle::lifetime	Particle.h	/^        float lifetime;$/;"	m	class:Particle	access:public
+Particle::origin	Particle.h	/^        sf::Vector2f origin;$/;"	m	class:Particle	access:public
+Particle::ospeed	Particle.h	/^        sf::Vector2f ospeed;$/;"	m	class:Particle	access:public
+Particle::pos	Particle.h	/^        sf::Vector2f pos;$/;"	m	class:Particle	access:public
+Particle::speed	Particle.h	/^        sf::Vector2f speed;$/;"	m	class:Particle	access:public
+ParticleEmitter	ParticleEmitter.cpp	/^ParticleEmitter::ParticleEmitter()$/;"	f	class:ParticleEmitter	signature:()
+ParticleEmitter	ParticleEmitter.h	/^        ParticleEmitter();$/;"	p	class:ParticleEmitter	access:public	signature:()
+ParticleEmitter	ParticleEmitter.h	/^class ParticleEmitter$/;"	c
+ParticleEmitter::Init	ParticleEmitter.cpp	/^void ParticleEmitter::Init(int max_p, sf::Vector2f p)$/;"	f	class:ParticleEmitter	signature:(int max_p, sf::Vector2f p)
+ParticleEmitter::Init	ParticleEmitter.h	/^        virtual void Init(int max_p, sf::Vector2f p);$/;"	p	class:ParticleEmitter	access:public	signature:(int max_p, sf::Vector2f p)
+ParticleEmitter::ParticleEmitter	ParticleEmitter.cpp	/^ParticleEmitter::ParticleEmitter()$/;"	f	class:ParticleEmitter	signature:()
+ParticleEmitter::ParticleEmitter	ParticleEmitter.h	/^        ParticleEmitter();$/;"	p	class:ParticleEmitter	access:public	signature:()
+ParticleEmitter::Update	ParticleEmitter.cpp	/^void ParticleEmitter::Update(sf::RenderWindow* win)$/;"	f	class:ParticleEmitter	signature:(sf::RenderWindow* win)
+ParticleEmitter::Update	ParticleEmitter.h	/^        virtual void Update(sf::RenderWindow* win);$/;"	p	class:ParticleEmitter	access:public	signature:(sf::RenderWindow* win)
+ParticleEmitter::draw	ParticleEmitter.h	/^        sf::Image draw;$/;"	m	class:ParticleEmitter	access:protected
+ParticleEmitter::max_particles	ParticleEmitter.h	/^        int max_particles;$/;"	m	class:ParticleEmitter	access:protected
+ParticleEmitter::particles	ParticleEmitter.h	/^        std::vector<Particle*> particles;$/;"	m	class:ParticleEmitter	access:protected
+ParticleEmitter::pos	ParticleEmitter.h	/^        sf::Vector2f pos;$/;"	m	class:ParticleEmitter	access:protected
+ParticleEmitter::todraw	ParticleEmitter.h	/^        sf::Sprite todraw;$/;"	m	class:ParticleEmitter	access:protected
+Physics2D	PhysicsWrappers/Box2DPhysics.h	12;"	d
+Physics3D	PhysicsWrappers/Box2DPhysics.h	13;"	d
+PhysicsBody	PhysicsWrappers/PhysicsBody.h	/^class PhysicsBody$/;"	c
+PhysicsBody::ApplyForce	PhysicsWrappers/PhysicsBody.h	/^        virtual void ApplyForce(Vec2 force)=0;$/;"	p	class:PhysicsBody	access:public	signature:(Vec2 force)
+PhysicsBody::ApplyForce	PhysicsWrappers/PhysicsBody.h	/^        virtual void ApplyForce(Vec2 force, Vec2 point)=0;$/;"	p	class:PhysicsBody	access:public	signature:(Vec2 force, Vec2 point)
+PhysicsBody::ApplyTorque	PhysicsWrappers/PhysicsBody.h	/^        virtual void ApplyTorque(float torque)=0;$/;"	p	class:PhysicsBody	access:public	signature:(float torque)
+PhysicsBody::GetAngle	PhysicsWrappers/PhysicsBody.h	/^        virtual float GetAngle()=0;$/;"	p	class:PhysicsBody	access:public	signature:()
+PhysicsBody::GetAngularVelocity	PhysicsWrappers/PhysicsBody.h	/^        virtual float GetAngularVelocity()=0;$/;"	p	class:PhysicsBody	access:public	signature:()
+PhysicsBody::GetBody	PhysicsWrappers/PhysicsBody.h	/^        virtual void* GetBody()=0;$/;"	p	class:PhysicsBody	access:public	signature:()
+PhysicsBody::GetLinearVelocity	PhysicsWrappers/PhysicsBody.h	/^        virtual Vec2 GetLinearVelocity()=0;$/;"	p	class:PhysicsBody	access:public	signature:()
+PhysicsBody::GetPosition	PhysicsWrappers/PhysicsBody.h	/^        virtual Vec2 GetPosition()=0;$/;"	p	class:PhysicsBody	access:public	signature:()
+PhysicsBody::GetType	PhysicsWrappers/PhysicsBody.h	/^        virtual int GetType() {return type;};$/;"	f	class:PhysicsBody	access:public	signature:()
+PhysicsBody::Intialize	PhysicsWrappers/PhysicsBody.h	/^        virtual void Intialize(Entity* obj)=0;$/;"	p	class:PhysicsBody	access:public	signature:(Entity* obj)
+PhysicsBody::SetAngularVelocity	PhysicsWrappers/PhysicsBody.h	/^        virtual void SetAngularVelocity(float angle)=0;$/;"	p	class:PhysicsBody	access:public	signature:(float angle)
+PhysicsBody::SetLinearVelocity	PhysicsWrappers/PhysicsBody.h	/^        virtual void SetLinearVelocity(Vec2 v)=0;$/;"	p	class:PhysicsBody	access:public	signature:(Vec2 v)
+PhysicsBody::SetTransform	PhysicsWrappers/PhysicsBody.h	/^        virtual void SetTransform(Vec2 pos, float angle)=0;$/;"	p	class:PhysicsBody	access:public	signature:(Vec2 pos, float angle)
+PhysicsBody::type	PhysicsWrappers/PhysicsBody.h	/^        int type;$/;"	m	class:PhysicsBody	access:protected
+PhysicsWorld	PhysicsWrappers/PhysicsWorld.h	/^class PhysicsWorld$/;"	c
+PhysicsWorld::CreateBody	PhysicsWrappers/PhysicsWorld.h	/^        virtual void* CreateBody(Def d)=0;$/;"	p	class:PhysicsWorld	access:public	signature:(Def d)
+PhysicsWorld::DestroyBody	PhysicsWrappers/PhysicsWorld.h	/^        virtual void DestroyBody(PhysicsBody* body)=0;$/;"	p	class:PhysicsWorld	access:public	signature:(PhysicsBody* body)
+PhysicsWorld::GetGravity	PhysicsWrappers/PhysicsWorld.h	/^        virtual Vec2 GetGravity()=0;$/;"	p	class:PhysicsWorld	access:public	signature:()
+PhysicsWorld::Init	PhysicsWrappers/PhysicsWorld.h	/^        virtual void Init(Vec2 gravity)=0;$/;"	p	class:PhysicsWorld	access:public	signature:(Vec2 gravity)
+PhysicsWorld::SetGravity	PhysicsWrappers/PhysicsWorld.h	/^        virtual void SetGravity(Vec2 gravity)=0;$/;"	p	class:PhysicsWorld	access:public	signature:(Vec2 gravity)
+PhysicsWorld::Step	PhysicsWrappers/PhysicsWorld.h	/^        virtual void Step(float timestep)=0;$/;"	p	class:PhysicsWorld	access:public	signature:(float timestep)
+PlayState	PlayState.cpp	/^PlayState::PlayState()$/;"	f	class:PlayState	signature:()
+PlayState	PlayState.h	/^        PlayState();$/;"	p	class:PlayState	access:public	signature:()
+PlayState	PlayState.h	/^class PlayState : public State$/;"	c	inherits:State
+PlayState::Init	PlayState.cpp	/^void PlayState::Init(sf::RenderWindow* win)$/;"	f	class:PlayState	signature:(sf::RenderWindow* win)
+PlayState::Init	PlayState.h	/^        virtual void Init(sf::RenderWindow* win);$/;"	p	class:PlayState	access:public	signature:(sf::RenderWindow* win)
+PlayState::PlayState	PlayState.cpp	/^PlayState::PlayState()$/;"	f	class:PlayState	signature:()
+PlayState::PlayState	PlayState.h	/^        PlayState();$/;"	p	class:PlayState	access:public	signature:()
+PlayState::Update	PlayState.cpp	/^std::string PlayState::Update()$/;"	f	class:PlayState	signature:()
+PlayState::Update	PlayState.h	/^        virtual std::string Update();$/;"	p	class:PlayState	access:public	signature:()
+PlayState::alive	PlayState.h	/^        bool alive;$/;"	m	class:PlayState	access:protected
+PlayState::bullwhipini	PlayState.h	/^        CSimpleIni bullwhipini;$/;"	m	class:PlayState	access:protected
+PlayState::player	PlayState.h	/^        Entity* player;$/;"	m	class:PlayState	access:protected
+PlayState::reg	PlayState.h	/^        EntityRegistry* reg;$/;"	m	class:PlayState	access:protected
+PlayState::renderspr	PlayState.h	/^        sf::Sprite renderspr;$/;"	m	class:PlayState	access:protected
+PlayState::scene	PlayState.h	/^        SceneManager* scene;$/;"	m	class:PlayState	access:protected
+PlayState::super	PlayState.h	/^        typedef State super;$/;"	t	class:PlayState	access:private
+PlayState::tex	PlayState.h	/^        sf::RenderTexture tex;$/;"	m	class:PlayState	access:protected
+Player	Player.cpp	/^Player::Player()$/;"	f	class:Player	signature:()
+Player	Player.h	/^        Player();$/;"	p	class:Player	access:public	signature:()
+Player	Player.h	/^class Player : public Actor$/;"	c	inherits:Actor
+Player::Player	Player.cpp	/^Player::Player()$/;"	f	class:Player	signature:()
+Player::Player	Player.h	/^        Player();$/;"	p	class:Player	access:public	signature:()
+Player::inv	Player.h	/^        Inventory inv;$/;"	m	class:Player	access:protected
+Player::onBeginCollision	Player.cpp	/^void Player::onBeginCollision(Entity* obj)$/;"	f	class:Player	signature:(Entity* obj)
+Player::onBeginCollision	Player.h	/^        virtual void onBeginCollision(Entity* obj);$/;"	p	class:Player	access:public	signature:(Entity* obj)
+Player::onEndCollision	Player.cpp	/^void Player::onEndCollision(Entity* obj)$/;"	f	class:Player	signature:(Entity* obj)
+Player::onEndCollision	Player.h	/^        virtual void onEndCollision(Entity* obj);$/;"	p	class:Player	access:public	signature:(Entity* obj)
+Player::pickup	Player.h	/^        Entity* pickup;$/;"	m	class:Player	access:protected
+Player::super	Player.h	/^        typedef Actor super;$/;"	t	class:Player	access:private
+Player::update	Player.cpp	/^void Player::update(SceneManager* scene)$/;"	f	class:Player	signature:(SceneManager* scene)
+Player::update	Player.h	/^        virtual void update(SceneManager* scene);$/;"	p	class:Player	access:public	signature:(SceneManager* scene)
+PreSolve	BullwhipContactListener.cpp	/^void BullwhipContactListener::PreSolve(b2Contact* contact, const b2Manifold* oldManifold)$/;"	f	class:BullwhipContactListener	signature:(b2Contact* contact, const b2Manifold* oldManifold)
+PreSolve	BullwhipContactListener.h	/^        void PreSolve(b2Contact* contact, const b2Manifold* oldManifold);$/;"	p	class:BullwhipContactListener	access:public	signature:(b2Contact* contact, const b2Manifold* oldManifold)
+PushString	Console.cpp	/^void Console::PushString(std::string str)$/;"	f	class:Console	signature:(std::string str)
+PushString	Console.h	/^        void PushString(std::string str);$/;"	p	class:Console	access:public	signature:(std::string str)
+Quit	Game.h	/^        void Quit() {running = false;};$/;"	f	class:Game	access:public	signature:()
+RESOURCEMANAGER_H_INCLUDED	ResourceManager.h	29;"	d
+ReadBlock	File.cpp	/^char* inFile::ReadBlock(int size)$/;"	f	class:inFile	signature:(int size)
+ReadBlock	File.h	/^        char* ReadBlock(int size);$/;"	p	class:inFile	access:public	signature:(int size)
+ReadByte	File.cpp	/^BYTE inFile::ReadByte()$/;"	f	class:inFile	signature:()
+ReadByte	File.h	/^        BYTE ReadByte();$/;"	p	class:inFile	access:public	signature:()
+ReadFloat	File.cpp	/^float inFile::ReadFloat()$/;"	f	class:inFile	signature:()
+ReadFloat	File.h	/^        float ReadFloat();$/;"	p	class:inFile	access:public	signature:()
+ReadInt	File.cpp	/^int inFile::ReadInt()$/;"	f	class:inFile	signature:()
+ReadInt	File.h	/^        int ReadInt();$/;"	p	class:inFile	access:public	signature:()
+ReadString	File.cpp	/^std::string inFile::ReadString()$/;"	f	class:inFile	signature:()
+ReadString	File.h	/^        std::string ReadString();$/;"	p	class:inFile	access:public	signature:()
+RegisterState	StateManager.cpp	/^void StateManager::RegisterState(std::string name, State& state)$/;"	f	class:StateManager	signature:(std::string name, State& state)
+RegisterState	StateManager.cpp	/^void StateManager::RegisterState(std::string name, State* state)$/;"	f	class:StateManager	signature:(std::string name, State* state)
+RegisterState	StateManager.h	/^        void RegisterState(std::string name, State& state);$/;"	p	class:StateManager	access:public	signature:(std::string name, State& state)
+RegisterState	StateManager.h	/^        void RegisterState(std::string name, State* state); \/\/Registers a state in the map$/;"	p	class:StateManager	access:public	signature:(std::string name, State* state)
+RemoveEntityFromList	SceneManager.cpp	/^void SceneManager::RemoveEntityFromList(Entity* ent)$/;"	f	class:SceneManager	signature:(Entity* ent)
+RemoveEntityFromList	SceneManager.cpp	/^void SceneManager::RemoveEntityFromList(std::string name)$/;"	f	class:SceneManager	signature:(std::string name)
+RemoveEntityFromList	SceneManager.h	/^        virtual void RemoveEntityFromList(Entity* ent);$/;"	p	class:SceneManager	access:public	signature:(Entity* ent)
+RemoveEntityFromList	SceneManager.h	/^        virtual void RemoveEntityFromList(std::string name); \/\/Removes an entity from a list, so you can delete it.$/;"	p	class:SceneManager	access:public	signature:(std::string name)
+RemoveItem	Item.cpp	/^bool Inventory::RemoveItem(std::string name)$/;"	f	class:Inventory	signature:(std::string name)
+RemoveItem	Item.h	/^        bool RemoveItem(std::string name);$/;"	p	class:Inventory	access:public	signature:(std::string name)
+Reset	SimpleINI/SimpleIni.h	/^    void Reset();$/;"	p	class:CSimpleIniTempl	access:public	signature:()
+Reset	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::Reset()$/;"	f	class:CSimpleIniTempl	signature:()
+Resource	ResourceManager.h	/^    typedef std::pair< std::string, T* >    Resource;$/;"	t	class:ResourceManager	access:public
+ResourceManager	ResourceManager.h	/^    ResourceManager() {$/;"	f	class:ResourceManager	access:public	signature:()
+ResourceManager	ResourceManager.h	/^class ResourceManager {$/;"	c
+ResourceManager::Resource	ResourceManager.h	/^    typedef std::pair< std::string, T* >    Resource;$/;"	t	class:ResourceManager	access:public
+ResourceManager::ResourceManager	ResourceManager.h	/^    ResourceManager() {$/;"	f	class:ResourceManager	access:public	signature:()
+ResourceManager::ResourceMap	ResourceManager.h	/^    typedef std::map< std::string, T* >     ResourceMap;$/;"	t	class:ResourceManager	access:public
+ResourceManager::find	ResourceManager.h	/^    T* find( const std::string& strId ) {$/;"	f	class:ResourceManager	access:private	signature:( const std::string& strId )
+ResourceManager::getResource	ResourceManager.h	/^    T* getResource( const std::string& strId ) {$/;"	f	class:ResourceManager	access:public	signature:( const std::string& strId )
+ResourceManager::load	ResourceManager.h	/^    virtual T* load( const std::string& strId ) = 0;$/;"	p	class:ResourceManager	access:protected	signature:( const std::string& strId )
+ResourceManager::m_resource	ResourceManager.h	/^    ResourceMap m_resource;$/;"	m	class:ResourceManager	access:private
+ResourceManager::releaseAllResources	ResourceManager.h	/^    void releaseAllResources() {$/;"	f	class:ResourceManager	access:public	signature:()
+ResourceManager::releaseResource	ResourceManager.h	/^    void releaseResource( const std::string& strId ) {$/;"	f	class:ResourceManager	access:public	signature:( const std::string& strId )
+ResourceManager::~ResourceManager	ResourceManager.h	/^    virtual ~ResourceManager() {$/;"	f	class:ResourceManager	access:public	signature:()
+ResourceMap	ResourceManager.h	/^    typedef std::map< std::string, T* >     ResourceMap;$/;"	t	class:ResourceManager	access:public
+SCALE	Constants.h	14;"	d
+SCENEMANAGER_H	SceneManager.h	3;"	d
+SFML_DYNAMIC	Game.h	5;"	d
+SI_ASSERT	SimpleINI/SimpleIni.h	230;"	d
+SI_ASSERT	SimpleINI/SimpleIni.h	232;"	d
+SI_CONVERT_GENERIC	SimpleINI/SimpleIni.h	2615;"	d
+SI_CONVERT_WIN32	SimpleINI/SimpleIni.h	2613;"	d
+SI_Case	SimpleINI/SimpleIni.h	2783;"	d
+SI_Case	SimpleINI/SimpleIni.h	2984;"	d
+SI_Case	SimpleINI/SimpleIni.h	3176;"	d
+SI_ConvertA	SimpleINI/SimpleIni.h	/^    SI_ConvertA() { }$/;"	f	class:SI_ConvertA	access:protected	signature:()
+SI_ConvertA	SimpleINI/SimpleIni.h	/^    SI_ConvertA(bool a_bStoreIsUtf8) : m_bStoreIsUtf8(a_bStoreIsUtf8) { }$/;"	f	class:SI_ConvertA	access:public	signature:(bool a_bStoreIsUtf8)
+SI_ConvertA	SimpleINI/SimpleIni.h	/^    SI_ConvertA(const SI_ConvertA & rhs) { operator=(rhs); }$/;"	f	class:SI_ConvertA	access:public	signature:(const SI_ConvertA & rhs)
+SI_ConvertA	SimpleINI/SimpleIni.h	/^class SI_ConvertA {$/;"	c
+SI_ConvertA::ConvertFromStore	SimpleINI/SimpleIni.h	/^    bool ConvertFromStore($/;"	f	class:SI_ConvertA	access:public	signature:( const char * a_pInputData, size_t a_uInputDataLen, SI_CHAR * a_pOutputData, size_t a_uOutputDataSize)
+SI_ConvertA::ConvertToStore	SimpleINI/SimpleIni.h	/^    bool ConvertToStore($/;"	f	class:SI_ConvertA	access:public	signature:( const SI_CHAR * a_pInputData, char * a_pOutputData, size_t a_uOutputDataSize)
+SI_ConvertA::SI_ConvertA	SimpleINI/SimpleIni.h	/^    SI_ConvertA() { }$/;"	f	class:SI_ConvertA	access:protected	signature:()
+SI_ConvertA::SI_ConvertA	SimpleINI/SimpleIni.h	/^    SI_ConvertA(bool a_bStoreIsUtf8) : m_bStoreIsUtf8(a_bStoreIsUtf8) { }$/;"	f	class:SI_ConvertA	access:public	signature:(bool a_bStoreIsUtf8)
+SI_ConvertA::SI_ConvertA	SimpleINI/SimpleIni.h	/^    SI_ConvertA(const SI_ConvertA & rhs) { operator=(rhs); }$/;"	f	class:SI_ConvertA	access:public	signature:(const SI_ConvertA & rhs)
+SI_ConvertA::SizeFromStore	SimpleINI/SimpleIni.h	/^    size_t SizeFromStore($/;"	f	class:SI_ConvertA	access:public	signature:( const char * a_pInputData, size_t a_uInputDataLen)
+SI_ConvertA::SizeToStore	SimpleINI/SimpleIni.h	/^    size_t SizeToStore($/;"	f	class:SI_ConvertA	access:public	signature:( const SI_CHAR * a_pInputData)
+SI_ConvertA::m_bStoreIsUtf8	SimpleINI/SimpleIni.h	/^    bool m_bStoreIsUtf8;$/;"	m	class:SI_ConvertA	access:private
+SI_ConvertA::operator =	SimpleINI/SimpleIni.h	/^    SI_ConvertA & operator=(const SI_ConvertA & rhs) {$/;"	f	class:SI_ConvertA	access:public	signature:(const SI_ConvertA & rhs)
+SI_ConvertW	SimpleINI/SimpleIni.h	/^    SI_ConvertW() : m_pEncoding(NULL), m_pConverter(NULL) { }$/;"	f	class:SI_ConvertW	access:protected	signature:()
+SI_ConvertW	SimpleINI/SimpleIni.h	/^    SI_ConvertW() { }$/;"	f	class:SI_ConvertW	access:protected	signature:()
+SI_ConvertW	SimpleINI/SimpleIni.h	/^    SI_ConvertW(bool a_bStoreIsUtf8) : m_bStoreIsUtf8(a_bStoreIsUtf8) { }$/;"	f	class:SI_ConvertW	access:public	signature:(bool a_bStoreIsUtf8)
+SI_ConvertW	SimpleINI/SimpleIni.h	/^    SI_ConvertW(bool a_bStoreIsUtf8) : m_pConverter(NULL) {$/;"	f	class:SI_ConvertW	access:public	signature:(bool a_bStoreIsUtf8)
+SI_ConvertW	SimpleINI/SimpleIni.h	/^    SI_ConvertW(bool a_bStoreIsUtf8) {$/;"	f	class:SI_ConvertW	access:public	signature:(bool a_bStoreIsUtf8)
+SI_ConvertW	SimpleINI/SimpleIni.h	/^    SI_ConvertW(const SI_ConvertW & rhs) { operator=(rhs); }$/;"	f	class:SI_ConvertW	access:public	signature:(const SI_ConvertW & rhs)
+SI_ConvertW	SimpleINI/SimpleIni.h	/^class SI_ConvertW {$/;"	c
+SI_ConvertW::ConvertFromStore	SimpleINI/SimpleIni.h	/^    bool ConvertFromStore($/;"	f	class:SI_ConvertW	access:public	signature:( const char * a_pInputData, size_t a_uInputDataLen, SI_CHAR * a_pOutputData, size_t a_uOutputDataSize)
+SI_ConvertW::ConvertFromStore	SimpleINI/SimpleIni.h	/^    bool ConvertFromStore($/;"	f	class:SI_ConvertW	access:public	signature:( const char * a_pInputData, size_t a_uInputDataLen, UChar * a_pOutputData, size_t a_uOutputDataSize)
+SI_ConvertW::ConvertToStore	SimpleINI/SimpleIni.h	/^    bool ConvertToStore($/;"	f	class:SI_ConvertW	access:public	signature:( const SI_CHAR * a_pInputData, char * a_pOutputData, size_t a_uOutputDataSize )
+SI_ConvertW::ConvertToStore	SimpleINI/SimpleIni.h	/^    bool ConvertToStore($/;"	f	class:SI_ConvertW	access:public	signature:( const SI_CHAR * a_pInputData, char * a_pOutputData, size_t a_uOutputDataSize)
+SI_ConvertW::ConvertToStore	SimpleINI/SimpleIni.h	/^    bool ConvertToStore($/;"	f	class:SI_ConvertW	access:public	signature:( const UChar * a_pInputData, char * a_pOutputData, size_t a_uOutputDataSize)
+SI_ConvertW::SI_ConvertW	SimpleINI/SimpleIni.h	/^    SI_ConvertW() : m_pEncoding(NULL), m_pConverter(NULL) { }$/;"	f	class:SI_ConvertW	access:protected	signature:()
+SI_ConvertW::SI_ConvertW	SimpleINI/SimpleIni.h	/^    SI_ConvertW() { }$/;"	f	class:SI_ConvertW	access:protected	signature:()
+SI_ConvertW::SI_ConvertW	SimpleINI/SimpleIni.h	/^    SI_ConvertW(bool a_bStoreIsUtf8) : m_bStoreIsUtf8(a_bStoreIsUtf8) { }$/;"	f	class:SI_ConvertW	access:public	signature:(bool a_bStoreIsUtf8)
+SI_ConvertW::SI_ConvertW	SimpleINI/SimpleIni.h	/^    SI_ConvertW(bool a_bStoreIsUtf8) : m_pConverter(NULL) {$/;"	f	class:SI_ConvertW	access:public	signature:(bool a_bStoreIsUtf8)
+SI_ConvertW::SI_ConvertW	SimpleINI/SimpleIni.h	/^    SI_ConvertW(bool a_bStoreIsUtf8) {$/;"	f	class:SI_ConvertW	access:public	signature:(bool a_bStoreIsUtf8)
+SI_ConvertW::SI_ConvertW	SimpleINI/SimpleIni.h	/^    SI_ConvertW(const SI_ConvertW & rhs) { operator=(rhs); }$/;"	f	class:SI_ConvertW	access:public	signature:(const SI_ConvertW & rhs)
+SI_ConvertW::SizeFromStore	SimpleINI/SimpleIni.h	/^    size_t SizeFromStore($/;"	f	class:SI_ConvertW	access:public	signature:( const char * a_pInputData, size_t a_uInputDataLen)
+SI_ConvertW::SizeToStore	SimpleINI/SimpleIni.h	/^    size_t SizeToStore($/;"	f	class:SI_ConvertW	access:public	signature:( const SI_CHAR * a_pInputData)
+SI_ConvertW::SizeToStore	SimpleINI/SimpleIni.h	/^    size_t SizeToStore($/;"	f	class:SI_ConvertW	access:public	signature:( const UChar * a_pInputData)
+SI_ConvertW::m_bStoreIsUtf8	SimpleINI/SimpleIni.h	/^    bool m_bStoreIsUtf8;$/;"	m	class:SI_ConvertW	access:private
+SI_ConvertW::m_pConverter	SimpleINI/SimpleIni.h	/^    UConverter * m_pConverter;$/;"	m	class:SI_ConvertW	access:private
+SI_ConvertW::m_pEncoding	SimpleINI/SimpleIni.h	/^    const char * m_pEncoding;$/;"	m	class:SI_ConvertW	access:private
+SI_ConvertW::m_uCodePage	SimpleINI/SimpleIni.h	/^    UINT m_uCodePage;$/;"	m	class:SI_ConvertW	access:private
+SI_ConvertW::operator =	SimpleINI/SimpleIni.h	/^    SI_ConvertW & operator=(const SI_ConvertW & rhs) {$/;"	f	class:SI_ConvertW	access:public	signature:(const SI_ConvertW & rhs)
+SI_ConvertW::~SI_ConvertW	SimpleINI/SimpleIni.h	/^    ~SI_ConvertW() { if (m_pConverter) ucnv_close(m_pConverter); }$/;"	f	class:SI_ConvertW	access:public	signature:()
+SI_Error	SimpleINI/SimpleIni.h	/^enum SI_Error {$/;"	g
+SI_FAIL	SimpleINI/SimpleIni.h	/^    SI_FAIL     = -1,   \/\/!< Generic failure$/;"	e	enum:SI_Error
+SI_FILE	SimpleINI/SimpleIni.h	/^    SI_FILE     = -3    \/\/!< File error (see errno for detail error)$/;"	e	enum:SI_Error
+SI_GenericCase	SimpleINI/SimpleIni.h	/^struct SI_GenericCase {$/;"	s
+SI_GenericCase::operator ()	SimpleINI/SimpleIni.h	/^    bool operator()(const SI_CHAR * pLeft, const SI_CHAR * pRight) const {$/;"	f	struct:SI_GenericCase	access:public	signature:(const SI_CHAR * pLeft, const SI_CHAR * pRight) const
+SI_GenericNoCase	SimpleINI/SimpleIni.h	/^struct SI_GenericNoCase {$/;"	s
+SI_GenericNoCase::locase	SimpleINI/SimpleIni.h	/^    inline SI_CHAR locase(SI_CHAR ch) const {$/;"	f	struct:SI_GenericNoCase	access:public	signature:(SI_CHAR ch) const
+SI_GenericNoCase::operator ()	SimpleINI/SimpleIni.h	/^    bool operator()(const SI_CHAR * pLeft, const SI_CHAR * pRight) const {$/;"	f	struct:SI_GenericNoCase	access:public	signature:(const SI_CHAR * pLeft, const SI_CHAR * pRight) const
+SI_HAS_WIDE_FILE	SimpleINI/SimpleIni.h	261;"	d
+SI_HAS_WIDE_FILE	SimpleINI/SimpleIni.h	264;"	d
+SI_INSERTED	SimpleINI/SimpleIni.h	/^    SI_INSERTED =  2,   \/\/!< A new value was inserted$/;"	e	enum:SI_Error
+SI_NEWLINE	SimpleINI/SimpleIni.h	3362;"	d
+SI_NEWLINE	SimpleINI/SimpleIni.h	3366;"	d
+SI_NEWLINE_A	SimpleINI/SimpleIni.h	249;"	d
+SI_NEWLINE_A	SimpleINI/SimpleIni.h	252;"	d
+SI_NEWLINE_W	SimpleINI/SimpleIni.h	250;"	d
+SI_NEWLINE_W	SimpleINI/SimpleIni.h	253;"	d
+SI_NOMEM	SimpleINI/SimpleIni.h	/^    SI_NOMEM    = -2,   \/\/!< Out of memory error$/;"	e	enum:SI_Error
+SI_NO_MBCS	SimpleINI/SimpleIni.h	3181;"	d
+SI_NoCase	SimpleINI/SimpleIni.h	/^struct SI_NoCase {$/;"	s
+SI_NoCase	SimpleINI/SimpleIni.h	2784;"	d
+SI_NoCase	SimpleINI/SimpleIni.h	2985;"	d
+SI_NoCase	SimpleINI/SimpleIni.h	3187;"	d
+SI_NoCase::operator ()	SimpleINI/SimpleIni.h	/^    bool operator()(const SI_CHAR * pLeft, const SI_CHAR * pRight) const {$/;"	f	struct:SI_NoCase	access:public	signature:(const SI_CHAR * pLeft, const SI_CHAR * pRight) const
+SI_OK	SimpleINI/SimpleIni.h	/^    SI_OK       =  0,   \/\/!< No error$/;"	e	enum:SI_Error
+SI_UPDATED	SimpleINI/SimpleIni.h	/^    SI_UPDATED  =  1,   \/\/!< An existing value was updated$/;"	e	enum:SI_Error
+SI_UTF8_SIGNATURE	SimpleINI/SimpleIni.h	246;"	d
+SI_WCHAR_T	SimpleINI/SimpleIni.h	262;"	d
+SI_WCHAR_T	SimpleINI/SimpleIni.h	265;"	d
+SOURCES	Makefile	/^SOURCES=Actor.cpp BullwhipContactListener.cpp Constants.cpp Definition.cpp Entity.cpp File.cpp Game.cpp ImageManager.cpp Item.cpp JMath.cpp MainMenuState.cpp PlayState.cpp Player.cpp SceneManager.cpp State.cpp StateManager.cpp Vec2.cpp main.cpp PhysicsWrappers\/BoxDynamicBody.cpp PhysicsWrappers\/BoxStaticBody.cpp PhysicsWrappers\/BoxTriggerBody.cpp PhysicsWrappers\/BoxWorld.cpp SimpleINI\/ConvertUTF.c entites\/InvisEntity.cpp entites\/InvisPhysEntity.cpp entites\/ent_item.cpp entites\/ent_string.cpp entites\/game_setglobal.cpp entites\/game_spawnpoint.cpp entites\/phys_dynamic.cpp entites\/phys_static.cpp entites\/tele_coord.cpp entites\/tele_obj.cpp$/;"	m
+STATE_H	State.h	3;"	d
+Save	Definition.cpp	/^void Def::Save(outFile& f)$/;"	f	class:Def	signature:(outFile& f)
+Save	Definition.cpp	/^void Def::Save(std::string filename)$/;"	f	class:Def	signature:(std::string filename)
+Save	Definition.h	/^        void Save(outFile& f);$/;"	p	class:Def	access:public	signature:(outFile& f)
+Save	Definition.h	/^        void Save(std::string filename);$/;"	p	class:Def	access:public	signature:(std::string filename)
+Save	Item.h	/^        void Save(std::string filename) {};$/;"	f	class:Inventory	access:public	signature:(std::string filename)
+Save	SimpleINI/SimpleIni.h	/^    SI_Error Save($/;"	f	class:CSimpleIniTempl	access:public	signature:( std::ostream & a_ostream, bool a_bAddSignature = false ) const
+Save	SimpleINI/SimpleIni.h	/^    SI_Error Save($/;"	f	class:CSimpleIniTempl	access:public	signature:( std::string & a_sBuffer, bool a_bAddSignature = false ) const
+Save	SimpleINI/SimpleIni.h	/^    SI_Error Save($/;"	p	class:CSimpleIniTempl	access:public	signature:( OutputWriter & a_oOutput, bool a_bAddSignature = false ) const
+Save	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::Save($/;"	f	class:CSimpleIniTempl	signature:( OutputWriter & a_oOutput, bool a_bAddSignature ) const
+SaveFile	SimpleINI/SimpleIni.h	/^    SI_Error SaveFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( FILE * a_pFile, bool a_bAddSignature = false ) const
+SaveFile	SimpleINI/SimpleIni.h	/^    SI_Error SaveFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_WCHAR_T * a_pwszFile, bool a_bAddSignature = true ) const
+SaveFile	SimpleINI/SimpleIni.h	/^    SI_Error SaveFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( const char * a_pszFile, bool a_bAddSignature = true ) const
+SaveFile	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::SaveFile($/;"	f	class:CSimpleIniTempl	signature:( FILE * a_pFile, bool a_bAddSignature ) const
+SaveFile	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::SaveFile($/;"	f	class:CSimpleIniTempl	signature:( const SI_WCHAR_T * a_pwszFile, bool a_bAddSignature ) const
+SaveFile	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::SaveFile($/;"	f	class:CSimpleIniTempl	signature:( const char * a_pszFile, bool a_bAddSignature ) const
+SceneManager	SceneManager.cpp	/^SceneManager::SceneManager()$/;"	f	class:SceneManager	signature:()
+SceneManager	SceneManager.h	/^        SceneManager();$/;"	p	class:SceneManager	access:public	signature:()
+SceneManager	SceneManager.h	/^class SceneManager$/;"	c
+SceneManager::AddEntity	SceneManager.cpp	/^void SceneManager::AddEntity(Entity& ent)$/;"	f	class:SceneManager	signature:(Entity& ent)
+SceneManager::AddEntity	SceneManager.cpp	/^void SceneManager::AddEntity(Entity* ent)$/;"	f	class:SceneManager	signature:(Entity* ent)
+SceneManager::AddEntity	SceneManager.h	/^        virtual void AddEntity (Entity& obj); \/\/Adds a entity to the global list$/;"	p	class:SceneManager	access:public	signature:(Entity& obj)
+SceneManager::AddEntity	SceneManager.h	/^        virtual void AddEntity (Entity* obj);$/;"	p	class:SceneManager	access:public	signature:(Entity* obj)
+SceneManager::AddSpawn	SceneManager.h	/^        virtual void AddSpawn(Entity& obj, std::string name) {spawnpoints[name] = &obj;}; \/\/Adds a spawnpoint, this should be deprectated.$/;"	f	class:SceneManager	access:public	signature:(Entity& obj, std::string name)
+SceneManager::AddSpawn	SceneManager.h	/^        virtual void AddSpawn(Entity* obj, std::string name) {spawnpoints[name] = obj;};$/;"	f	class:SceneManager	access:public	signature:(Entity* obj, std::string name)
+SceneManager::GetEntity	SceneManager.h	/^        virtual Entity* GetEntity(std::string n) {return specents[n];};$/;"	f	class:SceneManager	access:public	signature:(std::string n)
+SceneManager::Init	SceneManager.cpp	/^void SceneManager::Init(Vec2 gravity)$/;"	f	class:SceneManager	signature:(Vec2 gravity)
+SceneManager::Init	SceneManager.h	/^        virtual void Init(Vec2 gravity); \/\/Intializes the physics and views$/;"	p	class:SceneManager	access:public	signature:(Vec2 gravity)
+SceneManager::LoadScene	SceneManager.cpp	/^void SceneManager::LoadScene(std::string filename)$/;"	f	class:SceneManager	signature:(std::string filename)
+SceneManager::LoadScene	SceneManager.h	/^        virtual void LoadScene(std::string filename); \/\/Loads a level from a file.$/;"	p	class:SceneManager	access:public	signature:(std::string filename)
+SceneManager::RemoveEntityFromList	SceneManager.cpp	/^void SceneManager::RemoveEntityFromList(Entity* ent)$/;"	f	class:SceneManager	signature:(Entity* ent)
+SceneManager::RemoveEntityFromList	SceneManager.cpp	/^void SceneManager::RemoveEntityFromList(std::string name)$/;"	f	class:SceneManager	signature:(std::string name)
+SceneManager::RemoveEntityFromList	SceneManager.h	/^        virtual void RemoveEntityFromList(Entity* ent);$/;"	p	class:SceneManager	access:public	signature:(Entity* ent)
+SceneManager::RemoveEntityFromList	SceneManager.h	/^        virtual void RemoveEntityFromList(std::string name); \/\/Removes an entity from a list, so you can delete it.$/;"	p	class:SceneManager	access:public	signature:(std::string name)
+SceneManager::SceneManager	SceneManager.cpp	/^SceneManager::SceneManager()$/;"	f	class:SceneManager	signature:()
+SceneManager::SceneManager	SceneManager.h	/^        SceneManager();$/;"	p	class:SceneManager	access:public	signature:()
+SceneManager::SetEntity	SceneManager.h	/^        virtual void SetEntity(std::string n, Entity* ent) {specents[n] = ent;}; \/\/Sets a entity to be  referred by name$/;"	f	class:SceneManager	access:public	signature:(std::string n, Entity* ent)
+SceneManager::SetReg	SceneManager.h	/^        virtual void SetReg(EntityRegistry* r) {reg = r;}; \/\/Sets the current entity registry$/;"	f	class:SceneManager	access:public	signature:(EntityRegistry* r)
+SceneManager::Spawn	SceneManager.cpp	/^void SceneManager::Spawn(Entity& plyr, std::string spawnpoint)$/;"	f	class:SceneManager	signature:(Entity& plyr, std::string spawnpoint)
+SceneManager::Spawn	SceneManager.h	/^        virtual void Spawn(Entity& plyr, std::string spawnpoint); \/\/Spawns an entity$/;"	p	class:SceneManager	access:public	signature:(Entity& plyr, std::string spawnpoint)
+SceneManager::Update	SceneManager.cpp	/^void SceneManager::Update(sf::RenderTarget& win)$/;"	f	class:SceneManager	signature:(sf::RenderTarget& win)
+SceneManager::Update	SceneManager.h	/^        virtual void Update(sf::RenderTarget& win); \/\/Updates everything$/;"	p	class:SceneManager	access:public	signature:(sf::RenderTarget& win)
+SceneManager::entites	SceneManager.h	/^        std::vector<Entity*> entites; \/\/Global list of entites$/;"	m	class:SceneManager	access:protected
+SceneManager::reg	SceneManager.h	/^        EntityRegistry* reg; \/\/Entity registry$/;"	m	class:SceneManager	access:protected
+SceneManager::spawnpoints	SceneManager.h	/^        std::map<std::string, Entity*> spawnpoints; \/\/Spawnpoint map$/;"	m	class:SceneManager	access:protected
+SceneManager::specents	SceneManager.h	/^        std::map<std::string, Entity*> specents; \/\/List of entites to be reffered by name$/;"	m	class:SceneManager	access:protected
+SceneManager::v	SceneManager.h	/^        sf::View v; \/\/View for scrolling$/;"	m	class:SceneManager	access:protected
+SceneManager::worldprops	SceneManager.h	/^        Def worldprops; \/\/World properties$/;"	m	class:SceneManager	access:protected
+ScriptManager	ScriptManager.h	/^class ScriptManager$/;"	c
+ScriptManager::Close	ScriptManager.cpp	/^void ScriptManager::Close()$/;"	f	class:ScriptManager	signature:()
+ScriptManager::Close	ScriptManager.h	/^        void Close();$/;"	p	class:ScriptManager	access:public	signature:()
+ScriptManager::ExecScript	ScriptManager.cpp	/^void ScriptManager::ExecScript(std::string filename)$/;"	f	class:ScriptManager	signature:(std::string filename)
+ScriptManager::ExecScript	ScriptManager.h	/^        void ExecScript(std::string filename);$/;"	p	class:ScriptManager	access:public	signature:(std::string filename)
+ScriptManager::args	ScriptManager.h	/^        int args;$/;"	m	class:ScriptManager	access:private
+ScriptManager::fname	ScriptManager.h	/^        std::string fname;$/;"	m	class:ScriptManager	access:private
+ScriptManager::init	ScriptManager.cpp	/^void ScriptManager::init()$/;"	f	class:ScriptManager	signature:()
+ScriptManager::init	ScriptManager.h	/^        void init();$/;"	p	class:ScriptManager	access:public	signature:()
+ScriptManager::m_ScriptManager	ScriptManager.h	/^        static ScriptManager m_ScriptManager;$/;"	m	class:ScriptManager	access:private
+ScriptManager::tablepos	ScriptManager.h	/^        int tablepos;$/;"	m	class:ScriptManager	access:private
+SetAngularVelocity	PhysicsWrappers/BoxStaticBody.h	/^        void SetAngularVelocity(float v) {body->SetAngularVelocity(toRad(v));};$/;"	f	class:BoxStaticBody	access:public	signature:(float v)
+SetAngularVelocity	PhysicsWrappers/PhysicsBody.h	/^        virtual void SetAngularVelocity(float angle)=0;$/;"	p	class:PhysicsBody	access:public	signature:(float angle)
+SetAttribute	Entity.h	/^        virtual void SetAttribute(std::string attribute, bool val) {attributes[attribute] = val;};  \/\/Setting basic attributes, call in ctor only most$/;"	f	class:Entity	access:public	signature:(std::string attribute, bool val)
+SetBoolValue	SimpleINI/SimpleIni.h	/^    SI_Error SetBoolValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bValue, const SI_CHAR * a_pComment = NULL, bool a_bForceReplace = false )
+SetBoolValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::SetBoolValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bValue, const SI_CHAR * a_pComment, bool a_bForceReplace )
+SetCurrentState	StateManager.cpp	/^void StateManager::SetCurrentState(std::string name)$/;"	f	class:StateManager	signature:(std::string name)
+SetCurrentState	StateManager.h	/^        void SetCurrentState(std::string name); \/\/Sets the state as the one with this name$/;"	p	class:StateManager	access:public	signature:(std::string name)
+SetDoubleValue	SimpleINI/SimpleIni.h	/^    SI_Error SetDoubleValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, double a_nValue, const SI_CHAR * a_pComment = NULL, bool a_bForceReplace = false )
+SetDoubleValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::SetDoubleValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, double a_nValue, const SI_CHAR * a_pComment, bool a_bForceReplace )
+SetEntity	SceneManager.h	/^        virtual void SetEntity(std::string n, Entity* ent) {specents[n] = ent;}; \/\/Sets a entity to be  referred by name$/;"	f	class:SceneManager	access:public	signature:(std::string n, Entity* ent)
+SetGravity	PhysicsWrappers/BoxWorld.h	/^        void SetGravity(Vec2 gravity) {};$/;"	f	class:BoxWorld	access:public	signature:(Vec2 gravity)
+SetGravity	PhysicsWrappers/PhysicsWorld.h	/^        virtual void SetGravity(Vec2 gravity)=0;$/;"	p	class:PhysicsWorld	access:public	signature:(Vec2 gravity)
+SetItem	Item.h	/^        void SetItem(std::string name, Def d) {items[name] = d;};$/;"	f	class:ItemManager	access:public	signature:(std::string name, Def d)
+SetLinearVelocity	PhysicsWrappers/BoxStaticBody.h	/^        void SetLinearVelocity(Vec2 v) {body->SetLinearVelocity(v.toBox());};$/;"	f	class:BoxStaticBody	access:public	signature:(Vec2 v)
+SetLinearVelocity	PhysicsWrappers/PhysicsBody.h	/^        virtual void SetLinearVelocity(Vec2 v)=0;$/;"	p	class:PhysicsBody	access:public	signature:(Vec2 v)
+SetLongValue	SimpleINI/SimpleIni.h	/^    SI_Error SetLongValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, long a_nValue, const SI_CHAR * a_pComment = NULL, bool a_bUseHex = false, bool a_bForceReplace = false )
+SetLongValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::SetLongValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, long a_nValue, const SI_CHAR * a_pComment, bool a_bUseHex, bool a_bForceReplace )
+SetMultiKey	SimpleINI/SimpleIni.h	/^    void SetMultiKey(bool a_bAllowMultiKey = true) {$/;"	f	class:CSimpleIniTempl	access:public	signature:(bool a_bAllowMultiKey = true)
+SetMultiLine	SimpleINI/SimpleIni.h	/^    void SetMultiLine(bool a_bAllowMultiLine = true) {$/;"	f	class:CSimpleIniTempl	access:public	signature:(bool a_bAllowMultiLine = true)
+SetPos	Entity.h	/^        virtual void SetPos(Vec2& m) {pos = m;};$/;"	f	class:Entity	access:public	signature:(Vec2& m)
+SetReg	SceneManager.h	/^        virtual void SetReg(EntityRegistry* r) {reg = r;}; \/\/Sets the current entity registry$/;"	f	class:SceneManager	access:public	signature:(EntityRegistry* r)
+SetRot	Entity.h	/^        virtual void SetRot(float m) {draw.setRotation(m);angle = m;}; \/\/Getting and setting rotation angle (Degrees)$/;"	f	class:Entity	access:public	signature:(float m)
+SetRot	entites/phys_static.h	/^        virtual void SetRot(float m) {body->SetTransform(body->GetPosition(), toRad(m));};$/;"	f	class:phys_static	access:public	signature:(float m)
+SetSpaces	SimpleINI/SimpleIni.h	/^    void SetSpaces(bool a_bSpaces = true) {$/;"	f	class:CSimpleIniTempl	access:public	signature:(bool a_bSpaces = true)
+SetString	Definition.h	/^        void SetString(std::string name, std::string val) {SetVal(name, val);}; \/\/Compatibility reasons$/;"	f	class:Def	access:public	signature:(std::string name, std::string val)
+SetTransform	PhysicsWrappers/BoxStaticBody.h	/^        void SetTransform(Vec2 pos, float angle) {body->SetTransform(pos.toBox(), toRad(angle));};$/;"	f	class:BoxStaticBody	access:public	signature:(Vec2 pos, float angle)
+SetTransform	PhysicsWrappers/PhysicsBody.h	/^        virtual void SetTransform(Vec2 pos, float angle)=0;$/;"	p	class:PhysicsBody	access:public	signature:(Vec2 pos, float angle)
+SetUnicode	SimpleINI/SimpleIni.h	/^    void SetUnicode(bool a_bIsUtf8 = true) {$/;"	f	class:CSimpleIniTempl	access:public	signature:(bool a_bIsUtf8 = true)
+SetVal	Definition.cpp	/^void Def::SetVal(std::string name, Def val)$/;"	f	class:Def	signature:(std::string name, Def val)
+SetVal	Definition.cpp	/^void Def::SetVal(std::string name, bool val)$/;"	f	class:Def	signature:(std::string name, bool val)
+SetVal	Definition.cpp	/^void Def::SetVal(std::string name, boost::any val)$/;"	f	class:Def	signature:(std::string name, boost::any val)
+SetVal	Definition.cpp	/^void Def::SetVal(std::string name, float val)$/;"	f	class:Def	signature:(std::string name, float val)
+SetVal	Definition.cpp	/^void Def::SetVal(std::string name, int val)$/;"	f	class:Def	signature:(std::string name, int val)
+SetVal	Definition.cpp	/^void Def::SetVal(std::string name, std::string val)$/;"	f	class:Def	signature:(std::string name, std::string val)
+SetVal	Definition.h	/^        void SetVal(std::string name, Def val);$/;"	p	class:Def	access:public	signature:(std::string name, Def val)
+SetVal	Definition.h	/^        void SetVal(std::string name, bool val);$/;"	p	class:Def	access:public	signature:(std::string name, bool val)
+SetVal	Definition.h	/^        void SetVal(std::string name, boost::any val);$/;"	p	class:Def	access:public	signature:(std::string name, boost::any val)
+SetVal	Definition.h	/^        void SetVal(std::string name, float val);$/;"	p	class:Def	access:public	signature:(std::string name, float val)
+SetVal	Definition.h	/^        void SetVal(std::string name, int val);$/;"	p	class:Def	access:public	signature:(std::string name, int val)
+SetVal	Definition.h	/^        void SetVal(std::string name, std::string val);$/;"	p	class:Def	access:public	signature:(std::string name, std::string val)
+SetValue	SimpleINI/SimpleIni.h	/^    SI_Error SetValue($/;"	f	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pValue, const SI_CHAR * a_pComment = NULL, bool a_bForceReplace = false )
+SetX	Entity.cpp	/^void Entity::SetX(float m)$/;"	f	class:Entity	signature:(float m)
+SetX	Entity.h	/^        virtual void SetX(float m); \/\/Setting position$/;"	p	class:Entity	access:public	signature:(float m)
+SetX	entites/phys_static.h	/^        virtual void SetX(float m) {body->SetTransform(Vec2(m, GetY()), GetRot());};$/;"	f	class:phys_static	access:public	signature:(float m)
+SetXQ	Entity.cpp	/^void Entity::SetXQ(float m)$/;"	f	class:Entity	signature:(float m)
+SetXQ	Entity.h	/^        virtual void SetXQ(float m); \/\/Setting quened postion. Useful for modifiying position during a timestep.$/;"	p	class:Entity	access:public	signature:(float m)
+SetY	Entity.cpp	/^void Entity::SetY(float m)$/;"	f	class:Entity	signature:(float m)
+SetY	Entity.h	/^        virtual void SetY(float m);$/;"	p	class:Entity	access:public	signature:(float m)
+SetY	entites/phys_static.h	/^        virtual void SetY(float m) {body->SetTransform(Vec2(GetX(), m), GetRot());};$/;"	f	class:phys_static	access:public	signature:(float m)
+SetYQ	Entity.cpp	/^void Entity::SetYQ(float m)$/;"	f	class:Entity	signature:(float m)
+SetYQ	Entity.h	/^        virtual void SetYQ(float m);$/;"	p	class:Entity	access:public	signature:(float m)
+SizeFromStore	SimpleINI/SimpleIni.h	/^    size_t SizeFromStore($/;"	f	class:SI_ConvertA	access:public	signature:( const char * a_pInputData, size_t a_uInputDataLen)
+SizeFromStore	SimpleINI/SimpleIni.h	/^    size_t SizeFromStore($/;"	f	class:SI_ConvertW	access:public	signature:( const char * a_pInputData, size_t a_uInputDataLen)
+SizeToStore	SimpleINI/SimpleIni.h	/^    size_t SizeToStore($/;"	f	class:SI_ConvertA	access:public	signature:( const SI_CHAR * a_pInputData)
+SizeToStore	SimpleINI/SimpleIni.h	/^    size_t SizeToStore($/;"	f	class:SI_ConvertW	access:public	signature:( const SI_CHAR * a_pInputData)
+SizeToStore	SimpleINI/SimpleIni.h	/^    size_t SizeToStore($/;"	f	class:SI_ConvertW	access:public	signature:( const UChar * a_pInputData)
+SkipNewLine	SimpleINI/SimpleIni.h	/^    inline void SkipNewLine(SI_CHAR *& a_pData) const {$/;"	f	class:CSimpleIniTempl	access:private	signature:(SI_CHAR *& a_pData) const
+Spawn	SceneManager.cpp	/^void SceneManager::Spawn(Entity& plyr, std::string spawnpoint)$/;"	f	class:SceneManager	signature:(Entity& plyr, std::string spawnpoint)
+Spawn	SceneManager.h	/^        virtual void Spawn(Entity& plyr, std::string spawnpoint); \/\/Spawns an entity$/;"	p	class:SceneManager	access:public	signature:(Entity& plyr, std::string spawnpoint)
+State	State.cpp	/^State::State()$/;"	f	class:State	signature:()
+State	State.h	/^        State();$/;"	p	class:State	access:public	signature:()
+State	State.h	/^class State$/;"	c
+State::Init	State.h	/^        virtual void Init(sf::RenderWindow* win) {window = win;}; \/\/Intializes the state, that line is a must.$/;"	f	class:State	access:public	signature:(sf::RenderWindow* win)
+State::State	State.cpp	/^State::State()$/;"	f	class:State	signature:()
+State::State	State.h	/^        State();$/;"	p	class:State	access:public	signature:()
+State::Update	State.h	/^        virtual std::string Update() {return "";}; \/\/Called when the state is updated, returns the state to transtition to, "" for nothing.$/;"	f	class:State	access:public	signature:()
+State::window	State.h	/^        sf::RenderWindow* window;$/;"	m	class:State	access:protected
+StateManager	StateManager.cpp	/^StateManager::StateManager()$/;"	f	class:StateManager	signature:()
+StateManager	StateManager.h	/^        StateManager();$/;"	p	class:StateManager	access:public	signature:()
+StateManager	StateManager.h	/^class StateManager$/;"	c
+StateManager::Init	StateManager.h	/^        void Init(sf::RenderWindow* win) {window = win;}; \/\/Inits the state manger with the window$/;"	f	class:StateManager	access:public	signature:(sf::RenderWindow* win)
+StateManager::RegisterState	StateManager.cpp	/^void StateManager::RegisterState(std::string name, State& state)$/;"	f	class:StateManager	signature:(std::string name, State& state)
+StateManager::RegisterState	StateManager.cpp	/^void StateManager::RegisterState(std::string name, State* state)$/;"	f	class:StateManager	signature:(std::string name, State* state)
+StateManager::RegisterState	StateManager.h	/^        void RegisterState(std::string name, State& state);$/;"	p	class:StateManager	access:public	signature:(std::string name, State& state)
+StateManager::RegisterState	StateManager.h	/^        void RegisterState(std::string name, State* state); \/\/Registers a state in the map$/;"	p	class:StateManager	access:public	signature:(std::string name, State* state)
+StateManager::SetCurrentState	StateManager.cpp	/^void StateManager::SetCurrentState(std::string name)$/;"	f	class:StateManager	signature:(std::string name)
+StateManager::SetCurrentState	StateManager.h	/^        void SetCurrentState(std::string name); \/\/Sets the state as the one with this name$/;"	p	class:StateManager	access:public	signature:(std::string name)
+StateManager::StateManager	StateManager.cpp	/^StateManager::StateManager()$/;"	f	class:StateManager	signature:()
+StateManager::StateManager	StateManager.h	/^        StateManager();$/;"	p	class:StateManager	access:public	signature:()
+StateManager::Update	StateManager.cpp	/^void StateManager::Update()$/;"	f	class:StateManager	signature:()
+StateManager::Update	StateManager.h	/^        void Update(); \/\/Updates the current state$/;"	p	class:StateManager	access:public	signature:()
+StateManager::current_state	StateManager.h	/^        State* current_state;$/;"	m	class:StateManager	access:private
+StateManager::states	StateManager.h	/^        std::map<std::string, State*> states; \/\/Map of the states.$/;"	m	class:StateManager	access:private
+StateManager::window	StateManager.h	/^        sf::RenderWindow* window;$/;"	m	class:StateManager	access:private
+StaticBody	PhysicsWrappers/Box2DPhysics.h	9;"	d
+Step	PhysicsWrappers/BoxWorld.cpp	/^void BoxWorld::Step(float timestep)$/;"	f	class:BoxWorld	signature:(float timestep)
+Step	PhysicsWrappers/BoxWorld.h	/^        void Step(float timestep);$/;"	p	class:BoxWorld	access:public	signature:(float timestep)
+Step	PhysicsWrappers/PhysicsWorld.h	/^        virtual void Step(float timestep)=0;$/;"	p	class:PhysicsWorld	access:public	signature:(float timestep)
+StreamWriter	SimpleINI/SimpleIni.h	/^        StreamWriter(const StreamWriter &);             \/\/ disable$/;"	p	class:CSimpleIniTempl::StreamWriter	access:private	signature:(const StreamWriter &)
+StreamWriter	SimpleINI/SimpleIni.h	/^        StreamWriter(std::ostream & a_ostream) : m_ostream(a_ostream) { }$/;"	f	class:CSimpleIniTempl::StreamWriter	access:public	signature:(std::ostream & a_ostream)
+StreamWriter	SimpleINI/SimpleIni.h	/^    class StreamWriter : public OutputWriter {$/;"	c	class:CSimpleIniTempl	inherits:OutputWriter	access:public
+StringWriter	SimpleINI/SimpleIni.h	/^        StringWriter(const StringWriter &);             \/\/ disable$/;"	p	class:CSimpleIniTempl::StringWriter	access:private	signature:(const StringWriter &)
+StringWriter	SimpleINI/SimpleIni.h	/^        StringWriter(std::string & a_string) : m_string(a_string) { }$/;"	f	class:CSimpleIniTempl::StringWriter	access:public	signature:(std::string & a_string)
+StringWriter	SimpleINI/SimpleIni.h	/^    class StringWriter : public OutputWriter {$/;"	c	class:CSimpleIniTempl	inherits:OutputWriter	access:public
+TELE_COORD_H	entites/tele_coord.h	4;"	d
+TKeyVal	SimpleINI/SimpleIni.h	/^    typedef std::multimap<Entry,const SI_CHAR *,typename Entry::KeyOrder> TKeyVal;$/;"	t	class:CSimpleIniTempl	access:public
+TNamesDepend	SimpleINI/SimpleIni.h	/^    typedef std::list<Entry> TNamesDepend;$/;"	t	class:CSimpleIniTempl	access:public
+TSection	SimpleINI/SimpleIni.h	/^    typedef std::map<Entry,TKeyVal,typename Entry::KeyOrder> TSection;$/;"	t	class:CSimpleIniTempl	access:public
+TriggerBody	PhysicsWrappers/Box2DPhysics.h	11;"	d
+UNI_MAX_BMP	SimpleINI/ConvertUTF.h	97;"	d
+UNI_MAX_LEGAL_UTF32	SimpleINI/ConvertUTF.h	100;"	d
+UNI_MAX_UTF16	SimpleINI/ConvertUTF.h	98;"	d
+UNI_MAX_UTF32	SimpleINI/ConvertUTF.h	99;"	d
+UNI_REPLACEMENT_CHAR	SimpleINI/ConvertUTF.h	96;"	d
+UNI_SUR_HIGH_END	SimpleINI/ConvertUTF.c	53;"	d	file:
+UNI_SUR_HIGH_START	SimpleINI/ConvertUTF.c	52;"	d	file:
+UNI_SUR_LOW_END	SimpleINI/ConvertUTF.c	55;"	d	file:
+UNI_SUR_LOW_START	SimpleINI/ConvertUTF.c	54;"	d	file:
+UTF16	SimpleINI/ConvertUTF.h	/^typedef unsigned short	UTF16;	\/* at least 16 bits *\/$/;"	t
+UTF32	SimpleINI/ConvertUTF.h	/^typedef unsigned int	UTF32;	\/* at least 32 bits *\/$/;"	t
+UTF8	SimpleINI/ConvertUTF.h	/^typedef unsigned char	UTF8;	\/* typically 8 bits *\/$/;"	t
+Update	Entity.h	/^        virtual void Update(SceneManager* scene) {};\/\/Function prototype, since c++ doesn't have a super call this is for$/;"	f	class:Entity	access:public	signature:(SceneManager* scene)
+Update	MainMenuState.cpp	/^std::string MainMenuState::Update()$/;"	f	class:MainMenuState	signature:()
+Update	MainMenuState.h	/^        virtual std::string Update();$/;"	p	class:MainMenuState	access:public	signature:()
+Update	Particle.cpp	/^bool Particle::Update()$/;"	f	class:Particle	signature:()
+Update	Particle.h	/^        bool Update();$/;"	p	class:Particle	access:public	signature:()
+Update	ParticleEmitter.cpp	/^void ParticleEmitter::Update(sf::RenderWindow* win)$/;"	f	class:ParticleEmitter	signature:(sf::RenderWindow* win)
+Update	ParticleEmitter.h	/^        virtual void Update(sf::RenderWindow* win);$/;"	p	class:ParticleEmitter	access:public	signature:(sf::RenderWindow* win)
+Update	PlayState.cpp	/^std::string PlayState::Update()$/;"	f	class:PlayState	signature:()
+Update	PlayState.h	/^        virtual std::string Update();$/;"	p	class:PlayState	access:public	signature:()
+Update	SceneManager.cpp	/^void SceneManager::Update(sf::RenderTarget& win)$/;"	f	class:SceneManager	signature:(sf::RenderTarget& win)
+Update	SceneManager.h	/^        virtual void Update(sf::RenderTarget& win); \/\/Updates everything$/;"	p	class:SceneManager	access:public	signature:(sf::RenderTarget& win)
+Update	State.h	/^        virtual std::string Update() {return "";}; \/\/Called when the state is updated, returns the state to transtition to, "" for nothing.$/;"	f	class:State	access:public	signature:()
+Update	StateManager.cpp	/^void StateManager::Update()$/;"	f	class:StateManager	signature:()
+Update	StateManager.h	/^        void Update(); \/\/Updates the current state$/;"	p	class:StateManager	access:public	signature:()
+UsingSpaces	SimpleINI/SimpleIni.h	/^    bool UsingSpaces() const { return m_bSpaces; }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
+VEC2_H	Vec2.h	6;"	d
+VERSION	Game.h	14;"	d
+Vec2	Vec2.cpp	/^Vec2::Vec2()$/;"	f	class:Vec2	signature:()
+Vec2	Vec2.h	/^        Vec2();$/;"	p	class:Vec2	access:public	signature:()
+Vec2	Vec2.h	/^        Vec2(float m, float n) {x = m; y = n;};$/;"	f	class:Vec2	access:public	signature:(float m, float n)
+Vec2	Vec2.h	/^class Vec2$/;"	c
+Vec2::Vec2	Vec2.cpp	/^Vec2::Vec2()$/;"	f	class:Vec2	signature:()
+Vec2::Vec2	Vec2.h	/^        Vec2();$/;"	p	class:Vec2	access:public	signature:()
+Vec2::Vec2	Vec2.h	/^        Vec2(float m, float n) {x = m; y = n;};$/;"	f	class:Vec2	access:public	signature:(float m, float n)
+Vec2::toBox	Vec2.cpp	/^b2Vec2 Vec2::toBox()$/;"	f	class:Vec2	signature:()
+Vec2::toBox	Vec2.h	/^        b2Vec2 toBox();$/;"	p	class:Vec2	access:public	signature:()
+Vec2::tob2	Vec2.cpp	/^b2Vec2 Vec2::tob2()$/;"	f	class:Vec2	signature:()
+Vec2::tob2	Vec2.h	/^        b2Vec2 tob2();$/;"	p	class:Vec2	access:public	signature:()
+Vec2::x	Vec2.h	/^        float x;$/;"	m	class:Vec2	access:public
+Vec2::y	Vec2.h	/^        float y;$/;"	m	class:Vec2	access:public
+Write	SimpleINI/SimpleIni.h	/^        virtual void Write(const char * a_pBuf) = 0;$/;"	p	class:CSimpleIniTempl::OutputWriter	access:public	signature:(const char * a_pBuf)
+Write	SimpleINI/SimpleIni.h	/^        void Write(const char * a_pBuf) {$/;"	f	class:CSimpleIniTempl::FileWriter	access:public	signature:(const char * a_pBuf)
+Write	SimpleINI/SimpleIni.h	/^        void Write(const char * a_pBuf) {$/;"	f	class:CSimpleIniTempl::StreamWriter	access:public	signature:(const char * a_pBuf)
+Write	SimpleINI/SimpleIni.h	/^        void Write(const char * a_pBuf) {$/;"	f	class:CSimpleIniTempl::StringWriter	access:public	signature:(const char * a_pBuf)
+WriteBlock	File.cpp	/^void outFile::WriteBlock(char* data)$/;"	f	class:outFile	signature:(char* data)
+WriteBlock	File.h	/^        void WriteBlock(char* data);$/;"	p	class:outFile	access:public	signature:(char* data)
+WriteByte	File.cpp	/^void outFile::WriteByte(BYTE ff)$/;"	f	class:outFile	signature:(BYTE ff)
+WriteByte	File.h	/^        void WriteByte(BYTE ff);$/;"	p	class:outFile	access:public	signature:(BYTE ff)
+WriteFloat	File.cpp	/^void outFile::WriteFloat(float ff)$/;"	f	class:outFile	signature:(float ff)
+WriteFloat	File.h	/^        void WriteFloat(float ff);$/;"	p	class:outFile	access:public	signature:(float ff)
+WriteInt	File.cpp	/^void outFile::WriteInt(int ff)$/;"	f	class:outFile	signature:(int ff)
+WriteInt	File.h	/^        void WriteInt(int ff);$/;"	p	class:outFile	access:public	signature:(int ff)
+WriteString	File.cpp	/^void outFile::WriteString(std::string str)$/;"	f	class:outFile	signature:(std::string str)
+WriteString	File.h	/^        void WriteString(std::string str);$/;"	p	class:outFile	access:public	signature:(std::string str)
+alive	Entity.h	/^        bool alive; \/\/Is the object alive? (used in things such as whether to call update or not)$/;"	m	class:Entity	access:protected
+alive	MainMenuState.h	/^        bool alive;$/;"	m	class:MainMenuState	access:protected
+alive	Particle.h	/^        bool alive;$/;"	m	class:Particle	access:protected
+alive	PlayState.h	/^        bool alive;$/;"	m	class:PlayState	access:protected
+angle	Entity.h	/^        float angle;$/;"	m	class:Entity	access:protected
+args	ScriptManager.h	/^        int args;$/;"	m	class:ScriptManager	access:private
+asset	Entity.h	/^        Def asset; \/\/def loaded for asset stuff$/;"	m	class:Entity	access:protected
+attributes	Entity.h	/^        std::map<std::string, bool> attributes;$/;"	m	class:Entity	access:protected
+bclisten	PhysicsWrappers/BoxWorld.h	/^        BullwhipContactListener* bclisten;$/;"	m	class:BoxWorld	access:protected
+body	PhysicsWrappers/BoxStaticBody.h	/^        b2Body* body;$/;"	m	class:BoxStaticBody	access:protected
+body	entites/phys_static.h	/^        PhysicsBody* body; \/\/The actual physics body object.$/;"	m	class:phys_static	access:protected
+body_def	PhysicsWrappers/BoxStaticBody.h	/^        b2BodyDef body_def;$/;"	m	class:BoxStaticBody	access:protected
+bounding	PhysicsWrappers/BoxStaticBody.h	/^        b2PolygonShape bounding;$/;"	m	class:BoxStaticBody	access:protected
+bullwhipini	PlayState.h	/^        CSimpleIni bullwhipini;$/;"	m	class:PlayState	access:protected
+can_jump	Actor.h	/^        bool can_jump;$/;"	m	class:Actor	access:private
+clear	Game.h	/^        void clear() {win.clear();};$/;"	f	class:Game	access:public	signature:()
+color	Particle.h	/^        sf::Color color;$/;"	m	class:Particle	access:public
+conversionOK	SimpleINI/ConvertUTF.h	/^	conversionOK, 		\/* conversion successful *\/$/;"	e	enum:__anon1
+counter	Game.h	/^        sf::Clock counter;$/;"	m	class:Game	access:private
+current_state	StateManager.h	/^        State* current_state;$/;"	m	class:StateManager	access:private
+damage	Entity.cpp	/^void Entity::damage(int dmg)$/;"	f	class:Entity	signature:(int dmg)
+damage	Entity.h	/^        virtual void damage(int dmg); \/\/Incomplete damage system.$/;"	p	class:Entity	access:public	signature:(int dmg)
+define	Definition.h	/^        std::map<std::string, bool> define;$/;"	m	class:Def	access:protected
+display	Game.h	/^        void display() {win.display();};$/;"	f	class:Game	access:public	signature:()
+distance	JMath.cpp	/^float distance(float x1, float y1, float x2, float y2)$/;"	f	signature:(float x1, float y1, float x2, float y2)
+distance	JMath.h	/^float distance(float x1, float y1, float x2, float y2);$/;"	p	signature:(float x1, float y1, float x2, float y2)
+do_q	Entity.h	/^        bool do_q; \/\/Whether or not a quene is active$/;"	m	class:Entity	access:protected
+draw	Entity.h	/^        sf::Sprite draw; \/\/Sprite for drawing things$/;"	m	class:Entity	access:protected
+draw	Game.cpp	/^void Game::draw()$/;"	f	class:Game	signature:()
+draw	Game.h	/^        void draw();$/;"	p	class:Game	access:public	signature:()
+draw	ParticleEmitter.h	/^        sf::Image draw;$/;"	m	class:ParticleEmitter	access:protected
+ent_item	entites/ent_item.cpp	/^ent_item::ent_item()$/;"	f	class:ent_item	signature:()
+ent_item	entites/ent_item.h	/^        ent_item();$/;"	p	class:ent_item	access:public	signature:()
+ent_item	entites/ent_item.h	/^class ent_item : public InvisPhysEntity$/;"	c	inherits:InvisPhysEntity
+ent_item::Draw	entites/ent_item.h	/^        virtual void Draw(sf::RenderTarget& win) {win.draw(draw);};$/;"	f	class:ent_item	access:public	signature:(sf::RenderTarget& win)
+ent_item::ent_item	entites/ent_item.cpp	/^ent_item::ent_item()$/;"	f	class:ent_item	signature:()
+ent_item::ent_item	entites/ent_item.h	/^        ent_item();$/;"	p	class:ent_item	access:public	signature:()
+ent_item::init	entites/ent_item.cpp	/^void ent_item::init()$/;"	f	class:ent_item	signature:()
+ent_item::init	entites/ent_item.h	/^        virtual void init();$/;"	p	class:ent_item	access:public	signature:()
+ent_item::super	entites/ent_item.h	/^        typedef InvisPhysEntity super;$/;"	t	class:ent_item	access:private
+ent_string	entites/ent_string.cpp	/^ent_string::ent_string()$/;"	f	class:ent_string	signature:()
+ent_string	entites/ent_string.h	/^        ent_string();$/;"	p	class:ent_string	access:public	signature:()
+ent_string	entites/ent_string.h	/^class ent_string : public Entity$/;"	c	inherits:Entity
+ent_string::Draw	entites/ent_string.h	/^        virtual void Draw(sf::RenderTarget& win) {win.draw(str);};$/;"	f	class:ent_string	access:public	signature:(sf::RenderTarget& win)
+ent_string::ent_string	entites/ent_string.cpp	/^ent_string::ent_string()$/;"	f	class:ent_string	signature:()
+ent_string::ent_string	entites/ent_string.h	/^        ent_string();$/;"	p	class:ent_string	access:public	signature:()
+ent_string::f	entites/ent_string.h	/^        sf::Font f;$/;"	m	class:ent_string	access:protected
+ent_string::init	entites/ent_string.cpp	/^void ent_string::init()$/;"	f	class:ent_string	signature:()
+ent_string::init	entites/ent_string.h	/^        virtual void init();$/;"	p	class:ent_string	access:public	signature:()
+ent_string::str	entites/ent_string.h	/^        sf::Text str;$/;"	m	class:ent_string	access:protected
+ent_string::super	entites/ent_string.h	/^        typedef Entity super;$/;"	t	class:ent_string	access:private
+entites	SceneManager.h	/^        std::vector<Entity*> entites; \/\/Global list of entites$/;"	m	class:SceneManager	access:protected
+f	File.h	/^        std::ifstream* f;$/;"	m	class:inFile	access:private
+f	File.h	/^        std::ofstream* f;$/;"	m	class:outFile	access:private
+f	entites/ent_string.h	/^        sf::Font f;$/;"	m	class:ent_string	access:protected
+factorys	EntityRegistry.h	/^        std::map<std::string, Entity* (*)(int)> factorys;$/;"	m	class:EntityRegistry	access:private
+false	SimpleINI/ConvertUTF.c	56;"	d	file:
+find	ResourceManager.h	/^    T* find( const std::string& strId ) {$/;"	f	class:ResourceManager	access:private	signature:( const std::string& strId )
+firstByteMark	SimpleINI/ConvertUTF.c	/^static const UTF8 firstByteMark[7] = { 0x00, 0x00, 0xC0, 0xE0, 0xF0, 0xF8, 0xFC };$/;"	v	file:
+fix	PhysicsWrappers/BoxDynamicBody.h	/^        b2Fixture* fix;$/;"	m	class:BoxDynamicBody	access:protected
+fix_def	PhysicsWrappers/BoxDynamicBody.h	/^        b2FixtureDef fix_def;$/;"	m	class:BoxDynamicBody	access:protected
+fname	ScriptManager.h	/^        std::string fname;$/;"	m	class:ScriptManager	access:private
+fps	Game.h	/^        sf::Text fps;$/;"	m	class:Game	access:private
+fpsfont	Game.h	/^        sf::Font fpsfont;$/;"	m	class:Game	access:private
+gEvent	Game.h	/^        bool gEvent(sf::Event &ev) {return win.pollEvent(ev);};$/;"	f	class:Game	access:public	signature:(sf::Event &ev)
+gImageManager	ImageManager.cpp	/^ImageManager gImageManager;$/;"	v
+game_setglobal	entites/game_setglobal.cpp	/^game_setglobal::game_setglobal()$/;"	f	class:game_setglobal	signature:()
+game_setglobal	entites/game_setglobal.h	/^        game_setglobal();$/;"	p	class:game_setglobal	access:public	signature:()
+game_setglobal	entites/game_setglobal.h	/^class game_setglobal : public InvisPhysEntity$/;"	c	inherits:InvisPhysEntity
+game_setglobal::game_setglobal	entites/game_setglobal.cpp	/^game_setglobal::game_setglobal()$/;"	f	class:game_setglobal	signature:()
+game_setglobal::game_setglobal	entites/game_setglobal.h	/^        game_setglobal();$/;"	p	class:game_setglobal	access:public	signature:()
+game_setglobal::onCollision	entites/game_setglobal.cpp	/^void game_setglobal::onCollision(Entity* obj)$/;"	f	class:game_setglobal	signature:(Entity* obj)
+game_setglobal::onCollision	entites/game_setglobal.h	/^        virtual void onCollision(Entity* obj);$/;"	p	class:game_setglobal	access:public	signature:(Entity* obj)
+game_spawnpoint	entites/game_spawnpoint.cpp	/^game_spawnpoint::game_spawnpoint()$/;"	f	class:game_spawnpoint	signature:()
+game_spawnpoint	entites/game_spawnpoint.h	/^        game_spawnpoint();$/;"	p	class:game_spawnpoint	access:public	signature:()
+game_spawnpoint	entites/game_spawnpoint.h	/^class game_spawnpoint : public InvisEntity$/;"	c	inherits:InvisEntity
+game_spawnpoint::game_spawnpoint	entites/game_spawnpoint.cpp	/^game_spawnpoint::game_spawnpoint()$/;"	f	class:game_spawnpoint	signature:()
+game_spawnpoint::game_spawnpoint	entites/game_spawnpoint.h	/^        game_spawnpoint();$/;"	p	class:game_spawnpoint	access:public	signature:()
+getResource	ResourceManager.h	/^    T* getResource( const std::string& strId ) {$/;"	f	class:ResourceManager	access:public	signature:( const std::string& strId )
+getspr	Entity.h	/^        virtual sf::Sprite& getspr() {return draw;}; \/\/Helper function for getting the sprite. Not used anymore, just here for compatiblity.$/;"	f	class:Entity	access:public	signature:()
+getspr	entites/phys_static.h	/^        sf::Sprite& getspr() {return draw;};$/;"	f	class:phys_static	access:public	signature:()
+getwin	Game.h	/^        sf::RenderWindow& getwin() {return win;};$/;"	f	class:Game	access:public	signature:()
+gravity	Particle.h	/^        sf::Vector2f gravity;$/;"	m	class:Particle	access:public
+h	Entity.h	/^        int h;$/;"	m	class:Entity	access:protected
+halfBase	SimpleINI/ConvertUTF.c	/^static const UTF32 halfBase = 0x0010000UL;$/;"	v	file:
+halfMask	SimpleINI/ConvertUTF.c	/^static const UTF32 halfMask = 0x3FFUL;$/;"	v	file:
+halfShift	SimpleINI/ConvertUTF.c	/^static const int halfShift  = 10; \/* used for shifting by 10 bits *\/$/;"	v	file:
+hh	Entity.h	/^        int hh; \/\/Half height$/;"	m	class:Entity	access:protected
+hw	Entity.h	/^        int hw; \/\/Half width of sprite$/;"	m	class:Entity	access:protected
+inFile	File.cpp	/^inFile::inFile()$/;"	f	class:inFile	signature:()
+inFile	File.h	/^        inFile();$/;"	p	class:inFile	access:public	signature:()
+inFile	File.h	/^class inFile$/;"	c
+inFile::Close	File.cpp	/^void inFile::Close()$/;"	f	class:inFile	signature:()
+inFile::Close	File.h	/^        void Close();$/;"	p	class:inFile	access:public	signature:()
+inFile::OpenFile	File.cpp	/^void inFile::OpenFile(std::string filename)$/;"	f	class:inFile	signature:(std::string filename)
+inFile::OpenFile	File.h	/^        void OpenFile(std::string filename);$/;"	p	class:inFile	access:public	signature:(std::string filename)
+inFile::ReadBlock	File.cpp	/^char* inFile::ReadBlock(int size)$/;"	f	class:inFile	signature:(int size)
+inFile::ReadBlock	File.h	/^        char* ReadBlock(int size);$/;"	p	class:inFile	access:public	signature:(int size)
+inFile::ReadByte	File.cpp	/^BYTE inFile::ReadByte()$/;"	f	class:inFile	signature:()
+inFile::ReadByte	File.h	/^        BYTE ReadByte();$/;"	p	class:inFile	access:public	signature:()
+inFile::ReadFloat	File.cpp	/^float inFile::ReadFloat()$/;"	f	class:inFile	signature:()
+inFile::ReadFloat	File.h	/^        float ReadFloat();$/;"	p	class:inFile	access:public	signature:()
+inFile::ReadInt	File.cpp	/^int inFile::ReadInt()$/;"	f	class:inFile	signature:()
+inFile::ReadInt	File.h	/^        int ReadInt();$/;"	p	class:inFile	access:public	signature:()
+inFile::ReadString	File.cpp	/^std::string inFile::ReadString()$/;"	f	class:inFile	signature:()
+inFile::ReadString	File.h	/^        std::string ReadString();$/;"	p	class:inFile	access:public	signature:()
+inFile::f	File.h	/^        std::ifstream* f;$/;"	m	class:inFile	access:private
+inFile::inFile	File.cpp	/^inFile::inFile()$/;"	f	class:inFile	signature:()
+inFile::inFile	File.h	/^        inFile();$/;"	p	class:inFile	access:public	signature:()
+init	Actor.cpp	/^void Actor::init()$/;"	f	class:Actor	signature:()
+init	Actor.h	/^        virtual void init();$/;"	p	class:Actor	access:public	signature:()
+init	Entity.cpp	/^void Entity::init()$/;"	f	class:Entity	signature:()
+init	Entity.h	/^        virtual void init(); \/\/Intialization$/;"	p	class:Entity	access:public	signature:()
+init	Game.cpp	/^void Game::init(std::string title, int x, int y)$/;"	f	class:Game	signature:(std::string title, int x, int y)
+init	Game.h	/^        void init(std::string title, int x, int y);$/;"	p	class:Game	access:public	signature:(std::string title, int x, int y)
+init	ScriptManager.cpp	/^void ScriptManager::init()$/;"	f	class:ScriptManager	signature:()
+init	ScriptManager.h	/^        void init();$/;"	p	class:ScriptManager	access:public	signature:()
+init	entites/InvisEntity.cpp	/^void InvisEntity::init()$/;"	f	class:InvisEntity	signature:()
+init	entites/InvisEntity.h	/^        virtual void init();$/;"	p	class:InvisEntity	access:public	signature:()
+init	entites/InvisPhysEntity.cpp	/^void InvisPhysEntity::init()$/;"	f	class:InvisPhysEntity	signature:()
+init	entites/InvisPhysEntity.h	/^        virtual void init();$/;"	p	class:InvisPhysEntity	access:public	signature:()
+init	entites/ent_item.cpp	/^void ent_item::init()$/;"	f	class:ent_item	signature:()
+init	entites/ent_item.h	/^        virtual void init();$/;"	p	class:ent_item	access:public	signature:()
+init	entites/ent_string.cpp	/^void ent_string::init()$/;"	f	class:ent_string	signature:()
+init	entites/ent_string.h	/^        virtual void init();$/;"	p	class:ent_string	access:public	signature:()
+init	entites/phys_dynamic.cpp	/^void phys_dynamic::init()$/;"	f	class:phys_dynamic	signature:()
+init	entites/phys_dynamic.h	/^        virtual void init();$/;"	p	class:phys_dynamic	access:public	signature:()
+init	entites/phys_static.cpp	/^void phys_static::init()$/;"	f	class:phys_static	signature:()
+init	entites/phys_static.h	/^        virtual void init();$/;"	p	class:phys_static	access:public	signature:()
+inrange	JMath.cpp	/^bool inrange(float n, float x, float y)$/;"	f	signature:(float n, float x, float y)
+inrange	JMath.h	/^bool inrange(float n, float x, float y);$/;"	p	signature:(float n, float x, float y)
+inv	Player.h	/^        Inventory inv;$/;"	m	class:Player	access:protected
+isAlive	Entity.h	/^        virtual bool isAlive() {return alive;}; \/\/returns whether the entity is alive or not.$/;"	f	class:Entity	access:public	signature:()
+isLegalUTF8	SimpleINI/ConvertUTF.c	/^static Boolean isLegalUTF8(const UTF8 *source, int length) {$/;"	f	file:	signature:(const UTF8 *source, int length)
+isLegalUTF8Sequence	SimpleINI/ConvertUTF.c	/^Boolean isLegalUTF8Sequence(const UTF8 *source, const UTF8 *sourceEnd) {$/;"	f	signature:(const UTF8 *source, const UTF8 *sourceEnd)
+isLegalUTF8Sequence	SimpleINI/ConvertUTF.h	/^Boolean isLegalUTF8Sequence(const UTF8 *source, const UTF8 *sourceEnd);$/;"	p	signature:(const UTF8 *source, const UTF8 *sourceEnd)
+isasset	Entity.h	/^        bool isasset;$/;"	m	class:Entity	access:protected
+items	Item.h	/^        std::map<std::string, Def> items;$/;"	m	class:ItemManager	access:private
+items	Item.h	/^        std::vector<Def> items;$/;"	m	class:Inventory	access:private
+lenientConversion	SimpleINI/ConvertUTF.h	/^	lenientConversion$/;"	e	enum:__anon2
+life	Particle.h	/^        sf::Clock life;$/;"	m	class:Particle	access:protected
+lifetime	Particle.h	/^        float lifetime;$/;"	m	class:Particle	access:public
+load	ImageManager.cpp	/^sf::Texture* ImageManager::load( const std::string& strId ) {$/;"	f	class:ImageManager	signature:( const std::string& strId )
+load	ImageManager.h	/^    virtual sf::Texture* load( const std::string& strId );$/;"	p	class:ImageManager	access:protected	signature:( const std::string& strId )
+load	ResourceManager.h	/^    virtual T* load( const std::string& strId ) = 0;$/;"	p	class:ResourceManager	access:protected	signature:( const std::string& strId )
+locase	SimpleINI/SimpleIni.h	/^    inline SI_CHAR locase(SI_CHAR ch) const {$/;"	f	struct:SI_GenericNoCase	access:public	signature:(SI_CHAR ch) const
+lx	Entity.h	/^        float lx; \/\/Variable to hold current position$/;"	m	class:Entity	access:protected
+ly	Entity.h	/^        float ly; \/\/see above$/;"	m	class:Entity	access:protected
+m_ScriptManager	ScriptManager.h	/^        static ScriptManager m_ScriptManager;$/;"	m	class:ScriptManager	access:private
+m_bAllowMultiKey	SimpleINI/SimpleIni.h	/^    bool m_bAllowMultiKey;$/;"	m	class:CSimpleIniTempl	access:private
+m_bAllowMultiLine	SimpleINI/SimpleIni.h	/^    bool m_bAllowMultiLine;$/;"	m	class:CSimpleIniTempl	access:private
+m_bSpaces	SimpleINI/SimpleIni.h	/^    bool m_bSpaces;$/;"	m	class:CSimpleIniTempl	access:private
+m_bStoreIsUtf8	SimpleINI/SimpleIni.h	/^    bool m_bStoreIsUtf8;$/;"	m	class:CSimpleIniTempl	access:private
+m_bStoreIsUtf8	SimpleINI/SimpleIni.h	/^    bool m_bStoreIsUtf8;$/;"	m	class:SI_ConvertA	access:private
+m_bStoreIsUtf8	SimpleINI/SimpleIni.h	/^    bool m_bStoreIsUtf8;$/;"	m	class:SI_ConvertW	access:private
+m_data	SimpleINI/SimpleIni.h	/^    TSection m_data;$/;"	m	class:CSimpleIniTempl	access:private
+m_file	SimpleINI/SimpleIni.h	/^        FILE * m_file;$/;"	m	class:CSimpleIniTempl::FileWriter	access:private
+m_nOrder	SimpleINI/SimpleIni.h	/^    int m_nOrder;$/;"	m	class:CSimpleIniTempl	access:private
+m_ostream	SimpleINI/SimpleIni.h	/^        std::ostream & m_ostream;$/;"	m	class:CSimpleIniTempl::StreamWriter	access:private
+m_pConverter	SimpleINI/SimpleIni.h	/^    UConverter * m_pConverter;$/;"	m	class:SI_ConvertW	access:private
+m_pData	SimpleINI/SimpleIni.h	/^    SI_CHAR * m_pData;$/;"	m	class:CSimpleIniTempl	access:private
+m_pEncoding	SimpleINI/SimpleIni.h	/^    const char * m_pEncoding;$/;"	m	class:SI_ConvertW	access:private
+m_pFileComment	SimpleINI/SimpleIni.h	/^    const SI_CHAR * m_pFileComment;$/;"	m	class:CSimpleIniTempl	access:private
+m_resource	ResourceManager.h	/^    ResourceMap m_resource;$/;"	m	class:ResourceManager	access:private
+m_scratch	SimpleINI/SimpleIni.h	/^        std::string m_scratch;$/;"	m	class:CSimpleIniTempl::Converter	access:private
+m_string	SimpleINI/SimpleIni.h	/^        std::string & m_string;$/;"	m	class:CSimpleIniTempl::StringWriter	access:private
+m_strings	SimpleINI/SimpleIni.h	/^    TNamesDepend m_strings;$/;"	m	class:CSimpleIniTempl	access:private
+m_uCodePage	SimpleINI/SimpleIni.h	/^    UINT m_uCodePage;$/;"	m	class:SI_ConvertW	access:private
+m_uDataLen	SimpleINI/SimpleIni.h	/^    size_t m_uDataLen;$/;"	m	class:CSimpleIniTempl	access:private
+main	main.cpp	/^int main()$/;"	f	signature:()
+max_particles	ParticleEmitter.h	/^        int max_particles;$/;"	m	class:ParticleEmitter	access:protected
+nOrder	SimpleINI/SimpleIni.h	/^        int             nOrder;$/;"	m	struct:CSimpleIniTempl::Entry	access:public
+name	Entity.h	/^        std::string name; \/\/Quick getting the name of the entity eg phys_static$/;"	m	class:Entity	access:public
+offsetsFromUTF8	SimpleINI/ConvertUTF.c	/^static const UTF32 offsetsFromUTF8[6] = { 0x00000000UL, 0x00003080UL, 0x000E2080UL, $/;"	v	file:
+onBeginCollision	Entity.h	/^        virtual void onBeginCollision(Entity* obj) {return;}; \/\/Called only when the collision starts$/;"	f	class:Entity	access:public	signature:(Entity* obj)
+onBeginCollision	Player.cpp	/^void Player::onBeginCollision(Entity* obj)$/;"	f	class:Player	signature:(Entity* obj)
+onBeginCollision	Player.h	/^        virtual void onBeginCollision(Entity* obj);$/;"	p	class:Player	access:public	signature:(Entity* obj)
+onCollision	Actor.cpp	/^void Actor::onCollision(Entity* obj)$/;"	f	class:Actor	signature:(Entity* obj)
+onCollision	Actor.h	/^        virtual void onCollision(Entity* obj);$/;"	p	class:Actor	access:public	signature:(Entity* obj)
+onCollision	Entity.h	/^        virtual void onCollision(Entity* obj) {return;}; \/\/Collision callback, used for physics collisions. Called every frame of the collision$/;"	f	class:Entity	access:public	signature:(Entity* obj)
+onCollision	entites/game_setglobal.cpp	/^void game_setglobal::onCollision(Entity* obj)$/;"	f	class:game_setglobal	signature:(Entity* obj)
+onCollision	entites/game_setglobal.h	/^        virtual void onCollision(Entity* obj);$/;"	p	class:game_setglobal	access:public	signature:(Entity* obj)
+onCollision	entites/tele_coord.cpp	/^void tele_coord::onCollision(Entity* obj)$/;"	f	class:tele_coord	signature:(Entity* obj)
+onCollision	entites/tele_coord.h	/^        virtual void onCollision(Entity* obj);$/;"	p	class:tele_coord	access:public	signature:(Entity* obj)
+onCollision	entites/tele_obj.cpp	/^void tele_obj::onCollision(Entity* obj)$/;"	f	class:tele_obj	signature:(Entity* obj)
+onCollision	entites/tele_obj.h	/^        virtual void onCollision(Entity* obj);$/;"	p	class:tele_obj	access:public	signature:(Entity* obj)
+onEndCollision	Entity.h	/^        virtual void onEndCollision(Entity* obj) {return;};$/;"	f	class:Entity	access:public	signature:(Entity* obj)
+onEndCollision	Player.cpp	/^void Player::onEndCollision(Entity* obj)$/;"	f	class:Player	signature:(Entity* obj)
+onEndCollision	Player.h	/^        virtual void onEndCollision(Entity* obj);$/;"	p	class:Player	access:public	signature:(Entity* obj)
+operator ()	SimpleINI/SimpleIni.h	/^            bool operator()(const Entry & lhs, const Entry & rhs) const {$/;"	f	struct:CSimpleIniTempl::Entry::KeyOrder	access:public	signature:(const Entry & lhs, const Entry & rhs) const
+operator ()	SimpleINI/SimpleIni.h	/^            bool operator()(const Entry & lhs, const Entry & rhs) const {$/;"	f	struct:CSimpleIniTempl::Entry::LoadOrder	access:public	signature:(const Entry & lhs, const Entry & rhs) const
+operator ()	SimpleINI/SimpleIni.h	/^    bool operator()(const SI_CHAR * pLeft, const SI_CHAR * pRight) const {$/;"	f	struct:SI_GenericCase	access:public	signature:(const SI_CHAR * pLeft, const SI_CHAR * pRight) const
+operator ()	SimpleINI/SimpleIni.h	/^    bool operator()(const SI_CHAR * pLeft, const SI_CHAR * pRight) const {$/;"	f	struct:SI_GenericNoCase	access:public	signature:(const SI_CHAR * pLeft, const SI_CHAR * pRight) const
+operator ()	SimpleINI/SimpleIni.h	/^    bool operator()(const SI_CHAR * pLeft, const SI_CHAR * pRight) const {$/;"	f	struct:SI_NoCase	access:public	signature:(const SI_CHAR * pLeft, const SI_CHAR * pRight) const
+operator <	SimpleINI/SimpleIni.h	/^        bool operator<(const Entry & rhs) const { return LoadOrder()(*this, rhs); }$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const Entry & rhs) const
+operator =	SimpleINI/SimpleIni.h	/^        Converter & operator=(const Converter & rhs) {$/;"	f	class:CSimpleIniTempl::Converter	access:public	signature:(const Converter & rhs)
+operator =	SimpleINI/SimpleIni.h	/^        Entry & operator=(const Entry & rhs) {$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const Entry & rhs)
+operator =	SimpleINI/SimpleIni.h	/^        FileWriter & operator=(const FileWriter &); \/\/ disable$/;"	p	class:CSimpleIniTempl::FileWriter	access:private	signature:(const FileWriter &)
+operator =	SimpleINI/SimpleIni.h	/^        OutputWriter & operator=(const OutputWriter &); \/\/ disable$/;"	p	class:CSimpleIniTempl::OutputWriter	access:private	signature:(const OutputWriter &)
+operator =	SimpleINI/SimpleIni.h	/^        StreamWriter & operator=(const StreamWriter &); \/\/ disable$/;"	p	class:CSimpleIniTempl::StreamWriter	access:private	signature:(const StreamWriter &)
+operator =	SimpleINI/SimpleIni.h	/^        StringWriter & operator=(const StringWriter &); \/\/ disable$/;"	p	class:CSimpleIniTempl::StringWriter	access:private	signature:(const StringWriter &)
+operator =	SimpleINI/SimpleIni.h	/^    CSimpleIniTempl & operator=(const CSimpleIniTempl &); \/\/ disabled$/;"	p	class:CSimpleIniTempl	access:private	signature:(const CSimpleIniTempl &)
+operator =	SimpleINI/SimpleIni.h	/^    SI_ConvertA & operator=(const SI_ConvertA & rhs) {$/;"	f	class:SI_ConvertA	access:public	signature:(const SI_ConvertA & rhs)
+operator =	SimpleINI/SimpleIni.h	/^    SI_ConvertW & operator=(const SI_ConvertW & rhs) {$/;"	f	class:SI_ConvertW	access:public	signature:(const SI_ConvertW & rhs)
+operator >	SimpleINI/SimpleIni.h	/^        bool operator>(const Entry & rhs) const { return LoadOrder()(rhs, *this); }$/;"	f	struct:CSimpleIniTempl::Entry	access:public	signature:(const Entry & rhs) const
+origin	Particle.h	/^        sf::Vector2f origin;$/;"	m	class:Particle	access:public
+ospeed	Particle.h	/^        sf::Vector2f ospeed;$/;"	m	class:Particle	access:public
+outFile	File.cpp	/^outFile::outFile()$/;"	f	class:outFile	signature:()
+outFile	File.h	/^        outFile();$/;"	p	class:outFile	access:public	signature:()
+outFile	File.h	/^class outFile$/;"	c
+outFile::Close	File.cpp	/^void outFile::Close()$/;"	f	class:outFile	signature:()
+outFile::Close	File.h	/^        void Close();$/;"	p	class:outFile	access:public	signature:()
+outFile::OpenFile	File.cpp	/^void outFile::OpenFile(std::string filename)$/;"	f	class:outFile	signature:(std::string filename)
+outFile::OpenFile	File.h	/^        void OpenFile(std::string filename);$/;"	p	class:outFile	access:public	signature:(std::string filename)
+outFile::WriteBlock	File.cpp	/^void outFile::WriteBlock(char* data)$/;"	f	class:outFile	signature:(char* data)
+outFile::WriteBlock	File.h	/^        void WriteBlock(char* data);$/;"	p	class:outFile	access:public	signature:(char* data)
+outFile::WriteByte	File.cpp	/^void outFile::WriteByte(BYTE ff)$/;"	f	class:outFile	signature:(BYTE ff)
+outFile::WriteByte	File.h	/^        void WriteByte(BYTE ff);$/;"	p	class:outFile	access:public	signature:(BYTE ff)
+outFile::WriteFloat	File.cpp	/^void outFile::WriteFloat(float ff)$/;"	f	class:outFile	signature:(float ff)
+outFile::WriteFloat	File.h	/^        void WriteFloat(float ff);$/;"	p	class:outFile	access:public	signature:(float ff)
+outFile::WriteInt	File.cpp	/^void outFile::WriteInt(int ff)$/;"	f	class:outFile	signature:(int ff)
+outFile::WriteInt	File.h	/^        void WriteInt(int ff);$/;"	p	class:outFile	access:public	signature:(int ff)
+outFile::WriteString	File.cpp	/^void outFile::WriteString(std::string str)$/;"	f	class:outFile	signature:(std::string str)
+outFile::WriteString	File.h	/^        void WriteString(std::string str);$/;"	p	class:outFile	access:public	signature:(std::string str)
+outFile::f	File.h	/^        std::ofstream* f;$/;"	m	class:outFile	access:private
+outFile::outFile	File.cpp	/^outFile::outFile()$/;"	f	class:outFile	signature:()
+outFile::outFile	File.h	/^        outFile();$/;"	p	class:outFile	access:public	signature:()
+ox	entites/tele_obj.h	/^        int ox;$/;"	m	class:tele_obj	access:protected
+oy	entites/tele_obj.h	/^        int oy;$/;"	m	class:tele_obj	access:protected
+pComment	SimpleINI/SimpleIni.h	/^        const SI_CHAR * pComment;$/;"	m	struct:CSimpleIniTempl::Entry	access:public
+pItem	SimpleINI/SimpleIni.h	/^        const SI_CHAR * pItem;$/;"	m	struct:CSimpleIniTempl::Entry	access:public
+particles	ParticleEmitter.h	/^        std::vector<Particle*> particles;$/;"	m	class:ParticleEmitter	access:protected
+paused	Game.h	/^        bool paused;$/;"	m	class:Game	access:private
+phys_dynamic	entites/phys_dynamic.cpp	/^phys_dynamic::phys_dynamic()$/;"	f	class:phys_dynamic	signature:()
+phys_dynamic	entites/phys_dynamic.h	/^        phys_dynamic();$/;"	p	class:phys_dynamic	access:public	signature:()
+phys_dynamic	entites/phys_dynamic.h	/^class phys_dynamic : public phys_static$/;"	c	inherits:phys_static
+phys_dynamic::init	entites/phys_dynamic.cpp	/^void phys_dynamic::init()$/;"	f	class:phys_dynamic	signature:()
+phys_dynamic::init	entites/phys_dynamic.h	/^        virtual void init();$/;"	p	class:phys_dynamic	access:public	signature:()
+phys_dynamic::phys_dynamic	entites/phys_dynamic.cpp	/^phys_dynamic::phys_dynamic()$/;"	f	class:phys_dynamic	signature:()
+phys_dynamic::phys_dynamic	entites/phys_dynamic.h	/^        phys_dynamic();$/;"	p	class:phys_dynamic	access:public	signature:()
+phys_dynamic::super	entites/phys_dynamic.h	/^        typedef phys_static super;$/;"	t	class:phys_dynamic	access:private
+phys_static	entites/phys_static.cpp	/^phys_static::phys_static()$/;"	f	class:phys_static	signature:()
+phys_static	entites/phys_static.h	/^        phys_static();$/;"	p	class:phys_static	access:public	signature:()
+phys_static	entites/phys_static.h	/^class phys_static : public Entity$/;"	c	inherits:Entity
+phys_static::Destroy	entites/phys_static.h	/^        virtual void Destroy() {phys_world->DestroyBody(body);};$/;"	f	class:phys_static	access:public	signature:()
+phys_static::GetRot	entites/phys_static.h	/^        virtual float GetRot() {return toDeg(body->GetAngle());};$/;"	f	class:phys_static	access:public	signature:()
+phys_static::GetX	entites/phys_static.h	/^        virtual float GetX() {return body->GetPosition().x;};$/;"	f	class:phys_static	access:public	signature:()
+phys_static::GetY	entites/phys_static.h	/^        virtual float GetY() {return body->GetPosition().y;};$/;"	f	class:phys_static	access:public	signature:()
+phys_static::SetRot	entites/phys_static.h	/^        virtual void SetRot(float m) {body->SetTransform(body->GetPosition(), toRad(m));};$/;"	f	class:phys_static	access:public	signature:(float m)
+phys_static::SetX	entites/phys_static.h	/^        virtual void SetX(float m) {body->SetTransform(Vec2(m, GetY()), GetRot());};$/;"	f	class:phys_static	access:public	signature:(float m)
+phys_static::SetY	entites/phys_static.h	/^        virtual void SetY(float m) {body->SetTransform(Vec2(GetX(), m), GetRot());};$/;"	f	class:phys_static	access:public	signature:(float m)
+phys_static::body	entites/phys_static.h	/^        PhysicsBody* body; \/\/The actual physics body object.$/;"	m	class:phys_static	access:protected
+phys_static::getspr	entites/phys_static.h	/^        sf::Sprite& getspr() {return draw;};$/;"	f	class:phys_static	access:public	signature:()
+phys_static::init	entites/phys_static.cpp	/^void phys_static::init()$/;"	f	class:phys_static	signature:()
+phys_static::init	entites/phys_static.h	/^        virtual void init();$/;"	p	class:phys_static	access:public	signature:()
+phys_static::phys_static	entites/phys_static.cpp	/^phys_static::phys_static()$/;"	f	class:phys_static	signature:()
+phys_static::phys_static	entites/phys_static.h	/^        phys_static();$/;"	p	class:phys_static	access:public	signature:()
+phys_static::super	entites/phys_static.h	/^        typedef Entity super;$/;"	t	class:phys_static	access:public
+phys_static::update	entites/phys_static.cpp	/^void phys_static::update(SceneManager* scene)$/;"	f	class:phys_static	signature:(SceneManager* scene)
+phys_static::update	entites/phys_static.h	/^        virtual void update(SceneManager* scene);$/;"	p	class:phys_static	access:public	signature:(SceneManager* scene)
+phys_world	Constants.cpp	/^PhysicsWorld* phys_world;$/;"	v
+pickup	Player.h	/^        Entity* pickup;$/;"	m	class:Player	access:protected
+player	PlayState.h	/^        Entity* player;$/;"	m	class:PlayState	access:protected
+pos	Entity.h	/^        Vec2 pos;$/;"	m	class:Entity	access:protected
+pos	Particle.h	/^        sf::Vector2f pos;$/;"	m	class:Particle	access:public
+pos	ParticleEmitter.h	/^        sf::Vector2f pos;$/;"	m	class:ParticleEmitter	access:protected
+prop_static.update	testent.lua	/^function prop_static.update()$/;"	f
+qpos	Entity.h	/^        Vec2 qpos;$/;"	m	class:Entity	access:protected
+reg	PlayState.h	/^        EntityRegistry* reg;$/;"	m	class:PlayState	access:protected
+reg	SceneManager.h	/^        EntityRegistry* reg; \/\/Entity registry$/;"	m	class:SceneManager	access:protected
+releaseAllResources	ResourceManager.h	/^    void releaseAllResources() {$/;"	f	class:ResourceManager	access:public	signature:()
+releaseResource	ResourceManager.h	/^    void releaseResource( const std::string& strId ) {$/;"	f	class:ResourceManager	access:public	signature:( const std::string& strId )
+renderspr	PlayState.h	/^        sf::Sprite renderspr;$/;"	m	class:PlayState	access:protected
+run	Game.h	/^        bool run() {return running;};$/;"	f	class:Game	access:public	signature:()
+running	Game.h	/^        bool running;$/;"	m	class:Game	access:private
+scene	PlayState.h	/^        SceneManager* scene;$/;"	m	class:PlayState	access:protected
+sourceExhausted	SimpleINI/ConvertUTF.h	/^	sourceExhausted,	\/* partial character in source, but hit end *\/$/;"	e	enum:__anon1
+sourceIllegal	SimpleINI/ConvertUTF.h	/^	sourceIllegal		\/* source sequence is illegal\/malformed *\/$/;"	e	enum:__anon1
+spawnpoints	SceneManager.h	/^        std::map<std::string, Entity*> spawnpoints; \/\/Spawnpoint map$/;"	m	class:SceneManager	access:protected
+specents	SceneManager.h	/^        std::map<std::string, Entity*> specents; \/\/List of entites to be reffered by name$/;"	m	class:SceneManager	access:protected
+speed	Particle.h	/^        sf::Vector2f speed;$/;"	m	class:Particle	access:public
+state	Game.h	/^        StateManager* state;$/;"	m	class:Game	access:private
+states	StateManager.h	/^        std::map<std::string, State*> states; \/\/Map of the states.$/;"	m	class:StateManager	access:private
+str	entites/ent_string.h	/^        sf::Text str;$/;"	m	class:ent_string	access:protected
+strictConversion	SimpleINI/ConvertUTF.h	/^	strictConversion = 0,$/;"	e	enum:__anon2
+super	MainMenuState.h	/^        typedef State super;$/;"	t	class:MainMenuState	access:private
+super	PlayState.h	/^        typedef State super;$/;"	t	class:PlayState	access:private
+super	Player.h	/^        typedef Actor super;$/;"	t	class:Player	access:private
+super	entites/InvisEntity.h	/^        typedef Entity super;$/;"	t	class:InvisEntity	access:private
+super	entites/InvisPhysEntity.h	/^        typedef phys_static super;$/;"	t	class:InvisPhysEntity	access:private
+super	entites/ent_item.h	/^        typedef InvisPhysEntity super;$/;"	t	class:ent_item	access:private
+super	entites/ent_string.h	/^        typedef Entity super;$/;"	t	class:ent_string	access:private
+super	entites/phys_dynamic.h	/^        typedef phys_static super;$/;"	t	class:phys_dynamic	access:private
+super	entites/phys_static.h	/^        typedef Entity super;$/;"	t	class:phys_static	access:public
+tablepos	ScriptManager.h	/^        int tablepos;$/;"	m	class:ScriptManager	access:private
+targetExhausted	SimpleINI/ConvertUTF.h	/^	targetExhausted,	\/* insuff. room in target for conversion *\/$/;"	e	enum:__anon1
+tele_coord	entites/tele_coord.cpp	/^tele_coord::tele_coord()$/;"	f	class:tele_coord	signature:()
+tele_coord	entites/tele_coord.h	/^        tele_coord();$/;"	p	class:tele_coord	access:public	signature:()
+tele_coord	entites/tele_coord.h	/^class tele_coord : public InvisPhysEntity$/;"	c	inherits:InvisPhysEntity
+tele_coord::onCollision	entites/tele_coord.cpp	/^void tele_coord::onCollision(Entity* obj)$/;"	f	class:tele_coord	signature:(Entity* obj)
+tele_coord::onCollision	entites/tele_coord.h	/^        virtual void onCollision(Entity* obj);$/;"	p	class:tele_coord	access:public	signature:(Entity* obj)
+tele_coord::tele_coord	entites/tele_coord.cpp	/^tele_coord::tele_coord()$/;"	f	class:tele_coord	signature:()
+tele_coord::tele_coord	entites/tele_coord.h	/^        tele_coord();$/;"	p	class:tele_coord	access:public	signature:()
+tele_obj	entites/tele_obj.cpp	/^tele_obj::tele_obj()$/;"	f	class:tele_obj	signature:()
+tele_obj	entites/tele_obj.h	/^        tele_obj();$/;"	p	class:tele_obj	access:public	signature:()
+tele_obj	entites/tele_obj.h	/^class tele_obj : public tele_coord$/;"	c	inherits:tele_coord
+tele_obj::onCollision	entites/tele_obj.cpp	/^void tele_obj::onCollision(Entity* obj)$/;"	f	class:tele_obj	signature:(Entity* obj)
+tele_obj::onCollision	entites/tele_obj.h	/^        virtual void onCollision(Entity* obj);$/;"	p	class:tele_obj	access:public	signature:(Entity* obj)
+tele_obj::ox	entites/tele_obj.h	/^        int ox;$/;"	m	class:tele_obj	access:protected
+tele_obj::oy	entites/tele_obj.h	/^        int oy;$/;"	m	class:tele_obj	access:protected
+tele_obj::tele_obj	entites/tele_obj.cpp	/^tele_obj::tele_obj()$/;"	f	class:tele_obj	signature:()
+tele_obj::tele_obj	entites/tele_obj.h	/^        tele_obj();$/;"	p	class:tele_obj	access:public	signature:()
+tele_obj::update	entites/tele_obj.cpp	/^void tele_obj::update(SceneManager* scene)$/;"	f	class:tele_obj	signature:(SceneManager* scene)
+tele_obj::update	entites/tele_obj.h	/^        virtual void update(SceneManager* scene);$/;"	p	class:tele_obj	access:public	signature:(SceneManager* scene)
+tex	PlayState.h	/^        sf::RenderTexture tex;$/;"	m	class:PlayState	access:protected
+toBox	Vec2.cpp	/^b2Vec2 Vec2::toBox()$/;"	f	class:Vec2	signature:()
+toBox	Vec2.h	/^        b2Vec2 toBox();$/;"	p	class:Vec2	access:public	signature:()
+toDeg	JMath.cpp	/^float toDeg(float rad)$/;"	f	signature:(float rad)
+toDeg	JMath.h	/^float toDeg(float rad);$/;"	p	signature:(float rad)
+toRad	JMath.cpp	/^float toRad(float deg)$/;"	f	signature:(float deg)
+toRad	JMath.h	/^float toRad(float deg);$/;"	p	signature:(float deg)
+toReg	JMath.cpp	/^Vec2 toReg(b2Vec2 vec)$/;"	f	signature:(b2Vec2 vec)
+toReg	JMath.h	/^Vec2 toReg(b2Vec2 vec);$/;"	p	signature:(b2Vec2 vec)
+tob2	Vec2.cpp	/^b2Vec2 Vec2::tob2()$/;"	f	class:Vec2	signature:()
+tob2	Vec2.h	/^        b2Vec2 tob2();$/;"	p	class:Vec2	access:public	signature:()
+todraw	ParticleEmitter.h	/^        sf::Sprite todraw;$/;"	m	class:ParticleEmitter	access:protected
+trailingBytesForUTF8	SimpleINI/ConvertUTF.c	/^static const char trailingBytesForUTF8[256] = {$/;"	v	file:
+true	SimpleINI/ConvertUTF.c	57;"	d	file:
+type	PhysicsWrappers/PhysicsBody.h	/^        int type;$/;"	m	class:PhysicsBody	access:protected
+types	Definition.h	/^        std::map<std::string, int> types;$/;"	m	class:Def	access:protected
+update	Entity.cpp	/^void Entity::update(SceneManager* scene)$/;"	f	class:Entity	signature:(SceneManager* scene)
+update	Entity.h	/^        virtual void update(SceneManager* scene);   \/\/Update the basic components, don't overrider unless you need to add more$/;"	p	class:Entity	access:public	signature:(SceneManager* scene)
+update	Player.cpp	/^void Player::update(SceneManager* scene)$/;"	f	class:Player	signature:(SceneManager* scene)
+update	Player.h	/^        virtual void update(SceneManager* scene);$/;"	p	class:Player	access:public	signature:(SceneManager* scene)
+update	entites/phys_static.cpp	/^void phys_static::update(SceneManager* scene)$/;"	f	class:phys_static	signature:(SceneManager* scene)
+update	entites/phys_static.h	/^        virtual void update(SceneManager* scene);$/;"	p	class:phys_static	access:public	signature:(SceneManager* scene)
+update	entites/tele_obj.cpp	/^void tele_obj::update(SceneManager* scene)$/;"	f	class:tele_obj	signature:(SceneManager* scene)
+update	entites/tele_obj.h	/^        virtual void update(SceneManager* scene);$/;"	p	class:tele_obj	access:public	signature:(SceneManager* scene)
+uptime	Constants.h	/^const sf::Clock uptime; \/\/Global uptime timer$/;"	v
+v	SceneManager.h	/^        sf::View v; \/\/View for scrolling$/;"	m	class:SceneManager	access:protected
+vals	Definition.h	/^        std::map<std::string, boost::any> vals;$/;"	m	class:Def	access:protected
+w	Entity.h	/^        int w;$/;"	m	class:Entity	access:protected
+win	Game.h	/^        sf::RenderWindow win;$/;"	m	class:Game	access:private
+window	State.h	/^        sf::RenderWindow* window;$/;"	m	class:State	access:protected
+window	StateManager.h	/^        sf::RenderWindow* window;$/;"	m	class:StateManager	access:private
+world	PhysicsWrappers/BoxWorld.h	/^        b2World* world;$/;"	m	class:BoxWorld	access:protected
+worldprops	SceneManager.h	/^        Def worldprops; \/\/World properties$/;"	m	class:SceneManager	access:protected
+x	Vec2.h	/^        float x;$/;"	m	class:Vec2	access:public
+xq	Entity.h	/^        float xq; \/\/Quened position$/;"	m	class:Entity	access:protected
+y	Vec2.h	/^        float y;$/;"	m	class:Vec2	access:public
+yq	Entity.h	/^        float yq;$/;"	m	class:Entity	access:protected
+~CSimpleIniTempl	SimpleINI/SimpleIni.h	/^    ~CSimpleIniTempl();$/;"	p	class:CSimpleIniTempl	access:public	signature:()
+~CSimpleIniTempl	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::~CSimpleIniTempl()$/;"	f	class:CSimpleIniTempl	signature:()
+~OutputWriter	SimpleINI/SimpleIni.h	/^        virtual ~OutputWriter() { }$/;"	f	class:CSimpleIniTempl::OutputWriter	access:public	signature:()
+~ResourceManager	ResourceManager.h	/^    virtual ~ResourceManager() {$/;"	f	class:ResourceManager	access:public	signature:()
+~SI_ConvertW	SimpleINI/SimpleIni.h	/^    ~SI_ConvertW() { if (m_pConverter) ucnv_close(m_pConverter); }$/;"	f	class:SI_ConvertW	access:public	signature:()
