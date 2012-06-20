@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([bullwhip], [1.0], [stuff@stuff.com])
+AC_INIT([bullwhip], [0.3.14.1], [stuff@stuff.com])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([ImageManager.cpp])
 AC_CONFIG_HEADERS([config.h])
