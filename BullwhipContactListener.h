@@ -1,3 +1,10 @@
+/**
+ * @file BullwhipContactListener.h
+ * @brief Listener for collision callbacks, mumbo jumbo box2d stuff
+ * @author neos300
+ * @version 1.0
+ * @date 2012-06-20
+ */
 #pragma once
 #include <Box2D/Box2D.h>
 #include <iostream>
