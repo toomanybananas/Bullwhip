@@ -51,7 +51,12 @@ class Def
 	 * @return Value of type T
 	 */
         template<class T>
-        T GetVal(std::string name) {return any_cast<T>(vals[name]);};
+        T GetVal(std::string name) //{return any_cast<T>(vals[name]);};
+	{
+		if(!IsDefined(name))
+			return *new T;
+		return any_cast<T>(vals[name]);
+	}
         
 	/**
 	 * @brief Determines whether a value has been defined or not.
@@ -83,6 +88,10 @@ class Def
         void Save(std::string filename);
         void Load(inFile& f);
         void Save(outFile& f);
+	void Copy(Def& d);
+	std::map<std::string, boost::any> getRawVals() {return vals;};
+	std::map<std::string, bool> getRawDefine() {return define;};
+	std::map<std::string, int> getRawTypes() {return types;};
     protected:
         std::map<std::string, boost::any> vals;
         std::map<std::string, bool> define;

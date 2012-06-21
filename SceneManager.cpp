@@ -81,6 +81,40 @@ void SceneManager::RemoveEntityFromList(Entity* ent)
 void SceneManager::LoadScene(std::string filename)
 {
 	//place holder for new level routine, taken out because of lack of testing
+	inFile file;
+	file.OpenFile(filename);
+	if(file.ReadInt() != 2)
+	{
+		std::cout << "[scene] [ERROR] Incompatible map version!" << std::endl;
+	}
+	Def level;
+	level.Load(file);
+	std::string mapname;
+	if(level.IsDefined("name"))
+		mapname = level.GetVal<std::string>("name");
+	int count = level.GetVal<int>("entcount");
+	for(int i = 0; i < count; i++)
+	{
+		std::stringstream ss;
+		ss << count;
+		Def d = level.GetVal<Def>(ss.str());
+		std::string type = d.GetVal<std::string>("type");
+		Entity* ent = reg->NewEnt(type);
+		ent->Copy(d);
+		ent->init();
+		AddEntity(ent);
+		if(ent->IsDefined("name"))
+		{
+			SetEntity(ent->GetVal<std::string>("name"), ent);
+		}
+		if(type == "game_spawnpoint")
+		{
+			AddSpawn(ent, ent->GetVal<std::string>("name"));
+		}
+			
+	}
+	file.Close();
+	std::cout << "[scene] Level loaded\n";
 }
 
 void SceneManager::LoadScenev1(std::string filename)

@@ -43,6 +43,13 @@ void Def::SetVal(std::string name, Def val)
     define[name] = true;
     types[name] = DEF_DEF;
 }
+/*template<class T>
+T Def::GetVal(std::string name)
+{
+	if(!IsDefined(name))
+		return new T;
+	return any_cast<T>(vals[name]);
+}*/
 
 Def::Def()
 {
@@ -184,3 +191,11 @@ void Def::Save(outFile& f)
     }
     f.WriteByte(0);
 }
+
+void Def::Copy(Def& d)
+{
+	vals = d.getRawVals();
+	define = d.getRawDefine();
+	types = d.getRawTypes();
+}
+

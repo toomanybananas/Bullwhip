@@ -343,6 +343,8 @@ ConvertUTF8toUTF32	SimpleINI/ConvertUTF.h	/^ConversionResult ConvertUTF8toUTF32 
 Converter	SimpleINI/SimpleIni.h	/^        Converter(bool a_bStoreIsUtf8) : SI_CONVERTER(a_bStoreIsUtf8) {$/;"	f	class:CSimpleIniTempl::Converter	access:public	signature:(bool a_bStoreIsUtf8)
 Converter	SimpleINI/SimpleIni.h	/^        Converter(const Converter & rhs) { operator=(rhs); }$/;"	f	class:CSimpleIniTempl::Converter	access:public	signature:(const Converter & rhs)
 Converter	SimpleINI/SimpleIni.h	/^    class Converter : private SI_CONVERTER {$/;"	c	class:CSimpleIniTempl	inherits:SI_CONVERTER	access:public
+Copy	Definition.cpp	/^void Def::Copy(Def& d)$/;"	f	class:Def	signature:(Def& d)
+Copy	Definition.h	/^	void Copy(Def& d);$/;"	p	class:Def	access:public	signature:(Def& d)
 CopyString	SimpleINI/SimpleIni.h	/^    SI_Error CopyString(const SI_CHAR *& a_pString);$/;"	p	class:CSimpleIniTempl	access:private	signature:(const SI_CHAR *& a_pString)
 CopyString	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::CopyString($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR *& a_pString )
 CreateBody	PhysicsWrappers/BoxWorld.cpp	/^void* BoxWorld::CreateBody(Def d)$/;"	f	class:BoxWorld	signature:(Def d)
@@ -367,6 +369,8 @@ Data	SimpleINI/SimpleIni.h	/^        const char * Data() { return m_scratch.data
 Def	Definition.cpp	/^Def::Def()$/;"	f	class:Def	signature:()
 Def	Definition.h	/^        Def();$/;"	p	class:Def	access:public	signature:()
 Def	Definition.h	/^class Def$/;"	c
+Def::Copy	Definition.cpp	/^void Def::Copy(Def& d)$/;"	f	class:Def	signature:(Def& d)
+Def::Copy	Definition.h	/^	void Copy(Def& d);$/;"	p	class:Def	access:public	signature:(Def& d)
 Def::Def	Definition.cpp	/^Def::Def()$/;"	f	class:Def	signature:()
 Def::Def	Definition.h	/^        Def();$/;"	p	class:Def	access:public	signature:()
 Def::GetType	Definition.h	/^        int GetType(std::string name) {return types[name];};$/;"	f	class:Def	access:public	signature:(std::string name)
@@ -394,6 +398,9 @@ Def::SetVal	Definition.h	/^        void SetVal(std::string name, float val);$/;"
 Def::SetVal	Definition.h	/^        void SetVal(std::string name, int val);$/;"	p	class:Def	access:public	signature:(std::string name, int val)
 Def::SetVal	Definition.h	/^        void SetVal(std::string name, std::string val);$/;"	p	class:Def	access:public	signature:(std::string name, std::string val)
 Def::define	Definition.h	/^        std::map<std::string, bool> define;$/;"	m	class:Def	access:protected
+Def::getRawDefine	Definition.h	/^	std::map<std::string, bool> getRawDefine() {return define;};$/;"	f	class:Def	access:public	signature:()
+Def::getRawTypes	Definition.h	/^	std::map<std::string, int> getRawTypes() {return types;};$/;"	f	class:Def	access:public	signature:()
+Def::getRawVals	Definition.h	/^	std:::map<std::string, boost::any> getRawVals() {return vals;};$/;"	f	class:Def	access:public	signature:()
 Def::types	Definition.h	/^        std::map<std::string, int> types;$/;"	m	class:Def	access:protected
 Def::vals	Definition.h	/^        std::map<std::string, boost::any> vals;$/;"	m	class:Def	access:protected
 Delete	SimpleINI/SimpleIni.h	/^    bool Delete($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bRemoveEmpty = false )
@@ -705,6 +712,8 @@ LoadMultiLineText	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_
 LoadOrder	SimpleINI/SimpleIni.h	/^        struct LoadOrder : std::binary_function<Entry, Entry, bool> {$/;"	s	struct:CSimpleIniTempl::Entry	inherits:std::binary_function	access:public
 LoadScene	SceneManager.cpp	/^void SceneManager::LoadScene(std::string filename)$/;"	f	class:SceneManager	signature:(std::string filename)
 LoadScene	SceneManager.h	/^        virtual void LoadScene(std::string filename); \/\/Loads a level from a file.$/;"	p	class:SceneManager	access:public	signature:(std::string filename)
+LoadScenev1	SceneManager.cpp	/^void SceneManager::LoadScenev1(std::string filename)$/;"	f	class:SceneManager	signature:(std::string filename)
+LoadScenev1	SceneManager.h	/^	virtual void LoadScenev1(std::string filename);$/;"	p	class:SceneManager	access:public	signature:(std::string filename)
 MAKEINFO	Makefile	/^MAKEINFO = ${SHELL} \/home\/neos\/code\/bullwhip\/Bullwhip\/missing --run makeinfo$/;"	m
 MKDIR_P	Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
 MainMenuState	MainMenuState.cpp	/^MainMenuState::MainMenuState()$/;"	f	class:MainMenuState	signature:()
@@ -742,13 +751,13 @@ PACKAGE_BUGREPORT	Makefile	/^PACKAGE_BUGREPORT = stuff@stuff.com$/;"	m
 PACKAGE_BUGREPORT	config.h	77;"	d
 PACKAGE_NAME	Makefile	/^PACKAGE_NAME = bullwhip$/;"	m
 PACKAGE_NAME	config.h	80;"	d
-PACKAGE_STRING	Makefile	/^PACKAGE_STRING = bullwhip 1.0$/;"	m
+PACKAGE_STRING	Makefile	/^PACKAGE_STRING = bullwhip 0.3.14.1$/;"	m
 PACKAGE_STRING	config.h	83;"	d
 PACKAGE_TARNAME	Makefile	/^PACKAGE_TARNAME = bullwhip$/;"	m
 PACKAGE_TARNAME	config.h	86;"	d
 PACKAGE_URL	Makefile	/^PACKAGE_URL = $/;"	m
 PACKAGE_URL	config.h	89;"	d
-PACKAGE_VERSION	Makefile	/^PACKAGE_VERSION = 1.0$/;"	m
+PACKAGE_VERSION	Makefile	/^PACKAGE_VERSION = 0.3.14.1$/;"	m
 PACKAGE_VERSION	config.h	92;"	d
 PATH_SEPARATOR	Makefile	/^PATH_SEPARATOR = :$/;"	m
 PHYSINUSE	PhysicsWrappers/Box2DPhysics.h	15;"	d
@@ -891,7 +900,7 @@ ResourceManager::releaseResource	ResourceManager.h	/^    void releaseResource( c
 ResourceManager::~ResourceManager	ResourceManager.h	/^    virtual ~ResourceManager() {$/;"	f	class:ResourceManager	access:public	signature:()
 ResourceMap	ResourceManager.h	/^    typedef std::map< std::string, T* >     ResourceMap;$/;"	t	class:ResourceManager	access:public
 SCALE	Constants.h	20;"	d
-SCENEMANAGER_H	SceneManager.h	3;"	d
+SCENEMANAGER_H	SceneManager.h	10;"	d
 SET_MAKE	Makefile	/^SET_MAKE = $/;"	m
 SFML_DYNAMIC	Game.h	2;"	d
 SHELL	Makefile	/^SHELL = \/bin\/sh$/;"	m
@@ -1004,6 +1013,8 @@ SceneManager::Init	SceneManager.cpp	/^void SceneManager::Init(Vec2 gravity)$/;"	
 SceneManager::Init	SceneManager.h	/^        virtual void Init(Vec2 gravity); \/\/Intializes the physics and views$/;"	p	class:SceneManager	access:public	signature:(Vec2 gravity)
 SceneManager::LoadScene	SceneManager.cpp	/^void SceneManager::LoadScene(std::string filename)$/;"	f	class:SceneManager	signature:(std::string filename)
 SceneManager::LoadScene	SceneManager.h	/^        virtual void LoadScene(std::string filename); \/\/Loads a level from a file.$/;"	p	class:SceneManager	access:public	signature:(std::string filename)
+SceneManager::LoadScenev1	SceneManager.cpp	/^void SceneManager::LoadScenev1(std::string filename)$/;"	f	class:SceneManager	signature:(std::string filename)
+SceneManager::LoadScenev1	SceneManager.h	/^	virtual void LoadScenev1(std::string filename);$/;"	p	class:SceneManager	access:public	signature:(std::string filename)
 SceneManager::RemoveEntityFromList	SceneManager.cpp	/^void SceneManager::RemoveEntityFromList(Entity* ent)$/;"	f	class:SceneManager	signature:(Entity* ent)
 SceneManager::RemoveEntityFromList	SceneManager.cpp	/^void SceneManager::RemoveEntityFromList(std::string name)$/;"	f	class:SceneManager	signature:(std::string name)
 SceneManager::RemoveEntityFromList	SceneManager.h	/^        virtual void RemoveEntityFromList(Entity* ent);$/;"	p	class:SceneManager	access:public	signature:(Entity* ent)
@@ -1160,7 +1171,7 @@ Update	StateManager.cpp	/^void StateManager::Update()$/;"	f	class:StateManager	s
 Update	StateManager.h	/^        void Update(); \/\/Updates the current state$/;"	p	class:StateManager	access:public	signature:()
 UsingSpaces	SimpleINI/SimpleIni.h	/^    bool UsingSpaces() const { return m_bSpaces; }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
 VEC2_H	Vec2.h	6;"	d
-VERSION	Makefile	/^VERSION = 1.0$/;"	m
+VERSION	Makefile	/^VERSION = 0.3.14.1$/;"	m
 VERSION	config.h	98;"	d
 Vec2	Vec2.cpp	/^Vec2::Vec2()$/;"	f	class:Vec2	signature:()
 Vec2	Vec2.h	/^        Vec2();$/;"	p	class:Vec2	access:public	signature:()
@@ -1337,6 +1348,9 @@ game_spawnpoint	entites/game_spawnpoint.h	/^        game_spawnpoint();$/;"	p	cla
 game_spawnpoint	entites/game_spawnpoint.h	/^class game_spawnpoint : public InvisEntity$/;"	c	inherits:InvisEntity
 game_spawnpoint::game_spawnpoint	entites/game_spawnpoint.cpp	/^game_spawnpoint::game_spawnpoint()$/;"	f	class:game_spawnpoint	signature:()
 game_spawnpoint::game_spawnpoint	entites/game_spawnpoint.h	/^        game_spawnpoint();$/;"	p	class:game_spawnpoint	access:public	signature:()
+getRawDefine	Definition.h	/^	std::map<std::string, bool> getRawDefine() {return define;};$/;"	f	class:Def	access:public	signature:()
+getRawTypes	Definition.h	/^	std::map<std::string, int> getRawTypes() {return types;};$/;"	f	class:Def	access:public	signature:()
+getRawVals	Definition.h	/^	std:::map<std::string, boost::any> getRawVals() {return vals;};$/;"	f	class:Def	access:public	signature:()
 getResource	ResourceManager.h	/^    T* getResource( const std::string& strId ) {$/;"	f	class:ResourceManager	access:public	signature:( const std::string& strId )
 getspr	Entity.h	/^        virtual sf::Sprite& getspr() {return draw;}; \/\/Helper function for getting the sprite. Not used anymore, just here for compatiblity.$/;"	f	class:Entity	access:public	signature:()
 getspr	entites/phys_static.h	/^        sf::Sprite& getspr() {return draw;};$/;"	f	class:phys_static	access:public	signature:()
