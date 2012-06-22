@@ -374,7 +374,7 @@ Def::Copy	Definition.h	/^	void Copy(Def& d);$/;"	p	class:Def	access:public	signa
 Def::Def	Definition.cpp	/^Def::Def()$/;"	f	class:Def	signature:()
 Def::Def	Definition.h	/^        Def();$/;"	p	class:Def	access:public	signature:()
 Def::GetType	Definition.h	/^        int GetType(std::string name) {return types[name];};$/;"	f	class:Def	access:public	signature:(std::string name)
-Def::GetVal	Definition.h	/^        T GetVal(std::string name) {return any_cast<T>(vals[name]);};$/;"	f	class:Def	access:public	signature:(std::string name)
+Def::GetVal	Definition.h	/^        T GetVal(std::string name) \/\/{return any_cast<T>(vals[name]);};$/;"	f	class:Def	access:public	signature:(std::string name)
 Def::IsDefined	Definition.h	/^        bool IsDefined(std::string name) {return define[name];};$/;"	f	class:Def	access:public	signature:(std::string name)
 Def::Load	Definition.cpp	/^void Def::Load(inFile& f)$/;"	f	class:Def	signature:(inFile& f)
 Def::Load	Definition.cpp	/^void Def::Load(std::string filename)$/;"	f	class:Def	signature:(std::string filename)
@@ -400,7 +400,7 @@ Def::SetVal	Definition.h	/^        void SetVal(std::string name, std::string val
 Def::define	Definition.h	/^        std::map<std::string, bool> define;$/;"	m	class:Def	access:protected
 Def::getRawDefine	Definition.h	/^	std::map<std::string, bool> getRawDefine() {return define;};$/;"	f	class:Def	access:public	signature:()
 Def::getRawTypes	Definition.h	/^	std::map<std::string, int> getRawTypes() {return types;};$/;"	f	class:Def	access:public	signature:()
-Def::getRawVals	Definition.h	/^	std:::map<std::string, boost::any> getRawVals() {return vals;};$/;"	f	class:Def	access:public	signature:()
+Def::getRawVals	Definition.h	/^	std::map<std::string, boost::any> getRawVals() {return vals;};$/;"	f	class:Def	access:public	signature:()
 Def::types	Definition.h	/^        std::map<std::string, int> types;$/;"	m	class:Def	access:protected
 Def::vals	Definition.h	/^        std::map<std::string, boost::any> vals;$/;"	m	class:Def	access:protected
 Delete	SimpleINI/SimpleIni.h	/^    bool Delete($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, bool a_bRemoveEmpty = false )
@@ -565,7 +565,7 @@ GetSectionSize	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CON
 GetStateManager	Game.h	/^        StateManager* GetStateManager() {return state;};$/;"	f	class:Game	access:public	signature:()
 GetType	Definition.h	/^        int GetType(std::string name) {return types[name];};$/;"	f	class:Def	access:public	signature:(std::string name)
 GetType	PhysicsWrappers/PhysicsBody.h	/^        virtual int GetType() {return type;};$/;"	f	class:PhysicsBody	access:public	signature:()
-GetVal	Definition.h	/^        T GetVal(std::string name) {return any_cast<T>(vals[name]);};$/;"	f	class:Def	access:public	signature:(std::string name)
+GetVal	Definition.h	/^        T GetVal(std::string name) \/\/{return any_cast<T>(vals[name]);};$/;"	f	class:Def	access:public	signature:(std::string name)
 GetValue	SimpleINI/SimpleIni.h	/^    const SI_CHAR * GetValue($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pDefault = NULL, bool * a_pHasMultiple = NULL ) const
 GetValue	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::GetValue($/;"	f	class:CSimpleIniTempl	signature:( const SI_CHAR * a_pSection, const SI_CHAR * a_pKey, const SI_CHAR * a_pDefault, bool * a_pHasMultiple ) const
 GetWidth	Entity.h	/^        virtual int GetWidth() {return w;};$/;"	f	class:Entity	access:public	signature:()
@@ -629,6 +629,7 @@ Init	SceneManager.cpp	/^void SceneManager::Init(Vec2 gravity)$/;"	f	class:SceneM
 Init	SceneManager.h	/^        virtual void Init(Vec2 gravity); \/\/Intializes the physics and views$/;"	p	class:SceneManager	access:public	signature:(Vec2 gravity)
 Init	State.h	/^        virtual void Init(sf::RenderWindow* win) {window = win;}; \/\/Intializes the state, that line is a must.$/;"	f	class:State	access:public	signature:(sf::RenderWindow* win)
 Init	StateManager.h	/^        void Init(sf::RenderWindow* win) {window = win;}; \/\/Inits the state manger with the window$/;"	f	class:StateManager	access:public	signature:(sf::RenderWindow* win)
+Init	editor/LevelEditor.h	/^		virtual void Init(Vec2 gravity);$/;"	p	class:LevelEditor	access:public	signature:(Vec2 gravity)
 Intialize	PhysicsWrappers/BoxDynamicBody.cpp	/^void BoxDynamicBody::Intialize(Entity* obj)$/;"	f	class:BoxDynamicBody	signature:(Entity* obj)
 Intialize	PhysicsWrappers/BoxDynamicBody.h	/^        void Intialize(Entity* obj);$/;"	p	class:BoxDynamicBody	access:public	signature:(Entity* obj)
 Intialize	PhysicsWrappers/BoxStaticBody.cpp	/^void BoxStaticBody::Intialize(Entity* obj)$/;"	f	class:BoxStaticBody	signature:(Entity* obj)
@@ -691,6 +692,10 @@ LDFLAGS	Makefile	/^LDFLAGS = $/;"	m
 LIBOBJS	Makefile	/^LIBOBJS = $/;"	m
 LIBS	Makefile	/^LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lBox2D $/;"	m
 LTLIBOBJS	Makefile	/^LTLIBOBJS = $/;"	m
+LevelEditor	editor/LevelEditor.h	/^class LevelEditor : public SceneManager$/;"	c	inherits:SceneManager
+LevelEditor::Init	editor/LevelEditor.h	/^		virtual void Init(Vec2 gravity);$/;"	p	class:LevelEditor	access:public	signature:(Vec2 gravity)
+LevelEditor::Save	editor/LevelEditor.h	/^		virtual void Save(std::string filename);$/;"	p	class:LevelEditor	access:public	signature:(std::string filename)
+LevelEditor::Update	editor/LevelEditor.h	/^		virtual void Update(sf::RenderTarget& win);$/;"	p	class:LevelEditor	access:public	signature:(sf::RenderTarget& win)
 Load	Definition.cpp	/^void Def::Load(inFile& f)$/;"	f	class:Def	signature:(inFile& f)
 Load	Definition.cpp	/^void Def::Load(std::string filename)$/;"	f	class:Def	signature:(std::string filename)
 Load	Definition.h	/^        void Load(inFile& f);$/;"	p	class:Def	access:public	signature:(inFile& f)
@@ -902,7 +907,7 @@ ResourceMap	ResourceManager.h	/^    typedef std::map< std::string, T* >     Reso
 SCALE	Constants.h	20;"	d
 SCENEMANAGER_H	SceneManager.h	10;"	d
 SET_MAKE	Makefile	/^SET_MAKE = $/;"	m
-SFML_DYNAMIC	Game.h	2;"	d
+SFML_DYNAMIC	Game.h	9;"	d
 SHELL	Makefile	/^SHELL = \/bin\/sh$/;"	m
 SI_ASSERT	SimpleINI/SimpleIni.h	230;"	d
 SI_ASSERT	SimpleINI/SimpleIni.h	232;"	d
@@ -981,7 +986,7 @@ SI_UTF8_SIGNATURE	SimpleINI/SimpleIni.h	246;"	d
 SI_WCHAR_T	SimpleINI/SimpleIni.h	262;"	d
 SI_WCHAR_T	SimpleINI/SimpleIni.h	265;"	d
 SOURCES	Makefile	/^SOURCES = $(bullwhip_SOURCES)$/;"	m
-STATE_H	State.h	3;"	d
+STATE_H	State.h	10;"	d
 STDC_HEADERS	config.h	95;"	d
 STRIP	Makefile	/^STRIP = $/;"	m
 Save	Definition.cpp	/^void Def::Save(outFile& f)$/;"	f	class:Def	signature:(outFile& f)
@@ -993,6 +998,7 @@ Save	SimpleINI/SimpleIni.h	/^    SI_Error Save($/;"	f	class:CSimpleIniTempl	acce
 Save	SimpleINI/SimpleIni.h	/^    SI_Error Save($/;"	f	class:CSimpleIniTempl	access:public	signature:( std::string & a_sBuffer, bool a_bAddSignature = false ) const
 Save	SimpleINI/SimpleIni.h	/^    SI_Error Save($/;"	p	class:CSimpleIniTempl	access:public	signature:( OutputWriter & a_oOutput, bool a_bAddSignature = false ) const
 Save	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::Save($/;"	f	class:CSimpleIniTempl	signature:( OutputWriter & a_oOutput, bool a_bAddSignature ) const
+Save	editor/LevelEditor.h	/^		virtual void Save(std::string filename);$/;"	p	class:LevelEditor	access:public	signature:(std::string filename)
 SaveFile	SimpleINI/SimpleIni.h	/^    SI_Error SaveFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( FILE * a_pFile, bool a_bAddSignature = false ) const
 SaveFile	SimpleINI/SimpleIni.h	/^    SI_Error SaveFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_WCHAR_T * a_pwszFile, bool a_bAddSignature = true ) const
 SaveFile	SimpleINI/SimpleIni.h	/^    SI_Error SaveFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( const char * a_pszFile, bool a_bAddSignature = true ) const
@@ -1169,8 +1175,9 @@ Update	SceneManager.h	/^        virtual void Update(sf::RenderTarget& win); \/\/
 Update	State.h	/^        virtual std::string Update() {return "";}; \/\/Called when the state is updated, returns the state to transtition to, "" for nothing.$/;"	f	class:State	access:public	signature:()
 Update	StateManager.cpp	/^void StateManager::Update()$/;"	f	class:StateManager	signature:()
 Update	StateManager.h	/^        void Update(); \/\/Updates the current state$/;"	p	class:StateManager	access:public	signature:()
+Update	editor/LevelEditor.h	/^		virtual void Update(sf::RenderTarget& win);$/;"	p	class:LevelEditor	access:public	signature:(sf::RenderTarget& win)
 UsingSpaces	SimpleINI/SimpleIni.h	/^    bool UsingSpaces() const { return m_bSpaces; }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
-VEC2_H	Vec2.h	6;"	d
+VEC2_H	Vec2.h	10;"	d
 VERSION	Makefile	/^VERSION = 0.3.14.1$/;"	m
 VERSION	config.h	98;"	d
 Vec2	Vec2.cpp	/^Vec2::Vec2()$/;"	f	class:Vec2	signature:()
@@ -1350,7 +1357,7 @@ game_spawnpoint::game_spawnpoint	entites/game_spawnpoint.cpp	/^game_spawnpoint::
 game_spawnpoint::game_spawnpoint	entites/game_spawnpoint.h	/^        game_spawnpoint();$/;"	p	class:game_spawnpoint	access:public	signature:()
 getRawDefine	Definition.h	/^	std::map<std::string, bool> getRawDefine() {return define;};$/;"	f	class:Def	access:public	signature:()
 getRawTypes	Definition.h	/^	std::map<std::string, int> getRawTypes() {return types;};$/;"	f	class:Def	access:public	signature:()
-getRawVals	Definition.h	/^	std:::map<std::string, boost::any> getRawVals() {return vals;};$/;"	f	class:Def	access:public	signature:()
+getRawVals	Definition.h	/^	std::map<std::string, boost::any> getRawVals() {return vals;};$/;"	f	class:Def	access:public	signature:()
 getResource	ResourceManager.h	/^    T* getResource( const std::string& strId ) {$/;"	f	class:ResourceManager	access:public	signature:( const std::string& strId )
 getspr	Entity.h	/^        virtual sf::Sprite& getspr() {return draw;}; \/\/Helper function for getting the sprite. Not used anymore, just here for compatiblity.$/;"	f	class:Entity	access:public	signature:()
 getspr	entites/phys_static.h	/^        sf::Sprite& getspr() {return draw;};$/;"	f	class:phys_static	access:public	signature:()
@@ -1365,7 +1372,7 @@ host_alias	Makefile	/^host_alias = $/;"	m
 htmldir	Makefile	/^htmldir = ${docdir}$/;"	m
 hw	Entity.h	/^        int hw; \/\/Half width of sprite$/;"	m	class:Entity	access:protected
 inFile	File.cpp	/^inFile::inFile()$/;"	f	class:inFile	signature:()
-inFile	File.h	/^        inFile();$/;"	p	class:inFile	access:public	signature:()
+inFile	File.h	/^	inFile();$/;"	p	class:inFile	access:public	signature:()
 inFile	File.h	/^class inFile$/;"	c
 inFile::Close	File.cpp	/^void inFile::Close()$/;"	f	class:inFile	signature:()
 inFile::Close	File.h	/^        void Close();$/;"	p	class:inFile	access:public	signature:()
@@ -1383,7 +1390,7 @@ inFile::ReadString	File.cpp	/^std::string inFile::ReadString()$/;"	f	class:inFil
 inFile::ReadString	File.h	/^        std::string ReadString();$/;"	p	class:inFile	access:public	signature:()
 inFile::f	File.h	/^        std::ifstream* f;$/;"	m	class:inFile	access:private
 inFile::inFile	File.cpp	/^inFile::inFile()$/;"	f	class:inFile	signature:()
-inFile::inFile	File.h	/^        inFile();$/;"	p	class:inFile	access:public	signature:()
+inFile::inFile	File.h	/^	inFile();$/;"	p	class:inFile	access:public	signature:()
 includedir	Makefile	/^includedir = ${prefix}\/include$/;"	m
 infodir	Makefile	/^infodir = ${datarootdir}\/info$/;"	m
 init	Actor.cpp	/^void Actor::init()$/;"	f	class:Actor	signature:()

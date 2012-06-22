@@ -8,6 +8,9 @@
 #pragma once
 #include "entites/phys_dynamic.h"
 
+/**
+ * @brief Basic skeleton for an actor
+ */
 class Actor : public phys_dynamic
 {
     public:
