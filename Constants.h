@@ -20,4 +20,4 @@ extern Def Global; //Global def
 #define SCALE 0.01
 extern PhysicsWorld* phys_world; //Global physics world
 extern ItemManager Items; //Global item manager
-
+extern std::vector<sf::Keyboard::Key> keys;

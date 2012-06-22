@@ -28,6 +28,10 @@ void Game::draw()
         {
             Global.SetVal("run", false);
         }
+	if(ev.type == sf::Event::KeyPressed)
+	{
+		keys.push_back(ev.key.code);
+	}
     }
     std::stringstream ss;
     ss <<  (1.f / counter.restart().asSeconds());

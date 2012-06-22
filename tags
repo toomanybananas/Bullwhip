@@ -629,6 +629,7 @@ Init	SceneManager.cpp	/^void SceneManager::Init(Vec2 gravity)$/;"	f	class:SceneM
 Init	SceneManager.h	/^        virtual void Init(Vec2 gravity); \/\/Intializes the physics and views$/;"	p	class:SceneManager	access:public	signature:(Vec2 gravity)
 Init	State.h	/^        virtual void Init(sf::RenderWindow* win) {window = win;}; \/\/Intializes the state, that line is a must.$/;"	f	class:State	access:public	signature:(sf::RenderWindow* win)
 Init	StateManager.h	/^        void Init(sf::RenderWindow* win) {window = win;}; \/\/Inits the state manger with the window$/;"	f	class:StateManager	access:public	signature:(sf::RenderWindow* win)
+Init	editor/LevelEditor.cpp	/^void LevelEditor::Init(Vec2 gravity)$/;"	f	class:LevelEditor	signature:(Vec2 gravity)
 Init	editor/LevelEditor.h	/^		virtual void Init(Vec2 gravity);$/;"	p	class:LevelEditor	access:public	signature:(Vec2 gravity)
 Intialize	PhysicsWrappers/BoxDynamicBody.cpp	/^void BoxDynamicBody::Intialize(Entity* obj)$/;"	f	class:BoxDynamicBody	signature:(Entity* obj)
 Intialize	PhysicsWrappers/BoxDynamicBody.h	/^        void Intialize(Entity* obj);$/;"	p	class:BoxDynamicBody	access:public	signature:(Entity* obj)
@@ -693,9 +694,22 @@ LIBOBJS	Makefile	/^LIBOBJS = $/;"	m
 LIBS	Makefile	/^LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lBox2D $/;"	m
 LTLIBOBJS	Makefile	/^LTLIBOBJS = $/;"	m
 LevelEditor	editor/LevelEditor.h	/^class LevelEditor : public SceneManager$/;"	c	inherits:SceneManager
+LevelEditor::Init	editor/LevelEditor.cpp	/^void LevelEditor::Init(Vec2 gravity)$/;"	f	class:LevelEditor	signature:(Vec2 gravity)
 LevelEditor::Init	editor/LevelEditor.h	/^		virtual void Init(Vec2 gravity);$/;"	p	class:LevelEditor	access:public	signature:(Vec2 gravity)
+LevelEditor::LoadScene	editor/LevelEditor.cpp	/^void LevelEditor::LoadScene(std::string filename)$/;"	f	class:LevelEditor	signature:(std::string filename)
+LevelEditor::LoadScene	editor/LevelEditor.h	/^		virtual void LoadScene(std::string filename);$/;"	p	class:LevelEditor	access:public	signature:(std::string filename)
+LevelEditor::Save	editor/LevelEditor.cpp	/^void LevelEditor::Save(std::string filename)$/;"	f	class:LevelEditor	signature:(std::string filename)
 LevelEditor::Save	editor/LevelEditor.h	/^		virtual void Save(std::string filename);$/;"	p	class:LevelEditor	access:public	signature:(std::string filename)
+LevelEditor::Update	editor/LevelEditor.cpp	/^void LevelEditor::Update(sf::RenderTarget& win)$/;"	f	class:LevelEditor	signature:(sf::RenderTarget& win)
 LevelEditor::Update	editor/LevelEditor.h	/^		virtual void Update(sf::RenderTarget& win);$/;"	p	class:LevelEditor	access:public	signature:(sf::RenderTarget& win)
+LevelEditor::command	editor/LevelEditor.h	/^		std::string command;$/;"	m	class:LevelEditor	access:protected
+LevelEditor::doType	editor/LevelEditor.h	/^		bool doType;$/;"	m	class:LevelEditor	access:protected
+LevelEditor::inCommand	editor/LevelEditor.h	/^		bool inCommand; \/\/whether we are doing a command currently$/;"	m	class:LevelEditor	access:protected
+LevelEditor::inText	editor/LevelEditor.h	/^		std::string inText; \/\/input text$/;"	m	class:LevelEditor	access:protected
+LevelEntity	editor/LevelEntity.h	/^class LevelEntity : public Entity$/;"	c	inherits:Entity
+LevelEntity::init	editor/LevelEntity.cpp	/^void LevelEntity::init()$/;"	f	class:LevelEntity	signature:()
+LevelEntity::init	editor/LevelEntity.h	/^		virtual void init();$/;"	p	class:LevelEntity	access:public	signature:()
+LevelEntity::update	editor/LevelEntity.h	/^		virtual void update(){};$/;"	f	class:LevelEntity	access:public	signature:()
 Load	Definition.cpp	/^void Def::Load(inFile& f)$/;"	f	class:Def	signature:(inFile& f)
 Load	Definition.cpp	/^void Def::Load(std::string filename)$/;"	f	class:Def	signature:(std::string filename)
 Load	Definition.h	/^        void Load(inFile& f);$/;"	p	class:Def	access:public	signature:(inFile& f)
@@ -717,6 +731,8 @@ LoadMultiLineText	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_
 LoadOrder	SimpleINI/SimpleIni.h	/^        struct LoadOrder : std::binary_function<Entry, Entry, bool> {$/;"	s	struct:CSimpleIniTempl::Entry	inherits:std::binary_function	access:public
 LoadScene	SceneManager.cpp	/^void SceneManager::LoadScene(std::string filename)$/;"	f	class:SceneManager	signature:(std::string filename)
 LoadScene	SceneManager.h	/^        virtual void LoadScene(std::string filename); \/\/Loads a level from a file.$/;"	p	class:SceneManager	access:public	signature:(std::string filename)
+LoadScene	editor/LevelEditor.cpp	/^void LevelEditor::LoadScene(std::string filename)$/;"	f	class:LevelEditor	signature:(std::string filename)
+LoadScene	editor/LevelEditor.h	/^		virtual void LoadScene(std::string filename);$/;"	p	class:LevelEditor	access:public	signature:(std::string filename)
 LoadScenev1	SceneManager.cpp	/^void SceneManager::LoadScenev1(std::string filename)$/;"	f	class:SceneManager	signature:(std::string filename)
 LoadScenev1	SceneManager.h	/^	virtual void LoadScenev1(std::string filename);$/;"	p	class:SceneManager	access:public	signature:(std::string filename)
 MAKEINFO	Makefile	/^MAKEINFO = ${SHELL} \/home\/neos\/code\/bullwhip\/Bullwhip\/missing --run makeinfo$/;"	m
@@ -998,6 +1014,7 @@ Save	SimpleINI/SimpleIni.h	/^    SI_Error Save($/;"	f	class:CSimpleIniTempl	acce
 Save	SimpleINI/SimpleIni.h	/^    SI_Error Save($/;"	f	class:CSimpleIniTempl	access:public	signature:( std::string & a_sBuffer, bool a_bAddSignature = false ) const
 Save	SimpleINI/SimpleIni.h	/^    SI_Error Save($/;"	p	class:CSimpleIniTempl	access:public	signature:( OutputWriter & a_oOutput, bool a_bAddSignature = false ) const
 Save	SimpleINI/SimpleIni.h	/^CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::Save($/;"	f	class:CSimpleIniTempl	signature:( OutputWriter & a_oOutput, bool a_bAddSignature ) const
+Save	editor/LevelEditor.cpp	/^void LevelEditor::Save(std::string filename)$/;"	f	class:LevelEditor	signature:(std::string filename)
 Save	editor/LevelEditor.h	/^		virtual void Save(std::string filename);$/;"	p	class:LevelEditor	access:public	signature:(std::string filename)
 SaveFile	SimpleINI/SimpleIni.h	/^    SI_Error SaveFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( FILE * a_pFile, bool a_bAddSignature = false ) const
 SaveFile	SimpleINI/SimpleIni.h	/^    SI_Error SaveFile($/;"	p	class:CSimpleIniTempl	access:public	signature:( const SI_WCHAR_T * a_pwszFile, bool a_bAddSignature = true ) const
@@ -1175,6 +1192,7 @@ Update	SceneManager.h	/^        virtual void Update(sf::RenderTarget& win); \/\/
 Update	State.h	/^        virtual std::string Update() {return "";}; \/\/Called when the state is updated, returns the state to transtition to, "" for nothing.$/;"	f	class:State	access:public	signature:()
 Update	StateManager.cpp	/^void StateManager::Update()$/;"	f	class:StateManager	signature:()
 Update	StateManager.h	/^        void Update(); \/\/Updates the current state$/;"	p	class:StateManager	access:public	signature:()
+Update	editor/LevelEditor.cpp	/^void LevelEditor::Update(sf::RenderTarget& win)$/;"	f	class:LevelEditor	signature:(sf::RenderTarget& win)
 Update	editor/LevelEditor.h	/^		virtual void Update(sf::RenderTarget& win);$/;"	p	class:LevelEditor	access:public	signature:(sf::RenderTarget& win)
 UsingSpaces	SimpleINI/SimpleIni.h	/^    bool UsingSpaces() const { return m_bSpaces; }$/;"	f	class:CSimpleIniTempl	access:public	signature:() const
 VEC2_H	Vec2.h	10;"	d
@@ -1280,11 +1298,12 @@ build_alias	Makefile	/^build_alias = $/;"	m
 builddir	Makefile	/^builddir = .$/;"	m
 bullwhip_LDADD	Makefile	/^bullwhip_LDADD = $(LDADD)$/;"	m
 bullwhip_OBJECTS	Makefile	/^bullwhip_OBJECTS = $(am_bullwhip_OBJECTS)$/;"	m
-bullwhip_SOURCES	Makefile	/^bullwhip_SOURCES = Actor.cpp BullwhipContactListener.cpp Constants.cpp Definition.cpp Entity.cpp File.cpp Game.cpp ImageManager.cpp Item.cpp JMath.cpp MainMenuState.cpp PlayState.cpp Player.cpp SceneManager.cpp State.cpp StateManager.cpp Vec2.cpp main.cpp PhysicsWrappers\/BoxDynamicBody.cpp PhysicsWrappers\/BoxStaticBody.cpp PhysicsWrappers\/BoxTriggerBody.cpp PhysicsWrappers\/BoxWorld.cpp entites\/InvisEntity.cpp entites\/InvisPhysEntity.cpp entites\/ent_item.cpp entites\/ent_string.cpp entites\/game_setglobal.cpp entites\/game_spawnpoint.cpp entites\/phys_dynamic.cpp entites\/phys_static.cpp entites\/tele_coord.cpp entites\/tele_obj.cpp$/;"	m
+bullwhip_SOURCES	Makefile	/^bullwhip_SOURCES = Actor.cpp BullwhipContactListener.cpp Constants.cpp Definition.cpp Entity.cpp File.cpp Game.cpp ImageManager.cpp Item.cpp JMath.cpp MainMenuState.cpp PlayState.cpp Player.cpp SceneManager.cpp State.cpp StateManager.cpp Vec2.cpp main.cpp PhysicsWrappers\/BoxDynamicBody.cpp PhysicsWrappers\/BoxStaticBody.cpp PhysicsWrappers\/BoxTriggerBody.cpp PhysicsWrappers\/BoxWorld.cpp entites\/InvisEntity.cpp entites\/InvisPhysEntity.cpp entites\/ent_item.cpp entites\/ent_string.cpp entites\/game_setglobal.cpp entites\/game_spawnpoint.cpp entites\/phys_dynamic.cpp entites\/phys_static.cpp entites\/tele_coord.cpp entites\/tele_obj.cpp editor\/LevelEditor.cpp editor\/LevelEntity.cpp$/;"	m
 bullwhipini	PlayState.h	/^        CSimpleIni bullwhipini;$/;"	m	class:PlayState	access:protected
 can_jump	Actor.h	/^        bool can_jump;$/;"	m	class:Actor	access:private
 clear	Game.h	/^        void clear() {win.clear();};$/;"	f	class:Game	access:public	signature:()
 color	Particle.h	/^        sf::Color color;$/;"	m	class:Particle	access:public
+command	editor/LevelEditor.h	/^		std::string command;$/;"	m	class:LevelEditor	access:protected
 conversionOK	SimpleINI/ConvertUTF.h	/^	conversionOK, 		\/* conversion successful *\/$/;"	e	enum:__anon1
 counter	Game.h	/^        sf::Clock counter;$/;"	m	class:Game	access:private
 current_state	StateManager.h	/^        State* current_state;$/;"	m	class:StateManager	access:private
@@ -1300,6 +1319,7 @@ distance	JMath.h	/^float distance(float x1, float y1, float x2, float y2);$/;"	p
 distcleancheck_listfiles	Makefile	/^distcleancheck_listfiles = find . -type f -print$/;"	m
 distdir	Makefile	/^distdir = $(PACKAGE)-$(VERSION)$/;"	m
 distuninstallcheck_listfiles	Makefile	/^distuninstallcheck_listfiles = find . -type f -print$/;"	m
+doType	editor/LevelEditor.h	/^		bool doType;$/;"	m	class:LevelEditor	access:protected
 do_q	Entity.h	/^        bool do_q; \/\/Whether or not a quene is active$/;"	m	class:Entity	access:protected
 docdir	Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
 draw	Entity.h	/^        sf::Sprite draw; \/\/Sprite for drawing things$/;"	m	class:Entity	access:protected
@@ -1371,6 +1391,7 @@ hh	Entity.h	/^        int hh; \/\/Half height$/;"	m	class:Entity	access:protecte
 host_alias	Makefile	/^host_alias = $/;"	m
 htmldir	Makefile	/^htmldir = ${docdir}$/;"	m
 hw	Entity.h	/^        int hw; \/\/Half width of sprite$/;"	m	class:Entity	access:protected
+inCommand	editor/LevelEditor.h	/^		bool inCommand; \/\/whether we are doing a command currently$/;"	m	class:LevelEditor	access:protected
 inFile	File.cpp	/^inFile::inFile()$/;"	f	class:inFile	signature:()
 inFile	File.h	/^	inFile();$/;"	p	class:inFile	access:public	signature:()
 inFile	File.h	/^class inFile$/;"	c
@@ -1391,6 +1412,7 @@ inFile::ReadString	File.h	/^        std::string ReadString();$/;"	p	class:inFile
 inFile::f	File.h	/^        std::ifstream* f;$/;"	m	class:inFile	access:private
 inFile::inFile	File.cpp	/^inFile::inFile()$/;"	f	class:inFile	signature:()
 inFile::inFile	File.h	/^	inFile();$/;"	p	class:inFile	access:public	signature:()
+inText	editor/LevelEditor.h	/^		std::string inText; \/\/input text$/;"	m	class:LevelEditor	access:protected
 includedir	Makefile	/^includedir = ${prefix}\/include$/;"	m
 infodir	Makefile	/^infodir = ${datarootdir}\/info$/;"	m
 init	Actor.cpp	/^void Actor::init()$/;"	f	class:Actor	signature:()
@@ -1401,6 +1423,8 @@ init	Game.cpp	/^void Game::init(std::string title, int x, int y)$/;"	f	class:Gam
 init	Game.h	/^        void init(std::string title, int x, int y);$/;"	p	class:Game	access:public	signature:(std::string title, int x, int y)
 init	ScriptManager.cpp	/^void ScriptManager::init()$/;"	f	class:ScriptManager	signature:()
 init	ScriptManager.h	/^        void init();$/;"	p	class:ScriptManager	access:public	signature:()
+init	editor/LevelEntity.cpp	/^void LevelEntity::init()$/;"	f	class:LevelEntity	signature:()
+init	editor/LevelEntity.h	/^		virtual void init();$/;"	p	class:LevelEntity	access:public	signature:()
 init	entites/InvisEntity.cpp	/^void InvisEntity::init()$/;"	f	class:InvisEntity	signature:()
 init	entites/InvisEntity.h	/^        virtual void init();$/;"	p	class:InvisEntity	access:public	signature:()
 init	entites/InvisPhysEntity.cpp	/^void InvisPhysEntity::init()$/;"	f	class:InvisPhysEntity	signature:()
@@ -1427,6 +1451,7 @@ isLegalUTF8Sequence	SimpleINI/ConvertUTF.h	/^Boolean isLegalUTF8Sequence(const U
 isasset	Entity.h	/^        bool isasset;$/;"	m	class:Entity	access:protected
 items	Item.h	/^        std::map<std::string, Def> items;$/;"	m	class:ItemManager	access:private
 items	Item.h	/^        std::vector<Def> items;$/;"	m	class:Inventory	access:private
+keys	Constants.cpp	/^std::vector<sf::Keyboard::Key> keys;$/;"	v
 lenientConversion	SimpleINI/ConvertUTF.h	/^	lenientConversion$/;"	e	enum:__anon2
 libdir	Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
 libexecdir	Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
@@ -1654,6 +1679,7 @@ update	Entity.cpp	/^void Entity::update(SceneManager* scene)$/;"	f	class:Entity	
 update	Entity.h	/^        virtual void update(SceneManager* scene);   \/\/Update the basic components, don't overrider unless you need to add more$/;"	p	class:Entity	access:public	signature:(SceneManager* scene)
 update	Player.cpp	/^void Player::update(SceneManager* scene)$/;"	f	class:Player	signature:(SceneManager* scene)
 update	Player.h	/^        virtual void update(SceneManager* scene);$/;"	p	class:Player	access:public	signature:(SceneManager* scene)
+update	editor/LevelEntity.h	/^		virtual void update(){};$/;"	f	class:LevelEntity	access:public	signature:()
 update	entites/phys_static.cpp	/^void phys_static::update(SceneManager* scene)$/;"	f	class:phys_static	signature:(SceneManager* scene)
 update	entites/phys_static.h	/^        virtual void update(SceneManager* scene);$/;"	p	class:phys_static	access:public	signature:(SceneManager* scene)
 update	entites/tele_obj.cpp	/^void tele_obj::update(SceneManager* scene)$/;"	f	class:tele_obj	signature:(SceneManager* scene)

@@ -4,6 +4,8 @@
 
 void LevelEditor::Init(Vec2 gravity)
 {
+	v.setSize(800, 600);
+	v.setCenter(400, 300);
 	//set up a basic enviorment, not much to do
 }
 
@@ -11,8 +13,34 @@ void LevelEditor::Init(Vec2 gravity)
 void LevelEditor::Update(sf::RenderTarget& win)
 {
 	//read keybindings, draw entites, open menus
-	v.setSize(800, 600);
-	v.setCenter(400, 300);
+	//parse keys
+	for(int i = 0; i < keys.size(); i++)
+	{
+		if(doType)
+		{
+			switch (keys[i])
+			{
+				case sf::Keyboard::Back:
+					inText.resize(inText.size()-1);
+					break;
+				case sf::Keyboard::Return:
+					//command is done entered, lets do this!
+					doType = false;
+					inCommand = true;
+					command = inText;
+					inText = "';
+					break;
+				default:
+					inText += keys[i];
+					break;
+			}
+		}
+		if(inCommand && keys[i] == sf::Keyboard::Q)
+		{
+			inCommand = false;
+			command = "";
+		}
+	}
 }
 
 void LevelEditor::LoadScene(std::string filename)
