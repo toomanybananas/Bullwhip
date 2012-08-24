@@ -12,3 +12,8 @@
 *.iso
 *~
 config.h
+Makefile
+.deps
+bullwhip
+*.png
+*.ttf
