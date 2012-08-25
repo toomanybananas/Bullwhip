@@ -17,3 +17,7 @@ Makefile
 bullwhip
 *.png
 *.ttf
+autoscan.log
+config.log
+configure.scan
+*.bin

@@ -8,6 +8,11 @@ void (Def::*s3)(std::string, float) = &Def::SetVal;
 void (Def::*s4)(std::string, Def) = &Def::SetVal;
 void (Def::*s5)(std::string, boost::any) = &Def::SetVal;
 
+void (Def::*load1)(std::string) = &Def::Load;
+void (Def::*load2)(inFile&) = &Def::Load;
+
+void (Def::*save1)(std::string) = &Def::Save;
+void (Def::*save2)(outFile& f) = &Def::Save;
 
 BOOST_PYTHON_MODULE(bullwhip)
 {
@@ -22,5 +27,14 @@ BOOST_PYTHON_MODULE(bullwhip)
 		.def("GetFloat", &Def::GetVal<float>)
 		.def("GetDef", &Def::GetVal<Def>)
 		.def("SetString", &Def::SetString)
+		.def("IsDefined", &Def::IsDefined)
+		.def("GetType", &Def::GetType)
+		.def("Load", load1)
+		.def("Load", load2)
+		.def("Save", save1)
+		.def("Save", save2)
 	;
+
+	class_<inFile>("inFile");
+	class_<outFile>("outFile");
 }
