@@ -21,3 +21,4 @@ autoscan.log
 config.log
 configure.scan
 *.bin
+autom4te.cache
