@@ -4372,7 +4372,7 @@ _ACEOF
 fi
 
 
-
+CXXFLAGS="$CXXFLAGS -std=c++0x"
 # Checks for header files.
 ac_ext=cpp
 ac_cpp='$CXXCPP $CPPFLAGS'

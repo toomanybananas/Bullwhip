@@ -18,7 +18,7 @@ class EntityRegistry
 	 * @param name The class of the entity
 	 * @param func The factory function for that class
 	 */
-        void AddFactory(std::string name, Entity* (*func)(void)) {factorys[name] = func;};
+        void AddFactory(std::string name, std::vector<std::string> comps) {factorys[name] = comps;};
 	/**
 	 * @brief Instantates a new entity
 	 *
@@ -26,10 +26,18 @@ class EntityRegistry
 	 *
 	 * @return A pointer to the new entity
 	 */
-        Entity* NewEnt(std::string name) {return factorys[name]();}
+        Entity* NewEnt(std::string name)
+	{
+		Entity* ent = new Entity;
+		for(int i = 0; i < factorys[name].size(); i++)
+		{
+			ent->AddComponent(factorys[name][i]);
+		}
+		return ent;
+	}
     protected:
     private:
-        std::map<std::string, Entity* (*)(void)> factorys;
+        std::map<std::string, std::vector<std::string> > factorys;
 };
 
 /**

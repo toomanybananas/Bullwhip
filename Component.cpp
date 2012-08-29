@@ -1,7 +1,7 @@
 
-//#include "Component.h"
-//#include "ObjectManager.h"
-#include "Cistron.h"
+#include "Component.h"
+#include "ObjectManager.h"
+
 
 using namespace Cistron;
 
@@ -199,25 +199,25 @@ list<Component*> Component::getComponents(string name, ObjectId id) {
  */
 
 // send a message
-void Component::sendMessage(string msg, Payload payload) {
+void Component::sendMessage(string msg, boost::any payload) {
 	fObjectManager->sendGlobalMessage(msg, this, payload);
 }
-void Component::sendMessage(RequestId reqId, Payload payload) {
+void Component::sendMessage(RequestId reqId, boost::any payload) {
 	fObjectManager->sendGlobalMessage(reqId, this, payload);
 }
-void Component::sendLocalMessage(string msg, Payload payload) {
+void Component::sendLocalMessage(string msg, boost::any payload) {
 	fObjectManager->sendMessageToObject(msg, this, fOwnerId, payload);
 }
-void Component::sendLocalMessage(RequestId reqId, Payload payload) {
+void Component::sendLocalMessage(RequestId reqId, boost::any payload) {
 	fObjectManager->sendMessageToObject(reqId, this, fOwnerId, payload);
 }
 void Component::sendLocalMessage(RequestId reqId, Message const & msg) {
 	fObjectManager->sendMessageToObject(reqId, msg, fOwnerId);
 }
-void Component::sendMessageToObject(ObjectId id, string msg, Payload payload) {
+void Component::sendMessageToObject(ObjectId id, string msg, boost::any payload) {
 	fObjectManager->sendMessageToObject(msg, this, id, payload);
 }
-void Component::sendMessageToObject(ObjectId id, RequestId reqId, Payload payload) {
+void Component::sendMessageToObject(ObjectId id, RequestId reqId, boost::any payload) {
 	fObjectManager->sendMessageToObject(reqId, this, id, payload);
 }
 void Component::sendMessageToObject(ObjectId id, RequestId reqId, Message const & msg) {

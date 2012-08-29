@@ -19,27 +19,29 @@ void SceneManager::AddEntity(Entity* ent)
 
 void SceneManager::Update(sf::RenderTarget& win)
 {
-    phys_world->Step(1.f / 60.f);
+    	//phys_world->Step(1.f / 60.f);
 
-    //Parse entites
-    win.setView(v);
-    for(unsigned int i = 0; i < entites.size(); i++)
-    {
-        //Update entity
-        entites[i]->update(this);
-        entites[i]->Draw(win);
-    }
-    if(specents["center"] != NULL)
-    {
-        v.setCenter(specents["center"]->GetX(), specents["center"]->GetY());
-    }
-    win.setView(win.getDefaultView());
+	//Parse entites
+    	win.setView(v);
+    	for(unsigned int i = 0; i < entites.size(); i++)
+    	{
+        	//Update entity
+        	entites[i]->update(this);
+        	//entites[i]->Draw(win);
+		entites[i]->SendMessage("draw", &win);
+    	}
+    	if(specents["center"] != NULL)
+    	{
+		//std::cout << specents["center"]->GetX() << ":" << specents["center"]->GetY() << std::endl;
+		v.setCenter(specents["center"]->GetX(), specents["center"]->GetY());
+    	}
+    	win.setView(win.getDefaultView());
 }
 
 void SceneManager::Init(Vec2 gravity)
 {
-    phys_world = new Physics2D;
-    phys_world->Init(gravity);
+    //phys_world = new Physics2D;
+    //phys_world->Init(gravity);
     std::cout << "[scene][phys] intialized physics\n";
     v.setSize(800, 600);
     v.setCenter(100, 100);
@@ -49,9 +51,11 @@ void SceneManager::Init(Vec2 gravity)
 
 void SceneManager::Spawn(Entity& plyr, std::string spawnpoint)
 {
-    AddEntity(plyr);
-    plyr.SetX(spawnpoints[spawnpoint]->GetX());
-    plyr.SetY(spawnpoints[spawnpoint]->GetY());
+    	AddEntity(plyr);
+    	plyr.SetX(spawnpoints[spawnpoint]->GetX());
+    	plyr.SetY(spawnpoints[spawnpoint]->GetY());
+    	//plyr.GetComponent("Position")->x = spawnpoints[spawnpoint]->GetComponent("Position")->x;
+	//plyr.GetComponent("Position")->y = spawnpoints[spawnpoint]->GetComponent("Position")->y;
 }
 
 void SceneManager::RemoveEntityFromList(std::string name)
@@ -178,7 +182,7 @@ void SceneManager::LoadScenev1(std::string filename)
             break;
         }
         Entity* newent = reg->NewEnt(type);
-        //Def pdef;
+        //Def* pdef = new Def;
         while(true)
         {
             //BYTE: TYPE
@@ -212,6 +216,7 @@ void SceneManager::LoadScenev1(std::string filename)
                 newent->SetVal(h, i);
             }
         }
+	//Entity* newent = reg->NewEnt(type, pdef);
         newent->init();
         AddEntity(newent);
         if(newent->GetVal<std::string>("name") != "")

@@ -16,7 +16,7 @@
 #include <fstream>
 #include <sstream>
 #include "EntityRegistry.h"
-#include "entites/phys_static.h"
+//#include "entites/phys_static.h"
 #include "BullwhipContactListener.h"
 #include "File.h"
 #include "Constants.h"

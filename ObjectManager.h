@@ -6,10 +6,12 @@
 #include "Object.h"
 
 
-#include <unordered_map>
+#pragma warning( disable : 4396)
+#include <boost/unordered_map.hpp>
+#pragma warning( default : 4396)
 #include <list>
 #include <string>
-#include <sstream>
+#include <boost/format.hpp>
 
 
 namespace Cistron {
@@ -17,7 +19,6 @@ namespace Cistron {
 using std::list;
 using std::string;
 using std::pair;
-using std::stringstream;
 
 // the object manager manages all object entities, and performs communication between them
 class ObjectManager {
@@ -74,22 +75,22 @@ class ObjectManager {
 		 */
 
 		// send global messages
-		inline void sendGlobalMessage(string msg, Component *component, Payload payload) {
+		inline void sendGlobalMessage(string msg, Component *component, boost::any payload) {
 			sendGlobalMessage(getExistingRequestId(REQ_MESSAGE, msg), Message(MESSAGE, component, payload));
 		}
-		inline void sendGlobalMessage(RequestId reqId, Component *component, Payload payload) {
+		inline void sendGlobalMessage(RequestId reqId, Component *component, boost::any payload) {
 			sendGlobalMessage(reqId, Message(MESSAGE, component, payload));
 		}
 		void sendGlobalMessage(RequestId reqId, Message const & msg);
 
 		// send local messages to another object
-		inline void sendMessageToObject(string msg, Component *component, ObjectId id, Payload payload) {
+		inline void sendMessageToObject(string msg, Component *component, ObjectId id, boost::any payload) {
 			fObjects[id]->sendMessage(getMessageRequestId(REQ_MESSAGE, msg), Message(MESSAGE, component, payload));
 		}
 		inline void sendMessageToObject(RequestId reqId, Component *component, ObjectId id) {
 			fObjects[id]->sendMessage(reqId, Message(MESSAGE, component));
 		}
-		inline void sendMessageToObject(RequestId reqId, Component *component, ObjectId id, Payload payload) {
+		inline void sendMessageToObject(RequestId reqId, Component *component, ObjectId id, boost::any payload) {
 			fObjects[id]->sendMessage(reqId, Message(MESSAGE, component, payload));
 		}
 		inline void sendMessageToObject(string name, Message const & msg, ObjectId id) {
@@ -125,10 +126,10 @@ class ObjectManager {
 		RequestId fRequestIdCounter;
 
 		// mapping from a request to a unique id that identifies the request
-		std::tr1::unordered_map<string, RequestId> fRequestToId[2];
+		boost::unordered_map<string, RequestId> fRequestToId[2];
 
 		// mapping from request id to the original request name
-		std::tr1::unordered_map<RequestId, string> fIdToRequest[2];
+		boost::unordered_map<RequestId, string> fIdToRequest[2];
 
 		// get an existing request id
 		RequestId getExistingRequestId(ComponentRequestType, string name);
@@ -173,7 +174,7 @@ class ObjectManager {
 		vector<Object*> fObjects;
 
 		// mapping of objects to their unique name identified
-		std::tr1::unordered_map<string, list<Component*> > fComponentsByName;
+		boost::unordered_map<string, list<Component*> > fComponentsByName;
 
 		/**
 		 * REQUESTS
@@ -184,10 +185,10 @@ class ObjectManager {
 		vector<list<RegisteredComponent> > fGlobalRequests;
 
 		// list of required components which still need to be processed
-		std::tr1::unordered_map<ObjectId, list<string> > fRequiredComponents;
+		boost::unordered_map<ObjectId, list<string> > fRequiredComponents;
 
 		// list of component requests, by component id
-		std::tr1::unordered_map<ComponentId, list<ComponentRequest> > fRequestsByComponentId;
+		boost::unordered_map<ComponentId, list<ComponentRequest> > fRequestsByComponentId;
 
 
 		/**
@@ -195,7 +196,7 @@ class ObjectManager {
 		 */
 
 		// error function
-		void error(stringstream& str);
+		void error(boost::format str);
 
 
 

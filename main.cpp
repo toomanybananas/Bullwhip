@@ -39,6 +39,7 @@
 using namespace std;
 int main()
 {
+	objManager = new Cistron::ObjectManager();
     Game gam;
     gam.init("Bullwhip.Default", 800, 600); //Window title, width, height
     StateManager* state = gam.GetStateManager();

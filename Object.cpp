@@ -1,5 +1,6 @@
 
-#include "Cistron.h"
+#include "Object.h"
+#include "ObjectManager.h"
 
 
 using namespace Cistron;
@@ -89,18 +90,19 @@ void Object::removeComponent(Component *comp) {
 
 	// now we remove all local requests
 	for (unsigned i = 0; i < fLocalRequests.size(); ++i) {
-		vector<RegisteredComponent>& regs = fLocalRequests[i];
+		/*list<RegisteredComponent>& regs = fLocalRequests[i];
+		for (list<RegisteredComponent>::iterator it = regs.begin(); it != regs.end();) {
+			if (it->component->getId() == comp->getId()) {
+				it = regs.erase(it);
+			}
+			else ++it;
+		}*/
+		/*vector<RegisteredComponent>& regs = fLocalRequests[i];
 		for (unsigned j = 0; j < regs.size(); ++j) {
 			if (regs[j].component->getId() == comp->getId()) {
 				
-				// overwrite
-				for (unsigned k = j+1; k < regs.size(); ++k) {
-					regs[k-1] = regs[k];
-				}
-				regs.pop_back();
-				break;
 			}
-		}
+		}*/
 	}
 }
 

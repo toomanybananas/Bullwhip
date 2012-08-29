@@ -1,15 +1,15 @@
 
-#include "Cistron.h"
+#include "ObjectManager.h"
 
 
 using namespace Cistron;
 
 
 #include <iostream>
-#include <cassert>
 
 using std::cout;
 using std::endl;
+using boost::format;
 
 
 // constructor/destructor
@@ -94,9 +94,7 @@ void ObjectManager::activateLock(RequestId reqId) {
 
 	// if the lock is already activated, we have bounced against an infinite loop
 	if (fRequestLocks[reqId].locked) {
-		stringstream ss;
-		ss << "Do not request a message or component in a callback function for the same message/component request or a function called by this callback function";
-		error(ss);
+		error(format("Do not request a message or component in a callback function for the same message/component request or a function called by this callback function"));
 	}
 
 	// one more lofk
@@ -163,16 +161,12 @@ void ObjectManager::addComponent(ObjectId id, Component *component) {
 
 	// make sure the object exists
 	if (id < 0 || id >= fObjects.size() || fObjects[id] == 0) {
-		stringstream ss;
-		ss << "Failed to add component " << component->toString() << " to object " << id << ": it does not exist!";
-		error(ss);
+		error(format("Failed to add component %s to object %d: it does not exist!") % component->toString() % id);
 	}
 
 	// can only add once
 	if (component->fObjectManager != 0) {
-		stringstream ss;
-		ss << "Component is already part of an ObjectManager. You cannot add a component twice.";
-		error(ss);
+		error(format("Component is already part of an ObjectManager. You cannot add a component twice."));
 	}
 
 	// we get the appropriate object
@@ -186,9 +180,7 @@ void ObjectManager::addComponent(ObjectId id, Component *component) {
 
 	// we add the component
 	if (!obj->addComponent(component)) {
-		stringstream ss;
-		ss << "Failed to add component " << component->toString() << " to object " << id;
-		error(ss);
+		error(boost::format("Failed to add component %s to object %d") % component->toString() % id);
 	}
 
 	// put in log
@@ -362,7 +354,7 @@ void ObjectManager::sendGlobalMessage(RequestId reqId, Message const & msg) {
 
 
 // error processing
-void ObjectManager::error(stringstream& err) {
+void ObjectManager::error(boost::format err) {
 	cout << err.str() << endl;
 	assert(false);
 }
@@ -379,9 +371,7 @@ void ObjectManager::destroyObject(ObjectId id) {
 
 	// object doesn't exist
 	if (id < 0 || id >= fObjects.size() || fObjects[id] == 0) {
-		stringstream ss;
-		ss << "Failed to destroy object " << id << ": it does not exist!";
-		error(ss);
+		error(format("Failed to destroy object %d: it does not exist!") % id);
 	}
 
 	// destroy every component in the object
@@ -401,17 +391,21 @@ void ObjectManager::destroyObject(ObjectId id) {
 // destroy a component
 void ObjectManager::destroyComponent(Component *comp) {
 
+	// already destroyed before, don't do anything
+	if (comp->isDestroyed()) {
+		return;
+	}
+
 	// invalid component shouldn't be possible
-	if (!comp->isValid()) {
-		stringstream ss;
-		ss << "Error destroying component " << comp->toString() << ": component is not valid.";
-		error(ss);
+	else if (!comp->isValid()) {
+		error(format("Error destroying component %s: component is not valid.") % comp->toString());
 	}
 
 
 	// see if there are any locks - if there are, postpone this destroyal
 	if (fNLocks != 0) {
 		fDeadComponents.push_back(comp);
+		comp->setDestroyed();
 		return;
 	}
 	
@@ -476,9 +470,7 @@ void ObjectManager::finalizeObject(ObjectId id) {
 
 	// object doesn't exist
 	if (id < 0 || id >= fObjects.size() || fObjects[id] == 0) {
-		stringstream ss;
-		ss << "Failed to destroy object " << id << ": it does not exist!";
-		error(ss);
+		error(format("Failed to destroy object %d: it does not exist!") % id);
 	}
 
 	// finalize the object itself

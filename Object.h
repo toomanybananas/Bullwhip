@@ -5,7 +5,9 @@
 #include "Component.h"
 
 
-#include <unordered_map>
+#pragma warning( disable : 4396)
+#include <boost/unordered_map.hpp>
+#pragma warning( default : 4396)
 #include <list>
 #include <string>
 #include <vector>
@@ -16,7 +18,7 @@ namespace Cistron {
 using std::vector;
 using std::list;
 using std::string;
-using std::tr1::unordered_map;
+using boost::unordered_map;
 
 
 // an object is a container of components

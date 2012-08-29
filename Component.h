@@ -6,8 +6,9 @@
 #include <string>
 #include <map>
 #include <list>
-#include <functional>
-//#include <boost/any.hpp>
+#include <boost/function.hpp>
+#include <boost/bind.hpp>
+#include <boost/any.hpp>
 #include <ostream>
 
 
@@ -17,8 +18,6 @@ using std::list;
 using std::map;
 using std::string;
 using std::ostream;
-
-using namespace std::placeholders;
 
 
 // object & component id
@@ -60,17 +59,17 @@ class Component;
 struct Message {
 	MessageType type;
 	Component *sender;
-	Payload p;
+	boost::any p;
 	Message(MessageType t) : type(t) {};
 	Message(MessageType t, Component *c) : type(t), sender(c) {};
-	Message(MessageType t, Component *c, Payload payload) : type(t), sender(c), p(payload) {};
+	Message(MessageType t, Component *c, boost::any payload) : type(t), sender(c), p(payload) {};
 };
 
 
 
 
 // component function
-typedef std::tr1::function<void(Message const &)> MessageFunction;
+typedef boost::function<void(Message const &)> MessageFunction;
 
 
 // a component registered for an event (message or component creation/destruction)
@@ -170,22 +169,19 @@ class Component {
 		template<class T>
 		void requestAllExistingComponents(string name, void (T::*f)(Message const &));
 
-		// request all components of a given type and dynamic_cast to a particular class
-		template<class T>
-		list<T*> getComponents(string name, ObjectId id = -1);
 
 		/**
 		 * MESSAGING FUNCTIONS
 		 */
 
 		// send a message
-		void sendMessage(string msg, Payload  payload = 0);
-		void sendMessage(RequestId id, Payload  payload = 0);
-		void sendMessageToObject(ObjectId id, string msg, Payload payload = 0);
-		void sendMessageToObject(ObjectId id, RequestId reqId, Payload payload = 0);
+		void sendMessage(string msg, boost::any  payload = 0);
+		void sendMessage(RequestId id, boost::any  payload = 0);
+		void sendMessageToObject(ObjectId id, string msg, boost::any payload = 0);
+		void sendMessageToObject(ObjectId id, RequestId reqId, boost::any payload = 0);
 		void sendMessageToObject(ObjectId id, RequestId reqId, Message const & msg);
-		void sendLocalMessage(string msg, Payload payload = 0);
-		void sendLocalMessage(RequestId reqId, Payload payload = 0);
+		void sendLocalMessage(string msg, boost::any payload = 0);
+		void sendLocalMessage(RequestId reqId, boost::any payload = 0);
 		void sendLocalMessage(RequestId reqId, Message const & msg);
 
 		/**
@@ -259,41 +255,28 @@ class Component {
  * TEMPLATED REQUEST FUNCTIONS
  */
 
-// request all components of a given type in a given object
-template<class T>
-list<T*> Component::getComponents(string name, ObjectId id) {
-	list<Component*> comps;
-	if (id == -1) comps = fObjectManager->getComponents(getOwnerId(), name);
-	else comps = fObjectManager->getComponents(id, name);
-	list<T*> tcomps;
-	for (list<Component*>::iterator it = comps.begin(); it != comps.end(); ++it) {
-		tcomps.push_back(dynamic_cast<T*>(*it));
-	}
-	return tcomps;
-}
-
 // message request function
 template<class T>
 void Component::requestMessage(string message, void (T::*f)(Message const &)) {
-	requestMessage(message, std::tr1::bind(f, (T*)(this), _1));
+	requestMessage(message, boost::bind(f, (T*)(this), _1));
 }
 
 // require a component in this object
 template<class T>
 void Component::requireComponent(string name, void (T::*f)(Message const &)) {
-	requireComponent(name, std::tr1::bind(f, (T*)(this), _1));
+	requireComponent(name, boost::bind(f, (T*)(this), _1));
 }
 
 // register a component request
 template<class T>
 void Component::requestComponent(string name, void (T::*f)(Message const &), bool local) {
-	requestComponent(name, std::tr1::bind(f, (T*)(this), _1), local);
+	requestComponent(name, boost::bind(f, (T*)(this), _1), local);
 }
 
 // request all components of one type
 template<class T>
 void Component::requestAllExistingComponents(string name, void (T::*f)(Message const &)) {
-	requestAllExistingComponents(name, std::tr1::bind(f, (T*)(this), _1));
+	requestAllExistingComponents(name, boost::bind(f, (T*)(this), _1));
 }
 
 

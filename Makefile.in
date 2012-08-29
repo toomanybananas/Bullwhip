@@ -66,21 +66,15 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_bullwhip_OBJECTS = Actor.$(OBJEXT) \
-	BullwhipContactListener.$(OBJEXT) Constants.$(OBJEXT) \
-	Definition.$(OBJEXT) Entity.$(OBJEXT) File.$(OBJEXT) \
-	Game.$(OBJEXT) ImageManager.$(OBJEXT) Item.$(OBJEXT) \
+am_bullwhip_OBJECTS = BullwhipContactListener.$(OBJEXT) \
+	Constants.$(OBJEXT) Definition.$(OBJEXT) Entity.$(OBJEXT) \
+	File.$(OBJEXT) Game.$(OBJEXT) ImageManager.$(OBJEXT) \
 	JMath.$(OBJEXT) MainMenuState.$(OBJEXT) PlayState.$(OBJEXT) \
-	Player.$(OBJEXT) SceneManager.$(OBJEXT) State.$(OBJEXT) \
-	StateManager.$(OBJEXT) Vec2.$(OBJEXT) main.$(OBJEXT) \
-	BoxDynamicBody.$(OBJEXT) BoxStaticBody.$(OBJEXT) \
-	BoxTriggerBody.$(OBJEXT) BoxWorld.$(OBJEXT) \
-	InvisEntity.$(OBJEXT) InvisPhysEntity.$(OBJEXT) \
-	ent_item.$(OBJEXT) ent_string.$(OBJEXT) \
-	game_setglobal.$(OBJEXT) game_spawnpoint.$(OBJEXT) \
-	phys_dynamic.$(OBJEXT) phys_static.$(OBJEXT) \
-	tele_coord.$(OBJEXT) tele_obj.$(OBJEXT) Component.$(OBJEXT) \
-	Object.$(OBJEXT) ObjectManager.$(OBJEXT)
+	SceneManager.$(OBJEXT) State.$(OBJEXT) StateManager.$(OBJEXT) \
+	Vec2.$(OBJEXT) main.$(OBJEXT) BoxDynamicBody.$(OBJEXT) \
+	BoxStaticBody.$(OBJEXT) BoxTriggerBody.$(OBJEXT) \
+	BoxWorld.$(OBJEXT) Component.$(OBJEXT) Object.$(OBJEXT) \
+	ObjectManager.$(OBJEXT) Graphical.$(OBJEXT)
 bullwhip_OBJECTS = $(am_bullwhip_OBJECTS)
 bullwhip_LDADD = $(LDADD)
 DEFAULT_INCLUDES = -I.@am__isrc@
@@ -211,7 +205,8 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-bullwhip_SOURCES = Actor.cpp BullwhipContactListener.cpp Constants.cpp Definition.cpp Entity.cpp File.cpp Game.cpp ImageManager.cpp Item.cpp JMath.cpp MainMenuState.cpp PlayState.cpp Player.cpp SceneManager.cpp State.cpp StateManager.cpp Vec2.cpp main.cpp PhysicsWrappers/BoxDynamicBody.cpp PhysicsWrappers/BoxStaticBody.cpp PhysicsWrappers/BoxTriggerBody.cpp PhysicsWrappers/BoxWorld.cpp entites/InvisEntity.cpp entites/InvisPhysEntity.cpp entites/ent_item.cpp entites/ent_string.cpp entites/game_setglobal.cpp entites/game_spawnpoint.cpp entites/phys_dynamic.cpp entites/phys_static.cpp entites/tele_coord.cpp entites/tele_obj.cpp Component.cpp Object.cpp ObjectManager.cpp
+#bullwhip_SOURCES=Actor.cpp BullwhipContactListener.cpp Constants.cpp Definition.cpp Entity.cpp File.cpp Game.cpp ImageManager.cpp Item.cpp JMath.cpp MainMenuState.cpp PlayState.cpp Player.cpp SceneManager.cpp State.cpp StateManager.cpp Vec2.cpp main.cpp PhysicsWrappers/BoxDynamicBody.cpp PhysicsWrappers/BoxStaticBody.cpp PhysicsWrappers/BoxTriggerBody.cpp PhysicsWrappers/BoxWorld.cpp entites/InvisEntity.cpp entites/InvisPhysEntity.cpp entites/ent_item.cpp entites/ent_string.cpp entites/game_setglobal.cpp entites/game_spawnpoint.cpp entites/phys_dynamic.cpp entites/phys_static.cpp entites/tele_coord.cpp entites/tele_obj.cpp Component.cpp Object.cpp ObjectManager.cpp
+bullwhip_SOURCES = BullwhipContactListener.cpp Constants.cpp Definition.cpp Entity.cpp File.cpp Game.cpp ImageManager.cpp JMath.cpp MainMenuState.cpp PlayState.cpp SceneManager.cpp State.cpp StateManager.cpp Vec2.cpp main.cpp PhysicsWrappers/BoxDynamicBody.cpp PhysicsWrappers/BoxStaticBody.cpp PhysicsWrappers/BoxTriggerBody.cpp PhysicsWrappers/BoxWorld.cpp Component.cpp Object.cpp ObjectManager.cpp components/Graphical.cpp
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -316,7 +311,6 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Actor.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/BoxDynamicBody.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/BoxStaticBody.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/BoxTriggerBody.Po@am__quote@
@@ -328,29 +322,18 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Entity.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/File.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Game.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Graphical.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ImageManager.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/InvisEntity.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/InvisPhysEntity.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Item.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/JMath.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/MainMenuState.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Object.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ObjectManager.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PlayState.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Player.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SceneManager.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/State.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/StateManager.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Vec2.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ent_item.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ent_string.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/game_setglobal.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/game_spawnpoint.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/phys_dynamic.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/phys_static.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tele_coord.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tele_obj.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -422,145 +405,19 @@ BoxWorld.obj: PhysicsWrappers/BoxWorld.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o BoxWorld.obj `if test -f 'PhysicsWrappers/BoxWorld.cpp'; then $(CYGPATH_W) 'PhysicsWrappers/BoxWorld.cpp'; else $(CYGPATH_W) '$(srcdir)/PhysicsWrappers/BoxWorld.cpp'; fi`
 
-InvisEntity.o: entites/InvisEntity.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT InvisEntity.o -MD -MP -MF $(DEPDIR)/InvisEntity.Tpo -c -o InvisEntity.o `test -f 'entites/InvisEntity.cpp' || echo '$(srcdir)/'`entites/InvisEntity.cpp
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/InvisEntity.Tpo $(DEPDIR)/InvisEntity.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/InvisEntity.cpp' object='InvisEntity.o' libtool=no @AMDEPBACKSLASH@
+Graphical.o: components/Graphical.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT Graphical.o -MD -MP -MF $(DEPDIR)/Graphical.Tpo -c -o Graphical.o `test -f 'components/Graphical.cpp' || echo '$(srcdir)/'`components/Graphical.cpp
+@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/Graphical.Tpo $(DEPDIR)/Graphical.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='components/Graphical.cpp' object='Graphical.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o InvisEntity.o `test -f 'entites/InvisEntity.cpp' || echo '$(srcdir)/'`entites/InvisEntity.cpp
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o Graphical.o `test -f 'components/Graphical.cpp' || echo '$(srcdir)/'`components/Graphical.cpp
 
-InvisEntity.obj: entites/InvisEntity.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT InvisEntity.obj -MD -MP -MF $(DEPDIR)/InvisEntity.Tpo -c -o InvisEntity.obj `if test -f 'entites/InvisEntity.cpp'; then $(CYGPATH_W) 'entites/InvisEntity.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/InvisEntity.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/InvisEntity.Tpo $(DEPDIR)/InvisEntity.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/InvisEntity.cpp' object='InvisEntity.obj' libtool=no @AMDEPBACKSLASH@
+Graphical.obj: components/Graphical.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT Graphical.obj -MD -MP -MF $(DEPDIR)/Graphical.Tpo -c -o Graphical.obj `if test -f 'components/Graphical.cpp'; then $(CYGPATH_W) 'components/Graphical.cpp'; else $(CYGPATH_W) '$(srcdir)/components/Graphical.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/Graphical.Tpo $(DEPDIR)/Graphical.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='components/Graphical.cpp' object='Graphical.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o InvisEntity.obj `if test -f 'entites/InvisEntity.cpp'; then $(CYGPATH_W) 'entites/InvisEntity.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/InvisEntity.cpp'; fi`
-
-InvisPhysEntity.o: entites/InvisPhysEntity.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT InvisPhysEntity.o -MD -MP -MF $(DEPDIR)/InvisPhysEntity.Tpo -c -o InvisPhysEntity.o `test -f 'entites/InvisPhysEntity.cpp' || echo '$(srcdir)/'`entites/InvisPhysEntity.cpp
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/InvisPhysEntity.Tpo $(DEPDIR)/InvisPhysEntity.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/InvisPhysEntity.cpp' object='InvisPhysEntity.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o InvisPhysEntity.o `test -f 'entites/InvisPhysEntity.cpp' || echo '$(srcdir)/'`entites/InvisPhysEntity.cpp
-
-InvisPhysEntity.obj: entites/InvisPhysEntity.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT InvisPhysEntity.obj -MD -MP -MF $(DEPDIR)/InvisPhysEntity.Tpo -c -o InvisPhysEntity.obj `if test -f 'entites/InvisPhysEntity.cpp'; then $(CYGPATH_W) 'entites/InvisPhysEntity.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/InvisPhysEntity.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/InvisPhysEntity.Tpo $(DEPDIR)/InvisPhysEntity.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/InvisPhysEntity.cpp' object='InvisPhysEntity.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o InvisPhysEntity.obj `if test -f 'entites/InvisPhysEntity.cpp'; then $(CYGPATH_W) 'entites/InvisPhysEntity.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/InvisPhysEntity.cpp'; fi`
-
-ent_item.o: entites/ent_item.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ent_item.o -MD -MP -MF $(DEPDIR)/ent_item.Tpo -c -o ent_item.o `test -f 'entites/ent_item.cpp' || echo '$(srcdir)/'`entites/ent_item.cpp
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/ent_item.Tpo $(DEPDIR)/ent_item.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/ent_item.cpp' object='ent_item.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ent_item.o `test -f 'entites/ent_item.cpp' || echo '$(srcdir)/'`entites/ent_item.cpp
-
-ent_item.obj: entites/ent_item.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ent_item.obj -MD -MP -MF $(DEPDIR)/ent_item.Tpo -c -o ent_item.obj `if test -f 'entites/ent_item.cpp'; then $(CYGPATH_W) 'entites/ent_item.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/ent_item.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/ent_item.Tpo $(DEPDIR)/ent_item.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/ent_item.cpp' object='ent_item.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ent_item.obj `if test -f 'entites/ent_item.cpp'; then $(CYGPATH_W) 'entites/ent_item.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/ent_item.cpp'; fi`
-
-ent_string.o: entites/ent_string.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ent_string.o -MD -MP -MF $(DEPDIR)/ent_string.Tpo -c -o ent_string.o `test -f 'entites/ent_string.cpp' || echo '$(srcdir)/'`entites/ent_string.cpp
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/ent_string.Tpo $(DEPDIR)/ent_string.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/ent_string.cpp' object='ent_string.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ent_string.o `test -f 'entites/ent_string.cpp' || echo '$(srcdir)/'`entites/ent_string.cpp
-
-ent_string.obj: entites/ent_string.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ent_string.obj -MD -MP -MF $(DEPDIR)/ent_string.Tpo -c -o ent_string.obj `if test -f 'entites/ent_string.cpp'; then $(CYGPATH_W) 'entites/ent_string.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/ent_string.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/ent_string.Tpo $(DEPDIR)/ent_string.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/ent_string.cpp' object='ent_string.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ent_string.obj `if test -f 'entites/ent_string.cpp'; then $(CYGPATH_W) 'entites/ent_string.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/ent_string.cpp'; fi`
-
-game_setglobal.o: entites/game_setglobal.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT game_setglobal.o -MD -MP -MF $(DEPDIR)/game_setglobal.Tpo -c -o game_setglobal.o `test -f 'entites/game_setglobal.cpp' || echo '$(srcdir)/'`entites/game_setglobal.cpp
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/game_setglobal.Tpo $(DEPDIR)/game_setglobal.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/game_setglobal.cpp' object='game_setglobal.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o game_setglobal.o `test -f 'entites/game_setglobal.cpp' || echo '$(srcdir)/'`entites/game_setglobal.cpp
-
-game_setglobal.obj: entites/game_setglobal.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT game_setglobal.obj -MD -MP -MF $(DEPDIR)/game_setglobal.Tpo -c -o game_setglobal.obj `if test -f 'entites/game_setglobal.cpp'; then $(CYGPATH_W) 'entites/game_setglobal.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/game_setglobal.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/game_setglobal.Tpo $(DEPDIR)/game_setglobal.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/game_setglobal.cpp' object='game_setglobal.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o game_setglobal.obj `if test -f 'entites/game_setglobal.cpp'; then $(CYGPATH_W) 'entites/game_setglobal.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/game_setglobal.cpp'; fi`
-
-game_spawnpoint.o: entites/game_spawnpoint.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT game_spawnpoint.o -MD -MP -MF $(DEPDIR)/game_spawnpoint.Tpo -c -o game_spawnpoint.o `test -f 'entites/game_spawnpoint.cpp' || echo '$(srcdir)/'`entites/game_spawnpoint.cpp
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/game_spawnpoint.Tpo $(DEPDIR)/game_spawnpoint.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/game_spawnpoint.cpp' object='game_spawnpoint.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o game_spawnpoint.o `test -f 'entites/game_spawnpoint.cpp' || echo '$(srcdir)/'`entites/game_spawnpoint.cpp
-
-game_spawnpoint.obj: entites/game_spawnpoint.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT game_spawnpoint.obj -MD -MP -MF $(DEPDIR)/game_spawnpoint.Tpo -c -o game_spawnpoint.obj `if test -f 'entites/game_spawnpoint.cpp'; then $(CYGPATH_W) 'entites/game_spawnpoint.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/game_spawnpoint.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/game_spawnpoint.Tpo $(DEPDIR)/game_spawnpoint.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/game_spawnpoint.cpp' object='game_spawnpoint.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o game_spawnpoint.obj `if test -f 'entites/game_spawnpoint.cpp'; then $(CYGPATH_W) 'entites/game_spawnpoint.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/game_spawnpoint.cpp'; fi`
-
-phys_dynamic.o: entites/phys_dynamic.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT phys_dynamic.o -MD -MP -MF $(DEPDIR)/phys_dynamic.Tpo -c -o phys_dynamic.o `test -f 'entites/phys_dynamic.cpp' || echo '$(srcdir)/'`entites/phys_dynamic.cpp
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/phys_dynamic.Tpo $(DEPDIR)/phys_dynamic.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/phys_dynamic.cpp' object='phys_dynamic.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o phys_dynamic.o `test -f 'entites/phys_dynamic.cpp' || echo '$(srcdir)/'`entites/phys_dynamic.cpp
-
-phys_dynamic.obj: entites/phys_dynamic.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT phys_dynamic.obj -MD -MP -MF $(DEPDIR)/phys_dynamic.Tpo -c -o phys_dynamic.obj `if test -f 'entites/phys_dynamic.cpp'; then $(CYGPATH_W) 'entites/phys_dynamic.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/phys_dynamic.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/phys_dynamic.Tpo $(DEPDIR)/phys_dynamic.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/phys_dynamic.cpp' object='phys_dynamic.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o phys_dynamic.obj `if test -f 'entites/phys_dynamic.cpp'; then $(CYGPATH_W) 'entites/phys_dynamic.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/phys_dynamic.cpp'; fi`
-
-phys_static.o: entites/phys_static.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT phys_static.o -MD -MP -MF $(DEPDIR)/phys_static.Tpo -c -o phys_static.o `test -f 'entites/phys_static.cpp' || echo '$(srcdir)/'`entites/phys_static.cpp
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/phys_static.Tpo $(DEPDIR)/phys_static.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/phys_static.cpp' object='phys_static.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o phys_static.o `test -f 'entites/phys_static.cpp' || echo '$(srcdir)/'`entites/phys_static.cpp
-
-phys_static.obj: entites/phys_static.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT phys_static.obj -MD -MP -MF $(DEPDIR)/phys_static.Tpo -c -o phys_static.obj `if test -f 'entites/phys_static.cpp'; then $(CYGPATH_W) 'entites/phys_static.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/phys_static.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/phys_static.Tpo $(DEPDIR)/phys_static.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/phys_static.cpp' object='phys_static.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o phys_static.obj `if test -f 'entites/phys_static.cpp'; then $(CYGPATH_W) 'entites/phys_static.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/phys_static.cpp'; fi`
-
-tele_coord.o: entites/tele_coord.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT tele_coord.o -MD -MP -MF $(DEPDIR)/tele_coord.Tpo -c -o tele_coord.o `test -f 'entites/tele_coord.cpp' || echo '$(srcdir)/'`entites/tele_coord.cpp
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/tele_coord.Tpo $(DEPDIR)/tele_coord.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/tele_coord.cpp' object='tele_coord.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o tele_coord.o `test -f 'entites/tele_coord.cpp' || echo '$(srcdir)/'`entites/tele_coord.cpp
-
-tele_coord.obj: entites/tele_coord.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT tele_coord.obj -MD -MP -MF $(DEPDIR)/tele_coord.Tpo -c -o tele_coord.obj `if test -f 'entites/tele_coord.cpp'; then $(CYGPATH_W) 'entites/tele_coord.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/tele_coord.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/tele_coord.Tpo $(DEPDIR)/tele_coord.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/tele_coord.cpp' object='tele_coord.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o tele_coord.obj `if test -f 'entites/tele_coord.cpp'; then $(CYGPATH_W) 'entites/tele_coord.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/tele_coord.cpp'; fi`
-
-tele_obj.o: entites/tele_obj.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT tele_obj.o -MD -MP -MF $(DEPDIR)/tele_obj.Tpo -c -o tele_obj.o `test -f 'entites/tele_obj.cpp' || echo '$(srcdir)/'`entites/tele_obj.cpp
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/tele_obj.Tpo $(DEPDIR)/tele_obj.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/tele_obj.cpp' object='tele_obj.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o tele_obj.o `test -f 'entites/tele_obj.cpp' || echo '$(srcdir)/'`entites/tele_obj.cpp
-
-tele_obj.obj: entites/tele_obj.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT tele_obj.obj -MD -MP -MF $(DEPDIR)/tele_obj.Tpo -c -o tele_obj.obj `if test -f 'entites/tele_obj.cpp'; then $(CYGPATH_W) 'entites/tele_obj.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/tele_obj.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/tele_obj.Tpo $(DEPDIR)/tele_obj.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='entites/tele_obj.cpp' object='tele_obj.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o tele_obj.obj `if test -f 'entites/tele_obj.cpp'; then $(CYGPATH_W) 'entites/tele_obj.cpp'; else $(CYGPATH_W) '$(srcdir)/entites/tele_obj.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o Graphical.obj `if test -f 'components/Graphical.cpp'; then $(CYGPATH_W) 'components/Graphical.cpp'; else $(CYGPATH_W) '$(srcdir)/components/Graphical.cpp'; fi`
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \
