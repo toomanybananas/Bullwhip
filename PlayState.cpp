@@ -21,6 +21,7 @@ void PlayState::Init(sf::RenderWindow* win)
     componentreg.AddFactory("Position", &NewComp<Position>);
     componentreg.AddFactory("Graphical", &NewComp<Graphical>);
     componentreg.AddFactory("Physical", &NewComp<Physical>);
+    componentreg.AddFactory("Moveable", &NewComp<Moveable>);
 
 
     scene->Init(Vec2(0.f, 1000.f));
@@ -39,7 +40,7 @@ void PlayState::Init(sf::RenderWindow* win)
     std::vector<std::string> invis = {"Position"};
     std::vector<std::string> phys = {"Graphical", "Physical"};
     reg->AddFactory("base_ent", vis, 101);
-    reg->AddFactory("player", phys, 100, "dynamic");
+    reg->AddFactory("player", {"Graphical", "Physical", "Moveable"}, 100, "dynamic");
     reg->AddFactory("phys_static", phys, 100, "static");
     reg->AddFactory("phys_dynamic", phys, 100, "dynamic");
     reg->AddFactory("game_spawnpoint", invis);
