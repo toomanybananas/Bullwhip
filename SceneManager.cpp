@@ -19,7 +19,7 @@ void SceneManager::AddEntity(Entity* ent)
 
 void SceneManager::Update(sf::RenderTarget& win)
 {
-    	//phys_world->Step(1.f / 60.f);
+    	phys_world->Step(1.f / 60.f);
 
 	//Parse entites
     	win.setView(v);
@@ -40,8 +40,8 @@ void SceneManager::Update(sf::RenderTarget& win)
 
 void SceneManager::Init(Vec2 gravity)
 {
-    //phys_world = new Physics2D;
-    //phys_world->Init(gravity);
+    phys_world = new Physics2D;
+    phys_world->Init(gravity);
     std::cout << "[scene][phys] intialized physics\n";
     v.setSize(800, 600);
     v.setCenter(100, 100);

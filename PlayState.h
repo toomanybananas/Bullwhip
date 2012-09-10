@@ -16,6 +16,7 @@
 //#include "entites/ent_item.h"
 #include "components/Position.h"
 #include "components/Graphical.h"
+#include "components/Physical.h"
 
 class PlayState : public State
 {

@@ -15,7 +15,6 @@
 #include "ImageManager.h"
 #include "Constants.h"
 #include "ComponentRegistry.h"
-#include "components/Position.h"
 #include "components/Listener.h"
 
 class SceneManager;

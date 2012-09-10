@@ -15,7 +15,7 @@ void Entity::init()
 	}
 	listen = new Listener;
 	objManager->addComponent(obj, listen);
-	objManager->sendMessageToObject("init", NULL, obj, (Def*)this);
+	objManager->sendMessageToObject("init", NULL, obj, this);
 
 }
 

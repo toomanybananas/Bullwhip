@@ -20,6 +20,7 @@ void PlayState::Init(sf::RenderWindow* win)
 
     componentreg.AddFactory("Position", &NewComp<Position>);
     componentreg.AddFactory("Graphical", &NewComp<Graphical>);
+    componentreg.AddFactory("Physical", &NewComp<Physical>);
 
 
     scene->Init(Vec2(0.f, 1000.f));
@@ -34,14 +35,15 @@ void PlayState::Init(sf::RenderWindow* win)
     reg->AddFactory("game_setglobal", &NewEnt<game_setglobal>);
     reg->AddFactory("ent_item", &NewEnt<ent_item>);*/
     //New factory format, using fancy initalizer lists
-    std::vector<std::string> vis = {"Position", "Graphical"};
+    std::vector<std::string> vis = {"Graphical"};
     std::vector<std::string> invis = {"Position"};
-    reg->AddFactory("base_ent", vis);
-    reg->AddFactory("player", vis);
-    reg->AddFactory("phys_static", vis);
-    reg->AddFactory("phys_dynamic", vis);
+    std::vector<std::string> phys = {"Graphical", "Physical"};
+    reg->AddFactory("base_ent", vis, 101);
+    reg->AddFactory("player", phys, 100, "dynamic");
+    reg->AddFactory("phys_static", phys, 100, "static");
+    reg->AddFactory("phys_dynamic", phys, 100, "dynamic");
     reg->AddFactory("game_spawnpoint", invis);
-    reg->AddFactory("ent_item", vis);
+    reg->AddFactory("ent_item", vis, 101);
 
     //scene->LoadScene(bullwhipini.GetValue("Bullwhip", "level", NULL));
     scene->LoadScenev1("level.bin");

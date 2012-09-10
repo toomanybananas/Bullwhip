@@ -8,6 +8,7 @@ class Position : public Cistron::Component
 
 		void addedToObject()
 		{
+			//Auto assume authority because I'm too lazy to do proper error checking
 			requestMessage("sendpos", &Position::SendPos);
 			requestMessage("setx", &Position::SetX);
 			requestMessage("sety", &Position::SetY);
@@ -16,7 +17,7 @@ class Position : public Cistron::Component
 		}
 		void init(const Cistron::Message& msg)
 		{
-			Def* d = boost::any_cast<Def*>(msg.p);
+			Entity* d = boost::any_cast<Entity*>(msg.p);
 			x = d->GetVal<int>("x");
 			y = d->GetVal<int>("y");
 			angle = d->GetVal<float>("rotation");

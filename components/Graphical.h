@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "../Constants.h"
 #include "../ImageManager.h"
+#include "../Entity.h"
 class Graphical : public Cistron::Component
 {
 	public:
@@ -15,9 +16,9 @@ class Graphical : public Cistron::Component
 		{
 			requestMessage("init", &Graphical::init);
 			requestMessage("update", &Graphical::Update);
-			requestMessage("getx", &Graphical::SetX);
-			requestMessage("gety", &Graphical::SetY);
-			requestMessage("getrot", &Graphical::SetRot);
+			//requestMessage("getx", &Graphical::SetX);
+			//requestMessage("gety", &Graphical::SetY);
+			//requestMessage("getrot", &Graphical::SetRot);
 			requestMessage("draw", &Graphical::Draw);
 		}
 

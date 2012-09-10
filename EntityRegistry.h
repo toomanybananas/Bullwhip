@@ -18,7 +18,12 @@ class EntityRegistry
 	 * @param name The class of the entity
 	 * @param func The factory function for that class
 	 */
-        void AddFactory(std::string name, std::vector<std::string> comps) {factorys[name] = comps;};
+        void AddFactory(std::string name, std::vector<std::string> comps, int auth = 100, std::string phystype = "") 
+	{
+		factorys[name] = comps;
+		auths[name] = auth;
+		phys[name] = phystype;
+	}
 	/**
 	 * @brief Instantates a new entity
 	 *
@@ -29,6 +34,12 @@ class EntityRegistry
         Entity* NewEnt(std::string name)
 	{
 		Entity* ent = new Entity;
+		if(phys[name] != "")
+		{
+			ent->SetVal("phystype", phys[name]);
+		}
+		ent->SetVal("auth", auths[name]);
+
 		for(int i = 0; i < factorys[name].size(); i++)
 		{
 			ent->AddComponent(factorys[name][i]);
@@ -38,6 +49,8 @@ class EntityRegistry
     protected:
     private:
         std::map<std::string, std::vector<std::string> > factorys;
+	std::map<std::string, std::string> phys;
+	std::map<std::string, int> auths;
 };
 
 /**

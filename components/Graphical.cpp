@@ -5,7 +5,7 @@ void Graphical::init(const Message& msg)
 {
 	isasset = false;
 	sf::Texture* tex;
-	Def* d = boost::any_cast<Def*>(msg.p);
+	Entity* d = boost::any_cast<Entity*>(msg.p);
 	if(d == NULL)
 		std::cout << "bad def\n";
 	std::cout << d->GetVal<std::string>("image") << std::endl;
@@ -21,11 +21,27 @@ void Graphical::init(const Message& msg)
 	}
 	draw.setTexture(*tex);
 	hw = tex->getSize().x / 2;
+	d->SetVal("hw", hw);
 	hh = tex->getSize().y / 2;
+	d->SetVal("hh", hh);
 	w = tex->getSize().x;
 	h = tex->getSize().y;
 	draw.setOrigin(hw, hh);
-	sendLocalMessage("sendpos"); //Get the position entity to the send the position
+	//sendLocalMessage("sendpos"); //Get the position entity to the send the position
+	//Determine whether component has authority
+	if(d->GetVal<int>("auth") == 101)
+	{
+		//Get the proper messages
+		requestMessage("setx", &Graphical::SetX);
+		requestMessage("sety", &Graphical::SetY);
+		requestMessage("setrot", &Graphical::SetRot);
+	}
+	else
+	{
+		requestMessage("getx", &Graphical::SetX);
+		requestMessage("gety", &Graphical::SetY);
+		requestMessage("getrot", &Graphical::SetRot);
+	}
 }
 
 void Graphical::Update(const Message& msg)
