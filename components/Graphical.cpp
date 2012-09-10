@@ -8,8 +8,8 @@ void Graphical::init(const Message& msg)
 	Entity* d = boost::any_cast<Entity*>(msg.p);
 	if(d == NULL)
 		std::cout << "bad def\n";
-	std::cout << d->GetVal<std::string>("image") << std::endl;
-	std::cout << d->GetVal<int>("x") << std::endl;
+	//std::cout << d->GetVal<std::string>("image") << std::endl;
+	//std::cout << d->GetVal<int>("x") << std::endl;
 	if(d->IsDefined("image"))
 		tex = gImageManager.getResource(d->GetVal<std::string>("image"));
 	else

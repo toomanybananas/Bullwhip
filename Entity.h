@@ -68,7 +68,10 @@ class Entity : public Def
 	 *
 	 * @param obj Object being collided
 	 */
-        virtual void onCollision(Entity* obj) {return;}; //Collision callback, used for physics collisions. Called every frame of the collision
+        virtual void onCollision(Entity* obj)
+	{
+		SendMessage("oncollision", obj);
+	}
 	/**
 	 * @brief Collision callback called ONLY when the objects start to collide.
 	 *

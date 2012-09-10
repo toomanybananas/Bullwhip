@@ -16,6 +16,7 @@ class Physical : public Cistron::Component
 			//requestMessage("getrot", &Physical::SetRot);
 			requestMessage("init", &Physical::init);
 			requestMessage("update", &Physical::update);
+			requestMessage("applyforce", &Physical::ApplyForce);
 			authority = false;
 		}
 		void init(const Cistron::Message& msg)
@@ -83,6 +84,11 @@ class Physical : public Cistron::Component
 		float GetRot()
 		{
 			return toDeg(body->GetAngle());
+		}
+		void ApplyForce(const Cistron::Message& msg)
+		{
+			Vec2 vec = boost::any_cast<Vec2>(msg.p);
+			body->ApplyForce(vec);
 		}
 	protected:
 		PhysicsBody* body;
