@@ -20,6 +20,7 @@ AC_CHECK_LIB([sfml-window], [main])
 AC_CHECK_LIB([sfml-graphics], [main])
 
 CXXFLAGS="$CXXFLAGS -std=c++0x"
+
 # Checks for header files.
 AC_CHECK_HEADERS([wchar.h])
 AC_CHECK_HEADERS([Box2D/Box2D.h])

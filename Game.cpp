@@ -34,7 +34,7 @@ void Game::draw()
 	}
     }
     std::stringstream ss;
-    ss <<  (1.f / counter.restart().asSeconds());
+    ss << (int)(1.f / counter.restart().asSeconds());
     fps.setString(ss.str());
     win.draw(fps);
     win.display();
