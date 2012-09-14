@@ -83,7 +83,7 @@ class Physical : public Cistron::Component
 		}
 		float GetRot()
 		{
-			return toDeg(body->GetAngle());
+			return body->GetAngle();
 		}
 		void ApplyForce(const Cistron::Message& msg)
 		{

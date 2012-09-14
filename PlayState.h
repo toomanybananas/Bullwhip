@@ -18,6 +18,7 @@
 #include "components/Graphical.h"
 #include "components/Physical.h"
 #include "components/Moveable.h"
+#include "components/PlayerControlled.h"
 
 class PlayState : public State
 {

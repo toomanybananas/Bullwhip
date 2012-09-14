@@ -74,7 +74,8 @@ am_bullwhip_OBJECTS = BullwhipContactListener.$(OBJEXT) \
 	Vec2.$(OBJEXT) main.$(OBJEXT) BoxDynamicBody.$(OBJEXT) \
 	BoxStaticBody.$(OBJEXT) BoxTriggerBody.$(OBJEXT) \
 	BoxWorld.$(OBJEXT) Component.$(OBJEXT) Object.$(OBJEXT) \
-	ObjectManager.$(OBJEXT) Graphical.$(OBJEXT)
+	ObjectManager.$(OBJEXT) Graphical.$(OBJEXT) \
+	PlayerControlled.$(OBJEXT)
 bullwhip_OBJECTS = $(am_bullwhip_OBJECTS)
 bullwhip_LDADD = $(LDADD)
 DEFAULT_INCLUDES = -I.@am__isrc@
@@ -206,7 +207,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 #bullwhip_SOURCES=Actor.cpp BullwhipContactListener.cpp Constants.cpp Definition.cpp Entity.cpp File.cpp Game.cpp ImageManager.cpp Item.cpp JMath.cpp MainMenuState.cpp PlayState.cpp Player.cpp SceneManager.cpp State.cpp StateManager.cpp Vec2.cpp main.cpp PhysicsWrappers/BoxDynamicBody.cpp PhysicsWrappers/BoxStaticBody.cpp PhysicsWrappers/BoxTriggerBody.cpp PhysicsWrappers/BoxWorld.cpp entites/InvisEntity.cpp entites/InvisPhysEntity.cpp entites/ent_item.cpp entites/ent_string.cpp entites/game_setglobal.cpp entites/game_spawnpoint.cpp entites/phys_dynamic.cpp entites/phys_static.cpp entites/tele_coord.cpp entites/tele_obj.cpp Component.cpp Object.cpp ObjectManager.cpp
-bullwhip_SOURCES = BullwhipContactListener.cpp Constants.cpp Definition.cpp Entity.cpp File.cpp Game.cpp ImageManager.cpp JMath.cpp MainMenuState.cpp PlayState.cpp SceneManager.cpp State.cpp StateManager.cpp Vec2.cpp main.cpp PhysicsWrappers/BoxDynamicBody.cpp PhysicsWrappers/BoxStaticBody.cpp PhysicsWrappers/BoxTriggerBody.cpp PhysicsWrappers/BoxWorld.cpp Component.cpp Object.cpp ObjectManager.cpp components/Graphical.cpp
+bullwhip_SOURCES = BullwhipContactListener.cpp Constants.cpp Definition.cpp Entity.cpp File.cpp Game.cpp ImageManager.cpp JMath.cpp MainMenuState.cpp PlayState.cpp SceneManager.cpp State.cpp StateManager.cpp Vec2.cpp main.cpp PhysicsWrappers/BoxDynamicBody.cpp PhysicsWrappers/BoxStaticBody.cpp PhysicsWrappers/BoxTriggerBody.cpp PhysicsWrappers/BoxWorld.cpp Component.cpp Object.cpp ObjectManager.cpp components/Graphical.cpp components/PlayerControlled.cpp
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -329,6 +330,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Object.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ObjectManager.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PlayState.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PlayerControlled.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SceneManager.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/State.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/StateManager.Po@am__quote@
@@ -418,6 +420,20 @@ Graphical.obj: components/Graphical.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='components/Graphical.cpp' object='Graphical.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o Graphical.obj `if test -f 'components/Graphical.cpp'; then $(CYGPATH_W) 'components/Graphical.cpp'; else $(CYGPATH_W) '$(srcdir)/components/Graphical.cpp'; fi`
+
+PlayerControlled.o: components/PlayerControlled.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT PlayerControlled.o -MD -MP -MF $(DEPDIR)/PlayerControlled.Tpo -c -o PlayerControlled.o `test -f 'components/PlayerControlled.cpp' || echo '$(srcdir)/'`components/PlayerControlled.cpp
+@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/PlayerControlled.Tpo $(DEPDIR)/PlayerControlled.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='components/PlayerControlled.cpp' object='PlayerControlled.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o PlayerControlled.o `test -f 'components/PlayerControlled.cpp' || echo '$(srcdir)/'`components/PlayerControlled.cpp
+
+PlayerControlled.obj: components/PlayerControlled.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT PlayerControlled.obj -MD -MP -MF $(DEPDIR)/PlayerControlled.Tpo -c -o PlayerControlled.obj `if test -f 'components/PlayerControlled.cpp'; then $(CYGPATH_W) 'components/PlayerControlled.cpp'; else $(CYGPATH_W) '$(srcdir)/components/PlayerControlled.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/PlayerControlled.Tpo $(DEPDIR)/PlayerControlled.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='components/PlayerControlled.cpp' object='PlayerControlled.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o PlayerControlled.obj `if test -f 'components/PlayerControlled.cpp'; then $(CYGPATH_W) 'components/PlayerControlled.cpp'; else $(CYGPATH_W) '$(srcdir)/components/PlayerControlled.cpp'; fi`
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \

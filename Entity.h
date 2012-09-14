@@ -77,13 +77,19 @@ class Entity : public Def
 	 *
 	 * @param obj Object being collided
 	 */
-        virtual void onBeginCollision(Entity* obj) {return;}; //Called only when the collision starts
+        virtual void onBeginCollision(Entity* obj)
+	{
+		SendMessage("begincollision", obj);
+	}	
 	/**
 	 * @brief Collosion callback called ONLY when the collision ends
 	 *
 	 * @param obj Object being collided
 	 */
-        virtual void onEndCollision(Entity* obj) {return;};
+        virtual void onEndCollision(Entity* obj)
+	{
+		SendMessage("endcollision", obj);
+	}
 	/**
 	 * @brief Attribute setting, needs to go
 	 *
