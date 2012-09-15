@@ -28,7 +28,7 @@ void SceneManager::Update(sf::RenderTarget& win)
         	//Update entity
         	entites[i]->update(this);
         	//entites[i]->Draw(win);
-		entites[i]->SendMessage("draw", &win);
+		entites[i]->SendMessage("Core.Draw", &win);
     	}
     	if(specents["center"] != NULL)
     	{

@@ -28,25 +28,18 @@ class Entity : public Def
         virtual void init();
 
 	
+	/**
+	 * @brief Adds a component to the entity
+	 *
+	 * @param comp The name of the component to add, fetched from the component registry
+	 */
 	void AddComponent(std::string comp);	
-
-
-
-
 	/**
 	 * @brief Basic functionality for entites, DO NOT OVERRIDE THIS (unless you're making an extension)
 	 *
 	 * @param scene The scene manager it is refering to.
 	 */
-        virtual void update(SceneManager* scene);   //Update the basic components, don't overrider unless you need to add more
-                                                    //basic components, such as physics
-	/**
-	 * @brief Override this with your code.
-	 *
-	 * @param scene The global scene manager
-	 */
-        virtual void Update(SceneManager* scene) {};//Function prototype, since c++ doesn't have a super call this is for
-                                                    //user written code
+        virtual void update(SceneManager* scene);
         
 	/**
 	 * @brief Determines whether the entity should be drawn/updated.
@@ -54,15 +47,6 @@ class Entity : public Def
 	 * @return Whether the entity is alive or not
 	 */
         virtual bool isAlive() {return alive;}; //returns whether the entity is alive or not.
-
-	/**
-	 * @brief The makings of an incomplete health system.
-	 *
-	 * @param dmg The damage to deal
-	 */
-        virtual void damage(int dmg); //Incomplete damage system.
-
-      
 	/**
 	 * @brief Collision callback, called every frame the collision is happening.
 	 *
@@ -70,7 +54,7 @@ class Entity : public Def
 	 */
         virtual void onCollision(Entity* obj)
 	{
-		SendMessage("oncollision", obj);
+		SendMessage("Phys.Collision", obj);
 	}
 	/**
 	 * @brief Collision callback called ONLY when the objects start to collide.
@@ -79,7 +63,7 @@ class Entity : public Def
 	 */
         virtual void onBeginCollision(Entity* obj)
 	{
-		SendMessage("begincollision", obj);
+		SendMessage("Phys.BeginCollision", obj);
 	}	
 	/**
 	 * @brief Collosion callback called ONLY when the collision ends
@@ -88,7 +72,7 @@ class Entity : public Def
 	 */
         virtual void onEndCollision(Entity* obj)
 	{
-		SendMessage("endcollision", obj);
+		SendMessage("Phys.EndCollision", obj);
 	}
 	/**
 	 * @brief Attribute setting, needs to go
@@ -96,8 +80,7 @@ class Entity : public Def
 	 * @param attribute Attribute to set
 	 * @param val Value of the attribute
 	 */
-        virtual void SetAttribute(std::string attribute, bool val) {attributes[attribute] = val;};  //Setting basic attributes, call in ctor only most
-                                                                                                    //of the time
+        //virtual void SetAttribute(std::string attribute, bool val) {attributes[attribute] = val;};
 	/**
 	 * @brief Getting attributes, needs to go
 	 *
@@ -105,8 +88,7 @@ class Entity : public Def
 	 *
 	 * @return The attribute value
 	 */
-        virtual bool GetAttribute(std::string attribute) {return attributes[attribute];}; //Getting attributes
-
+        //virtual bool GetAttribute(std::string attribute) {return attributes[attribute];};
 	/**
 	 * @brief Type of the entity (eg phys_static). Should be set in ctor
 	 */
@@ -138,18 +120,18 @@ class Entity : public Def
 	}
 	void SetX(int xx)
 	{
-		SendMessage("setx", xx);	
+		SendMessage("Set.X", xx);	
 	}
 	void SetY(int xx)
 	{
-		SendMessage("sety", xx);
+		SendMessage("Set.Y", xx);
 	}
     protected:
         bool alive; //Is the object alive? (used in things such as whether to call update or not)
 
         Def asset; //def loaded for asset stuff
         bool isasset;
-        std::map<std::string, bool> attributes;
+        //std::map<std::string, bool> attributes;
 	Cistron::ObjectId obj;
 	std::vector<std::string> comps;
 	Listener* listen;

@@ -8,9 +8,9 @@ class Listener : public Cistron::Component
 
 		void addedToObject()
 		{
-			requestMessage("getx", &Listener::SetX);
-			requestMessage("gety", &Listener::SetY);
-			requestMessage("getrot", &Listener::SetRot);
+			requestMessage("Pos.X", &Listener::SetX);
+			requestMessage("Pos.Y", &Listener::SetY);
+			requestMessage("Pos.Angle", &Listener::SetRot);
 			x = 0;
 			y = 0;
 		}

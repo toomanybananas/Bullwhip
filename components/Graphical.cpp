@@ -32,15 +32,15 @@ void Graphical::init(const Message& msg)
 	if(d->GetVal<int>("auth") == 101)
 	{
 		//Get the proper messages
-		requestMessage("setx", &Graphical::SetX);
-		requestMessage("sety", &Graphical::SetY);
-		requestMessage("setrot", &Graphical::SetRot);
+		requestMessage("Set.X", &Graphical::SetX);
+		requestMessage("Set.Y", &Graphical::SetY);
+		requestMessage("Set.Angle", &Graphical::SetRot);
 	}
 	else
 	{
-		requestMessage("getx", &Graphical::SetX);
-		requestMessage("gety", &Graphical::SetY);
-		requestMessage("getrot", &Graphical::SetRot);
+		requestMessage("Pos.X", &Graphical::SetX);
+		requestMessage("Pos.Y", &Graphical::SetY);
+		requestMessage("Pos.Angle", &Graphical::SetRot);
 	}
 }
 

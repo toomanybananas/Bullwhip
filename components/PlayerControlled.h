@@ -11,9 +11,9 @@ class PlayerControlled : public Cistron::Component
 		void addedToObject()
 		{
 			//requestMessage("oncollision", &PlayerControlled::OnCollision);
-			requestMessage("begincollision", &PlayerControlled::BeginCollision);
-			requestMessage("endcollision", &PlayerControlled::EndCollision);
-			requestMessage("update", &PlayerControlled::update);
+			requestMessage("Phys.BeginCollision", &PlayerControlled::BeginCollision);
+			requestMessage("Phys.EndCollision", &PlayerControlled::EndCollision);
+			requestMessage("Core.Update", &PlayerControlled::update);
 			//requestMessage("init", &PlayerControlled::init);
 		}
 		void update(const Cistron::Message& msg);

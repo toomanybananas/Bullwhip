@@ -8,13 +8,13 @@ class Moveable : public Cistron::Component
 
 		void addedToObject()
 		{
-			requestMessage("moveright", &Moveable::MoveRight);
-			requestMessage("moveleft", &Moveable::MoveLeft);
-			requestMessage("jump", &Moveable::Jump);
-			requestMessage("oncollision", &Moveable::OnCollision);
+			requestMessage("Actor.Right", &Moveable::MoveRight);
+			requestMessage("Actor.Left", &Moveable::MoveLeft);
+			requestMessage("Actor.Jump", &Moveable::Jump);
+			requestMessage("Phys.Collision", &Moveable::OnCollision);
 			//requestMessage("update", &Moveable::update);
-			requestMessage("init", &Moveable::init);
-			requestMessage("gety", &Moveable::SetY);
+			requestMessage("Core.Init", &Moveable::init);
+			requestMessage("Pos.Y", &Moveable::SetY);
 		}
 		void init(const Cistron::Message& msg)
 		{
@@ -38,21 +38,21 @@ class Moveable : public Cistron::Component
 		{
 			if(!speed.GetVal<bool>("moveable"))
 				return;
-			sendLocalMessage("applyforce", Vec2(speed.GetVal<int>("move"), 0));
+			sendLocalMessage("Phys.ApplyForce", Vec2(speed.GetVal<int>("move"), 0));
 		}
 
 		void MoveLeft(const Cistron::Message& msg)
 		{
 			if(!speed.GetVal<bool>("moveable"))
 				return;
-			sendLocalMessage("applyforce", Vec2(speed.GetVal<int>("move") * -1, 0));
+			sendLocalMessage("Phys.ApplyForce", Vec2(speed.GetVal<int>("move") * -1, 0));
 		}
 
 		void Jump(const Cistron::Message& msg)
 		{
 			if(!can_jump)
 				return;
-			sendLocalMessage("applyforce", Vec2(0, speed.GetVal<int>("jump")));
+			sendLocalMessage("Phys.ApplyForce", Vec2(0, speed.GetVal<int>("jump")));
 			can_jump = false;
 		}
 		void OnCollision(const Cistron::Message& msg)

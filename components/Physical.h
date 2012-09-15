@@ -14,9 +14,9 @@ class Physical : public Cistron::Component
 			//requestMessage("getx", &Physical::SetX);
 			//requestMessage("gety", &Physical::SetY);
 			//requestMessage("getrot", &Physical::SetRot);
-			requestMessage("init", &Physical::init);
-			requestMessage("update", &Physical::update);
-			requestMessage("applyforce", &Physical::ApplyForce);
+			requestMessage("Core.Init", &Physical::init);
+			requestMessage("Core.Update", &Physical::update);
+			requestMessage("Phys.ApplyForce", &Physical::ApplyForce);
 			authority = false;
 		}
 		void init(const Cistron::Message& msg)
@@ -32,16 +32,16 @@ class Physical : public Cistron::Component
 			if(d->GetVal<int>("auth") == 100)
 			{
 				authority = true;
-				requestMessage("setx", &Physical::SetX);
-				requestMessage("sety", &Physical::SetY);
-				requestMessage("setrot", &Physical::SetRot);
+				requestMessage("Set.X", &Physical::SetX);
+				requestMessage("Set.Y", &Physical::SetY);
+				requestMessage("Set.Angle", &Physical::SetRot);
 			}
 			else
 			{
 				std::cout << "Warning: You have a physics component that has no authority. This is generally very bad, and can result in a very unstable physics simulation\n";
-				requestMessage("getx", &Physical::SetX);
-				requestMessage("gety", &Physical::SetY);
-				requestMessage("getrot", &Physical::SetRot);
+				requestMessage("Pos.X", &Physical::SetX);
+				requestMessage("Pos.Y", &Physical::SetY);
+				requestMessage("Pos.Angle", &Physical::SetRot);
 			}
 			body->Intialize(d);
 
@@ -52,9 +52,9 @@ class Physical : public Cistron::Component
 		{
 			if(authority)
 			{
-				sendLocalMessage("getx", GetX());
-				sendLocalMessage("gety", GetY());
-				sendLocalMessage("getrot", GetRot());
+				sendLocalMessage("Pos.X", GetX());
+				sendLocalMessage("Pos.Y", GetY());
+				sendLocalMessage("Pos.Angle", GetRot());
 			}
 		}
 

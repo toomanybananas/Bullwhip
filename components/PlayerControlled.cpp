@@ -4,9 +4,9 @@
 void PlayerControlled::update(const Cistron::Message& msg)
 {
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-		sendLocalMessage("jump");
+		sendLocalMessage("Actor.Jump");
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-		sendLocalMessage("moveright");
+		sendLocalMessage("Actor.Right");
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-		sendLocalMessage("moveleft");
+		sendLocalMessage("Actor.Left");
 }

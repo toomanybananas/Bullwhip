@@ -14,12 +14,12 @@ class Graphical : public Cistron::Component
 
 		void addedToObject()
 		{
-			requestMessage("init", &Graphical::init);
-			requestMessage("update", &Graphical::Update);
+			requestMessage("Core.Init", &Graphical::init);
+			requestMessage("Core.Update", &Graphical::Update);
 			//requestMessage("getx", &Graphical::SetX);
 			//requestMessage("gety", &Graphical::SetY);
 			//requestMessage("getrot", &Graphical::SetRot);
-			requestMessage("draw", &Graphical::Draw);
+			requestMessage("Core.Draw", &Graphical::Draw);
 		}
 
 		void init(const Cistron::Message& msg);

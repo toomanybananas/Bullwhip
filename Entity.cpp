@@ -15,7 +15,7 @@ void Entity::init()
 	}
 	listen = new Listener;
 	objManager->addComponent(obj, listen);
-	objManager->sendMessageToObject("init", NULL, obj, this);
+	objManager->sendMessageToObject("Core.Init", NULL, obj, this);
 
 }
 
@@ -27,8 +27,8 @@ void Entity::AddComponent(std::string comp)
 }
 
 
-void Entity::damage(int dmg)
-{
+//void Entity::damage(int dmg)
+//{
     /*if((bool)mdef.GetVal("invincible"))
         return;
     mdef.SetVal("health", (int)mdef.GetVal("health") - dmg);
@@ -36,10 +36,10 @@ void Entity::damage(int dmg)
     {
         alive = false;
     }*/
-}
+//}
 
 void Entity::update(SceneManager* scene)
 {
 	//do some stuff
-	objManager->sendMessageToObject("update", NULL, obj, this);
+	objManager->sendMessageToObject("Core.Update", NULL, obj, this);
 }

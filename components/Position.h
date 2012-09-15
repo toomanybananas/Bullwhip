@@ -10,10 +10,10 @@ class Position : public Cistron::Component
 		{
 			//Auto assume authority because I'm too lazy to do proper error checking
 			requestMessage("sendpos", &Position::SendPos);
-			requestMessage("setx", &Position::SetX);
-			requestMessage("sety", &Position::SetY);
-			requestMessage("setrot", &Position::SetRot);
-			requestMessage("init", &Position::init);
+			requestMessage("Set.X", &Position::SetX);
+			requestMessage("Set.Y", &Position::SetY);
+			requestMessage("Set.Angle", &Position::SetRot);
+			requestMessage("Core.Init", &Position::init);
 		}
 		void init(const Cistron::Message& msg)
 		{
@@ -25,24 +25,24 @@ class Position : public Cistron::Component
 
 		void SendPos(const Cistron::Message& msg)
 		{
-			sendLocalMessage("getx", x);
-			sendLocalMessage("gety", y);
-			sendLocalMessage("getrot", angle);
+			sendLocalMessage("Pos.X", x); //Message contains coordinates
+			sendLocalMessage("Pos.Y", y);
+			sendLocalMessage("Pos.Angle", angle);
 		}
 		void SetX(const Cistron::Message& msg)
 		{
 			x = boost::any_cast<int>(msg.p);
-			sendLocalMessage("getx", x);
+			sendLocalMessage("Pos.X", x);
 		}
 		void SetY(const Cistron::Message& msg)
 		{
 			y = boost::any_cast<int>(msg.p);
-			sendLocalMessage("gety", y);
+			sendLocalMessage("Pos.Y", y);
 		}
 		void SetRot(const Cistron::Message& msg)
 		{
 			angle = boost::any_cast<float>(msg.p);
-			sendLocalMessage("getrot", angle);
+			sendLocalMessage("Pos.Angle", angle);
 		}
 	public:
 		int x;
