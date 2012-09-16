@@ -17,6 +17,14 @@ class Physical : public Cistron::Component
 			requestMessage("Core.Init", &Physical::init);
 			requestMessage("Core.Update", &Physical::update);
 			requestMessage("Phys.ApplyForce", &Physical::ApplyForce);
+			requestMessage("Set.LinearVelocity", [this](const Cistron::Message& msg)
+					{
+						body->SetLinearVelocity(boost::any_cast<Vec2>(msg.p));	
+					});
+			requestMessage("Get.LinearVelocity", [this](const Cistron::Message& msg)
+					{
+						sendLocalMessage("Phys.LinearVelocity", body->GetLinearVelocity());
+					});
 			authority = false;
 		}
 		void init(const Cistron::Message& msg)
@@ -35,6 +43,10 @@ class Physical : public Cistron::Component
 				requestMessage("Set.X", &Physical::SetX);
 				requestMessage("Set.Y", &Physical::SetY);
 				requestMessage("Set.Angle", &Physical::SetRot);
+				//I'm hooked on lambdas
+				requestMessage("Get.X", [this](const Cistron::Message& msg){sendLocalMessage("Pos.X", GetX());});
+				requestMessage("Get.Y", [this](const Cistron::Message& msg){sendLocalMessage("Pos.Y", GetY());});
+				requestMessage("Get.Angle", [this](const Cistron::Message& msg){sendLocalMessage("Pos.Angle", GetRot());});
 			}
 			else
 			{

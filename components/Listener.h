@@ -30,12 +30,12 @@ class Listener : public Cistron::Component
 		}
 		int GetX()
 		{
-			sendLocalMessage("sendpos");
+			sendLocalMessage("Get.X");
 			return x;
 		}
 		int GetY()
 		{
-			sendLocalMessage("sendpos");
+			sendLocalMessage("Get.Y");
 			return y;
 		}
 	public:

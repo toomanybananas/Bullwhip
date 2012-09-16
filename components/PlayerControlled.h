@@ -14,6 +14,10 @@ class PlayerControlled : public Cistron::Component
 			requestMessage("Phys.BeginCollision", &PlayerControlled::BeginCollision);
 			requestMessage("Phys.EndCollision", &PlayerControlled::EndCollision);
 			requestMessage("Core.Update", &PlayerControlled::update);
+			requestMessage("Phys.LinearVelocity", [this](const Cistron::Message& msg)
+					{
+						vel = boost::any_cast<Vec2>(msg.p);
+					});	
 			//requestMessage("init", &PlayerControlled::init);
 		}
 		void update(const Cistron::Message& msg);
@@ -38,4 +42,5 @@ class PlayerControlled : public Cistron::Component
 	private:
 		//Inventory inv;
 		Entity* pickup;
+		Vec2 vel;
 };

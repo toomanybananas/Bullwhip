@@ -9,4 +9,9 @@ void PlayerControlled::update(const Cistron::Message& msg)
 		sendLocalMessage("Actor.Right");
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		sendLocalMessage("Actor.Left");
+	if((!sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) && (!sf::Keyboard::isKeyPressed(sf::Keyboard::Left)))
+	{
+		sendLocalMessage("Get.LinearVelocity");
+		sendLocalMessage("Set.LinearVelocity", Vec2(vel.x * 0.90f, vel.y));
+	}
 }

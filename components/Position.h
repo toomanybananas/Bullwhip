@@ -9,7 +9,10 @@ class Position : public Cistron::Component
 		void addedToObject()
 		{
 			//Auto assume authority because I'm too lazy to do proper error checking
-			requestMessage("sendpos", &Position::SendPos);
+			requestMessage("Get.Pos", &Position::SendPos);
+			//fancy lambdas
+			requestMessage("Get.X",[this](const Cistron::Message& msg){sendLocalMessage("Pos.X",x);});
+			requestMessage("Get.Y",[this](const Cistron::Message& msg){sendLocalMessage("Pos.Y",y);});
 			requestMessage("Set.X", &Position::SetX);
 			requestMessage("Set.Y", &Position::SetY);
 			requestMessage("Set.Angle", &Position::SetRot);
