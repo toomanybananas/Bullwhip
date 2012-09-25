@@ -31,10 +31,19 @@ void Graphical::init(const Message& msg)
 	//Determine whether component has authority
 	if(d->GetVal<int>("auth") == 101)
 	{
+		std::cout << "Graphics has authority\n";
 		//Get the proper messages
 		requestMessage("Set.X", &Graphical::SetX);
 		requestMessage("Set.Y", &Graphical::SetY);
 		requestMessage("Set.Angle", &Graphical::SetRot);
+		requestMessage("Get.X", [this](const Cistron::Message& msg)
+				{
+					sendLocalMessage("Pos.X", x);
+				});
+		requestMessage("Get.Y", [this](const Cistron::Message& msg)
+				{
+					sendLocalMessage("Pos.Y", y);
+				});
 	}
 	else
 	{
