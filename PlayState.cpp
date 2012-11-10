@@ -1,5 +1,5 @@
 #include "PlayState.h"
-
+#include "Item.h"
 PlayState::PlayState()
 {
     alive = false;
@@ -26,6 +26,7 @@ void PlayState::Init(sf::RenderWindow* win)
 
 
     scene->Init(Vec2(0.f, 1000.f));
+    //scene->Init(Vec2(0.f, 0.f));
     /*reg->AddFactory("base_ent", &NewEnt<Entity>);
     reg->AddFactory("player", &NewEnt<Player>);
     reg->AddFactory("phys_static", &NewEnt<phys_static>);
@@ -68,7 +69,7 @@ void PlayState::Init(sf::RenderWindow* win)
     Def item;
     item.SetString("name", "QSword");
     item.SetString("real_name", "Sword");
-    //Items.SetItem("QSword", item);
+    Items.SetItem("QSword", item);
 
     alive = true;
 }
