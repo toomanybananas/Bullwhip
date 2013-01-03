@@ -1,7 +1,7 @@
 #ifndef CONSOLE_H
 #define CONSOLE_H
 
-#include <SLB/SLB.hpp>
+//#include <SLB/SLB.hpp>
 #include <iostream>
 #include <string>
 #include <SFML/Graphics.hpp>
