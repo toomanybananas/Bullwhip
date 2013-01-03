@@ -16,26 +16,6 @@
 #include "MainMenuState.h"
 
 //Config sutff
-#include "config.h"
-#if HAVE_LIBBOX2D
-#else
-#error Needs box2d
-#endif
-
-#if HAVE_LIBSFML_SYSTEM
-#else
-#error Needs sfml
-#endif
-
-#if HAVE_LIBSFML_WINDOW
-#else
-#error Needs sfml
-#endif
-
-#if HAVE_LIBSFML_GRAPHICS
-#else
-#error Needs sfml
-#endif
 using namespace std;
 int main()
 {

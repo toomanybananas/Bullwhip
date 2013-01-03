@@ -22,3 +22,5 @@ config.log
 configure.scan
 *.bin
 autom4te.cache
+obj
+*.make

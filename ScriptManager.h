@@ -8,7 +8,7 @@
 #include <stdarg.h>
 
 //Lua include
-#include <SLB/SLB.hpp>
+//#include <SLB/SLB.hpp>
 
 
 class ScriptManager
